@@ -62,7 +62,7 @@ import java.util.Collections;
 import java.util.Locale;
 import java.util.Set;
 
-import uz.unnarsx.cherrygram.core.configs.CherrygramChatsConfig;
+import uz.unnarsx.komarugram.core.configs.CherrygramChatsConfig;
 
 public class VoIPHelper {
 

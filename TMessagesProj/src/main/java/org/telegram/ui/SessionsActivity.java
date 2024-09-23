@@ -80,7 +80,7 @@ import org.telegram.ui.Components.voip.CellFlickerDrawable;
 import java.util.ArrayList;
 import java.util.Objects;
 
-import uz.unnarsx.cherrygram.core.configs.CherrygramAppearanceConfig;
+import uz.unnarsx.komarugram.core.configs.CherrygramAppearanceConfig;
 
 public class SessionsActivity extends BaseFragment implements NotificationCenter.NotificationCenterDelegate {
 

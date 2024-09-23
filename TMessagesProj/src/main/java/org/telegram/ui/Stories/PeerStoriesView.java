@@ -188,8 +188,8 @@ import java.util.Locale;
 import java.util.Objects;
 import java.util.concurrent.CountDownLatch;
 
-import uz.unnarsx.cherrygram.core.configs.CherrygramCoreConfig;
-import uz.unnarsx.cherrygram.Extra;
+import uz.unnarsx.komarugram.core.configs.CherrygramCoreConfig;
+import uz.unnarsx.komarugram.Extra;
 
 public class PeerStoriesView extends SizeNotifierFrameLayout implements NotificationCenter.NotificationCenterDelegate {
 

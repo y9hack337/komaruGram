@@ -45,7 +45,7 @@ import org.telegram.ui.Components.VectorAvatarThumbDrawable;
 import java.util.ArrayList;
 import java.util.List;
 
-import uz.unnarsx.cherrygram.core.configs.CherrygramCoreConfig;
+import uz.unnarsx.komarugram.core.configs.CherrygramCoreConfig;
 
 public class ImageReceiver implements NotificationCenter.NotificationCenterDelegate {
 

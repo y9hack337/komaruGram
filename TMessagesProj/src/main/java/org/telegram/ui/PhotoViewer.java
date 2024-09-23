@@ -295,10 +295,10 @@ import java.util.Locale;
 import java.util.Map;
 import java.util.Objects;
 
-import uz.unnarsx.cherrygram.core.configs.CherrygramAppearanceConfig;
-import uz.unnarsx.cherrygram.core.configs.CherrygramChatsConfig;
-import uz.unnarsx.cherrygram.core.configs.CherrygramDebugConfig;
-import uz.unnarsx.cherrygram.core.helpers.CGResourcesHelper;
+import uz.unnarsx.komarugram.core.configs.CherrygramAppearanceConfig;
+import uz.unnarsx.komarugram.core.configs.CherrygramChatsConfig;
+import uz.unnarsx.komarugram.core.configs.CherrygramDebugConfig;
+import uz.unnarsx.komarugram.core.helpers.CGResourcesHelper;
 
 @SuppressLint("WrongConstant")
 @SuppressWarnings("unchecked")

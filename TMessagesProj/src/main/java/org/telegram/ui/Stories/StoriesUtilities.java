@@ -58,7 +58,7 @@ import org.telegram.ui.LaunchActivity;
 import java.io.File;
 import java.util.Collections;
 
-import uz.unnarsx.cherrygram.core.configs.CherrygramAppearanceConfig;
+import uz.unnarsx.komarugram.core.configs.CherrygramAppearanceConfig;
 
 public class StoriesUtilities {
 

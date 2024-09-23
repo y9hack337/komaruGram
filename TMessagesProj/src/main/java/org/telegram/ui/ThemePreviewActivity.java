@@ -160,7 +160,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-import uz.unnarsx.cherrygram.core.configs.CherrygramAppearanceConfig;
+import uz.unnarsx.komarugram.core.configs.CherrygramAppearanceConfig;
 
 public class ThemePreviewActivity extends BaseFragment implements DownloadController.FileDownloadProgressListener, NotificationCenter.NotificationCenterDelegate {
 

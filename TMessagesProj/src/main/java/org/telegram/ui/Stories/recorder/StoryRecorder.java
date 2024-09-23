@@ -164,7 +164,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import uz.unnarsx.cherrygram.core.PermissionsUtils;
+import uz.unnarsx.komarugram.core.PermissionsUtils;
 
 public class StoryRecorder implements NotificationCenter.NotificationCenterDelegate {
 

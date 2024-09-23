@@ -223,9 +223,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 
-import uz.unnarsx.cherrygram.core.configs.CherrygramChatsConfig;
-import uz.unnarsx.cherrygram.chats.helpers.ChatsHelper2;
-import uz.unnarsx.cherrygram.core.configs.CherrygramExperimentalConfig;
+import uz.unnarsx.komarugram.core.configs.CherrygramChatsConfig;
+import uz.unnarsx.komarugram.chats.helpers.ChatsHelper2;
+import uz.unnarsx.komarugram.core.configs.CherrygramExperimentalConfig;
 
 public class ArticleViewer implements NotificationCenter.NotificationCenterDelegate {
 

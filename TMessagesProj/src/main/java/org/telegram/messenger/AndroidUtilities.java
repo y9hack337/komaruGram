@@ -215,10 +215,10 @@ import java.util.concurrent.atomic.AtomicReference;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import uz.unnarsx.cherrygram.core.configs.CherrygramAppearanceConfig;
-import uz.unnarsx.cherrygram.core.configs.CherrygramCoreConfig;
-import uz.unnarsx.cherrygram.helpers.ui.FontHelper;
-import uz.unnarsx.cherrygram.core.PermissionsUtils;
+import uz.unnarsx.komarugram.core.configs.CherrygramAppearanceConfig;
+import uz.unnarsx.komarugram.core.configs.CherrygramCoreConfig;
+import uz.unnarsx.komarugram.helpers.ui.FontHelper;
+import uz.unnarsx.komarugram.core.PermissionsUtils;
 
 public class AndroidUtilities {
     public final static int LIGHT_STATUS_BAR_OVERLAY = 0x0f000000, DARK_STATUS_BAR_OVERLAY = 0x33000000;

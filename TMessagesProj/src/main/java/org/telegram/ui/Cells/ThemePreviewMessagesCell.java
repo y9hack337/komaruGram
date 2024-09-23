@@ -44,7 +44,7 @@ import org.telegram.ui.Components.Reactions.ReactionsEffectOverlay;
 import org.telegram.ui.Components.Reactions.ReactionsLayoutInBubble;
 import org.telegram.ui.Stories.recorder.StoryEntry;
 
-import uz.unnarsx.cherrygram.misc.Constants;
+import uz.unnarsx.komarugram.misc.Constants;
 
 public class ThemePreviewMessagesCell extends LinearLayout {
 
@@ -230,7 +230,7 @@ public class ThemePreviewMessagesCell extends LinearLayout {
         } else {
             TLRPC.Message message = new TLRPC.TL_message();
             if (type == 0) {
-                message.message = LocaleController.getString(R.string.FontSizePreviewReply);
+                message.message = "не ел уран"; //LocaleController.getString(R.string.FontSizePreviewReply);
             } else {
                 message.message = LocaleController.getString(R.string.NewThemePreviewReply);
             }
@@ -257,7 +257,7 @@ public class ThemePreviewMessagesCell extends LinearLayout {
 
             message = new TLRPC.TL_message();
             if (type == 0) {
-                message.message = LocaleController.getString(R.string.FontSizePreviewLine2);
+                message.message = "я мурчик"; //LocaleController.getString(R.string.FontSizePreviewLine2);
             } else {
                 String text = LocaleController.getString(R.string.NewThemePreviewLine3);
                 StringBuilder builder = new StringBuilder(text);
@@ -301,7 +301,7 @@ public class ThemePreviewMessagesCell extends LinearLayout {
 
             message = new TLRPC.TL_message();
             if (type == 0) {
-                message.message = LocaleController.getString(R.string.FontSizePreviewLine1);
+                message.message = "Исправляй";  //LocaleController.getString(R.string.FontSizePreviewLine1);
             } else {
                 message.message = LocaleController.getString(R.string.NewThemePreviewLine1);
             }

@@ -71,8 +71,8 @@ import org.telegram.ui.Components.Reactions.ReactionsLayoutInBubble;
 import org.telegram.ui.Components.SnowflakesEffect;
 import org.telegram.ui.ThemeActivity;
 
-import uz.unnarsx.cherrygram.core.configs.CherrygramAppearanceConfig;
-import uz.unnarsx.cherrygram.preferences.drawer.helpers.DrawerBitmapHelper;
+import uz.unnarsx.komarugram.core.configs.CherrygramAppearanceConfig;
+import uz.unnarsx.komarugram.preferences.drawer.helpers.DrawerBitmapHelper;
 
 import java.util.ArrayList;
 

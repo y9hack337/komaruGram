@@ -20,7 +20,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.ChatActivity;
 
-import uz.unnarsx.cherrygram.core.configs.CherrygramCameraConfig;
+import uz.unnarsx.komarugram.core.configs.CherrygramCameraConfig;
 
 public class BlurBehindDrawable {
 

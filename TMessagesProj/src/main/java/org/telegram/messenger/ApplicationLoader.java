@@ -52,10 +52,10 @@ import java.util.ArrayList;
 import kotlin.coroutines.Continuation;
 import kotlin.coroutines.CoroutineContext;
 import kotlin.coroutines.EmptyCoroutineContext;
-import uz.unnarsx.cherrygram.core.configs.CherrygramCoreConfig;
+import uz.unnarsx.komarugram.core.configs.CherrygramCoreConfig;
 import org.telegram.tgnet.ConnectionsManagerImpl;
-import uz.unnarsx.cherrygram.camera.CameraXUtils;
-import uz.unnarsx.cherrygram.core.configs.CherrygramExperimentalConfig;
+import uz.unnarsx.komarugram.camera.CameraXUtils;
+import uz.unnarsx.komarugram.core.configs.CherrygramExperimentalConfig;
 
 public class ApplicationLoader extends Application {
 
@@ -166,7 +166,7 @@ public class ApplicationLoader extends Application {
         } catch (Exception e) {
             FileLog.e(e);
         }
-        return new File("/data/data/uz.unnarsx.cherrygram/files");
+        return new File("/data/data/uz.unnarsx.komarugram/files");
     }
 
     public static void postInitApplication() {

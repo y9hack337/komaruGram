@@ -296,14 +296,14 @@ import java.util.concurrent.atomic.AtomicReference;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
 
-import uz.unnarsx.cherrygram.chats.helpers.ChatsPasswordHelper;
-import uz.unnarsx.cherrygram.core.CGBiometricPrompt;
-import uz.unnarsx.cherrygram.core.configs.CherrygramAppearanceConfig;
-import uz.unnarsx.cherrygram.Extra;
-import uz.unnarsx.cherrygram.misc.Constants;
-import uz.unnarsx.cherrygram.core.helpers.AppRestartHelper;
-import uz.unnarsx.cherrygram.core.helpers.CGResourcesHelper;
-import uz.unnarsx.cherrygram.preferences.tgkit.CherrygramPreferencesNavigator;
+import uz.unnarsx.komarugram.chats.helpers.ChatsPasswordHelper;
+import uz.unnarsx.komarugram.core.CGBiometricPrompt;
+import uz.unnarsx.komarugram.core.configs.CherrygramAppearanceConfig;
+import uz.unnarsx.komarugram.Extra;
+import uz.unnarsx.komarugram.misc.Constants;
+import uz.unnarsx.komarugram.core.helpers.AppRestartHelper;
+import uz.unnarsx.komarugram.core.helpers.CGResourcesHelper;
+import uz.unnarsx.komarugram.preferences.tgkit.CherrygramPreferencesNavigator;
 
 public class ProfileActivity extends BaseFragment implements NotificationCenter.NotificationCenterDelegate, DialogsActivity.DialogsActivityDelegate, SharedMediaLayout.SharedMediaPreloaderDelegate, ImageUpdater.ImageUpdaterDelegate, SharedMediaLayout.Delegate {
     private final static int PHONE_OPTION_CALL = 0,
@@ -565,7 +565,7 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
     private int passwordSuggestionRow;
     private int settingsSectionRow;
     private int settingsSectionRow2;
-    private int cherrygramRow;
+    private int komarugramRow;
     private int notificationRow;
     private int languageRow;
     private int privacyRow;
@@ -3903,7 +3903,7 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
                 presentFragment(fragment);
             } else if (position == notificationRow) {
                 presentFragment(new NotificationsSettingsActivity());
-            } else if (position == cherrygramRow) {
+            } else if (position == komarugramRow) {
                 presentFragment(CherrygramPreferencesNavigator.createMainMenu());
             } else if (position == privacyRow) {
                 presentFragment(new PrivacySettingsActivity().setCurrentPassword(currentPassword));
@@ -8719,7 +8719,7 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
         passwordSuggestionRow = -1;
         settingsSectionRow = -1;
         settingsSectionRow2 = -1;
-        cherrygramRow = -1;
+        komarugramRow = -1;
         notificationRow = -1;
         languageRow = -1;
         premiumRow = -1;
@@ -8863,7 +8863,7 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
                 }
 
                 settingsSectionRow2 = rowCount++;
-                cherrygramRow = rowCount++;
+                komarugramRow = rowCount++;
                 chatRow = rowCount++;
                 privacyRow = rowCount++;
                 notificationRow = rowCount++;
@@ -11093,7 +11093,7 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
                     try {
                         String abi = CGResourcesHelper.INSTANCE.getAbiCode();
                         String appName = CGResourcesHelper.INSTANCE.getAppName();
-                        cell.setText(appName + " v" + Constants.INSTANCE.getCG_VERSION() + " " + abi + "\n Based on Telegram v" + BuildVars.BUILD_VERSION_STRING + " " + "\n" + Constants.INSTANCE.getCG_AUTHOR());
+                        cell.setText(appName + " v" + Constants.INSTANCE.getCG_VERSION() + " " + abi  + "\n Код спиздили у Cherrygram \uD83C\uDF52" + "\n Based on Telegram v" + BuildVars.BUILD_VERSION_STRING + " " + "\n" + Constants.INSTANCE.getCG_AUTHOR());
                     } catch (Exception e) {
                         FileLog.e(e);
                     }
@@ -11566,7 +11566,7 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
                     } else if (position == languageRow) {
                         textCell.setTextAndValueAndIcon(LocaleController.getString(R.string.Language), LocaleController.getCurrentLanguageName(), false, R.drawable.msg2_language, false);
                         textCell.setImageLeft(23);
-                    } else if (position == cherrygramRow) {
+                    } else if (position == komarugramRow) {
                         textCell.setTextAndIcon(LocaleController.getString("CGP_AdvancedSettings", R.string.CGP_AdvancedSettings), R.drawable.msg_settings, true);
                     } else if (position == notificationRow) {
                         textCell.setTextAndIcon(LocaleController.getString(R.string.NotificationsAndSounds), R.drawable.msg2_notifications, true);
@@ -11922,7 +11922,7 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
                         position == languageRow || position == setUsernameRow || position == bioRow ||
                         position == versionRow || position == dataRow || position == chatRow ||
                         position == questionRow || position == devicesRow || position == filtersRow || position == stickersRow ||
-                        position == faqRow || position == policyRow || position == sendLogsRow || position == sendLastLogsRow || position == cherrygramRow ||
+                        position == faqRow || position == policyRow || position == sendLogsRow || position == sendLastLogsRow || position == komarugramRow ||
                         position == clearLogsRow || position == switchBackendRow || position == setAvatarRow ||
                         position == addToGroupButtonRow || position == premiumRow || position == premiumGiftingRow ||
                         position == businessRow || position == liteModeRow || position == birthdayRow || position == channelRow ||
@@ -11963,7 +11963,7 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
             } else if (position == settingsTimerRow || position == settingsKeyRow || position == reportRow || position == reportReactionRow ||
                     position == subscribersRow || position == subscribersRequestsRow || position == administratorsRow || position == settingsRow || position == blockedUsersRow ||
                     position == addMemberRow || position == joinRow || position == unblockRow ||
-                    position == sendMessageRow || position == notificationRow || position == cherrygramRow || position == privacyRow ||
+                    position == sendMessageRow || position == notificationRow || position == komarugramRow || position == privacyRow ||
                     position == languageRow || position == dataRow || position == chatRow ||
                     position == questionRow || position == devicesRow || position == filtersRow || position == stickersRow ||
                     position == faqRow || position == policyRow || position == sendLogsRow || position == sendLastLogsRow ||

@@ -22,7 +22,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 
-import uz.unnarsx.cherrygram.core.configs.CherrygramCoreConfig;
+import uz.unnarsx.komarugram.core.configs.CherrygramCoreConfig;
 
 public class ChatThemeController extends BaseController {
 

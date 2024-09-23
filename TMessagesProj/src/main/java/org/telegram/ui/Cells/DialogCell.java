@@ -125,10 +125,10 @@ import java.util.List;
 import java.util.Objects;
 import java.util.Stack;
 
-import uz.unnarsx.cherrygram.chats.helpers.ChatsPasswordHelper;
-import uz.unnarsx.cherrygram.core.configs.CherrygramAppearanceConfig;
-import uz.unnarsx.cherrygram.core.configs.CherrygramChatsConfig;
-import uz.unnarsx.cherrygram.misc.Constants;
+import uz.unnarsx.komarugram.chats.helpers.ChatsPasswordHelper;
+import uz.unnarsx.komarugram.core.configs.CherrygramAppearanceConfig;
+import uz.unnarsx.komarugram.core.configs.CherrygramChatsConfig;
+import uz.unnarsx.komarugram.misc.Constants;
 
 public class DialogCell extends BaseCell implements StoriesListPlaceProvider.AvatarOverlaysView {
 

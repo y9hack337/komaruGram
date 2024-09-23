@@ -96,8 +96,8 @@ import org.telegram.ui.Stories.DarkThemeResourceProvider;
 import java.util.ArrayList;
 import java.util.List;
 
-import uz.unnarsx.cherrygram.core.CGFeatureHooks;
-import uz.unnarsx.cherrygram.core.configs.CherrygramChatsConfig;
+import uz.unnarsx.komarugram.core.CGFeatureHooks;
+import uz.unnarsx.komarugram.core.configs.CherrygramChatsConfig;
 
 public class ContentPreviewViewer {
 

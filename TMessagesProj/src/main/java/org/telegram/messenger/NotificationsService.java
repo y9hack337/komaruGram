@@ -19,8 +19,8 @@ import androidx.core.app.NotificationChannelCompat;
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
 
-import uz.unnarsx.cherrygram.core.configs.CherrygramExperimentalConfig;
-import uz.unnarsx.cherrygram.core.helpers.CGResourcesHelper;
+import uz.unnarsx.komarugram.core.configs.CherrygramExperimentalConfig;
+import uz.unnarsx.komarugram.core.helpers.CGResourcesHelper;
 
 public class NotificationsService extends Service {
 
@@ -31,7 +31,7 @@ public class NotificationsService extends Service {
         ApplicationLoader.postInitApplication();
 
         if (CherrygramExperimentalConfig.INSTANCE.getResidentNotification()) {
-            NotificationChannelCompat channel = new NotificationChannelCompat.Builder("cherrygramPush", NotificationManagerCompat.IMPORTANCE_DEFAULT)
+            NotificationChannelCompat channel = new NotificationChannelCompat.Builder("komarugramPush", NotificationManagerCompat.IMPORTANCE_DEFAULT)
                     .setName(LocaleController.getString("CG_PushService", R.string.CG_PushService))
                     .setLightsEnabled(false)
                     .setVibrationEnabled(false)
@@ -41,7 +41,7 @@ public class NotificationsService extends Service {
             NotificationManagerCompat notificationManager = NotificationManagerCompat.from(this);
             notificationManager.createNotificationChannel(channel);
             startForeground(7777,
-                    new NotificationCompat.Builder(this, "cherrygramPush")
+                    new NotificationCompat.Builder(this, "komarugramPush")
                             .setSmallIcon(CGResourcesHelper.getResidentNotificationIcon())
                             .setShowWhen(false)
                             .setOngoing(true)

@@ -92,11 +92,11 @@ import java.util.Map;
 import java.util.concurrent.CountDownLatch;
 import java.util.function.Consumer;
 
-import uz.unnarsx.cherrygram.chats.helpers.ChatsHelper;
-import uz.unnarsx.cherrygram.chats.helpers.ChatsPasswordHelper;
-import uz.unnarsx.cherrygram.core.configs.CherrygramChatsConfig;
-import uz.unnarsx.cherrygram.core.VibrateUtil;
-import uz.unnarsx.cherrygram.core.helpers.CGResourcesHelper;
+import uz.unnarsx.komarugram.chats.helpers.ChatsHelper;
+import uz.unnarsx.komarugram.chats.helpers.ChatsPasswordHelper;
+import uz.unnarsx.komarugram.core.configs.CherrygramChatsConfig;
+import uz.unnarsx.komarugram.core.VibrateUtil;
+import uz.unnarsx.komarugram.core.helpers.CGResourcesHelper;
 
 public class NotificationsController extends BaseController {
 

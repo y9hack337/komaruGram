@@ -59,7 +59,7 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
-import uz.unnarsx.cherrygram.chats.helpers.ChatsHelper;
+import uz.unnarsx.komarugram.chats.helpers.ChatsHelper;
 
 public final class BulletinFactory {
 

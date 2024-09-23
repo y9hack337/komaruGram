@@ -125,13 +125,13 @@ import javax.microedition.khronos.egl.EGLContext;
 import javax.microedition.khronos.egl.EGLDisplay;
 import javax.microedition.khronos.egl.EGLSurface;
 
-import uz.unnarsx.cherrygram.core.configs.CherrygramAppearanceConfig;
-import uz.unnarsx.cherrygram.core.configs.CherrygramChatsConfig;
-import uz.unnarsx.cherrygram.core.configs.CherrygramCameraConfig;
-import uz.unnarsx.cherrygram.camera.CameraXUtils;
-import uz.unnarsx.cherrygram.camera.SlideControlView;
-import uz.unnarsx.cherrygram.camera.VideoMessagesHelper;
-import uz.unnarsx.cherrygram.chats.AudioEnhance;
+import uz.unnarsx.komarugram.core.configs.CherrygramAppearanceConfig;
+import uz.unnarsx.komarugram.core.configs.CherrygramChatsConfig;
+import uz.unnarsx.komarugram.core.configs.CherrygramCameraConfig;
+import uz.unnarsx.komarugram.camera.CameraXUtils;
+import uz.unnarsx.komarugram.camera.SlideControlView;
+import uz.unnarsx.komarugram.camera.VideoMessagesHelper;
+import uz.unnarsx.komarugram.chats.AudioEnhance;
 
 @TargetApi(18)
 public class InstantCameraView extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {

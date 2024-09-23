@@ -19,7 +19,7 @@ import org.telegram.ui.Components.MessagePreviewView;
 
 import java.util.ArrayList;
 
-import uz.unnarsx.cherrygram.core.configs.CherrygramChatsConfig;
+import uz.unnarsx.komarugram.core.configs.CherrygramChatsConfig;
 
 public class MessagePreviewParams {
 

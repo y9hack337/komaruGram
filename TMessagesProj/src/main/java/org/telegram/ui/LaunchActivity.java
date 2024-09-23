@@ -226,25 +226,25 @@ import java.util.regex.Pattern;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
 
-import uz.unnarsx.cherrygram.Extra;
-import uz.unnarsx.cherrygram.core.configs.CherrygramAppearanceConfig;
-import uz.unnarsx.cherrygram.core.configs.CherrygramChatsConfig;
-import uz.unnarsx.cherrygram.core.configs.CherrygramCoreConfig;
-import uz.unnarsx.cherrygram.chats.helpers.ChatsPasswordHelper;
-import uz.unnarsx.cherrygram.core.CGBiometricPrompt;
-import uz.unnarsx.cherrygram.core.helpers.DeeplinkHelper;
-import uz.unnarsx.cherrygram.misc.CherrygramExtras;
-import uz.unnarsx.cherrygram.core.helpers.AppRestartHelper;
-import uz.unnarsx.cherrygram.chats.helpers.ChatsHelper2;
-import uz.unnarsx.cherrygram.preferences.folders.FoldersPreferencesEntry;
-import uz.unnarsx.cherrygram.preferences.drawer.DrawerPreferencesEntry;
-import uz.unnarsx.cherrygram.preferences.tgkit.CherrygramPreferencesNavigator;
-import uz.unnarsx.cherrygram.helpers.ui.MonetHelper;
-import uz.unnarsx.cherrygram.core.updater.UpdaterUtils;
-import uz.unnarsx.cherrygram.preferences.CameraPreferencesEntry;
-import uz.unnarsx.cherrygram.preferences.ExperimentalPreferencesEntry;
-import uz.unnarsx.cherrygram.core.icons.CGUIResources;
-import uz.unnarsx.cherrygram.core.crashlytics.Crashlytics;
+import uz.unnarsx.komarugram.Extra;
+import uz.unnarsx.komarugram.core.configs.CherrygramAppearanceConfig;
+import uz.unnarsx.komarugram.core.configs.CherrygramChatsConfig;
+import uz.unnarsx.komarugram.core.configs.CherrygramCoreConfig;
+import uz.unnarsx.komarugram.chats.helpers.ChatsPasswordHelper;
+import uz.unnarsx.komarugram.core.CGBiometricPrompt;
+import uz.unnarsx.komarugram.core.helpers.DeeplinkHelper;
+import uz.unnarsx.komarugram.misc.CherrygramExtras;
+import uz.unnarsx.komarugram.core.helpers.AppRestartHelper;
+import uz.unnarsx.komarugram.chats.helpers.ChatsHelper2;
+import uz.unnarsx.komarugram.preferences.folders.FoldersPreferencesEntry;
+import uz.unnarsx.komarugram.preferences.drawer.DrawerPreferencesEntry;
+import uz.unnarsx.komarugram.preferences.tgkit.CherrygramPreferencesNavigator;
+import uz.unnarsx.komarugram.helpers.ui.MonetHelper;
+import uz.unnarsx.komarugram.core.updater.UpdaterUtils;
+import uz.unnarsx.komarugram.preferences.CameraPreferencesEntry;
+import uz.unnarsx.komarugram.preferences.ExperimentalPreferencesEntry;
+import uz.unnarsx.komarugram.core.icons.CGUIResources;
+import uz.unnarsx.komarugram.core.crashlytics.Crashlytics;
 
 public class LaunchActivity extends BasePermissionsActivity implements INavigationLayout.INavigationLayoutDelegate, NotificationCenter.NotificationCenterDelegate, DialogsActivity.DialogsActivityDelegate {
     public final static String EXTRA_FORCE_NOT_INTERNAL_APPS = "force_not_internal_apps";
@@ -3013,9 +3013,9 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
                                             NotificationCenter.getInstance(intentAccount[0]).postNotificationName(NotificationCenter.closeChats);
                                             push_user_id = userId;
                                             String mimeType = cursor.getString(cursor.getColumnIndex(ContactsContract.Data.MIMETYPE));
-                                            if (TextUtils.equals(mimeType, "vnd.android.cursor.item/vnd.uz.unnarsx.cherrygram.android.call")) {
+                                            if (TextUtils.equals(mimeType, "vnd.android.cursor.item/vnd.uz.unnarsx.komarugram.android.call")) {
                                                 audioCallUser = true;
-                                            } else if (TextUtils.equals(mimeType, "vnd.android.cursor.item/vnd.uz.unnarsx.cherrygram.android.call.video")) {
+                                            } else if (TextUtils.equals(mimeType, "vnd.android.cursor.item/vnd.uz.unnarsx.komarugram.android.call.video")) {
                                                 videoCallUser = true;
                                             }
                                         }

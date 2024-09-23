@@ -289,24 +289,24 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
-import uz.unnarsx.cherrygram.chats.helpers.ChatsPasswordHelper;
-import uz.unnarsx.cherrygram.core.CGFeatureHooks;
-import uz.unnarsx.cherrygram.Extra;
-import uz.unnarsx.cherrygram.core.CGBiometricPrompt;
-import uz.unnarsx.cherrygram.chats.helpers.ChatsHelper2;
-import uz.unnarsx.cherrygram.chats.CherrygramChatMenuInjector;
-import uz.unnarsx.cherrygram.core.configs.CherrygramAppearanceConfig;
-import uz.unnarsx.cherrygram.core.configs.CherrygramChatsConfig;
-import uz.unnarsx.cherrygram.chats.CherrygramMessageMenuInjector;
-import uz.unnarsx.cherrygram.core.configs.CherrygramCoreConfig;
-import uz.unnarsx.cherrygram.core.configs.CherrygramExperimentalConfig;
-import uz.unnarsx.cherrygram.core.configs.CherrygramPrivacyConfig;
-import uz.unnarsx.cherrygram.core.helpers.backup.BackupHelper;
-import uz.unnarsx.cherrygram.chats.helpers.ChatsHelper;
-import uz.unnarsx.cherrygram.chats.JsonBottomSheet;
-import uz.unnarsx.cherrygram.core.helpers.CGResourcesHelper;
-import uz.unnarsx.cherrygram.preferences.BlurPreferencesBottomSheet;
-import uz.unnarsx.cherrygram.core.PermissionsUtils;
+import uz.unnarsx.komarugram.chats.helpers.ChatsPasswordHelper;
+import uz.unnarsx.komarugram.core.CGFeatureHooks;
+import uz.unnarsx.komarugram.Extra;
+import uz.unnarsx.komarugram.core.CGBiometricPrompt;
+import uz.unnarsx.komarugram.chats.helpers.ChatsHelper2;
+import uz.unnarsx.komarugram.chats.CherrygramChatMenuInjector;
+import uz.unnarsx.komarugram.core.configs.CherrygramAppearanceConfig;
+import uz.unnarsx.komarugram.core.configs.CherrygramChatsConfig;
+import uz.unnarsx.komarugram.chats.CherrygramMessageMenuInjector;
+import uz.unnarsx.komarugram.core.configs.CherrygramCoreConfig;
+import uz.unnarsx.komarugram.core.configs.CherrygramExperimentalConfig;
+import uz.unnarsx.komarugram.core.configs.CherrygramPrivacyConfig;
+import uz.unnarsx.komarugram.core.helpers.backup.BackupHelper;
+import uz.unnarsx.komarugram.chats.helpers.ChatsHelper;
+import uz.unnarsx.komarugram.chats.JsonBottomSheet;
+import uz.unnarsx.komarugram.core.helpers.CGResourcesHelper;
+import uz.unnarsx.komarugram.preferences.BlurPreferencesBottomSheet;
+import uz.unnarsx.komarugram.core.PermissionsUtils;
 
 @SuppressWarnings("unchecked")
 public class ChatActivity extends BaseFragment implements NotificationCenter.NotificationCenterDelegate, DialogsActivity.DialogsActivityDelegate, LocationActivity.LocationActivityDelegate, ChatAttachAlertDocumentLayout.DocumentSelectActivityDelegate, ChatActivityInterface, FloatingDebugProvider, InstantCameraView.Delegate {

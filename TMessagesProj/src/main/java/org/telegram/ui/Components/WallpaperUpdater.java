@@ -35,7 +35,7 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.util.ArrayList;
 
-import uz.unnarsx.cherrygram.core.PermissionsUtils;
+import uz.unnarsx.komarugram.core.PermissionsUtils;
 
 public class WallpaperUpdater {
 

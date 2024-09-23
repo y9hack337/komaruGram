@@ -59,10 +59,10 @@ import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 
-import uz.unnarsx.cherrygram.core.configs.CherrygramCoreConfig;
-import uz.unnarsx.cherrygram.core.configs.CherrygramDebugConfig;
-import uz.unnarsx.cherrygram.core.configs.CherrygramExperimentalConfig;
-import uz.unnarsx.cherrygram.core.helpers.ErrorDatabaseHelper;
+import uz.unnarsx.komarugram.core.configs.CherrygramCoreConfig;
+import uz.unnarsx.komarugram.core.configs.CherrygramDebugConfig;
+import uz.unnarsx.komarugram.core.configs.CherrygramExperimentalConfig;
+import uz.unnarsx.komarugram.core.helpers.ErrorDatabaseHelper;
 
 import javax.net.ssl.SSLException;
 

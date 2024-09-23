@@ -59,7 +59,7 @@ import org.telegram.ui.Components.SeekBarView;
 import java.util.ArrayList;
 import java.util.Objects;
 
-import uz.unnarsx.cherrygram.core.configs.CherrygramAppearanceConfig;
+import uz.unnarsx.komarugram.core.configs.CherrygramAppearanceConfig;
 
 public class SaveToGallerySettingsActivity extends BaseFragment {
 

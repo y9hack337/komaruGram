@@ -37,7 +37,7 @@ import org.telegram.ui.FilterCreateActivity;
 
 import java.util.Set;
 
-import uz.unnarsx.cherrygram.core.configs.CherrygramAppearanceConfig;
+import uz.unnarsx.komarugram.core.configs.CherrygramAppearanceConfig;
 
 public class DrawerActionCell extends FrameLayout {
 

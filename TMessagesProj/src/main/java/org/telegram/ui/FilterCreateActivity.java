@@ -98,9 +98,9 @@ import org.telegram.ui.Components.UndoView;
 import java.util.ArrayList;
 import java.util.Collections;
 
-import uz.unnarsx.cherrygram.core.configs.CherrygramAppearanceConfig;
-import uz.unnarsx.cherrygram.preferences.folders.helpers.FolderIconHelper;
-import uz.unnarsx.cherrygram.preferences.folders.IconSelectorAlert;
+import uz.unnarsx.komarugram.core.configs.CherrygramAppearanceConfig;
+import uz.unnarsx.komarugram.preferences.folders.helpers.FolderIconHelper;
+import uz.unnarsx.komarugram.preferences.folders.IconSelectorAlert;
 
 public class FilterCreateActivity extends BaseFragment {
 

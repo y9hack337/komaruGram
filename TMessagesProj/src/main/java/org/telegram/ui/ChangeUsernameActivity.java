@@ -92,7 +92,7 @@ import org.telegram.ui.Components.URLSpanNoUnderline;
 import java.util.ArrayList;
 import java.util.List;
 
-import uz.unnarsx.cherrygram.core.configs.CherrygramAppearanceConfig;
+import uz.unnarsx.komarugram.core.configs.CherrygramAppearanceConfig;
 
 public class ChangeUsernameActivity extends BaseFragment {
 

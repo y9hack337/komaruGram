@@ -54,8 +54,8 @@ import org.telegram.ui.ChatBackgroundDrawable;
 
 import java.util.ArrayList;
 
-import uz.unnarsx.cherrygram.core.configs.CherrygramAppearanceConfig;
-import uz.unnarsx.cherrygram.core.configs.CherrygramDebugConfig;
+import uz.unnarsx.komarugram.core.configs.CherrygramAppearanceConfig;
+import uz.unnarsx.komarugram.core.configs.CherrygramDebugConfig;
 
 public class SizeNotifierFrameLayout extends FrameLayout {
 

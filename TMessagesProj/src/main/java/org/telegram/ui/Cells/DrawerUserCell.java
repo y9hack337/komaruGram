@@ -35,7 +35,7 @@ import org.telegram.ui.Components.GroupCreateCheckBox;
 import org.telegram.ui.Components.LayoutHelper;
 import org.telegram.ui.Components.Premium.PremiumGradient;
 
-import uz.unnarsx.cherrygram.chats.helpers.ChatsHelper2;
+import uz.unnarsx.komarugram.chats.helpers.ChatsHelper2;
 
 public class DrawerUserCell extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
 

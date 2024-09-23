@@ -12,8 +12,8 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Build;
 
-import uz.unnarsx.cherrygram.core.configs.CherrygramCoreConfig;
-import uz.unnarsx.cherrygram.Extra;
+import uz.unnarsx.komarugram.core.configs.CherrygramCoreConfig;
+import uz.unnarsx.komarugram.Extra;
 
 import com.android.billingclient.api.ProductDetails;
 

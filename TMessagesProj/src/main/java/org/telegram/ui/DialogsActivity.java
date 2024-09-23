@@ -246,14 +246,14 @@ import java.util.Collections;
 import java.util.List;
 import java.util.concurrent.ConcurrentHashMap;
 
-import uz.unnarsx.cherrygram.core.configs.CherrygramAppearanceConfig;
-import uz.unnarsx.cherrygram.core.configs.CherrygramChatsConfig;
-import uz.unnarsx.cherrygram.core.CGBiometricPrompt;
-import uz.unnarsx.cherrygram.core.configs.CherrygramExperimentalConfig;
-import uz.unnarsx.cherrygram.core.configs.CherrygramPrivacyConfig;
-import uz.unnarsx.cherrygram.core.crashlytics.CrashReportBottomSheet;
-import uz.unnarsx.cherrygram.core.crashlytics.Crashlytics;
-import uz.unnarsx.cherrygram.core.PermissionsUtils;
+import uz.unnarsx.komarugram.core.configs.CherrygramAppearanceConfig;
+import uz.unnarsx.komarugram.core.configs.CherrygramChatsConfig;
+import uz.unnarsx.komarugram.core.CGBiometricPrompt;
+import uz.unnarsx.komarugram.core.configs.CherrygramExperimentalConfig;
+import uz.unnarsx.komarugram.core.configs.CherrygramPrivacyConfig;
+import uz.unnarsx.komarugram.core.crashlytics.CrashReportBottomSheet;
+import uz.unnarsx.komarugram.core.crashlytics.Crashlytics;
+import uz.unnarsx.komarugram.core.PermissionsUtils;
 
 public class DialogsActivity extends BaseFragment implements NotificationCenter.NotificationCenterDelegate, FloatingDebugProvider {
 

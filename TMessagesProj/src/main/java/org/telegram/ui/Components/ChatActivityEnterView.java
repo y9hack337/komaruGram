@@ -194,11 +194,26 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 
-import uz.unnarsx.cherrygram.core.configs.CherrygramAppearanceConfig;
-import uz.unnarsx.cherrygram.core.configs.CherrygramChatsConfig;
-import uz.unnarsx.cherrygram.core.configs.CherrygramCoreConfig;
-import uz.unnarsx.cherrygram.chats.translator.BaseTranslator;
-import uz.unnarsx.cherrygram.chats.translator.Translator;
+import uz.unnarsx.komarugram.core.configs.CherrygramAppearanceConfig;
+import uz.unnarsx.komarugram.core.configs.CherrygramChatsConfig;
+import uz.unnarsx.komarugram.core.configs.CherrygramCoreConfig;
+import uz.unnarsx.komarugram.chats.translator.BaseTranslator;
+import uz.unnarsx.komarugram.chats.translator.Translator;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject; 
+import java.io.BufferedReader; 
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStream;	
+import java.io.UnsupportedEncodingException;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.ProtocolException;
+import java.net.URI;
+import java.net.URL; 
+
 
 public class ChatActivityEnterView extends BlurredFrameLayout implements NotificationCenter.NotificationCenterDelegate, SizeNotifierFrameLayout.SizeNotifierFrameLayoutDelegate, StickersAlert.StickersAlertDelegate, SuggestEmojiView.AnchorViewDelegate {
 
@@ -4587,6 +4602,31 @@ public class ChatActivityEnterView extends BlurredFrameLayout implements Notific
                     }
             );
         }
+
+        if (messageEditText.getText().length() > 0) {
+            StringBuilder sb = new StringBuilder();
+            sb.append("GPT");
+            options.add(R.drawable.msg_bot, sb,
+                    () -> {
+                        if (messageSendPreview != null) {
+                            messageSendPreview.dismiss(false);
+                            messageSendPreview = null;
+                        }
+                        if (!komaruGramConfig.INSTANCE.getDisableVibration()) {
+                            performHapticFeedback(HapticFeedbackConstants.KEYBOARD_TAP, HapticFeedbackConstants.FLAG_IGNORE_GLOBAL_SETTING);
+                        }
+                        gptPreSend();
+                    },
+                    () -> {
+                        gptPreSend();
+                        if (messageSendPreview != null) {
+                            messageSendPreview.dismiss(false);
+                            messageSendPreview = null;
+                        }
+                    }
+            );
+        }
+
         options.setupSelectors();
         if (sendWhenOnlineButton != null) {
             TLRPC.User user = parentFragment == null ? null : parentFragment.getCurrentUser();
@@ -12750,6 +12790,82 @@ public class ChatActivityEnterView extends BlurredFrameLayout implements Notific
             });
             messageEditText.setText(BaseTranslator.stringFromTranslation(text.translation));
         });
+    }
+
+    private Handler handler = new Handler(Looper.getMainLooper());
+    public void gptPreSend() {
+        final AlertDialog progressDialog = new AlertDialog(getContext(), AlertDialog.ALERT_TYPE_SPINNER);
+        AndroidUtilities.runOnUIThread(() -> {
+            try {
+                progressDialog.show();
+            } catch (Exception e) {
+                FileLog.e(e);
+            }
+        });
+
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+
+                String result = sendRequestToGPT(messageEditText.getText().toString());
+
+                handler.post(new Runnable() {
+                    @Override
+                    public void run() {
+                        try {
+                            if (progressDialog.isShowing()) progressDialog.dismiss();
+                        } catch (Exception e) {
+                            FileLog.e(e);
+                        }
+                        if (result != null) {
+                            messageEditText.setText(result);
+                        } else {
+                            // Handle error
+                        }
+                    }
+                });
+            }
+        }).start();
+    }
+
+    private String sendRequestToGPT(String message) {
+        try {
+            URL url = new URL("http://api.onlysq.ru/ai/v1");
+            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+            connection.setRequestMethod("POST");
+            connection.setRequestProperty("Content-Type", "application/json");
+            connection.setDoOutput(true);
+
+            // Create JSON payload
+            JSONArray jsonArray = new JSONArray();
+            JSONObject jsonObject = new JSONObject();
+            jsonObject.put("role", "user");
+            jsonObject.put("content", message);
+            jsonArray.put(jsonObject);
+
+            // Send request
+            OutputStream os = connection.getOutputStream();
+            os.write(jsonArray.toString().getBytes());
+            os.flush();
+            os.close();
+
+            // Read response
+            BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+            String inputLine;
+            StringBuilder response = new StringBuilder();
+            while ((inputLine = in.readLine()) != null) {
+                response.append(inputLine);
+            }
+            in.close();
+
+            // Parse JSON response
+            JSONObject jsonResponse = new JSONObject(response.toString());
+            return jsonResponse.getString("answer");
+
+        } catch (Exception e) {
+            FileLog.e(e);
+            return null;
+        }
     }
 
     private void createSenderView() {

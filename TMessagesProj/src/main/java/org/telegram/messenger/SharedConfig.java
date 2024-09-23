@@ -50,7 +50,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Locale;
 
-import uz.unnarsx.cherrygram.core.configs.CherrygramDebugConfig;
+import uz.unnarsx.komarugram.core.configs.CherrygramDebugConfig;
 
 public class SharedConfig {
     /**

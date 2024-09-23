@@ -50,7 +50,7 @@ import org.telegram.ui.Components.OutlineTextContainerView;
 
 import java.util.ArrayList;
 
-import uz.unnarsx.cherrygram.core.configs.CherrygramAppearanceConfig;
+import uz.unnarsx.komarugram.core.configs.CherrygramAppearanceConfig;
 
 public class ChangeBioActivity extends BaseFragment {
 

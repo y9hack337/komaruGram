@@ -60,7 +60,7 @@ import org.telegram.ui.Components.voip.VoIPHelper;
 import java.io.File;
 import java.util.ArrayList;
 
-import uz.unnarsx.cherrygram.core.configs.CherrygramAppearanceConfig;
+import uz.unnarsx.komarugram.core.configs.CherrygramAppearanceConfig;
 
 public class DataSettingsActivity extends BaseFragment {
 
