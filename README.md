@@ -1,4 +1,4 @@
-# 🍒 komaruGram
+# 😺 komaruGram
 
 komaruGram is a third-party Telegram client with not many but useful modifications.
 
