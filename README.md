@@ -1,6 +1,6 @@
-# 🍒 Cherrygram
+# 🍒 komaruGram
 
-Cherrygram is a third-party Telegram client with not many but useful modifications.
+komaruGram is a third-party Telegram client with not many but useful modifications.
 
 This is an unofficial fork of the original [Telegram App for Android](https://github.com/DrKLO/Telegram).
 
@@ -18,9 +18,9 @@ This repo contains the official source code for [Telegram App for Android](https
 
 ## Discussion
 
-Join the [Cherrygram official channel](https://t.me/Cherry_gram)
+Join the [komaruGram official channel](https://t.me/Cherry_gram)
 
-Join the [Cherrygram official group](https://t.me/CherrygramSupport)
+Join the [komaruGram official group](https://t.me/komaruGramSupport)
 
 ## Changes:
 
@@ -39,7 +39,7 @@ Join the [Cherrygram official group](https://t.me/CherrygramSupport)
 - Added native biometrics support,
 - "tg://user?id=int" Links support (e.g. "tg://user?id=282287840"),
 - Allow to set "Keep media" for one day,
-- "Kaboom" (Erase all Cherrygram's data in 1 click),
+- "Kaboom" (Erase all komaruGram's data in 1 click),
 - "Kaboom" home screen widget.
 
 *Chats:*
@@ -60,7 +60,7 @@ Join the [Cherrygram official group](https://t.me/CherrygramSupport)
 - Open avatar by swiping down in profile,
 - Mention in chat by name (long press on username).
 
-*Cherrygram General Preferences:*
+*komaruGram General Preferences:*
 - Enable/Disable members rounding,
 - Enable/Disable system emoji,
 - Enable/Disable system fonts,
@@ -73,7 +73,7 @@ Join the [Cherrygram official group](https://t.me/CherrygramSupport)
 - Enable/Disable premium stickers auto-play,
 - Enable/Disable "Send as channel" button.
 
-*Cherrygram Appearance Preferences:*
+*komaruGram Appearance Preferences:*
 - VKUI/Solar icons in app,
 - One UI (Samsung) Switchers style,
 - Center title in action bar,
@@ -108,7 +108,7 @@ Join the [Cherrygram official group](https://t.me/CherrygramSupport)
 - Enable/Disable drawer buttons,
 - Drawer icons set.
 
-*Cherrygram Chats Preferences:*
+*komaruGram Chats Preferences:*
 - Hide time on stickers,
 - Stickers size amplifier (changer),
 - Admin shortcuts in chats,
@@ -140,13 +140,13 @@ Join the [Cherrygram official group](https://t.me/CherrygramSupport)
 - Enable/Disable vibration in chats and choose vibration intensity,
 - Silence notifications from non-contacts.
 
-*Cherrygram Camera Preferences:*
+*komaruGram Camera Preferences:*
 - Camera Type (Default, CameraX or System camera),
 - Disable camera in attachments menu,
 - Default camera for video messages,
 - Custom camera aspect ratio for video-messages (1:1, 4:3 or 16:9).
 
-*Cherrygram Experimental Preferences:*
+*komaruGram Experimental Preferences:*
 - Enable/Disable spring animations for app navigation,
 - Show a resident notification,
 - Toast all RPC errors,
@@ -155,7 +155,7 @@ Join the [Cherrygram official group](https://t.me/CherrygramSupport)
 - Upload speed boost,
 - Slow network mode.
 
-*Cherrygram Security Preferences:*
+*komaruGram Security Preferences:*
 - Enable/Disable Google Analytics,
 - Delete old cache folder (/sdcard/Telegram),
 - Delete your Telegram account.
@@ -169,12 +169,12 @@ MTproto protocol manuals: https://core.telegram.org/mtproto
 
 ## Compilation Guide
 
-1. Download the Cherrygram source code ( `git clone https://github.com/arslan4k1390/Cherrygram.git` )
+1. Download the komaruGram source code ( `git clone https://github.com/arslan4k1390/komaruGram.git` )
 2. Fill out storeFile, storePassword, keyAlias, keyPassword in app's build.gradle to sign your app
 3. Go to https://console.firebase.google.com/, create two android apps with application IDs uz.unnarsx.komarugram and uz.unnarsx.komarugram.beta, turn on firebase messaging and download `google-services.json`, which should be copied into `TMessagesProj` folder.
 4. Open the project in the Studio (note that it should be opened, NOT imported).
 5. Fill out values in `TMessagesProj/src/main/java/uz/unnarsx/komarugram/Extra.kt` – there’s a link for each of the variables showing where and which data to obtain.
-6. You are ready to compile and use Cherrygram.
+6. You are ready to compile and use komaruGram.
 
 
 ## Thanks to:
