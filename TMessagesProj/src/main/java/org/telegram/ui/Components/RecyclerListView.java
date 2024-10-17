@@ -71,7 +71,7 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Objects;
 
-import uz.unnarsx.komarugram.core.configs.CherrygramChatsConfig;
+import uz.unnarsx.komarugram.core.configs.komarugramChatsConfig;
 
 @SuppressWarnings("JavaReflectionMemberAccess")
 public class RecyclerListView extends RecyclerView {
@@ -1112,14 +1112,14 @@ public class RecyclerListView extends RecyclerView {
                     View child = currentChildView;
                     if (onItemLongClickListener != null) {
                         if (onItemLongClickListener.onItemClick(currentChildView, currentChildPosition)) {
-                            if (!CherrygramChatsConfig.INSTANCE.getDisableVibration()) {
+                            if (!komarugramChatsConfig.INSTANCE.getDisableVibration()) {
                                 child.performHapticFeedback(HapticFeedbackConstants.LONG_PRESS);
                             }
                             child.sendAccessibilityEvent(AccessibilityEvent.TYPE_VIEW_LONG_CLICKED);
                         }
                     } else {
                         if (onItemLongClickListenerExtended.onItemClick(currentChildView, currentChildPosition, event.getX() - currentChildView.getX(), event.getY() - currentChildView.getY())) {
-                            if (!CherrygramChatsConfig.INSTANCE.getDisableVibration()) {
+                            if (!komarugramChatsConfig.INSTANCE.getDisableVibration()) {
                                 child.performHapticFeedback(HapticFeedbackConstants.LONG_PRESS);
                             }
                             child.sendAccessibilityEvent(AccessibilityEvent.TYPE_VIEW_LONG_CLICKED);

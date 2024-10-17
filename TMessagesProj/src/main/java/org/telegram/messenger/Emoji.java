@@ -40,8 +40,8 @@ import java.util.HashMap;
 import java.util.Locale;
 import java.util.Objects;
 
-import uz.unnarsx.komarugram.core.configs.CherrygramChatsConfig;
-import uz.unnarsx.komarugram.core.configs.CherrygramCoreConfig;
+import uz.unnarsx.komarugram.core.configs.komarugramChatsConfig;
+import uz.unnarsx.komarugram.core.configs.komarugramCoreConfig;
 import uz.unnarsx.komarugram.helpers.ui.FontHelper;
 
 public class Emoji {
@@ -81,7 +81,7 @@ public class Emoji {
         "\uD83D\uDE06", "\uD83D\uDC4C", "\uD83D\uDE10", "\uD83D\uDE15"
     };
 
-    private final static int MAX_RECENT_EMOJI_COUNT = CherrygramChatsConfig.INSTANCE.getSlider_RecentEmojisAmplifier();
+    private final static int MAX_RECENT_EMOJI_COUNT = komarugramChatsConfig.INSTANCE.getSlider_RecentEmojisAmplifier();
 
     static {
         drawImgSize = AndroidUtilities.dp(20);
@@ -325,7 +325,7 @@ public class Emoji {
                 b = getBounds();
             }
 
-            if (CherrygramCoreConfig.INSTANCE.getSystemEmoji()) {
+            if (komarugramCoreConfig.INSTANCE.getSystemEmoji()) {
                 String emoji = fixEmoji(EmojiData.data[info.page][info.emojiIndex]);
                 textPaint.setTypeface(FontHelper.getSystemEmojiTypeface());
                 textPaint.setTextSize(b.height() * 0.8f);

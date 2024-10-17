@@ -50,7 +50,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import uz.unnarsx.komarugram.core.configs.CherrygramCoreConfig;
+import uz.unnarsx.komarugram.core.configs.komarugramCoreConfig;
 
 public class AppIconsSelectorCell extends RecyclerListView implements NotificationCenter.NotificationCenterDelegate {
     public final static float ICONS_ROUND_RADIUS = 100;
@@ -227,7 +227,7 @@ public class AppIconsSelectorCell extends RecyclerListView implements Notificati
                 }
             }
         }
-        if (!CherrygramCoreConfig.INSTANCE.getFilterLauncherIcon()) {
+        if (!komarugramCoreConfig.INSTANCE.getFilterLauncherIcon()) {
             availableIcons.removeIf(p -> p.equals(LauncherIconController.LauncherIcon.OLD));
             availableIcons.removeIf(p -> p.equals(LauncherIconController.LauncherIcon.MONET_SAMSUNG));
             availableIcons.removeIf(p -> p.equals(LauncherIconController.LauncherIcon.MONET_PIXEL));
@@ -243,7 +243,7 @@ public class AppIconsSelectorCell extends RecyclerListView implements Notificati
             availableIcons.removeIf(p -> p.equals(LauncherIconController.LauncherIcon.TURBO));
             availableIcons.removeIf(p -> p.equals(LauncherIconController.LauncherIcon.NOX));
         }
-        if (CherrygramCoreConfig.INSTANCE.getFilterLauncherIcon()) {
+        if (komarugramCoreConfig.INSTANCE.getFilterLauncherIcon()) {
             availableIcons.removeIf(p -> p.equals(LauncherIconController.LauncherIcon.CHERRY));
             availableIcons.removeIf(p -> p.equals(LauncherIconController.LauncherIcon.MONET_CHERRY_SAMSUNG));
             availableIcons.removeIf(p -> p.equals(LauncherIconController.LauncherIcon.MONET_CHERRY_PIXEL));

@@ -1,4 +1,4 @@
-package uz.unnarsx.cherrygram.chats;
+package uz.unnarsx.komarugram.chats;
 
 import static org.telegram.messenger.AndroidUtilities.dp;
 import static org.telegram.messenger.AndroidUtilities.dpf2;
@@ -56,7 +56,7 @@ import org.telegram.ui.Components.RecyclerListView;
 
 import java.io.IOException;
 
-import uz.unnarsx.cherrygram.chats.helpers.ChatsHelper2;
+import uz.unnarsx.komarugram.chats.helpers.ChatsHelper2;
 
 public class JsonBottomSheet extends BottomSheet implements NotificationCenter.NotificationCenterDelegate {
 

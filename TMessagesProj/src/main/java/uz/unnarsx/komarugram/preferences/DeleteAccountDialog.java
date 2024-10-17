@@ -1,4 +1,4 @@
-package uz.unnarsx.cherrygram.preferences;
+package uz.unnarsx.komarugram.preferences;
 
 import static org.telegram.messenger.LocaleController.getString;
 

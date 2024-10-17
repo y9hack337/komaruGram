@@ -1,4 +1,4 @@
-package uz.unnarsx.cherrygram.core.crashlytics;
+package uz.unnarsx.komarugram.core.crashlytics;
 
 import static org.telegram.messenger.LocaleController.getString;
 
@@ -28,7 +28,7 @@ import org.telegram.ui.LaunchActivity;
 import java.io.File;
 import java.io.IOException;
 
-import uz.unnarsx.cherrygram.helpers.ui.OnceBottomSheetHelper;
+import uz.unnarsx.komarugram.helpers.ui.OnceBottomSheetHelper;
 
 public class CrashReportBottomSheet extends OnceBottomSheetHelper {
     public CrashReportBottomSheet(BaseFragment fragment) {

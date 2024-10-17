@@ -1,4 +1,4 @@
-package uz.unnarsx.cherrygram.camera;
+package uz.unnarsx.komarugram.camera;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;

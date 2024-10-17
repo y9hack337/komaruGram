@@ -1,11 +1,11 @@
-package uz.unnarsx.cherrygram.preferences
+package uz.unnarsx.komarugram.preferences
 
 import org.telegram.ui.ActionBar.BaseFragment
-import uz.unnarsx.cherrygram.preferences.tgkit.preference.TGKitSettings
-import uz.unnarsx.cherrygram.preferences.tgkit.preference.types.TGKitListPreference
-import uz.unnarsx.cherrygram.preferences.tgkit.preference.types.TGKitSettingsCellRow
-import uz.unnarsx.cherrygram.preferences.tgkit.preference.types.TGKitSwitchPreference
-import uz.unnarsx.cherrygram.preferences.tgkit.preference.types.TGKitTextDetailRow
+import uz.unnarsx.komarugram.preferences.tgkit.preference.TGKitSettings
+import uz.unnarsx.komarugram.preferences.tgkit.preference.types.TGKitListPreference
+import uz.unnarsx.komarugram.preferences.tgkit.preference.types.TGKitSettingsCellRow
+import uz.unnarsx.komarugram.preferences.tgkit.preference.types.TGKitSwitchPreference
+import uz.unnarsx.komarugram.preferences.tgkit.preference.types.TGKitTextDetailRow
 
 interface BasePreferencesEntry {
     fun getProcessedPrefs(bf: BaseFragment): TGKitSettings {

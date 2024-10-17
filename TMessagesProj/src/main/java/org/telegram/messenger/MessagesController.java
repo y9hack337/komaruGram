@@ -115,9 +115,9 @@ import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.CountDownLatch;
 
-import uz.unnarsx.komarugram.core.configs.CherrygramCoreConfig;
-import uz.unnarsx.komarugram.core.configs.CherrygramCameraConfig;
-import uz.unnarsx.komarugram.core.configs.CherrygramPrivacyConfig;
+import uz.unnarsx.komarugram.core.configs.komarugramCoreConfig;
+import uz.unnarsx.komarugram.core.configs.komarugramCameraConfig;
+import uz.unnarsx.komarugram.core.configs.komarugramPrivacyConfig;
 
 public class MessagesController extends BaseController implements NotificationCenter.NotificationCenterDelegate {
 
@@ -1465,7 +1465,7 @@ public class MessagesController extends BaseController implements NotificationCe
         ringtoneSizeMax = mainPreferences.getInt("ringtoneSizeMax", 1024_00);
         pmReadDateExpirePeriod = mainPreferences.getInt("pmReadDateExpirePeriod", 7 * 86400);
         suggestStickersApiOnly = mainPreferences.getBoolean("suggestStickersApiOnly", false);
-        roundVideoSize = mainPreferences.getInt("roundVideoSize", CherrygramCameraConfig.INSTANCE.getVideoMessagesResolution()); //was 384
+        roundVideoSize = mainPreferences.getInt("roundVideoSize", komarugramCameraConfig.INSTANCE.getVideoMessagesResolution()); //was 384
         roundVideoBitrate = mainPreferences.getInt("roundVideoBitrate", 1000);
         roundAudioBitrate = mainPreferences.getInt("roundAudioBitrate", 64);
         pendingSuggestions = mainPreferences.getStringSet("pendingSuggestions", null);
@@ -9591,7 +9591,7 @@ public class MessagesController extends BaseController implements NotificationCe
                 promoDialogId = did;
                 if (res.proxy) {
                     promoDialogType = PROMO_TYPE_PROXY;
-                    if (CherrygramPrivacyConfig.INSTANCE.getHideProxySponsor()) {
+                    if (komarugramPrivacyConfig.INSTANCE.getHideProxySponsor()) {
                         noDialog = true;
                     }
                 } else if (!TextUtils.isEmpty(res.psa_type)) {
@@ -21088,7 +21088,7 @@ public class MessagesController extends BaseController implements NotificationCe
     }
 
     public boolean storiesEnabled() {
-        if (CherrygramCoreConfig.INSTANCE.getHideStories()) {
+        if (komarugramCoreConfig.INSTANCE.getHideStories()) {
             return false;
         }
         switch (storiesPosting) {

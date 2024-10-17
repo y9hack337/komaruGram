@@ -1,4 +1,4 @@
-package uz.unnarsx.cherrygram.preferences.folders;
+package uz.unnarsx.komarugram.preferences.folders;
 
 import static org.telegram.messenger.AndroidUtilities.dp;
 import static org.telegram.messenger.LocaleController.getString;
@@ -35,7 +35,7 @@ import org.telegram.ui.Components.ExtendedGridLayoutManager;
 import org.telegram.ui.Components.LayoutHelper;
 import org.telegram.ui.Components.RecyclerListView;
 
-import uz.unnarsx.cherrygram.preferences.folders.helpers.FolderIconHelper;
+import uz.unnarsx.komarugram.preferences.folders.helpers.FolderIconHelper;
 
 public class IconSelectorAlert extends BottomSheet {
 

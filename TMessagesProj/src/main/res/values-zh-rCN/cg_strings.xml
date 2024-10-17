@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- by t.me/arsLan-->
-    <string name="CG_FollowChannelLink">订阅 @Cherry_Gram！</string>
+    <string name="CG_FollowChannelLink">订阅 @komarugram！</string>
     <string name="CG_FollowChannelTitle">订阅官方频道</string>
-    <string name="CG_FollowChannelInfo">加入我们的频道以随时了解 Cherrygram 的所有新闻和功能！</string>
+    <string name="CG_FollowChannelInfo">加入我们的频道以随时了解 komarugram 的所有新闻和功能！</string>
     <string name="CG_DoNotRemindAgain">不再提醒</string>
     <!--Telegram screens-->
     <!--Sign in screen-->
@@ -69,13 +69,13 @@
     <!--Misc-->
     <string name="CG_Restart">重启应用</string>
     <string name="CG_RestartToApply">重启应用生效</string>
-    <string name="CG_PushService">Cherrygram 推送服务</string>
+    <string name="CG_PushService">komarugram 推送服务</string>
     <string name="CG_ForceClean">强行清除 Telegram 缓存</string>
     <string name="CG_ForceCleanInfo">当您尝试清除缓存时，长时间卡在“正在计算…”，可以使用本功能。本功能会清除您所有的数据，谨慎使用！</string>
     <string name="CG_ForceCleanInfo1">是否删除所有 Telegram 数据？</string>
-    <string name="CG_Kaboom">无需 Cherrygram 密码即可通过系统设置访问此功能。此功能会完全擦除您所有的本地（Cherrygram）数据。</string>
+    <string name="CG_Kaboom">无需 komarugram 密码即可通过系统设置访问此功能。此功能会完全擦除您所有的本地（komarugram）数据。</string>
     <string name="CG_AppCrashed">出错了</string>
-    <string name="CG_AppCrashedDesc">Cherrygram 已停止运行。请将日志发送给开发者，以帮助修复这个问题</string>
+    <string name="CG_AppCrashedDesc">komarugram 已停止运行。请将日志发送给开发者，以帮助修复这个问题</string>
     <string name="CG_CopyReportDetails">复制崩溃信息</string>
     <string name="CG_ReportDetailsCopied">崩溃信息已复制到剪切板</string>
     <string name="CG_TranslationLanguage">目标语言</string>
@@ -97,11 +97,11 @@
     <string name="CG_MessageContainsCustomReactions_other">表态包含 %1$d 里的自定义 emoji \n</string>
     <!--Misc-->
     <!--Telegram screens-->
-    <!--Cherrygram screens-->
-    <!--Cherrygram Preferences-->
+    <!--komarugram screens-->
+    <!--komarugram Preferences-->
     <string name="CGP_AdvancedSettings">自定义偏好</string>
     <string name="CGP_About_Desc">实验性的 Telegram 应用程序修改。点击此处阅读应用程序的特性列表。</string>
-    <string name="CGP_Header_About">关于 Cherrygram</string>
+    <string name="CGP_Header_About">关于 komarugram</string>
     <string name="CGP_Header_About_Desc">更新、源代码及更多</string>
     <string name="CGP_Links">链接</string>
     <string name="CGP_ToChannel">官方频道</string>
@@ -109,7 +109,7 @@
     <string name="CGP_Source">开源代码</string>
     <string name="CGP_Crowdin">帮助翻译</string>
     <string name="CGP_Header_Categories">自定义偏好</string>
-    <!--Cherrygram Preferences-->
+    <!--komarugram Preferences-->
     <!--General Preferences-->
     <string name="AP_Header_General">通用</string>
     <!--General Preferences-->
@@ -169,8 +169,8 @@
     <string name="CP_DisablePremStickAutoPlay">禁止自动播放 Premium 贴纸动画</string>
     <string name="CP_DisablePremStickAutoPlay_Desc">Premium 贴纸动画不会自动播放（开启禁止点击 Premium 功能时此功能无效）</string>
     <string name="CP_Filters_Header">文件夹</string>
-    <string name="AP_FolderNameInHeader">使用文件夹名称而非 \"Cherrygram\"</string>
-    <string name="AP_FolderNameInHeader_Desc">这会将操作栏中的“Cherrygram”更改为文件夹名称 (开启仅显示图标时效果最佳)</string>
+    <string name="AP_FolderNameInHeader">使用文件夹名称而非 \"komarugram\"</string>
+    <string name="AP_FolderNameInHeader_Desc">这会将操作栏中的“komarugram”更改为文件夹名称 (开启仅显示图标时效果最佳)</string>
     <string name="CP_NewTabs_RemoveAllChats">隐藏所有聊天Tab</string>
     <string name="AP_Tab_Style">Tab 样式</string>
     <string name="AP_Tab_Style_Default">默认</string>
@@ -300,7 +300,7 @@
     <string name="UP_ClearedUpdatesCache">已清除 %1$s 缓存</string>
     <string name="UP_NothingToClear">暂无可清理内容</string>
     <string name="UP_CheckForUpdates">检查更新</string>
-    <string name="UP_Not_Found">Cherrygram 已是最新</string>
+    <string name="UP_Not_Found">komarugram 已是最新</string>
     <string name="UP_UpdateAvailable">有可用更新！</string>
     <string name="UP_Version">版本</string>
     <string name="UP_UpdateSize">文件大小</string>
@@ -312,5 +312,5 @@
     <string name="DP_Donate">捐赠</string>
     <string name="DP_Donate_Method">选择付款方法</string>
     <!--Donations-->
-    <!--Cherrygram screens-->
+    <!--komarugram screens-->
 </resources>

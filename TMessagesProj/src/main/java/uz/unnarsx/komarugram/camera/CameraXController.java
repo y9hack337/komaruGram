@@ -1,4 +1,4 @@
-package uz.unnarsx.cherrygram.camera;
+package uz.unnarsx.komarugram.camera;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -73,7 +73,7 @@ import java.lang.annotation.RetentionPolicy;
 import java.nio.ByteBuffer;
 import java.util.concurrent.ExecutionException;
 
-import uz.unnarsx.cherrygram.core.configs.CherrygramCameraConfig;
+import uz.unnarsx.komarugram.core.configs.komarugramCameraConfig;
 
 public class CameraXController {
 
@@ -99,7 +99,7 @@ public class CameraXController {
     public static final int CAMERA_HDR = 2;
     public static final int CAMERA_AUTO = 3;
     public static final int CAMERA_WIDE = 4;
-    public float oldZoomSelection = CherrygramCameraConfig.INSTANCE.getStartFromUltraWideCam() ? 0F : 5F;
+    public float oldZoomSelection = komarugramCameraConfig.INSTANCE.getStartFromUltraWideCam() ? 0F : 5F;
     private int selectedEffect = CAMERA_NONE;
 
     public static class CameraLifecycle implements LifecycleOwner {
@@ -312,7 +312,7 @@ public class CameraXController {
         android.util.Size targetSize = getVideoBestSize();
         Preview.Builder previewBuilder = new Preview.Builder();
         previewBuilder.setTargetResolution(targetSize);
-        if (CherrygramCameraConfig.INSTANCE.getCameraXFpsRange() != CherrygramCameraConfig.CameraXFpsRangeDefault) {
+        if (komarugramCameraConfig.INSTANCE.getCameraXFpsRange() != komarugramCameraConfig.CameraXFpsRangeDefault) {
             previewBuilder.setTargetFrameRate(VideoMessagesHelper.getCameraXFpsRange());
         }
         if (!isFrontface && selectedEffect == CAMERA_WIDE) {
@@ -347,11 +347,11 @@ public class CameraXController {
                 .build();
         vCapture = VideoCapture.withOutput(recorder);
 
-        boolean useImageCaptureForFrontCamera = stableFPSPreviewOnly && CherrygramCameraConfig.INSTANCE.getCaptureTypeFront() == CherrygramCameraConfig.CaptureType_ImageCapture;
-        boolean useImageCaptureForBackCamera = stableFPSPreviewOnly && CherrygramCameraConfig.INSTANCE.getCaptureTypeBack() == CherrygramCameraConfig.CaptureType_ImageCapture;
+        boolean useImageCaptureForFrontCamera = stableFPSPreviewOnly && komarugramCameraConfig.INSTANCE.getCaptureTypeFront() == komarugramCameraConfig.CaptureType_ImageCapture;
+        boolean useImageCaptureForBackCamera = stableFPSPreviewOnly && komarugramCameraConfig.INSTANCE.getCaptureTypeBack() == komarugramCameraConfig.CaptureType_ImageCapture;
         boolean useImageCaptureForBothCameras = stableFPSPreviewOnly
-                && CherrygramCameraConfig.INSTANCE.getCaptureTypeFront() == CherrygramCameraConfig.CaptureType_ImageCapture
-                && CherrygramCameraConfig.INSTANCE.getCaptureTypeBack() == CherrygramCameraConfig.CaptureType_ImageCapture;
+                && komarugramCameraConfig.INSTANCE.getCaptureTypeFront() == komarugramCameraConfig.CaptureType_ImageCapture
+                && komarugramCameraConfig.INSTANCE.getCaptureTypeBack() == komarugramCameraConfig.CaptureType_ImageCapture;
 
         ImageCapture.Builder iCaptureBuilder = new ImageCapture.Builder();
         iCaptureBuilder.setCaptureMode(ImageCapture.CAPTURE_MODE_MAXIMIZE_QUALITY);
@@ -378,22 +378,22 @@ public class CameraXController {
                 camera = provider.bindToLifecycle(lifecycle, cameraSelector, previewUseCase, vCapture);
             }
 
-            if (CherrygramCameraConfig.INSTANCE.getCameraStabilisation()
-                    || CherrygramCameraConfig.INSTANCE.getCameraXFpsRange() != CherrygramCameraConfig.CameraXFpsRangeDefault
+            if (komarugramCameraConfig.INSTANCE.getCameraStabilisation()
+                    || komarugramCameraConfig.INSTANCE.getCameraXFpsRange() != komarugramCameraConfig.CameraXFpsRangeDefault
             ) {
                 CaptureRequestOptions.Builder captureRequestOptions = new CaptureRequestOptions.Builder();
 
-                if (CherrygramCameraConfig.INSTANCE.getCameraStabilisation()) {
+                if (komarugramCameraConfig.INSTANCE.getCameraStabilisation()) {
                     captureRequestOptions.setCaptureRequestOption(CaptureRequest.CONTROL_VIDEO_STABILIZATION_MODE, CameraMetadata.CONTROL_VIDEO_STABILIZATION_MODE_ON);
                     captureRequestOptions.setCaptureRequestOption(CaptureRequest.LENS_OPTICAL_STABILIZATION_MODE, CameraMetadata.LENS_OPTICAL_STABILIZATION_MODE_ON);
                 }
 
-                if (CherrygramCameraConfig.INSTANCE.getCameraXFpsRange() != CherrygramCameraConfig.CameraXFpsRangeDefault) {
+                if (komarugramCameraConfig.INSTANCE.getCameraXFpsRange() != komarugramCameraConfig.CameraXFpsRangeDefault) {
                     captureRequestOptions.setCaptureRequestOption(CaptureRequest.CONTROL_AE_TARGET_FPS_RANGE, VideoMessagesHelper.getCameraXFpsRange());
                 }
 
                 if (useImageCaptureForFrontCamera || useImageCaptureForBackCamera || useImageCaptureForBothCameras) {
-                    captureRequestOptions.setCaptureRequestOption(CaptureRequest.CONTROL_EFFECT_MODE, CherrygramCameraConfig.INSTANCE.getCameraXCameraEffect());
+                    captureRequestOptions.setCaptureRequestOption(CaptureRequest.CONTROL_EFFECT_MODE, komarugramCameraConfig.INSTANCE.getCameraXCameraEffect());
                 }
 
                 Camera2CameraControl cameraControl = Camera2CameraControl.from(camera.getCameraControl());

@@ -1,10 +1,10 @@
-package uz.unnarsx.cherrygram.preferences.tgkit.preference.types
+package uz.unnarsx.komarugram.preferences.tgkit.preference.types
 
 import android.app.Activity
 import androidx.core.util.Pair
 import org.telegram.ui.ActionBar.BaseFragment
 import org.telegram.ui.Components.AlertsCreator
-import uz.unnarsx.cherrygram.preferences.tgkit.preference.TGKitPreference
+import uz.unnarsx.komarugram.preferences.tgkit.preference.TGKitPreference
 
 class TGKitListPreference : TGKitPreference() {
     var divider = false

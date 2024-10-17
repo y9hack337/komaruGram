@@ -1,4 +1,4 @@
-package uz.unnarsx.cherrygram.chats.helpers;
+package uz.unnarsx.komarugram.chats.helpers;
 
 import static org.telegram.messenger.LocaleController.getString;
 

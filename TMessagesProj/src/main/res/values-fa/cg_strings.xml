@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- by t.me/arsLan-->
-    <string name="CG_FollowChannelLink">عضو @Cherry_Gram شوید!</string>
+    <string name="CG_FollowChannelLink">عضو @komaruGram شوید!</string>
     <string name="CG_FollowChannelTitle">عضو کانال رسمی شوید</string>
-    <string name="CG_FollowChannelInfo">برای در جریان بودن از تمام اخبار و ویژگی‌های Cherrygram، به کانال ما بپیوندید!</string>
+    <string name="CG_FollowChannelInfo">برای در جریان بودن از تمام اخبار و ویژگی‌های komarugram، به کانال ما بپیوندید!</string>
     <string name="CG_DoNotRemindAgain">دوباره یادآوری نکن</string>
     <!--Telegram screens-->
     <!--Sign in screen-->
@@ -70,13 +70,13 @@
     <!--Misc-->
     <string name="CG_Restart">راه‌اندازی مجدد برنامه</string>
     <string name="CG_RestartToApply">برای اعمال تغییرات برنامه را مجدداً راه‌اندازی کنید</string>
-    <string name="CG_PushService">خدمات پوش Cherrygram.</string>
+    <string name="CG_PushService">خدمات پوش komarugram.</string>
     <string name="CG_ForceClean">پاک‌سازی اجباری حافظه نهان تلگرام</string>
     <string name="CG_ForceCleanInfo">تنها زمانی از این دکمه استفاده کنید که حین پاک‌سازی حافظه پنهان با پیغام «در حال محاسبه...» طولانی مواجه هستید.\n این گزینه باعث حذف همه‌چیز از حافظه پنهان شما خواهد شد - مراقب باشید!</string>
     <string name="CG_ForceCleanInfo1">آیا واقعاً می خواهید همه چیز را از کش تلگرام خود حذف کنید؟</string>
-    <string name="CG_Kaboom">این قابلیت بدون رمز Cherrygram از طریق تنظیمات سیستم قابل دسترسی است. این ویژگی تمام داده های محلی (Cherrygram) شما را به طور کامل پاک می کند. می توان از آن در مواقع اضطراری استفاده کرد.</string>
+    <string name="CG_Kaboom">این قابلیت بدون رمز komarugram از طریق تنظیمات سیستم قابل دسترسی است. این ویژگی تمام داده های محلی (komarugram) شما را به طور کامل پاک می کند. می توان از آن در مواقع اضطراری استفاده کرد.</string>
     <string name="CG_AppCrashed">مشکلی پیش آمد</string>
-    <string name="CG_AppCrashedDesc">Cherrygram از کار افتاده است. لطفا گزارش‌ها را برای توسعه‌دهندگان ارسال کنید تا بتوانند در اسرع وقت این اشکال را برطرف کنند.</string>
+    <string name="CG_AppCrashedDesc">komarugram از کار افتاده است. لطفا گزارش‌ها را برای توسعه‌دهندگان ارسال کنید تا بتوانند در اسرع وقت این اشکال را برطرف کنند.</string>
     <string name="CG_CopyReportDetails">رونوشت جزئیات گزارش</string>
     <string name="CG_ReportDetailsCopied">گزارش جزئیات به بریده‌دان رونوشت شد.</string>
     <string name="CG_TranslationLanguage">زبان ترجمه</string>
@@ -98,11 +98,11 @@
     <string name="CG_MessageContainsCustomReactions_other">واکنش‌ها شامل ایموجی‌های سفارشی\nاز بسته %1$d.</string>
     <!--Misc-->
     <!--Telegram screens-->
-    <!--Cherrygram screens-->
-    <!--Cherrygram Preferences-->
-    <string name="CGP_AdvancedSettings">تنظیمات Cherrygram</string>
+    <!--komarugram screens-->
+    <!--komarugram Preferences-->
+    <string name="CGP_AdvancedSettings">تنظیمات komarugram</string>
     <string name="CGP_About_Desc">یک کلاینت با تغییرات آزمایشی در اپلیکیشن تلگرام. برای مشاهده لیست ویژگی‌های این اپلیکیشن، اینجا را لمس کنید.</string>
-    <string name="CGP_Header_About">درباره Cherrygram</string>
+    <string name="CGP_Header_About">درباره komarugram</string>
     <string name="CGP_Header_About_Desc">بروزرسانی‌ها، کدمنبع و بیشتر</string>
     <string name="CGP_Links">لینک‌ها</string>
     <string name="CGP_ToChannel">کانال رسمی</string>
@@ -110,7 +110,7 @@
     <string name="CGP_Source">کدمنبع</string>
     <string name="CGP_Crowdin">کمک‌کردن به ترجمه</string>
     <string name="CGP_Header_Categories">دسته‌بندی‌ها</string>
-    <!--Cherrygram Preferences-->
+    <!--komarugram Preferences-->
     <!--General Preferences-->
     <string name="AP_Header_General">عمومی</string>
     <!--General Preferences-->
@@ -170,8 +170,8 @@
     <string name="CP_DisablePremStickAutoPlay">غیرفعال‌سازی پخش خودکار استیکر پریمیوم</string>
     <string name="CP_DisablePremStickAutoPlay_Desc">انیمیشن استیکرهای پریمیوم به صورت خودکار پخش نخواهد شد (این ویژگی کار نخواهد کرد اگر لمس روی استیکرهای پریمیوم را غیرفعال کرده باشید)</string>
     <string name="CP_Filters_Header">پوشه‌ها</string>
-    <string name="AP_FolderNameInHeader">نام پوشه به جای «Cherrygram»</string>
-    <string name="AP_FolderNameInHeader_Desc">این باعث تغییر \"Cherrygram\" در نوار اقدام به نام پوشه‌ی شما می‌شود (قابلیت مفید در صورتی که فقط آیکون‌ها به جای نام‌های پوشه داشته باشید)</string>
+    <string name="AP_FolderNameInHeader">نام پوشه به جای «komarugram»</string>
+    <string name="AP_FolderNameInHeader_Desc">این باعث تغییر \"komarugram\" در نوار اقدام به نام پوشه‌ی شما می‌شود (قابلیت مفید در صورتی که فقط آیکون‌ها به جای نام‌های پوشه داشته باشید)</string>
     <string name="CP_NewTabs_RemoveAllChats">پنهان‌سازی سربرگ همه گفتگوها</string>
     <string name="AP_Tab_Style">نوع سربرگ</string>
     <string name="AP_Tab_Style_Default">پیش‌فرض</string>
@@ -294,7 +294,7 @@
     <string name="UP_ClearedUpdatesCache">%1$s از حافظه پنهان پاکسازی شد.</string>
     <string name="UP_NothingToClear">چیزی برای پاکسازی نبود.</string>
     <string name="UP_CheckForUpdates">بررسی به‌روزرسانی</string>
-    <string name="UP_Not_Found">نرم‌افزار Cherrygram بروز است.</string>
+    <string name="UP_Not_Found">نرم‌افزار komarugram بروز است.</string>
     <string name="UP_UpdateAvailable">بروزرسانی موجود است!</string>
     <string name="UP_Version">نسخه</string>
     <string name="UP_UpdateSize">اندازه بروزرسانی</string>
@@ -306,5 +306,5 @@
     <string name="DP_Donate">کمک مالی</string>
     <string name="DP_Donate_Method">انتخاب نوع پرداخت</string>
     <!--Donations-->
-    <!--Cherrygram screens-->
+    <!--komarugram screens-->
 </resources>

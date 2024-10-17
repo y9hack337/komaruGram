@@ -1,4 +1,4 @@
-package uz.unnarsx.cherrygram.preferences.tgkit.preference.types;
+package uz.unnarsx.komarugram.preferences.tgkit.preference.types;
 
 public enum TGPType {
     SECTION(0, false),

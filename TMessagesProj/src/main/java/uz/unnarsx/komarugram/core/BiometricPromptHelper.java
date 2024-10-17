@@ -1,4 +1,4 @@
-//package uz.unnarsx.cherrygram.helpers;
+//package uz.unnarsx.komarugram.helpers;
 //
 //import android.app.Activity;
 //import android.content.Context;
@@ -29,7 +29,7 @@
 //import org.telegram.ui.ActionBar.Theme;
 //import org.telegram.ui.Components.LayoutHelper;
 //
-//import uz.unnarsx.cherrygram.core.configs.CherrygramConfig;
+//import uz.unnarsx.komarugram.core.configs.komarugramConfig;
 //
 //@SuppressWarnings("deprecation")
 //@RequiresApi(23)
@@ -72,12 +72,12 @@
 //            cancellationSignal = new CancellationSignal();
 //            BiometricPrompt.Builder builder = new BiometricPrompt.Builder(activity);
 //            builder.setTitle(getString(R.string.CG_AppName));
-//            if (!CherrygramConfig.INSTANCE.getAllowSystemPasscode()) {
+//            if (!komarugramConfig.INSTANCE.getAllowSystemPasscode()) {
 //                builder.setNegativeButton(getString(R.string.Cancel), activity.getMainExecutor(), (dialog, which) -> {
 //                });
 //            }
 //            if (Build.VERSION.SDK_INT >= 29) {
-//                builder.setDeviceCredentialAllowed(CherrygramConfig.INSTANCE.getAllowSystemPasscode());
+//                builder.setDeviceCredentialAllowed(komarugramConfig.INSTANCE.getAllowSystemPasscode());
 //                builder.setConfirmationRequired(false);
 //            }
 //            builder.build().authenticate(cancellationSignal, activity.getMainExecutor(), new BiometricPrompt.AuthenticationCallback() {

@@ -1,4 +1,4 @@
-package uz.unnarsx.cherrygram.preferences;
+package uz.unnarsx.komarugram.preferences;
 
 import static org.telegram.messenger.LocaleController.getString;
 
@@ -36,12 +36,12 @@ import java.util.Map;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-import uz.unnarsx.cherrygram.camera.CameraTypeSelector;
-import uz.unnarsx.cherrygram.camera.CameraXUtils;
-import uz.unnarsx.cherrygram.core.configs.CherrygramCameraConfig;
-import uz.unnarsx.cherrygram.core.helpers.AppRestartHelper;
-import uz.unnarsx.cherrygram.core.helpers.CGResourcesHelper;
-import uz.unnarsx.cherrygram.helpers.ui.PopupHelper;
+import uz.unnarsx.komarugram.camera.CameraTypeSelector;
+import uz.unnarsx.komarugram.camera.CameraXUtils;
+import uz.unnarsx.komarugram.core.configs.komarugramCameraConfig;
+import uz.unnarsx.komarugram.core.helpers.AppRestartHelper;
+import uz.unnarsx.komarugram.core.helpers.CGResourcesHelper;
+import uz.unnarsx.komarugram.helpers.ui.PopupHelper;
 
 public class CameraPreferencesEntry extends BaseFragment implements NotificationCenter.NotificationCenterDelegate {
 
@@ -148,9 +148,9 @@ public class CameraPreferencesEntry extends BaseFragment implements Notification
         frameLayout.addView(listView, LayoutHelper.createFrame(LayoutHelper.MATCH_PARENT, LayoutHelper.MATCH_PARENT));
         listView.setOnItemClickListener((view, position, x, y) -> {
             if (position == disableAttachCameraRow) {
-                CherrygramCameraConfig.INSTANCE.toggleDisableAttachCamera();
+                komarugramCameraConfig.INSTANCE.toggleDisableAttachCamera();
                 if (view instanceof TextCheckCell) {
-                    ((TextCheckCell) view).setChecked(CherrygramCameraConfig.INSTANCE.getDisableAttachCamera());
+                    ((TextCheckCell) view).setChecked(komarugramCameraConfig.INSTANCE.getDisableAttachCamera());
                 }
                 AppRestartHelper.createRestartBulletin(this);
             } else if (position == cameraAspectRatioRow) {
@@ -158,19 +158,19 @@ public class CameraPreferencesEntry extends BaseFragment implements Notification
                 ArrayList<Integer> configValues = new ArrayList<>();
 
                 configStringKeys.add("1:1");
-                configValues.add(CherrygramCameraConfig.Camera1to1);
+                configValues.add(komarugramCameraConfig.Camera1to1);
 
                 configStringKeys.add("4:3");
-                configValues.add(CherrygramCameraConfig.Camera4to3);
+                configValues.add(komarugramCameraConfig.Camera4to3);
 
                 configStringKeys.add("16:9");
-                configValues.add(CherrygramCameraConfig.Camera16to9);
+                configValues.add(komarugramCameraConfig.Camera16to9);
 
                 configStringKeys.add(getString(R.string.Default));
-                configValues.add(CherrygramCameraConfig.CameraAspectDefault);
+                configValues.add(komarugramCameraConfig.CameraAspectDefault);
 
-                PopupHelper.show(configStringKeys, getString(R.string.CP_CameraAspectRatio), configValues.indexOf(CherrygramCameraConfig.INSTANCE.getCameraAspectRatio()), context, i -> {
-                    CherrygramCameraConfig.INSTANCE.setCameraAspectRatio(configValues.get(i));
+                PopupHelper.show(configStringKeys, getString(R.string.CP_CameraAspectRatio), configValues.indexOf(komarugramCameraConfig.INSTANCE.getCameraAspectRatio()), context, i -> {
+                    komarugramCameraConfig.INSTANCE.setCameraAspectRatio(configValues.get(i));
 
                     listAdapter.notifyItemChanged(cameraAspectRatioRow);
                 });
@@ -179,44 +179,44 @@ public class CameraPreferencesEntry extends BaseFragment implements Notification
                 Stream<Integer> tmp = availableSizes.values().stream().sorted(Comparator.comparingInt(Size::getWidth).reversed()).map(Size::getHeight);
                 ArrayList<Integer> types = tmp.collect(Collectors.toCollection(ArrayList::new));
                 ArrayList<String> arrayList = types.stream().map(p -> p + "p").collect(Collectors.toCollection(ArrayList::new));
-                PopupHelper.show(arrayList, getString(R.string.CP_CameraQuality), types.indexOf(CherrygramCameraConfig.INSTANCE.getCameraResolution()), context, i -> {
-                    CherrygramCameraConfig.INSTANCE.setCameraResolution(types.get(i));
+                PopupHelper.show(arrayList, getString(R.string.CP_CameraQuality), types.indexOf(komarugramCameraConfig.INSTANCE.getCameraResolution()), context, i -> {
+                    komarugramCameraConfig.INSTANCE.setCameraResolution(types.get(i));
 
                     listAdapter.notifyItemChanged(cameraXQualityRow);
                     AppRestartHelper.createRestartBulletin(this);
                 });
             } else if (position == cameraUseDualCameraRow) {
-                CherrygramCameraConfig.INSTANCE.toggleUseDualCamera();
+                komarugramCameraConfig.INSTANCE.toggleUseDualCamera();
                 if (view instanceof TextCheckCell) {
-                    ((TextCheckCell) view).setChecked(CherrygramCameraConfig.INSTANCE.getUseDualCamera());
+                    ((TextCheckCell) view).setChecked(komarugramCameraConfig.INSTANCE.getUseDualCamera());
                 }
 
                 listAdapter.notifyItemChanged(rearCamRow);
                 updateRowsId(false);
                 parentLayout.rebuildAllFragmentViews(false, false);
             } else if (position == startFromUltraWideRow) {
-                CherrygramCameraConfig.INSTANCE.toggleStartFromUltraWideCam();
+                komarugramCameraConfig.INSTANCE.toggleStartFromUltraWideCam();
                 if (view instanceof TextCheckCell) {
-                    ((TextCheckCell) view).setChecked(CherrygramCameraConfig.INSTANCE.getStartFromUltraWideCam());
+                    ((TextCheckCell) view).setChecked(komarugramCameraConfig.INSTANCE.getStartFromUltraWideCam());
                 }
             } else if (position == cameraXFpsRangeRow) {
                 ArrayList<String> configStringKeys = new ArrayList<>();
                 ArrayList<Integer> configValues = new ArrayList<>();
 
                 configStringKeys.add("25-30");
-                configValues.add(CherrygramCameraConfig.CameraXFpsRange25to30);
+                configValues.add(komarugramCameraConfig.CameraXFpsRange25to30);
 
                 configStringKeys.add("30-60");
-                configValues.add(CherrygramCameraConfig.CameraXFpsRange30to60);
+                configValues.add(komarugramCameraConfig.CameraXFpsRange30to60);
 
                 configStringKeys.add("60-60");
-                configValues.add(CherrygramCameraConfig.CameraXFpsRange60to60);
+                configValues.add(komarugramCameraConfig.CameraXFpsRange60to60);
 
                 configStringKeys.add(getString("Default", R.string.Default));
-                configValues.add(CherrygramCameraConfig.CameraXFpsRangeDefault);
+                configValues.add(komarugramCameraConfig.CameraXFpsRangeDefault);
 
-                PopupHelper.show(configStringKeys, "FPS", configValues.indexOf(CherrygramCameraConfig.INSTANCE.getCameraXFpsRange()), context, i -> {
-                    CherrygramCameraConfig.INSTANCE.setCameraXFpsRange(configValues.get(i));
+                PopupHelper.show(configStringKeys, "FPS", configValues.indexOf(komarugramCameraConfig.INSTANCE.getCameraXFpsRange()), context, i -> {
+                    komarugramCameraConfig.INSTANCE.setCameraXFpsRange(configValues.get(i));
 
                     listAdapter.notifyItemChanged(cameraXFpsRangeRow);
                 });
@@ -225,85 +225,85 @@ public class CameraPreferencesEntry extends BaseFragment implements Notification
                 ArrayList<Integer> configValues = new ArrayList<>();
 
                 configStringKeys.add("MONO");
-                configValues.add(CherrygramCameraConfig.CONTROL_EFFECT_MODE_MONO);
+                configValues.add(komarugramCameraConfig.CONTROL_EFFECT_MODE_MONO);
 
                 configStringKeys.add("NEGATIVE");
-                configValues.add(CherrygramCameraConfig.CONTROL_EFFECT_MODE_NEGATIVE);
+                configValues.add(komarugramCameraConfig.CONTROL_EFFECT_MODE_NEGATIVE);
 
                 configStringKeys.add("SOLARIZE");
-                configValues.add(CherrygramCameraConfig.CONTROL_EFFECT_MODE_SOLARIZE);
+                configValues.add(komarugramCameraConfig.CONTROL_EFFECT_MODE_SOLARIZE);
 
                 configStringKeys.add("SEPIA");
-                configValues.add(CherrygramCameraConfig.CONTROL_EFFECT_MODE_SEPIA);
+                configValues.add(komarugramCameraConfig.CONTROL_EFFECT_MODE_SEPIA);
 
                 configStringKeys.add("POSTERIZE");
-                configValues.add(CherrygramCameraConfig.CONTROL_EFFECT_MODE_POSTERIZE);
+                configValues.add(komarugramCameraConfig.CONTROL_EFFECT_MODE_POSTERIZE);
 
                 configStringKeys.add("WHITEBOARD");
-                configValues.add(CherrygramCameraConfig.CONTROL_EFFECT_MODE_WHITEBOARD);
+                configValues.add(komarugramCameraConfig.CONTROL_EFFECT_MODE_WHITEBOARD);
 
                 configStringKeys.add("BLACKBOARD");
-                configValues.add(CherrygramCameraConfig.CONTROL_EFFECT_MODE_BLACKBOARD);
+                configValues.add(komarugramCameraConfig.CONTROL_EFFECT_MODE_BLACKBOARD);
 
                 configStringKeys.add("AQUA");
-                configValues.add(CherrygramCameraConfig.CONTROL_EFFECT_MODE_AQUA);
+                configValues.add(komarugramCameraConfig.CONTROL_EFFECT_MODE_AQUA);
 
                 configStringKeys.add(getString("Default", R.string.Default));
-                configValues.add(CherrygramCameraConfig.CONTROL_EFFECT_MODE_OFF);
+                configValues.add(komarugramCameraConfig.CONTROL_EFFECT_MODE_OFF);
 
-                PopupHelper.show(configStringKeys, "Effect", configValues.indexOf(CherrygramCameraConfig.INSTANCE.getCameraXCameraEffect()), context, i -> {
-                    CherrygramCameraConfig.INSTANCE.setCameraXCameraEffect(configValues.get(i));
+                PopupHelper.show(configStringKeys, "Effect", configValues.indexOf(komarugramCameraConfig.INSTANCE.getCameraXCameraEffect()), context, i -> {
+                    komarugramCameraConfig.INSTANCE.setCameraXCameraEffect(configValues.get(i));
 
                     listAdapter.notifyItemChanged(cameraXCameraEffectsRow);
                 });
             } else if (position == cameraStabilisationRow) {
-                CherrygramCameraConfig.INSTANCE.toggleCameraStabilisation();
+                komarugramCameraConfig.INSTANCE.toggleCameraStabilisation();
                 if (view instanceof TextCheckCell) {
-                    ((TextCheckCell) view).setChecked(CherrygramCameraConfig.INSTANCE.getCameraStabilisation());
+                    ((TextCheckCell) view).setChecked(komarugramCameraConfig.INSTANCE.getCameraStabilisation());
                 }
             } else if (position == exposureSliderRow) {
                 ArrayList<String> configStringKeys = new ArrayList<>();
                 ArrayList<Integer> configValues = new ArrayList<>();
 
                 /*configStringKeys.add(getString(R.string.CP_ZoomSliderPosition_Bottom));
-                configValues.add(CherrygramCameraConfig.EXPOSURE_SLIDER_BOTTOM);*/
+                configValues.add(komarugramCameraConfig.EXPOSURE_SLIDER_BOTTOM);*/
 
                 configStringKeys.add(getString(R.string.CP_ZoomSliderPosition_Right));
-                configValues.add(CherrygramCameraConfig.EXPOSURE_SLIDER_RIGHT);
+                configValues.add(komarugramCameraConfig.EXPOSURE_SLIDER_RIGHT);
 
                 /*configStringKeys.add(getString(R.string.CP_ZoomSliderPosition_Left));
-                configValues.add(CherrygramCameraConfig.EXPOSURE_SLIDER_LEFT);*/
+                configValues.add(komarugramCameraConfig.EXPOSURE_SLIDER_LEFT);*/
 
                 configStringKeys.add(getString(R.string.Disable));
-                configValues.add(CherrygramCameraConfig.EXPOSURE_SLIDER_NONE);
+                configValues.add(komarugramCameraConfig.EXPOSURE_SLIDER_NONE);
 
-                PopupHelper.show(configStringKeys, getString(R.string.CP_ExposureSliderPosition), configValues.indexOf(CherrygramCameraConfig.INSTANCE.getExposureSlider()), context, i -> {
-                    CherrygramCameraConfig.INSTANCE.setExposureSlider(configValues.get(i));
+                PopupHelper.show(configStringKeys, getString(R.string.CP_ExposureSliderPosition), configValues.indexOf(komarugramCameraConfig.INSTANCE.getExposureSlider()), context, i -> {
+                    komarugramCameraConfig.INSTANCE.setExposureSlider(configValues.get(i));
 
                     listAdapter.notifyItemChanged(exposureSliderRow);
                 });
             } else if (position == cameraControlButtonsRow) {
-                CherrygramCameraConfig.INSTANCE.toggleCenterCameraControlButtons();
+                komarugramCameraConfig.INSTANCE.toggleCenterCameraControlButtons();
                 if (view instanceof TextCheckCell) {
-                    ((TextCheckCell) view).setChecked(CherrygramCameraConfig.INSTANCE.getCenterCameraControlButtons());
+                    ((TextCheckCell) view).setChecked(komarugramCameraConfig.INSTANCE.getCenterCameraControlButtons());
                 }
             } else if (position == rearCamRow) {
-                CherrygramCameraConfig.INSTANCE.toggleRearCam();
+                komarugramCameraConfig.INSTANCE.toggleRearCam();
                 if (view instanceof TextCheckCell) {
-                    ((TextCheckCell) view).setChecked(CherrygramCameraConfig.INSTANCE.getRearCam());
+                    ((TextCheckCell) view).setChecked(komarugramCameraConfig.INSTANCE.getRearCam());
                 }
             } else if (position == captureTypeFrontRow) {
                 ArrayList<String> configStringKeys = new ArrayList<>();
                 ArrayList<Integer> configValues = new ArrayList<>();
 
                 configStringKeys.add("ImageCapture");
-                configValues.add(CherrygramCameraConfig.CaptureType_ImageCapture);
+                configValues.add(komarugramCameraConfig.CaptureType_ImageCapture);
 
                 configStringKeys.add("VideoCapture");
-                configValues.add(CherrygramCameraConfig.CaptureType_VideoCapture);
+                configValues.add(komarugramCameraConfig.CaptureType_VideoCapture);
 
-                PopupHelper.show(configStringKeys, "Capture type (Front camera)", configValues.indexOf(CherrygramCameraConfig.INSTANCE.getCaptureTypeFront()), context, i -> {
-                    CherrygramCameraConfig.INSTANCE.setCaptureTypeFront(configValues.get(i));
+                PopupHelper.show(configStringKeys, "Capture type (Front camera)", configValues.indexOf(komarugramCameraConfig.INSTANCE.getCaptureTypeFront()), context, i -> {
+                    komarugramCameraConfig.INSTANCE.setCaptureTypeFront(configValues.get(i));
 
                     listAdapter.notifyItemChanged(captureTypeFrontRow);
                     listAdapter.notifyItemChanged(cameraXCameraEffectsRow);
@@ -314,13 +314,13 @@ public class CameraPreferencesEntry extends BaseFragment implements Notification
                 ArrayList<Integer> configValues = new ArrayList<>();
 
                 configStringKeys.add("ImageCapture");
-                configValues.add(CherrygramCameraConfig.CaptureType_ImageCapture);
+                configValues.add(komarugramCameraConfig.CaptureType_ImageCapture);
 
                 configStringKeys.add("VideoCapture");
-                configValues.add(CherrygramCameraConfig.CaptureType_VideoCapture);
+                configValues.add(komarugramCameraConfig.CaptureType_VideoCapture);
 
-                PopupHelper.show(configStringKeys, "Capture type (Back camera)", configValues.indexOf(CherrygramCameraConfig.INSTANCE.getCaptureTypeBack()), context, i -> {
-                    CherrygramCameraConfig.INSTANCE.setCaptureTypeBack(configValues.get(i));
+                PopupHelper.show(configStringKeys, "Capture type (Back camera)", configValues.indexOf(komarugramCameraConfig.INSTANCE.getCaptureTypeBack()), context, i -> {
+                    komarugramCameraConfig.INSTANCE.setCaptureTypeBack(configValues.get(i));
 
                     listAdapter.notifyItemChanged(captureTypeBackRow);
                     listAdapter.notifyItemChanged(cameraXCameraEffectsRow);
@@ -349,7 +349,7 @@ public class CameraPreferencesEntry extends BaseFragment implements Notification
         audioVideoHeaderRow = rowCount++;
         disableAttachCameraRow = rowCount++;
 
-        if (CherrygramCameraConfig.INSTANCE.getCameraType() != CherrygramCameraConfig.CAMERA_2) {
+        if (komarugramCameraConfig.INSTANCE.getCameraType() != komarugramCameraConfig.CAMERA_2) {
             cameraAspectRatioRow = rowCount++;
         } else {
             cameraAspectRatioRow = -1;
@@ -363,7 +363,7 @@ public class CameraPreferencesEntry extends BaseFragment implements Notification
             cameraXQualityRow = -1;
         }
 
-        if (CherrygramCameraConfig.INSTANCE.getCameraType() == CherrygramCameraConfig.CAMERA_2) {
+        if (komarugramCameraConfig.INSTANCE.getCameraType() == komarugramCameraConfig.CAMERA_2) {
             cameraUseDualCameraRow = rowCount++;
         } else {
             cameraUseDualCameraRow = -1;
@@ -372,8 +372,8 @@ public class CameraPreferencesEntry extends BaseFragment implements Notification
         if (CameraXUtils.isCurrentCameraCameraX()) {
             startFromUltraWideRow = rowCount++;
             cameraXFpsRangeRow = rowCount++;
-            if (CherrygramCameraConfig.INSTANCE.getCaptureTypeFront() == CherrygramCameraConfig.CaptureType_ImageCapture
-                    || CherrygramCameraConfig.INSTANCE.getCaptureTypeBack() == CherrygramCameraConfig.CaptureType_ImageCapture) {
+            if (komarugramCameraConfig.INSTANCE.getCaptureTypeFront() == komarugramCameraConfig.CaptureType_ImageCapture
+                    || komarugramCameraConfig.INSTANCE.getCaptureTypeBack() == komarugramCameraConfig.CaptureType_ImageCapture) {
                 cameraXCameraEffectsRow = rowCount++;
             } else {
                 cameraXCameraEffectsRow = -1;
@@ -390,7 +390,7 @@ public class CameraPreferencesEntry extends BaseFragment implements Notification
 
         cameraControlButtonsRow = rowCount++;
 
-        if (CherrygramCameraConfig.INSTANCE.getCameraType() == CherrygramCameraConfig.CAMERA_2 && CherrygramCameraConfig.INSTANCE.getUseDualCamera()) {
+        if (komarugramCameraConfig.INSTANCE.getCameraType() == komarugramCameraConfig.CAMERA_2 && komarugramCameraConfig.INSTANCE.getUseDualCamera()) {
             rearCamRow = -1;
         } else {
             rearCamRow = rowCount++;;
@@ -452,17 +452,17 @@ public class CameraPreferencesEntry extends BaseFragment implements Notification
                     TextCheckCell textCheckCell = (TextCheckCell) holder.itemView;
                     textCheckCell.setEnabled(true, null);
                     if (position == disableAttachCameraRow) {
-                        textCheckCell.setTextAndValueAndCheck(getString(R.string.CP_DisableCam), getString(R.string.CP_DisableCam_Desc), CherrygramCameraConfig.INSTANCE.getDisableAttachCamera(), true, true);
+                        textCheckCell.setTextAndValueAndCheck(getString(R.string.CP_DisableCam), getString(R.string.CP_DisableCam_Desc), komarugramCameraConfig.INSTANCE.getDisableAttachCamera(), true, true);
                     } else if (position == cameraUseDualCameraRow) {
-                        textCheckCell.setTextAndValueAndCheck(getString(R.string.CP_CameraDualCamera), getString(R.string.CP_CameraDualCamera_Desc), CherrygramCameraConfig.INSTANCE.getUseDualCamera(), true, true);
+                        textCheckCell.setTextAndValueAndCheck(getString(R.string.CP_CameraDualCamera), getString(R.string.CP_CameraDualCamera_Desc), komarugramCameraConfig.INSTANCE.getUseDualCamera(), true, true);
                     } else if (position == startFromUltraWideRow) {
-                        textCheckCell.setTextAndValueAndCheck(getString(R.string.CP_CameraUW), getString(R.string.CP_CameraUW_Desc), CherrygramCameraConfig.INSTANCE.getStartFromUltraWideCam(), true, true);
+                        textCheckCell.setTextAndValueAndCheck(getString(R.string.CP_CameraUW), getString(R.string.CP_CameraUW_Desc), komarugramCameraConfig.INSTANCE.getStartFromUltraWideCam(), true, true);
                     } else if (position == cameraStabilisationRow) {
-                        textCheckCell.setTextAndCheck(getString(R.string.CP_CameraStabilisation), CherrygramCameraConfig.INSTANCE.getCameraStabilisation(), true);
+                        textCheckCell.setTextAndCheck(getString(R.string.CP_CameraStabilisation), komarugramCameraConfig.INSTANCE.getCameraStabilisation(), true);
                     } else if (position == cameraControlButtonsRow) {
-                        textCheckCell.setTextAndValueAndCheck(getString(R.string.CP_CenterCameraControlButtons), getString(R.string.CP_CenterCameraControlButtons_Desc), CherrygramCameraConfig.INSTANCE.getCenterCameraControlButtons(), true, false);
+                        textCheckCell.setTextAndValueAndCheck(getString(R.string.CP_CenterCameraControlButtons), getString(R.string.CP_CenterCameraControlButtons_Desc), komarugramCameraConfig.INSTANCE.getCenterCameraControlButtons(), true, false);
                     } else if (position == rearCamRow) {
-                        textCheckCell.setTextAndValueAndCheck(getString(R.string.CP_RearCam), getString(R.string.CP_RearCam_Desc), CherrygramCameraConfig.INSTANCE.getRearCam(), true, false);
+                        textCheckCell.setTextAndValueAndCheck(getString(R.string.CP_RearCam), getString(R.string.CP_RearCam_Desc), komarugramCameraConfig.INSTANCE.getRearCam(), true, false);
                     }
                     break;
                 case 6:
@@ -481,7 +481,7 @@ public class CameraPreferencesEntry extends BaseFragment implements Notification
                     if (position == cameraAspectRatioRow) {
                         textCell.setTextAndValue(getString(R.string.CP_CameraAspectRatio), CGResourcesHelper.getCameraAspectRatio(), true);
                     } else if (position == cameraXQualityRow) {
-                        textSettingsCell.setTextAndValue(getString(R.string.CP_CameraQuality), CherrygramCameraConfig.INSTANCE.getCameraResolution() + "p", false);
+                        textSettingsCell.setTextAndValue(getString(R.string.CP_CameraQuality), komarugramCameraConfig.INSTANCE.getCameraResolution() + "p", false);
                     } else if (position == cameraXFpsRangeRow) {
                         textCell.setTextAndValue("FPS", CGResourcesHelper.getCameraXFpsRange(), true);
                     } else if (position == cameraXCameraEffectsRow) {
@@ -522,7 +522,7 @@ public class CameraPreferencesEntry extends BaseFragment implements Notification
                         protected void onSelectedCamera(int cameraSelected) {
                             super.onSelectedCamera(cameraSelected);
 
-                            CherrygramCameraConfig.INSTANCE.setCameraType(cameraSelected);
+                            komarugramCameraConfig.INSTANCE.setCameraType(cameraSelected);
 
                             updateRowsId(false);
 

@@ -1,11 +1,11 @@
-package uz.unnarsx.cherrygram.preferences.tgkit.preference.types;
+package uz.unnarsx.komarugram.preferences.tgkit.preference.types;
 
 import androidx.annotation.Nullable;
 
 import org.telegram.ui.ActionBar.BaseFragment;
 import org.telegram.ui.Cells.TextCell;
 
-import uz.unnarsx.cherrygram.preferences.tgkit.preference.TGKitPreference;
+import uz.unnarsx.komarugram.preferences.tgkit.preference.TGKitPreference;
 
 public class TGKitTextIconRow extends TGKitPreference {
     public boolean divider = false;

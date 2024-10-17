@@ -9,7 +9,7 @@
 
 */
 
-package uz.unnarsx.cherrygram.preferences.folders.cells;
+package uz.unnarsx.komarugram.preferences.folders.cells;
 
 import static org.telegram.messenger.AndroidUtilities.dp;
 import static org.telegram.messenger.AndroidUtilities.dpf2;
@@ -44,8 +44,8 @@ import org.telegram.ui.Components.LayoutHelper;
 
 import java.util.Objects;
 
-import uz.unnarsx.cherrygram.core.configs.CherrygramAppearanceConfig;
-import uz.unnarsx.cherrygram.preferences.folders.helpers.FolderIconHelper;
+import uz.unnarsx.komarugram.core.configs.komarugramAppearanceConfig;
+import uz.unnarsx.komarugram.preferences.folders.helpers.FolderIconHelper;
 
 @SuppressLint("ViewConstructor")
 public class FoldersPreviewCell extends FrameLayout {
@@ -68,7 +68,7 @@ public class FoldersPreviewCell extends FrameLayout {
     private int oldStyle, currentStyle;
     private String allChatsTabName;
     private String allChatsTabIcon;
-    int tabStyle = CherrygramAppearanceConfig.INSTANCE.getTabStyle();
+    int tabStyle = komarugramAppearanceConfig.INSTANCE.getTabStyle();
 
     private ValueAnimator animator;
 
@@ -104,13 +104,13 @@ public class FoldersPreviewCell extends FrameLayout {
 
                 rect.set(0, 0, w, h);
                 Theme.dialogs_onlineCirclePaint.setColor(Color.argb(20, r, g, b));
-                canvas.drawRoundRect(rect, dp(tabStyle == CherrygramAppearanceConfig.TAB_STYLE_PILLS ? 50 : 8), dp(tabStyle == CherrygramAppearanceConfig.TAB_STYLE_PILLS ? 50 : 8), Theme.dialogs_onlineCirclePaint);
+                canvas.drawRoundRect(rect, dp(tabStyle == komarugramAppearanceConfig.TAB_STYLE_PILLS ? 50 : 8), dp(tabStyle == komarugramAppearanceConfig.TAB_STYLE_PILLS ? 50 : 8), Theme.dialogs_onlineCirclePaint);
 
                 float stroke = outlinePaint.getStrokeWidth() / 2;
                 rect.set(stroke, stroke, w - stroke, h - stroke);
-                canvas.drawRoundRect(rect, dp(tabStyle == CherrygramAppearanceConfig.TAB_STYLE_PILLS ? 50 : 8), dp(tabStyle == CherrygramAppearanceConfig.TAB_STYLE_PILLS ? 50 : 8), outlinePaint);
+                canvas.drawRoundRect(rect, dp(tabStyle == komarugramAppearanceConfig.TAB_STYLE_PILLS ? 50 : 8), dp(tabStyle == komarugramAppearanceConfig.TAB_STYLE_PILLS ? 50 : 8), outlinePaint);
 
-                if (CherrygramAppearanceConfig.INSTANCE.getTabStyleStroke()) {
+                if (komarugramAppearanceConfig.INSTANCE.getTabStyleStroke()) {
                     outlinePaint2.setStyle(Paint.Style.STROKE);
                     outlinePaint2.setStrokeWidth(Math.max(5, AndroidUtilities.dp(0.5f)));
                     outlinePaint2.setColor(ColorUtils.blendARGB(ColorUtils.setAlphaComponent(Theme.getColor(Theme.key_switchTrack), 0x3F), Theme.getColor(Theme.key_windowBackgroundWhiteValueText), chipsStyleProgress));
@@ -150,7 +150,7 @@ public class FoldersPreviewCell extends FrameLayout {
                                 dpf2(8 + 15 * pillsStyleProgress),
                                 Theme.dialogs_onlineCirclePaint);
 
-                        if (tabStyle >= CherrygramAppearanceConfig.TAB_STYLE_VKUI && CherrygramAppearanceConfig.INSTANCE.getTabStyleStroke()) {
+                        if (tabStyle >= komarugramAppearanceConfig.TAB_STYLE_VKUI && komarugramAppearanceConfig.INSTANCE.getTabStyleStroke()) {
                             canvas.drawRoundRect(
                                     startX,
                                     startY + dpf2(6) * textStyleProgress - dpf2(37.5f) * chipsStyleProgress,
@@ -225,11 +225,11 @@ public class FoldersPreviewCell extends FrameLayout {
     }
 
     public void updateTabStyle(boolean animate) {
-        if (Objects.equals(currentStyle, CherrygramAppearanceConfig.INSTANCE.getTabStyle()) && animate)
+        if (Objects.equals(currentStyle, komarugramAppearanceConfig.INSTANCE.getTabStyle()) && animate)
             return;
 
         oldStyle = currentStyle;
-        currentStyle = CherrygramAppearanceConfig.INSTANCE.getTabStyle();
+        currentStyle = komarugramAppearanceConfig.INSTANCE.getTabStyle();
 
         if (animate) {
             ValueAnimator def = ValueAnimator.ofFloat(0f, 1f).setDuration(250);
@@ -314,7 +314,7 @@ public class FoldersPreviewCell extends FrameLayout {
     }
 
     public void updateTabTitle(boolean animate) {
-        float to = CherrygramAppearanceConfig.INSTANCE.getTabMode() != 2 ? 1 : 0;
+        float to = komarugramAppearanceConfig.INSTANCE.getTabMode() != 2 ? 1 : 0;
         if (to == titleProgress && animate)
             return;
         if (animate) {
@@ -332,7 +332,7 @@ public class FoldersPreviewCell extends FrameLayout {
     }
 
     public void updateTabIcons(boolean animate) {
-        float to = CherrygramAppearanceConfig.INSTANCE.getTabMode() != 1 ? 1 : 0;
+        float to = komarugramAppearanceConfig.INSTANCE.getTabMode() != 1 ? 1 : 0;
         if (to == iconProgress && animate)
             return;
         if (animate) {
@@ -350,7 +350,7 @@ public class FoldersPreviewCell extends FrameLayout {
     }
 
     public void updateTabCounter(boolean animate) {
-        float to = !CherrygramAppearanceConfig.INSTANCE.getTabsNoUnread() ? 1 : 0;
+        float to = !komarugramAppearanceConfig.INSTANCE.getTabsNoUnread() ? 1 : 0;
         if (to == counterProgress && animate)
             return;
         if (animate) {
@@ -368,7 +368,7 @@ public class FoldersPreviewCell extends FrameLayout {
     }
 
     public void updateTabStroke(boolean animate) {
-        float to = CherrygramAppearanceConfig.INSTANCE.getTabStyleStroke() ? 1 : 0;
+        float to = komarugramAppearanceConfig.INSTANCE.getTabStyleStroke() ? 1 : 0;
         if (to == strokeProgress && animate)
             return;
         if (animate) {
@@ -386,11 +386,11 @@ public class FoldersPreviewCell extends FrameLayout {
     }
 
     private String getAllChatsTabName() {
-        return CherrygramAppearanceConfig.INSTANCE.getTabsHideAllChats() ? filters[6][0] : filters[0][0];
+        return komarugramAppearanceConfig.INSTANCE.getTabsHideAllChats() ? filters[6][0] : filters[0][0];
     }
 
     private String getAllChatsTabIcon() {
-        return CherrygramAppearanceConfig.INSTANCE.getTabsHideAllChats() ? filters[6][1] : filters[0][1];
+        return komarugramAppearanceConfig.INSTANCE.getTabsHideAllChats() ? filters[6][1] : filters[0][1];
     }
 
     @Override

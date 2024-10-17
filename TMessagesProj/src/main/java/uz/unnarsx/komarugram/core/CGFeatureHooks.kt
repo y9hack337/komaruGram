@@ -1,7 +1,7 @@
-package uz.unnarsx.cherrygram.core
+package uz.unnarsx.komarugram.core
 
-import uz.unnarsx.cherrygram.core.configs.CherrygramChatsConfig
-import uz.unnarsx.cherrygram.core.configs.CherrygramCameraConfig
+import uz.unnarsx.komarugram.core.configs.komarugramChatsConfig
+import uz.unnarsx.komarugram.core.configs.komarugramCameraConfig
 
 // I've created this so CG features can be injected in a source file with 1 line only (maybe)
 // Because manual editing of drklo's sources harms your mental health.
@@ -10,19 +10,19 @@ object CGFeatureHooks {
     @JvmStatic
     fun setFlashLight(b: Boolean) {
         // ...
-        CherrygramCameraConfig.whiteBackground = b
+        komarugramCameraConfig.whiteBackground = b
     }
 
     @JvmStatic
     fun switchNoAuthor(b: Boolean) {
         // ...
-        CherrygramChatsConfig.noAuthorship = b
+        komarugramChatsConfig.noAuthorship = b
     }
 
     @JvmStatic
     fun switchGifSpoilers(b: Boolean) {
         // ...
-        CherrygramChatsConfig.gifSpoilers = b
+        komarugramChatsConfig.gifSpoilers = b
     }
 
 }

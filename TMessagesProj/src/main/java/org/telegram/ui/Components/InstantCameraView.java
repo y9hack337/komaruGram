@@ -125,9 +125,9 @@ import javax.microedition.khronos.egl.EGLContext;
 import javax.microedition.khronos.egl.EGLDisplay;
 import javax.microedition.khronos.egl.EGLSurface;
 
-import uz.unnarsx.komarugram.core.configs.CherrygramAppearanceConfig;
-import uz.unnarsx.komarugram.core.configs.CherrygramChatsConfig;
-import uz.unnarsx.komarugram.core.configs.CherrygramCameraConfig;
+import uz.unnarsx.komarugram.core.configs.komarugramAppearanceConfig;
+import uz.unnarsx.komarugram.core.configs.komarugramChatsConfig;
+import uz.unnarsx.komarugram.core.configs.komarugramCameraConfig;
 import uz.unnarsx.komarugram.camera.CameraXUtils;
 import uz.unnarsx.komarugram.camera.SlideControlView;
 import uz.unnarsx.komarugram.camera.VideoMessagesHelper;
@@ -191,7 +191,7 @@ public class InstantCameraView extends FrameLayout implements NotificationCenter
     private Size aspectRatio = SharedConfig.roundCamera16to9 ? new Size(16, 9) : new Size(4, 3);
     private TextureView textureView;
     public BackupImageView textureOverlayView;
-    public final boolean useCamera2 = CherrygramCameraConfig.INSTANCE.getCameraType() == CherrygramCameraConfig.CAMERA_2;
+    public final boolean useCamera2 = komarugramCameraConfig.INSTANCE.getCameraType() == komarugramCameraConfig.CAMERA_2;
     public CameraSession cameraSession;
     private boolean bothCameras;
     private Camera2Session[] camera2Sessions = new Camera2Session[2];
@@ -381,7 +381,7 @@ public class InstantCameraView extends FrameLayout implements NotificationCenter
         evControlView = new SliderView(getContext(), SliderView.TYPE_EXPOSURE);
         evControlView.setVisibility(View.GONE);
         evControlView.setAlpha(0.0f);
-        if (CherrygramCameraConfig.INSTANCE.getExposureSlider() != CherrygramCameraConfig.EXPOSURE_SLIDER_NONE && CameraXUtils.isCurrentCameraCameraX()) {
+        if (komarugramCameraConfig.INSTANCE.getExposureSlider() != komarugramCameraConfig.EXPOSURE_SLIDER_NONE && CameraXUtils.isCurrentCameraCameraX()) {
             evControlView.setRotation(270f);
             evControlView.setVisibility(View.VISIBLE);
             evControlView.setAlpha(1.0f);
@@ -403,7 +403,7 @@ public class InstantCameraView extends FrameLayout implements NotificationCenter
             });
         }
 
-        boolean centerCameraControlButtons = CherrygramCameraConfig.INSTANCE.getCenterCameraControlButtons();
+        boolean centerCameraControlButtons = komarugramCameraConfig.INSTANCE.getCenterCameraControlButtons();
 
         switchCameraButton = new FlashViews.ImageViewInvertable(context);
         switchCameraButton.setScaleType(ImageView.ScaleType.CENTER);
@@ -818,7 +818,7 @@ public class InstantCameraView extends FrameLayout implements NotificationCenter
             try {
                 performHapticFeedback(HapticFeedbackConstants.KEYBOARD_TAP, HapticFeedbackConstants.FLAG_IGNORE_GLOBAL_SETTING);
             } catch (Exception ignore) {}
-            if (!AndroidUtilities.isTablet() && CherrygramAppearanceConfig.INSTANCE.getIconReplacement() != CherrygramAppearanceConfig.ICON_REPLACE_NONE) {
+            if (!AndroidUtilities.isTablet() && komarugramAppearanceConfig.INSTANCE.getIconReplacement() != komarugramAppearanceConfig.ICON_REPLACE_NONE) {
                 AndroidUtilities.lockOrientation(delegate.getParentActivity(), ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
             } else {
                 AndroidUtilities.lockOrientation(delegate.getParentActivity());
@@ -858,8 +858,8 @@ public class InstantCameraView extends FrameLayout implements NotificationCenter
         cameraReady = false;
         selectedCamera = null;
         if (!fromPaused) {
-            if (!useCamera2 /*!CherrygramCameraConfig.INSTANCE.getUseDualCamera()*/) { // casuses unworking main flash if recording starts from front camera in Camera2
-                isFrontface = !CherrygramCameraConfig.INSTANCE.getRearCam();
+            if (!useCamera2 /*!komarugramCameraConfig.INSTANCE.getUseDualCamera()*/) { // casuses unworking main flash if recording starts from front camera in Camera2
+                isFrontface = !komarugramCameraConfig.INSTANCE.getRearCam();
             }
             if (CameraXUtils.isCurrentCameraNotCameraX()) {
                 updateFlash();
@@ -905,7 +905,7 @@ public class InstantCameraView extends FrameLayout implements NotificationCenter
         }
 
         if (useCamera2) {
-            bothCameras = DualCameraView.dualAvailableStatic(getContext()) && CherrygramCameraConfig.INSTANCE.getUseDualCamera();
+            bothCameras = DualCameraView.dualAvailableStatic(getContext()) && komarugramCameraConfig.INSTANCE.getUseDualCamera();
             if (bothCameras) {
                 for (int a = 0; a < 2; ++a) {
                     if (camera2Sessions[a] == null) {
@@ -923,7 +923,7 @@ public class InstantCameraView extends FrameLayout implements NotificationCenter
                 }
                 if (camera2SessionCurrent == null) return;
             } else {
-                camera2SessionCurrent = camera2Sessions[!CherrygramCameraConfig.INSTANCE.getRearCam() ? 0 : 1] = Camera2Session.create(isFrontface, MessagesController.getInstance(UserConfig.selectedAccount).roundVideoSize, MessagesController.getInstance(UserConfig.selectedAccount).roundVideoSize);
+                camera2SessionCurrent = camera2Sessions[!komarugramCameraConfig.INSTANCE.getRearCam() ? 0 : 1] = Camera2Session.create(isFrontface, MessagesController.getInstance(UserConfig.selectedAccount).roundVideoSize, MessagesController.getInstance(UserConfig.selectedAccount).roundVideoSize);
                 if (camera2SessionCurrent == null) return;
                 camera2SessionCurrent.setRecordingVideo(true);
                 previewSize[0] = new Size(camera2SessionCurrent.getPreviewWidth(), camera2SessionCurrent.getPreviewHeight());
@@ -1298,9 +1298,9 @@ public class InstantCameraView extends FrameLayout implements NotificationCenter
                 if (camera2SessionCurrent != null) {
                     camera2SessionCurrent.destroy(false);
                     camera2SessionCurrent = null;
-                    camera2Sessions[!CherrygramCameraConfig.INSTANCE.getRearCam() ? 1 : 0] = null;
+                    camera2Sessions[!komarugramCameraConfig.INSTANCE.getRearCam() ? 1 : 0] = null;
                 }
-                camera2SessionCurrent = camera2Sessions[!CherrygramCameraConfig.INSTANCE.getRearCam() ? 0 : 1] = Camera2Session.create(isFrontface, MessagesController.getInstance(UserConfig.selectedAccount).roundVideoSize, MessagesController.getInstance(UserConfig.selectedAccount).roundVideoSize);
+                camera2SessionCurrent = camera2Sessions[!komarugramCameraConfig.INSTANCE.getRearCam() ? 0 : 1] = Camera2Session.create(isFrontface, MessagesController.getInstance(UserConfig.selectedAccount).roundVideoSize, MessagesController.getInstance(UserConfig.selectedAccount).roundVideoSize);
                 if (camera2SessionCurrent == null) return;
                 camera2SessionCurrent.setRecordingVideo(true);
                 previewSize[0] = new Size(camera2SessionCurrent.getPreviewWidth(), camera2SessionCurrent.getPreviewHeight());
@@ -1351,16 +1351,16 @@ public class InstantCameraView extends FrameLayout implements NotificationCenter
         ArrayList<Size> previewSizes = selectedCamera.getPreviewSizes();
         ArrayList<Size> pictureSizes = selectedCamera.getPictureSizes();
 
-        if (CherrygramCameraConfig.INSTANCE.getCameraAspectRatio() == CherrygramCameraConfig.Camera1to1) {
+        if (komarugramCameraConfig.INSTANCE.getCameraAspectRatio() == komarugramCameraConfig.Camera1to1) {
             previewSize = new Size[]{CameraController.chooseOptimalSize(previewSizes, 960, 540, new Size(1, 1), false)};
             pictureSize = CameraController.chooseOptimalSize(pictureSizes, 960, 540, new Size(1, 1), false);
-        } else if (CherrygramCameraConfig.INSTANCE.getCameraAspectRatio() == CherrygramCameraConfig.Camera4to3) {
+        } else if (komarugramCameraConfig.INSTANCE.getCameraAspectRatio() == komarugramCameraConfig.Camera4to3) {
             previewSize = new Size[]{CameraController.chooseOptimalSize(previewSizes, 960, 540, new Size(4, 3), false)};
             pictureSize = CameraController.chooseOptimalSize(pictureSizes, 960, 540, new Size(4, 3), false);
-        } else if (CherrygramCameraConfig.INSTANCE.getCameraAspectRatio() == CherrygramCameraConfig.Camera16to9) {
+        } else if (komarugramCameraConfig.INSTANCE.getCameraAspectRatio() == komarugramCameraConfig.Camera16to9) {
             previewSize = new Size[]{CameraController.chooseOptimalSize(previewSizes, 960, 540, new Size(16, 9), false)};
             pictureSize = CameraController.chooseOptimalSize(pictureSizes, 960, 540, new Size(16, 9), false);
-        } else if (CherrygramCameraConfig.INSTANCE.getCameraAspectRatio() == CherrygramCameraConfig.CameraAspectDefault) {
+        } else if (komarugramCameraConfig.INSTANCE.getCameraAspectRatio() == komarugramCameraConfig.CameraAspectDefault) {
             previewSize[0] = chooseOptimalSize(previewSizes);
             pictureSize = chooseOptimalSize(pictureSizes);
         }
@@ -2519,7 +2519,7 @@ public class InstantCameraView extends FrameLayout implements NotificationCenter
 
             started = true;
             //int resolution = MessagesController.getInstance(currentAccount).roundVideoSize;
-            int resolution = CherrygramCameraConfig.INSTANCE.getVideoMessagesResolution();
+            int resolution = komarugramCameraConfig.INSTANCE.getVideoMessagesResolution();
             int bitrate = MessagesController.getInstance(currentAccount).roundVideoBitrate * 1024;
             AndroidUtilities.runOnUIThread(() -> {
                 NotificationCenter.getInstance(currentAccount).postNotificationName(NotificationCenter.stopAllHeavyOperations, 512);
@@ -3455,14 +3455,14 @@ public class InstantCameraView extends FrameLayout implements NotificationCenter
                     if (cancelled) {
                         return;
                     }
-                    if (!CherrygramChatsConfig.INSTANCE.getDisableVibration()) {
+                    if (!komarugramChatsConfig.INSTANCE.getDisableVibration()) {
                         try {
                             performHapticFeedback(HapticFeedbackConstants.KEYBOARD_TAP, HapticFeedbackConstants.FLAG_IGNORE_GLOBAL_SETTING);
                         } catch (Exception ignore) {
 
                         }
                     }
-                    if (!AndroidUtilities.isTablet() && CherrygramAppearanceConfig.INSTANCE.getIconReplacement() != CherrygramAppearanceConfig.ICON_REPLACE_NONE) {
+                    if (!AndroidUtilities.isTablet() && komarugramAppearanceConfig.INSTANCE.getIconReplacement() != komarugramAppearanceConfig.ICON_REPLACE_NONE) {
                         AndroidUtilities.lockOrientation(delegate.getParentActivity(), ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
                     } else {
                         AndroidUtilities.lockOrientation(delegate.getParentActivity());

@@ -75,7 +75,7 @@ import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
-import uz.unnarsx.komarugram.core.configs.CherrygramChatsConfig;
+import uz.unnarsx.komarugram.core.configs.komarugramChatsConfig;
 import uz.unnarsx.komarugram.core.CGBiometricPrompt;
 
 public class PasscodeView extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
@@ -161,7 +161,7 @@ public class PasscodeView extends FrameLayout implements NotificationCenter.Noti
                 return;
             }
             try {
-                if (!CherrygramChatsConfig.INSTANCE.getDisableVibration()) {
+                if (!komarugramChatsConfig.INSTANCE.getDisableVibration()) {
                     performHapticFeedback(HapticFeedbackConstants.KEYBOARD_TAP);
                 }
             } catch (Exception e) {
@@ -286,7 +286,7 @@ public class PasscodeView extends FrameLayout implements NotificationCenter.Noti
                 return false;
             }
             try {
-                if (!CherrygramChatsConfig.INSTANCE.getDisableVibration()) {
+                if (!komarugramChatsConfig.INSTANCE.getDisableVibration()) {
                     performHapticFeedback(HapticFeedbackConstants.KEYBOARD_TAP);
                 }
             } catch (Exception e) {
@@ -1341,7 +1341,7 @@ public class PasscodeView extends FrameLayout implements NotificationCenter.Noti
                     imageView.getAnimatedDrawable().setCustomEndFrame(37);
                     imageView.playAnimation();
                     showPin(true);
-                    if (!CherrygramChatsConfig.INSTANCE.getDisableVibration()) {
+                    if (!komarugramChatsConfig.INSTANCE.getDisableVibration()) {
                         AndroidUtilities.runOnUIThread(() -> imageView.performHapticFeedback(HapticFeedbackConstants.KEYBOARD_TAP, HapticFeedbackConstants.FLAG_IGNORE_GLOBAL_SETTING), 350);
                     }
                     AnimatorSet animatorSet = new AnimatorSet();

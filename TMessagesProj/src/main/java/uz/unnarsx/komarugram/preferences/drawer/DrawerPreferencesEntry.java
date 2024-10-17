@@ -1,4 +1,4 @@
-package uz.unnarsx.cherrygram.preferences.drawer;
+package uz.unnarsx.komarugram.preferences.drawer;
 
 import static org.telegram.messenger.LocaleController.getString;
 
@@ -29,11 +29,11 @@ import org.telegram.ui.Cells.TextCheckCell;
 import org.telegram.ui.Components.LayoutHelper;
 import org.telegram.ui.Components.RecyclerListView;
 
-import uz.unnarsx.cherrygram.core.configs.CherrygramAppearanceConfig;
-import uz.unnarsx.cherrygram.preferences.drawer.cells.BlurIntensityCell;
-import uz.unnarsx.cherrygram.preferences.drawer.cells.DrawerProfilePreviewCell;
-import uz.unnarsx.cherrygram.preferences.drawer.cells.ThemeSelectorDrawerCell;
-import uz.unnarsx.cherrygram.preferences.helpers.AlertDialogSwitchers;
+import uz.unnarsx.komarugram.core.configs.komarugramAppearanceConfig;
+import uz.unnarsx.komarugram.preferences.drawer.cells.BlurIntensityCell;
+import uz.unnarsx.komarugram.preferences.drawer.cells.DrawerProfilePreviewCell;
+import uz.unnarsx.komarugram.preferences.drawer.cells.ThemeSelectorDrawerCell;
+import uz.unnarsx.komarugram.preferences.helpers.AlertDialogSwitchers;
 
 public class DrawerPreferencesEntry extends BaseFragment {
     private int rowCount;
@@ -114,55 +114,55 @@ public class DrawerPreferencesEntry extends BaseFragment {
         frameLayout.addView(listView, LayoutHelper.createFrame(LayoutHelper.MATCH_PARENT, LayoutHelper.MATCH_PARENT));
         listView.setOnItemClickListener((view, position, x, y) -> {
             if (position == drawerSnowRow) {
-                CherrygramAppearanceConfig.INSTANCE.toggleDrawerSnow();
+                komarugramAppearanceConfig.INSTANCE.toggleDrawerSnow();
                 if (view instanceof TextCheckCell) {
-                    ((TextCheckCell) view).setChecked(CherrygramAppearanceConfig.INSTANCE.getDrawSnowInDrawer());
+                    ((TextCheckCell) view).setChecked(komarugramAppearanceConfig.INSTANCE.getDrawSnowInDrawer());
                 }
                 parentLayout.rebuildAllFragmentViews(true, true);
             } else if (position == drawerAvatarAsBackgroundRow) {
-                CherrygramAppearanceConfig.INSTANCE.toggleDrawerAvatar();
+                komarugramAppearanceConfig.INSTANCE.toggleDrawerAvatar();
                 if (view instanceof TextCheckCell) {
-                    ((TextCheckCell) view).setChecked(CherrygramAppearanceConfig.INSTANCE.getDrawerAvatar());
+                    ((TextCheckCell) view).setChecked(komarugramAppearanceConfig.INSTANCE.getDrawerAvatar());
                 }
                 getNotificationCenter().postNotificationName(NotificationCenter.mainUserInfoChanged);
                 TransitionManager.beginDelayedTransition(profilePreviewCell);
                 listAdapter.notifyItemChanged(drawerRow, new Object());
-                if (CherrygramAppearanceConfig.INSTANCE.getDrawerAvatar()) {
+                if (komarugramAppearanceConfig.INSTANCE.getDrawerAvatar()) {
                     updateRowsId(false);
-                    listAdapter.notifyItemRangeInserted(showGradientRow, 4 + (CherrygramAppearanceConfig.INSTANCE.getDrawerBlur() ? 3:0));
+                    listAdapter.notifyItemRangeInserted(showGradientRow, 4 + (komarugramAppearanceConfig.INSTANCE.getDrawerBlur() ? 3:0));
                 } else {
-                    listAdapter.notifyItemRangeRemoved(showGradientRow, 4 + (CherrygramAppearanceConfig.INSTANCE.getDrawerBlur() ? 3:0));
+                    listAdapter.notifyItemRangeRemoved(showGradientRow, 4 + (komarugramAppearanceConfig.INSTANCE.getDrawerBlur() ? 3:0));
                     updateRowsId(false);
                 }
             } else if (position == showAvatarRow) {
-                CherrygramAppearanceConfig.INSTANCE.toggleDrawerSmallAvatar();
+                komarugramAppearanceConfig.INSTANCE.toggleDrawerSmallAvatar();
                 if (view instanceof TextCheckCell) {
-                    ((TextCheckCell) view).setChecked(CherrygramAppearanceConfig.INSTANCE.getDrawerSmallAvatar());
+                    ((TextCheckCell) view).setChecked(komarugramAppearanceConfig.INSTANCE.getDrawerSmallAvatar());
                 }
                 getNotificationCenter().postNotificationName(NotificationCenter.mainUserInfoChanged);
                 listAdapter.notifyItemChanged(drawerRow, new Object());
             } else if (position == drawerDarkenBackgroundRow) {
-                CherrygramAppearanceConfig.INSTANCE.toggleDrawerDarken();
+                komarugramAppearanceConfig.INSTANCE.toggleDrawerDarken();
                 if (view instanceof TextCheckCell) {
-                    ((TextCheckCell) view).setChecked(CherrygramAppearanceConfig.INSTANCE.getDrawerDarken());
+                    ((TextCheckCell) view).setChecked(komarugramAppearanceConfig.INSTANCE.getDrawerDarken());
                 }
                 getNotificationCenter().postNotificationName(NotificationCenter.mainUserInfoChanged);
                 listAdapter.notifyItemChanged(drawerRow, new Object());
             } else if (position == showGradientRow) {
-                CherrygramAppearanceConfig.INSTANCE.toggleDrawerGradient();
+                komarugramAppearanceConfig.INSTANCE.toggleDrawerGradient();
                 if (view instanceof TextCheckCell) {
-                    ((TextCheckCell) view).setChecked(CherrygramAppearanceConfig.INSTANCE.getDrawerGradient());
+                    ((TextCheckCell) view).setChecked(komarugramAppearanceConfig.INSTANCE.getDrawerGradient());
                 }
                 getNotificationCenter().postNotificationName(NotificationCenter.mainUserInfoChanged);
                 listAdapter.notifyItemChanged(drawerRow, new Object());
             } else if (position == drawerBlurBackgroundRow) {
-                CherrygramAppearanceConfig.INSTANCE.toggleDrawerBlur();
+                komarugramAppearanceConfig.INSTANCE.toggleDrawerBlur();
                 if (view instanceof TextCheckCell) {
-                    ((TextCheckCell) view).setChecked(CherrygramAppearanceConfig.INSTANCE.getDrawerBlur());
+                    ((TextCheckCell) view).setChecked(komarugramAppearanceConfig.INSTANCE.getDrawerBlur());
                 }
                 getNotificationCenter().postNotificationName(NotificationCenter.mainUserInfoChanged);
                 listAdapter.notifyItemChanged(drawerRow, new Object());
-                if(CherrygramAppearanceConfig.INSTANCE.getDrawerBlur()) {
+                if(komarugramAppearanceConfig.INSTANCE.getDrawerBlur()) {
                     listAdapter.notifyItemRangeInserted(drawerDividerRow, 3);
                 } else {
                     listAdapter.notifyItemRangeRemoved(drawerDividerRow, 3);
@@ -189,14 +189,14 @@ public class DrawerPreferencesEntry extends BaseFragment {
         drawerRow = rowCount++;
         drawerSnowRow = rowCount++;
         drawerAvatarAsBackgroundRow = rowCount++;
-        if (CherrygramAppearanceConfig.INSTANCE.getDrawerAvatar()) {
+        if (komarugramAppearanceConfig.INSTANCE.getDrawerAvatar()) {
             showAvatarRow = rowCount++;
             drawerDarkenBackgroundRow = rowCount++;
             showGradientRow = rowCount++;
             drawerBlurBackgroundRow = rowCount++;
         }
         drawerDividerRow = rowCount++;
-        if (CherrygramAppearanceConfig.INSTANCE.getDrawerBlur() && CherrygramAppearanceConfig.INSTANCE.getDrawerAvatar()) {
+        if (komarugramAppearanceConfig.INSTANCE.getDrawerBlur() && komarugramAppearanceConfig.INSTANCE.getDrawerAvatar()) {
             editBlurHeaderRow = rowCount++;
             editBlurRow = rowCount++;
             editBlurDividerRow = rowCount++;
@@ -252,17 +252,17 @@ public class DrawerPreferencesEntry extends BaseFragment {
                 case 3:
                     TextCheckCell textCheckCell = (TextCheckCell) holder.itemView;
                     if (position == drawerSnowRow) {
-                        textCheckCell.setTextAndCheck(getString(R.string.CP_Snowflakes_Header), CherrygramAppearanceConfig.INSTANCE.getDrawSnowInDrawer(), !CherrygramAppearanceConfig.INSTANCE.getDrawerBlur());
+                        textCheckCell.setTextAndCheck(getString(R.string.CP_Snowflakes_Header), komarugramAppearanceConfig.INSTANCE.getDrawSnowInDrawer(), !komarugramAppearanceConfig.INSTANCE.getDrawerBlur());
                     } else if (position == drawerAvatarAsBackgroundRow) {
-                        textCheckCell.setTextAndCheck(getString(R.string.AP_DrawerAvatar), CherrygramAppearanceConfig.INSTANCE.getDrawerAvatar(), CherrygramAppearanceConfig.INSTANCE.getDrawerAvatar());
+                        textCheckCell.setTextAndCheck(getString(R.string.AP_DrawerAvatar), komarugramAppearanceConfig.INSTANCE.getDrawerAvatar(), komarugramAppearanceConfig.INSTANCE.getDrawerAvatar());
                     } else if (position == showAvatarRow) {
-                        textCheckCell.setTextAndCheck(getString(R.string.AP_DrawerShowAvatar), CherrygramAppearanceConfig.INSTANCE.getDrawerSmallAvatar(), drawerBlurBackgroundRow != -1);
+                        textCheckCell.setTextAndCheck(getString(R.string.AP_DrawerShowAvatar), komarugramAppearanceConfig.INSTANCE.getDrawerSmallAvatar(), drawerBlurBackgroundRow != -1);
                     } else if (position == drawerDarkenBackgroundRow) {
-                        textCheckCell.setTextAndCheck(getString(R.string.AP_DrawerDarken), CherrygramAppearanceConfig.INSTANCE.getDrawerDarken(), true);
+                        textCheckCell.setTextAndCheck(getString(R.string.AP_DrawerDarken), komarugramAppearanceConfig.INSTANCE.getDrawerDarken(), true);
                     } else if (position == showGradientRow) {
-                        textCheckCell.setTextAndCheck(getString(R.string.AP_ShadeBackground), CherrygramAppearanceConfig.INSTANCE.getDrawerGradient(), true);
+                        textCheckCell.setTextAndCheck(getString(R.string.AP_ShadeBackground), komarugramAppearanceConfig.INSTANCE.getDrawerGradient(), true);
                     } else if (position == drawerBlurBackgroundRow) {
-                        textCheckCell.setTextAndCheck(getString(R.string.AP_DrawerBlur), CherrygramAppearanceConfig.INSTANCE.getDrawerBlur(), !CherrygramAppearanceConfig.INSTANCE.getDrawerBlur());
+                        textCheckCell.setTextAndCheck(getString(R.string.AP_DrawerBlur), komarugramAppearanceConfig.INSTANCE.getDrawerBlur(), !komarugramAppearanceConfig.INSTANCE.getDrawerBlur());
                     }
                     break;
                 case 4:
@@ -307,7 +307,7 @@ public class DrawerPreferencesEntry extends BaseFragment {
                         @Override
                         protected void onBlurIntensityChange(int percentage, boolean layout) {
                             super.onBlurIntensityChange(percentage, layout);
-                            CherrygramAppearanceConfig.INSTANCE.setDrawerBlurIntensity(percentage);
+                            komarugramAppearanceConfig.INSTANCE.setDrawerBlurIntensity(percentage);
                             RecyclerView.ViewHolder holder = listView.findViewHolderForAdapterPosition(editBlurRow);
                             if (holder != null && holder.itemView instanceof BlurIntensityCell) {
                                 BlurIntensityCell cell = (BlurIntensityCell) holder.itemView;
@@ -328,11 +328,11 @@ public class DrawerPreferencesEntry extends BaseFragment {
                     view.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundWhite));
                     break;
                 case 7:
-                    view = new ThemeSelectorDrawerCell(mContext, CherrygramAppearanceConfig.INSTANCE.getEventType()) {
+                    view = new ThemeSelectorDrawerCell(mContext, komarugramAppearanceConfig.INSTANCE.getEventType()) {
                         @Override
                         protected void onSelectedEvent(int eventSelected) {
                             super.onSelectedEvent(eventSelected);
-                            CherrygramAppearanceConfig.INSTANCE.setEventType(eventSelected);
+                            komarugramAppearanceConfig.INSTANCE.setEventType(eventSelected);
                             listAdapter.notifyItemChanged(drawerRow, new Object());
                             Theme.lastHolidayCheckTime = 0;
                             Theme.dialogs_holidayDrawable = null;

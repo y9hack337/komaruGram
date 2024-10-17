@@ -1,4 +1,4 @@
-package uz.unnarsx.cherrygram.helpers.ui;
+package uz.unnarsx.komarugram.helpers.ui;
 
 import android.graphics.Bitmap;
 import android.graphics.Canvas;

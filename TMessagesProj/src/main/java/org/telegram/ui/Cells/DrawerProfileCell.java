@@ -71,7 +71,7 @@ import org.telegram.ui.Components.Reactions.ReactionsLayoutInBubble;
 import org.telegram.ui.Components.SnowflakesEffect;
 import org.telegram.ui.ThemeActivity;
 
-import uz.unnarsx.komarugram.core.configs.CherrygramAppearanceConfig;
+import uz.unnarsx.komarugram.core.configs.komarugramAppearanceConfig;
 import uz.unnarsx.komarugram.preferences.drawer.helpers.DrawerBitmapHelper;
 
 import java.util.ArrayList;
@@ -300,7 +300,7 @@ public class DrawerProfileCell extends FrameLayout implements NotificationCenter
         addView(darkThemeView, LayoutHelper.createFrame(48, 48, Gravity.RIGHT | Gravity.BOTTOM, 0, 0, 6, 90));
 
 //        if (Theme.getEventType() == 0) {
-        if (CherrygramAppearanceConfig.INSTANCE.getDrawSnowInDrawer()) {
+        if (komarugramAppearanceConfig.INSTANCE.getDrawSnowInDrawer()) {
             snowflakesEffect = new SnowflakesEffect(0);
             snowflakesEffect.setColorKey(Theme.key_chats_menuName);
         }
@@ -593,17 +593,17 @@ public class DrawerProfileCell extends FrameLayout implements NotificationCenter
             sunDrawable.setLayerColor("Path 5.**", currentMoonColor);
             sunDrawable.commitApplyLayerColors();
         }
-        if (AndroidUtilities.isLight(colorBackground) && CherrygramAppearanceConfig.INSTANCE.getDrawerGradient() && CherrygramAppearanceConfig.INSTANCE.getDrawerAvatar()) {
+        if (AndroidUtilities.isLight(colorBackground) && komarugramAppearanceConfig.INSTANCE.getDrawerGradient() && komarugramAppearanceConfig.INSTANCE.getDrawerAvatar()) {
             nameTextView.setTextColor(Theme.getColor(Theme.key_dialogTextBlack));
         } else {
             nameTextView.setTextColor(Theme.getColor(Theme.key_chats_menuName));
         }
-        if (CherrygramAppearanceConfig.INSTANCE.getDrawerAvatar() && DrawerBitmapHelper.currentAccountBitmap != null) {
+        if (komarugramAppearanceConfig.INSTANCE.getDrawerAvatar() && DrawerBitmapHelper.currentAccountBitmap != null) {
             backgroundDrawable = DrawerBitmapHelper.currentAccountBitmap;
             useImageBackground = true;
         }
         if (avatarAsDrawerBackground || useImageBackground) {
-            if (AndroidUtilities.isLight(colorBackground) && CherrygramAppearanceConfig.INSTANCE.getDrawerGradient() && CherrygramAppearanceConfig.INSTANCE.getDrawerAvatar()) {
+            if (AndroidUtilities.isLight(colorBackground) && komarugramAppearanceConfig.INSTANCE.getDrawerGradient() && komarugramAppearanceConfig.INSTANCE.getDrawerAvatar()) {
                 phoneTextView.getTextView().setTextColor(AndroidUtilities.getTransparentColor(Theme.getColor(Theme.key_dialogTextBlack), 0.4f));
             } else {
                 phoneTextView.getTextView().setTextColor(Theme.getColor(Theme.key_chats_menuPhone));
@@ -622,7 +622,7 @@ public class DrawerProfileCell extends FrameLayout implements NotificationCenter
             } else if (backgroundDrawable instanceof BitmapDrawable) {
                 Bitmap bitmap = ((BitmapDrawable) backgroundDrawable).getBitmap().copy(Bitmap.Config.ARGB_8888, true);
                 if (bitmap != null) {
-                    if (CherrygramAppearanceConfig.INSTANCE.getDrawerDarken()) {
+                    if (komarugramAppearanceConfig.INSTANCE.getDrawerDarken()) {
                         DrawerBitmapHelper.darkenBitmap(bitmap);
                     }
                     float scaleX = (float) getMeasuredWidth() / (float) bitmap.getWidth();
@@ -647,7 +647,7 @@ public class DrawerProfileCell extends FrameLayout implements NotificationCenter
             if (shadowView.getVisibility() != visibility) {
                 shadowView.setVisibility(visibility);
             }
-            if (AndroidUtilities.isLight(colorBackground) && CherrygramAppearanceConfig.INSTANCE.getDrawerGradient() && CherrygramAppearanceConfig.INSTANCE.getDrawerAvatar()) {
+            if (AndroidUtilities.isLight(colorBackground) && komarugramAppearanceConfig.INSTANCE.getDrawerGradient() && komarugramAppearanceConfig.INSTANCE.getDrawerAvatar()) {
                 phoneTextView.getTextView().setTextColor(AndroidUtilities.getTransparentColor(Theme.getColor(Theme.key_dialogTextBlack), 0.4f));
             } else {
                 phoneTextView.getTextView().setTextColor(Theme.getColor(Theme.key_chats_menuPhoneCats));
@@ -775,13 +775,13 @@ public class DrawerProfileCell extends FrameLayout implements NotificationCenter
         AvatarDrawable avatarDrawable = new AvatarDrawable(user);
         avatarDrawable.setColor(Theme.getColor(Theme.key_avatar_backgroundInProfileBlue));
         avatarImageView.setForUserOrChat(user, avatarDrawable);
-        if (CherrygramAppearanceConfig.INSTANCE.getDrawerAvatar()) {
-            if (CherrygramAppearanceConfig.INSTANCE.getDrawerGradient()) {
+        if (komarugramAppearanceConfig.INSTANCE.getDrawerAvatar()) {
+            if (komarugramAppearanceConfig.INSTANCE.getDrawerGradient()) {
                 gradientBackground.setVisibility(VISIBLE);
             } else {
                 gradientBackground.setVisibility(INVISIBLE);
             }
-            if (CherrygramAppearanceConfig.INSTANCE.getDrawerSmallAvatar()) {
+            if (komarugramAppearanceConfig.INSTANCE.getDrawerSmallAvatar()) {
                 avatarImageView.setVisibility(VISIBLE);
             } else {
                 avatarImageView.setVisibility(INVISIBLE);
@@ -792,7 +792,7 @@ public class DrawerProfileCell extends FrameLayout implements NotificationCenter
             gradientBackground.setVisibility(INVISIBLE);
         }
         applyBackground(true);
-        if (CherrygramAppearanceConfig.INSTANCE.getDrawerAvatar()) DrawerBitmapHelper.setAccountBitmap(user);
+        if (komarugramAppearanceConfig.INSTANCE.getDrawerAvatar()) DrawerBitmapHelper.setAccountBitmap(user);
         updateRightDrawable = true;
     }
 

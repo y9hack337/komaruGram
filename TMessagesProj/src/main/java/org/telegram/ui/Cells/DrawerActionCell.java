@@ -37,7 +37,7 @@ import org.telegram.ui.FilterCreateActivity;
 
 import java.util.Set;
 
-import uz.unnarsx.komarugram.core.configs.CherrygramAppearanceConfig;
+import uz.unnarsx.komarugram.core.configs.komarugramAppearanceConfig;
 
 public class DrawerActionCell extends FrameLayout {
 
@@ -52,7 +52,7 @@ public class DrawerActionCell extends FrameLayout {
         super(context);
 
         int frameSize = 24;
-        if (CherrygramAppearanceConfig.INSTANCE.getIconReplacement() == CherrygramAppearanceConfig.ICON_REPLACE_VKUI) frameSize = 26;
+        if (komarugramAppearanceConfig.INSTANCE.getIconReplacement() == komarugramAppearanceConfig.ICON_REPLACE_VKUI) frameSize = 26;
 
         imageView = new BackupImageView(context);
         imageView.setColorFilter(new PorterDuffColorFilter(Theme.getColor(Theme.key_chats_menuItemIcon), PorterDuff.Mode.SRC_IN));

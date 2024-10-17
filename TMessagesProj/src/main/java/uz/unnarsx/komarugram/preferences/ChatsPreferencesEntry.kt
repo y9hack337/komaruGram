@@ -1,4 +1,4 @@
-package uz.unnarsx.cherrygram.preferences
+package uz.unnarsx.komarugram.preferences
 
 import android.media.MediaPlayer
 import android.view.HapticFeedbackConstants
@@ -6,20 +6,20 @@ import androidx.core.util.Pair
 import org.telegram.messenger.LocaleController.getString
 import org.telegram.messenger.R
 import org.telegram.ui.ActionBar.BaseFragment
-import uz.unnarsx.cherrygram.core.configs.CherrygramChatsConfig
-import uz.unnarsx.cherrygram.core.VibrateUtil
-import uz.unnarsx.cherrygram.core.helpers.AppRestartHelper
-import uz.unnarsx.cherrygram.preferences.helpers.AlertDialogSwitchers
-import uz.unnarsx.cherrygram.preferences.tgkit.preference.category
-import uz.unnarsx.cherrygram.preferences.tgkit.preference.contract
-import uz.unnarsx.cherrygram.preferences.tgkit.preference.hint
-import uz.unnarsx.cherrygram.preferences.tgkit.preference.list
-import uz.unnarsx.cherrygram.preferences.tgkit.preference.slider
-import uz.unnarsx.cherrygram.preferences.tgkit.preference.switch
-import uz.unnarsx.cherrygram.preferences.tgkit.preference.textIcon
-import uz.unnarsx.cherrygram.preferences.tgkit.preference.tgKitScreen
-import uz.unnarsx.cherrygram.preferences.tgkit.preference.types.TGKitSliderPreference.TGSLContract
-import uz.unnarsx.cherrygram.preferences.tgkit.preference.types.TGKitTextIconRow
+import uz.unnarsx.komarugram.core.configs.komarugramChatsConfig
+import uz.unnarsx.komarugram.core.VibrateUtil
+import uz.unnarsx.komarugram.core.helpers.AppRestartHelper
+import uz.unnarsx.komarugram.preferences.helpers.AlertDialogSwitchers
+import uz.unnarsx.komarugram.preferences.tgkit.preference.category
+import uz.unnarsx.komarugram.preferences.tgkit.preference.contract
+import uz.unnarsx.komarugram.preferences.tgkit.preference.hint
+import uz.unnarsx.komarugram.preferences.tgkit.preference.list
+import uz.unnarsx.komarugram.preferences.tgkit.preference.slider
+import uz.unnarsx.komarugram.preferences.tgkit.preference.switch
+import uz.unnarsx.komarugram.preferences.tgkit.preference.textIcon
+import uz.unnarsx.komarugram.preferences.tgkit.preference.tgKitScreen
+import uz.unnarsx.komarugram.preferences.tgkit.preference.types.TGKitSliderPreference.TGSLContract
+import uz.unnarsx.komarugram.preferences.tgkit.preference.types.TGKitTextIconRow
 
 class ChatsPreferencesEntry : BasePreferencesEntry {
     override fun getPreferences(bf: BaseFragment) = tgKitScreen(getString(R.string.CP_Header_Chats)) {
@@ -28,9 +28,9 @@ class ChatsPreferencesEntry : BasePreferencesEntry {
                 title = getString(R.string.CP_TimeOnStick)
 
                 contract({
-                    return@contract CherrygramChatsConfig.hideStickerTime
+                    return@contract komarugramChatsConfig.hideStickerTime
                 }) {
-                    CherrygramChatsConfig.hideStickerTime = it
+                    komarugramChatsConfig.hideStickerTime = it
                 }
             }
         }
@@ -38,11 +38,11 @@ class ChatsPreferencesEntry : BasePreferencesEntry {
             slider {
                 contract = object : TGSLContract {
                     override fun setValue(value: Int) {
-                        CherrygramChatsConfig.slider_stickerAmplifier = value
+                        komarugramChatsConfig.slider_stickerAmplifier = value
                     }
 
                     override fun getPreferenceValue(): Int {
-                        return CherrygramChatsConfig.slider_stickerAmplifier
+                        return komarugramChatsConfig.slider_stickerAmplifier
                     }
 
                     override fun getMin(): Int {
@@ -69,9 +69,9 @@ class ChatsPreferencesEntry : BasePreferencesEntry {
             switch {
                 title = getString(R.string.AP_CenterChatsTitle)
                 contract({
-                    return@contract CherrygramChatsConfig.centerChatTitle
+                    return@contract komarugramChatsConfig.centerChatTitle
                 }) {
-                    CherrygramChatsConfig.centerChatTitle = it
+                    komarugramChatsConfig.centerChatTitle = it
                     bf.parentLayout.rebuildAllFragmentViews(false, false)
                 }
             }
@@ -80,27 +80,27 @@ class ChatsPreferencesEntry : BasePreferencesEntry {
                 description = getString(R.string.CP_UnreadBadgeOnBackButton_Desc)
 
                 contract({
-                    return@contract CherrygramChatsConfig.unreadBadgeOnBackButton
+                    return@contract komarugramChatsConfig.unreadBadgeOnBackButton
                 }) {
-                    CherrygramChatsConfig.unreadBadgeOnBackButton = it
+                    komarugramChatsConfig.unreadBadgeOnBackButton = it
                 }
             }
             switch {
                 title = getString(R.string.CP_ConfirmCalls)
 
                 contract({
-                    return@contract CherrygramChatsConfig.confirmCalls
+                    return@contract komarugramChatsConfig.confirmCalls
                 }) {
-                    CherrygramChatsConfig.confirmCalls = it
+                    komarugramChatsConfig.confirmCalls = it
                 }
             }
             switch {
                 title = getString(R.string.CP_HideKbdOnScroll)
 
                 contract({
-                    return@contract CherrygramChatsConfig.hideKeyboardOnScroll
+                    return@contract komarugramChatsConfig.hideKeyboardOnScroll
                 }) {
-                    CherrygramChatsConfig.hideKeyboardOnScroll = it
+                    komarugramChatsConfig.hideKeyboardOnScroll = it
                     AppRestartHelper.createRestartBulletin(bf)
                 }
             }
@@ -109,18 +109,18 @@ class ChatsPreferencesEntry : BasePreferencesEntry {
                 description = getString(R.string.CP_DisableSwipeToNext_Desc)
 
                 contract({
-                    return@contract CherrygramChatsConfig.disableSwipeToNext
+                    return@contract komarugramChatsConfig.disableSwipeToNext
                 }) {
-                    CherrygramChatsConfig.disableSwipeToNext = it
+                    komarugramChatsConfig.disableSwipeToNext = it
                 }
             }
             switch {
                 title = getString(R.string.CP_HideMuteUnmuteButton)
 
                 contract({
-                    return@contract CherrygramChatsConfig.hideMuteUnmuteButton
+                    return@contract komarugramChatsConfig.hideMuteUnmuteButton
                 }) {
-                    CherrygramChatsConfig.hideMuteUnmuteButton = it
+                    komarugramChatsConfig.hideMuteUnmuteButton = it
                 }
             }
         }
@@ -129,11 +129,11 @@ class ChatsPreferencesEntry : BasePreferencesEntry {
             slider {
                 contract = object : TGSLContract {
                     override fun setValue(value: Int) {
-                        CherrygramChatsConfig.slider_RecentEmojisAmplifier = value
+                        komarugramChatsConfig.slider_RecentEmojisAmplifier = value
                     }
 
                     override fun getPreferenceValue(): Int {
-                        return CherrygramChatsConfig.slider_RecentEmojisAmplifier
+                        return komarugramChatsConfig.slider_RecentEmojisAmplifier
                     }
 
                     override fun getMin(): Int {
@@ -151,11 +151,11 @@ class ChatsPreferencesEntry : BasePreferencesEntry {
             slider {
                 contract = object : TGSLContract {
                     override fun setValue(value: Int) {
-                        CherrygramChatsConfig.slider_RecentStickersAmplifier = value
+                        komarugramChatsConfig.slider_RecentStickersAmplifier = value
                     }
 
                     override fun getPreferenceValue(): Int {
-                        return CherrygramChatsConfig.slider_RecentStickersAmplifier
+                        return komarugramChatsConfig.slider_RecentStickersAmplifier
                     }
 
                     override fun getMin(): Int {
@@ -191,26 +191,26 @@ class ChatsPreferencesEntry : BasePreferencesEntry {
                 description = getString(R.string.CP_DeleteForAll_Desc)
 
                 contract({
-                    return@contract CherrygramChatsConfig.deleteForAll
+                    return@contract komarugramChatsConfig.deleteForAll
                 }) {
-                    CherrygramChatsConfig.deleteForAll = it
+                    komarugramChatsConfig.deleteForAll = it
                 }
             }
             switch {
                 title = getString(R.string.CP_ForwardMsgDate)
 
                 contract({
-                    return@contract CherrygramChatsConfig.msgForwardDate
+                    return@contract komarugramChatsConfig.msgForwardDate
                 }) {
-                    CherrygramChatsConfig.msgForwardDate = it
+                    komarugramChatsConfig.msgForwardDate = it
                 }
             }
             switch {
                 title = getString(R.string.AP_ShowPencilIcon)
                 contract({
-                    return@contract CherrygramChatsConfig.showPencilIcon
+                    return@contract komarugramChatsConfig.showPencilIcon
                 }) {
-                    CherrygramChatsConfig.showPencilIcon = it
+                    komarugramChatsConfig.showPencilIcon = it
                 }
             }
             list {
@@ -218,20 +218,20 @@ class ChatsPreferencesEntry : BasePreferencesEntry {
 
                 contract({
                     return@contract listOf(
-                        Pair(CherrygramChatsConfig.LEFT_BUTTON_FORWARD_WO_AUTHORSHIP, getString(R.string.Forward) + getString(R.string.CG_Without_Authorship)),
-                        Pair(CherrygramChatsConfig.LEFT_BUTTON_REPLY, getString(R.string.Reply)),
-                        Pair(CherrygramChatsConfig.LEFT_BUTTON_SAVE_MESSAGE, getString(R.string.CG_ToSaved)),
-                        Pair(CherrygramChatsConfig.LEFT_BUTTON_DIRECT_SHARE, getString(R.string.DirectShare))
+                        Pair(komarugramChatsConfig.LEFT_BUTTON_FORWARD_WO_AUTHORSHIP, getString(R.string.Forward) + getString(R.string.CG_Without_Authorship)),
+                        Pair(komarugramChatsConfig.LEFT_BUTTON_REPLY, getString(R.string.Reply)),
+                        Pair(komarugramChatsConfig.LEFT_BUTTON_SAVE_MESSAGE, getString(R.string.CG_ToSaved)),
+                        Pair(komarugramChatsConfig.LEFT_BUTTON_DIRECT_SHARE, getString(R.string.DirectShare))
                     )
                 }, {
-                    return@contract when (CherrygramChatsConfig.leftBottomButton) {
-                        CherrygramChatsConfig.LEFT_BUTTON_REPLY -> getString(R.string.Reply)
-                        CherrygramChatsConfig.LEFT_BUTTON_SAVE_MESSAGE -> getString(R.string.CG_ToSaved)
-                        CherrygramChatsConfig.LEFT_BUTTON_DIRECT_SHARE -> getString(R.string.DirectShare)
+                    return@contract when (komarugramChatsConfig.leftBottomButton) {
+                        komarugramChatsConfig.LEFT_BUTTON_REPLY -> getString(R.string.Reply)
+                        komarugramChatsConfig.LEFT_BUTTON_SAVE_MESSAGE -> getString(R.string.CG_ToSaved)
+                        komarugramChatsConfig.LEFT_BUTTON_DIRECT_SHARE -> getString(R.string.DirectShare)
                         else -> getString(R.string.Forward) + getString(R.string.CG_Without_Authorship)
                     }
                 }) {
-                    CherrygramChatsConfig.leftBottomButton = it
+                    komarugramChatsConfig.leftBottomButton = it
                 }
             }
             list {
@@ -239,24 +239,24 @@ class ChatsPreferencesEntry : BasePreferencesEntry {
 
                 contract({
                     return@contract listOf(
-                        Pair(CherrygramChatsConfig.DOUBLE_TAP_ACTION_NONE, getString(R.string.Disable)),
-                        Pair(CherrygramChatsConfig.DOUBLE_TAP_ACTION_REACTION, getString(R.string.Reactions)),
-                        Pair(CherrygramChatsConfig.DOUBLE_TAP_ACTION_REPLY, getString(R.string.Reply)),
-                        Pair(CherrygramChatsConfig.DOUBLE_TAP_ACTION_SAVE, getString(R.string.CG_ToSaved)),
-                        Pair(CherrygramChatsConfig.DOUBLE_TAP_ACTION_EDIT, getString(R.string.Edit)),
-                        Pair(CherrygramChatsConfig.DOUBLE_TAP_ACTION_TRANSLATE, getString(R.string.TranslateMessage))
+                        Pair(komarugramChatsConfig.DOUBLE_TAP_ACTION_NONE, getString(R.string.Disable)),
+                        Pair(komarugramChatsConfig.DOUBLE_TAP_ACTION_REACTION, getString(R.string.Reactions)),
+                        Pair(komarugramChatsConfig.DOUBLE_TAP_ACTION_REPLY, getString(R.string.Reply)),
+                        Pair(komarugramChatsConfig.DOUBLE_TAP_ACTION_SAVE, getString(R.string.CG_ToSaved)),
+                        Pair(komarugramChatsConfig.DOUBLE_TAP_ACTION_EDIT, getString(R.string.Edit)),
+                        Pair(komarugramChatsConfig.DOUBLE_TAP_ACTION_TRANSLATE, getString(R.string.TranslateMessage))
                     )
                 }, {
-                    return@contract when (CherrygramChatsConfig.doubleTapAction) {
-                        CherrygramChatsConfig.DOUBLE_TAP_ACTION_REACTION -> getString(R.string.Reactions)
-                        CherrygramChatsConfig.DOUBLE_TAP_ACTION_REPLY -> getString(R.string.Reply)
-                        CherrygramChatsConfig.DOUBLE_TAP_ACTION_SAVE -> getString(R.string.CG_ToSaved)
-                        CherrygramChatsConfig.DOUBLE_TAP_ACTION_EDIT -> getString(R.string.Edit)
-                        CherrygramChatsConfig.DOUBLE_TAP_ACTION_TRANSLATE -> getString(R.string.TranslateMessage)
+                    return@contract when (komarugramChatsConfig.doubleTapAction) {
+                        komarugramChatsConfig.DOUBLE_TAP_ACTION_REACTION -> getString(R.string.Reactions)
+                        komarugramChatsConfig.DOUBLE_TAP_ACTION_REPLY -> getString(R.string.Reply)
+                        komarugramChatsConfig.DOUBLE_TAP_ACTION_SAVE -> getString(R.string.CG_ToSaved)
+                        komarugramChatsConfig.DOUBLE_TAP_ACTION_EDIT -> getString(R.string.Edit)
+                        komarugramChatsConfig.DOUBLE_TAP_ACTION_TRANSLATE -> getString(R.string.TranslateMessage)
                         else -> getString(R.string.Disable)
                     }
                 }) {
-                    CherrygramChatsConfig.doubleTapAction = it
+                    komarugramChatsConfig.doubleTapAction = it
                 }
             }
             list {
@@ -264,20 +264,20 @@ class ChatsPreferencesEntry : BasePreferencesEntry {
 
                 contract({
                     return@contract listOf(
-                        Pair(CherrygramChatsConfig.MESSAGE_SLIDE_ACTION_REPLY, getString(R.string.Reply)),
-                        Pair(CherrygramChatsConfig.MESSAGE_SLIDE_ACTION_SAVE, getString(R.string.CG_ToSaved)),
-                        Pair(CherrygramChatsConfig.MESSAGE_SLIDE_ACTION_TRANSLATE, getString(R.string.TranslateMessage)),
-                        Pair(CherrygramChatsConfig.MESSAGE_SLIDE_ACTION_DIRECT_SHARE, getString(R.string.DirectShare))
+                        Pair(komarugramChatsConfig.MESSAGE_SLIDE_ACTION_REPLY, getString(R.string.Reply)),
+                        Pair(komarugramChatsConfig.MESSAGE_SLIDE_ACTION_SAVE, getString(R.string.CG_ToSaved)),
+                        Pair(komarugramChatsConfig.MESSAGE_SLIDE_ACTION_TRANSLATE, getString(R.string.TranslateMessage)),
+                        Pair(komarugramChatsConfig.MESSAGE_SLIDE_ACTION_DIRECT_SHARE, getString(R.string.DirectShare))
                     )
                 }, {
-                    return@contract when (CherrygramChatsConfig.messageSlideAction) {
-                        CherrygramChatsConfig.MESSAGE_SLIDE_ACTION_SAVE -> getString(R.string.CG_ToSaved)
-                        CherrygramChatsConfig.MESSAGE_SLIDE_ACTION_TRANSLATE -> getString(R.string.TranslateMessage)
-                        CherrygramChatsConfig.MESSAGE_SLIDE_ACTION_DIRECT_SHARE -> getString(R.string.DirectShare)
+                    return@contract when (komarugramChatsConfig.messageSlideAction) {
+                        komarugramChatsConfig.MESSAGE_SLIDE_ACTION_SAVE -> getString(R.string.CG_ToSaved)
+                        komarugramChatsConfig.MESSAGE_SLIDE_ACTION_TRANSLATE -> getString(R.string.TranslateMessage)
+                        komarugramChatsConfig.MESSAGE_SLIDE_ACTION_DIRECT_SHARE -> getString(R.string.DirectShare)
                         else -> getString(R.string.Reply)
                     }
                 }) {
-                    CherrygramChatsConfig.messageSlideAction = it
+                    komarugramChatsConfig.messageSlideAction = it
                 }
             }
         }
@@ -287,9 +287,9 @@ class ChatsPreferencesEntry : BasePreferencesEntry {
                 title = getString(R.string.EP_PhotosSize)
 
                 contract({
-                    return@contract CherrygramChatsConfig.largePhotos
+                    return@contract komarugramChatsConfig.largePhotos
                 }) {
-                    CherrygramChatsConfig.largePhotos = it
+                    komarugramChatsConfig.largePhotos = it
                     AppRestartHelper.createRestartBulletin(bf)
                 }
             }
@@ -297,9 +297,9 @@ class ChatsPreferencesEntry : BasePreferencesEntry {
                 title = getString(R.string.CP_SpoilersOnMedia)
 
                 contract({
-                    return@contract CherrygramChatsConfig.spoilersOnMedia
+                    return@contract komarugramChatsConfig.spoilersOnMedia
                 }) {
-                    CherrygramChatsConfig.spoilersOnMedia = it
+                    komarugramChatsConfig.spoilersOnMedia = it
                 }
             }
             switch {
@@ -307,9 +307,9 @@ class ChatsPreferencesEntry : BasePreferencesEntry {
                 description = getString(R.string.CP_VoiceEnhancements_Desc)
 
                 contract({
-                    return@contract CherrygramChatsConfig.voicesAgc
+                    return@contract komarugramChatsConfig.voicesAgc
                 }) {
-                    CherrygramChatsConfig.voicesAgc = it
+                    komarugramChatsConfig.voicesAgc = it
                 }
             }
             switch {
@@ -317,9 +317,9 @@ class ChatsPreferencesEntry : BasePreferencesEntry {
                 description = getString(R.string.CP_PlayVideo_Desc)
 
                 contract({
-                    return@contract CherrygramChatsConfig.playVideoOnVolume
+                    return@contract komarugramChatsConfig.playVideoOnVolume
                 }) {
-                    CherrygramChatsConfig.playVideoOnVolume = it
+                    komarugramChatsConfig.playVideoOnVolume = it
                 }
             }
             switch {
@@ -327,18 +327,18 @@ class ChatsPreferencesEntry : BasePreferencesEntry {
                 description = getString(R.string.CP_AutoPauseVideo_Desc)
 
                 contract({
-                    return@contract CherrygramChatsConfig.autoPauseVideo
+                    return@contract komarugramChatsConfig.autoPauseVideo
                 }) {
-                    CherrygramChatsConfig.autoPauseVideo = it
+                    komarugramChatsConfig.autoPauseVideo = it
                 }
             }
             switch {
                 title = getString(R.string.CP_DisableVibration)
 
                 contract({
-                    return@contract CherrygramChatsConfig.disableVibration
+                    return@contract komarugramChatsConfig.disableVibration
                 }) {
-                    CherrygramChatsConfig.disableVibration = it
+                    komarugramChatsConfig.disableVibration = it
                     AppRestartHelper.createRestartBulletin(bf)
                 }
             }
@@ -348,11 +348,11 @@ class ChatsPreferencesEntry : BasePreferencesEntry {
             slider {
                 contract = object : TGSLContract {
                     override fun setValue(value: Int) {
-                        CherrygramChatsConfig.videoSeekDuration = value
+                        komarugramChatsConfig.videoSeekDuration = value
                     }
 
                     override fun getPreferenceValue(): Int {
-                        return CherrygramChatsConfig.videoSeekDuration
+                        return komarugramChatsConfig.videoSeekDuration
                     }
 
                     override fun getMin(): Int {
@@ -366,30 +366,53 @@ class ChatsPreferencesEntry : BasePreferencesEntry {
             }
         }
 
+        category("GPT") {
+            list {
+                title = "Model API"
+
+                contract({
+                    return@contract listOf(
+                        Pair(komarugramChatsConfig.CHATGPT, "ChatGPT-3.5"),
+                        Pair(komarugramChatsConfig.GEMINI, "Gemini"),
+                        Pair(komarugramChatsConfig.BLACKBOX, "Blackbox")
+                    )
+                }, {
+                    return@contract when (komarugramChatsConfig.GPTMODEL) {
+                        komarugramChatsConfig.GEMINI -> "Gemini"
+                        komarugramChatsConfig.BLACKBOX -> "Blackbox"
+                        else -> "ChatGPT-3.5"
+                    }
+                }) {
+                    komarugramChatsConfig.GPTMODEL = it
+
+                }
+            }
+        }
+
         category(getString(R.string.CP_Header_Notification)) {
             list {
                 title = getString(R.string.CP_NotificationSound)
 
                 contract({
                     return@contract listOf(
-                        Pair(CherrygramChatsConfig.NOTIF_SOUND_DISABLE, getString(R.string.Disable)),
-                        Pair(CherrygramChatsConfig.NOTIF_SOUND_DEFAULT, getString(R.string.Default)),
-                        Pair(CherrygramChatsConfig.NOTIF_SOUND_IOS, "IOS")
+                        Pair(komarugramChatsConfig.NOTIF_SOUND_DISABLE, getString(R.string.Disable)),
+                        Pair(komarugramChatsConfig.NOTIF_SOUND_DEFAULT, getString(R.string.Default)),
+                        Pair(komarugramChatsConfig.NOTIF_SOUND_IOS, "IOS")
                     )
                 }, {
-                    return@contract when (CherrygramChatsConfig.notificationSound) {
-                        CherrygramChatsConfig.NOTIF_SOUND_DEFAULT -> getString(R.string.Default)
-                        CherrygramChatsConfig.NOTIF_SOUND_IOS -> "IOS"
+                    return@contract when (komarugramChatsConfig.notificationSound) {
+                        komarugramChatsConfig.NOTIF_SOUND_DEFAULT -> getString(R.string.Default)
+                        komarugramChatsConfig.NOTIF_SOUND_IOS -> "IOS"
                         else -> getString(R.string.Disable)
                     }
                 }) {
-                    CherrygramChatsConfig.notificationSound = it
+                    komarugramChatsConfig.notificationSound = it
 
                     var tone = 0
                     try {
-                        if (CherrygramChatsConfig.notificationSound == 1) {
+                        if (komarugramChatsConfig.notificationSound == 1) {
                             tone = R.raw.sound_in
-                        } else if (CherrygramChatsConfig.notificationSound == 2) {
+                        } else if (komarugramChatsConfig.notificationSound == 2) {
                             tone = R.raw.sound_in_ios
                         }
                         val mp: MediaPlayer = MediaPlayer.create(bf.context, tone)
@@ -404,35 +427,35 @@ class ChatsPreferencesEntry : BasePreferencesEntry {
 
                 contract({
                     return@contract listOf(
-                        Pair(CherrygramChatsConfig.VIBRATION_DISABLE, getString(R.string.Disable)),
-                        Pair(CherrygramChatsConfig.VIBRATION_CLICK, "1"),
-                        Pair(CherrygramChatsConfig.VIBRATION_WAVE_FORM, "2"),
-                        Pair(CherrygramChatsConfig.VIBRATION_KEYBOARD_TAP, "3"),
-                        Pair(CherrygramChatsConfig.VIBRATION_LONG, "4")
+                        Pair(komarugramChatsConfig.VIBRATION_DISABLE, getString(R.string.Disable)),
+                        Pair(komarugramChatsConfig.VIBRATION_CLICK, "1"),
+                        Pair(komarugramChatsConfig.VIBRATION_WAVE_FORM, "2"),
+                        Pair(komarugramChatsConfig.VIBRATION_KEYBOARD_TAP, "3"),
+                        Pair(komarugramChatsConfig.VIBRATION_LONG, "4")
                     )
                 }, {
-                    return@contract when (CherrygramChatsConfig.vibrateInChats) {
-                        CherrygramChatsConfig.VIBRATION_CLICK -> "1"
-                        CherrygramChatsConfig.VIBRATION_WAVE_FORM -> "2"
-                        CherrygramChatsConfig.VIBRATION_KEYBOARD_TAP -> "3"
-                        CherrygramChatsConfig.VIBRATION_LONG -> "4"
+                    return@contract when (komarugramChatsConfig.vibrateInChats) {
+                        komarugramChatsConfig.VIBRATION_CLICK -> "1"
+                        komarugramChatsConfig.VIBRATION_WAVE_FORM -> "2"
+                        komarugramChatsConfig.VIBRATION_KEYBOARD_TAP -> "3"
+                        komarugramChatsConfig.VIBRATION_LONG -> "4"
                         else -> getString(R.string.Disable)
                     }
                 }) {
-                    CherrygramChatsConfig.vibrateInChats = it
+                    komarugramChatsConfig.vibrateInChats = it
 
                     try {
-                        when (CherrygramChatsConfig.vibrateInChats) {
-                            CherrygramChatsConfig.VIBRATION_CLICK -> {
+                        when (komarugramChatsConfig.vibrateInChats) {
+                            komarugramChatsConfig.VIBRATION_CLICK -> {
                                 VibrateUtil.makeClickVibration()
                             }
-                            CherrygramChatsConfig.VIBRATION_WAVE_FORM -> {
+                            komarugramChatsConfig.VIBRATION_WAVE_FORM -> {
                                 VibrateUtil.makeWaveVibration()
                             }
-                            CherrygramChatsConfig.VIBRATION_KEYBOARD_TAP -> {
+                            komarugramChatsConfig.VIBRATION_KEYBOARD_TAP -> {
                                 VibrateUtil.vibrate(HapticFeedbackConstants.KEYBOARD_TAP.toLong())
                             }
-                            CherrygramChatsConfig.VIBRATION_LONG -> {
+                            komarugramChatsConfig.VIBRATION_LONG -> {
                                 VibrateUtil.vibrate()
                             }
                         }
@@ -448,9 +471,9 @@ class ChatsPreferencesEntry : BasePreferencesEntry {
 
 
                 contract({
-                    return@contract CherrygramChatsConfig.silenceNonContacts
+                    return@contract komarugramChatsConfig.silenceNonContacts
                 }) {
-                    CherrygramChatsConfig.silenceNonContacts = it
+                    komarugramChatsConfig.silenceNonContacts = it
                 }
             }
         }

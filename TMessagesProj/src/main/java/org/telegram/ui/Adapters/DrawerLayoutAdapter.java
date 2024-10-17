@@ -38,7 +38,7 @@ import org.telegram.ui.Components.SideMenultItemAnimator;
 import java.util.ArrayList;
 import java.util.Collections;
 
-import uz.unnarsx.komarugram.core.configs.CherrygramAppearanceConfig;
+import uz.unnarsx.komarugram.core.configs.komarugramAppearanceConfig;
 
 public class DrawerLayoutAdapter extends RecyclerListView.SelectionAdapter {
 
@@ -251,8 +251,8 @@ public class DrawerLayoutAdapter extends RecyclerListView.SelectionAdapter {
             return;
         }
         int eventType = Theme.getEventType();
-        if (CherrygramAppearanceConfig.INSTANCE.getEventType() > 0) {
-            eventType = CherrygramAppearanceConfig.INSTANCE.getEventType() - 1;
+        if (komarugramAppearanceConfig.INSTANCE.getEventType() > 0) {
+            eventType = komarugramAppearanceConfig.INSTANCE.getEventType() - 1;
         }
         int newGroupIcon;
         int newSecretIcon;
@@ -319,9 +319,9 @@ public class DrawerLayoutAdapter extends RecyclerListView.SelectionAdapter {
         }
         UserConfig me = UserConfig.getInstance(UserConfig.selectedAccount);
         boolean showDivider = false;
-        if (CherrygramAppearanceConfig.INSTANCE.getMyProfileDrawerButton())
+        if (komarugramAppearanceConfig.INSTANCE.getMyProfileDrawerButton())
             items.add(new Item(16, LocaleController.getString(R.string.MyProfile), R.drawable.left_status_profile));
-        if (me != null && me.isPremium() && CherrygramAppearanceConfig.INSTANCE.getChangeStatusDrawerButton()) {
+        if (me != null && me.isPremium() && komarugramAppearanceConfig.INSTANCE.getChangeStatusDrawerButton()) {
             if (me.getEmojiStatus() != null) {
                 items.add(new Item(15, LocaleController.getString(R.string.ChangeEmojiStatus), R.drawable.msg_status_edit));
             } else {
@@ -329,7 +329,7 @@ public class DrawerLayoutAdapter extends RecyclerListView.SelectionAdapter {
             }
             showDivider = true;
         }
-//        if (MessagesController.getInstance(UserConfig.selectedAccount).storiesEnabled() && CherrygramAppearanceConfig.INSTANCE.getMyStoriesDrawerButton()) {
+//        if (MessagesController.getInstance(UserConfig.selectedAccount).storiesEnabled() && komarugramAppearanceConfig.INSTANCE.getMyStoriesDrawerButton()) {
 //            items.add(new Item(17, LocaleController.getString(R.string.ProfileStories), R.drawable.msg_menu_stories));
 //            showDivider = true;
 //        }
@@ -353,28 +353,28 @@ public class DrawerLayoutAdapter extends RecyclerListView.SelectionAdapter {
             items.add(null); // divider
         }
 
-        if (CherrygramAppearanceConfig.INSTANCE.getCreateGroupDrawerButton())
+        if (komarugramAppearanceConfig.INSTANCE.getCreateGroupDrawerButton())
             items.add(new Item(2, LocaleController.getString(R.string.NewGroup), newGroupIcon));
         //items.add(new Item(3, LocaleController.getString(R.string.NewSecretChat), newSecretIcon));
-        if (CherrygramAppearanceConfig.INSTANCE.getCreateChannelDrawerButton())
+        if (komarugramAppearanceConfig.INSTANCE.getCreateChannelDrawerButton())
             items.add(new Item(4, LocaleController.getString(R.string.NewChannel), newChannelIcon));
-        if (CherrygramAppearanceConfig.INSTANCE.getContactsDrawerButton())
+        if (komarugramAppearanceConfig.INSTANCE.getContactsDrawerButton())
             items.add(new Item(6, LocaleController.getString(R.string.Contacts), contactsIcon));
-        if (CherrygramAppearanceConfig.INSTANCE.getCallsDrawerButton())
+        if (komarugramAppearanceConfig.INSTANCE.getCallsDrawerButton())
             items.add(new Item(10, LocaleController.getString(R.string.Calls), callsIcon));
-        if (CherrygramAppearanceConfig.INSTANCE.getSavedMessagesDrawerButton())
+        if (komarugramAppearanceConfig.INSTANCE.getSavedMessagesDrawerButton())
             items.add(new Item(11, LocaleController.getString(R.string.SavedMessages), savedIcon));
-        if (CherrygramAppearanceConfig.INSTANCE.getArchivedChatsDrawerButton())
+        if (komarugramAppearanceConfig.INSTANCE.getArchivedChatsDrawerButton())
             items.add(new Item(1001, LocaleController.getString(R.string.ArchivedChats), archiveIcon));
-        if (CherrygramAppearanceConfig.INSTANCE.getScanQRDrawerButton())
+        if (komarugramAppearanceConfig.INSTANCE.getScanQRDrawerButton())
             items.add(new Item(1000, LocaleController.getString(R.string.AuthAnotherClient), scanQrIcon));
-        if (CherrygramAppearanceConfig.INSTANCE.getCGPreferencesDrawerButton())
+        if (komarugramAppearanceConfig.INSTANCE.getCGPreferencesDrawerButton())
             items.add(new Item(1002, LocaleController.getString(R.string.CGP_AdvancedSettings), settingsIcon));
         items.add(new Item(8, LocaleController.getString(R.string.Settings), settingsIcon));
         /*items.add(null); // divider
-        if (CherrygramAppearanceConfig.INSTANCE.getInviteFriendsDrawerButton())
+        if (komarugramAppearanceConfig.INSTANCE.getInviteFriendsDrawerButton())
             items.add(new Item(7, LocaleController.getString("InviteFriends", R.string.InviteFriends), inviteIcon));
-        if (CherrygramAppearanceConfig.INSTANCE.getTelegramFeaturesDrawerButton())
+        if (komarugramAppearanceConfig.INSTANCE.getTelegramFeaturesDrawerButton())
             items.add(new Item(13, LocaleController.getString("TelegramFeatures", R.string.TelegramFeatures), helpIcon));*/
     }
 

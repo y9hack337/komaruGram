@@ -1,4 +1,4 @@
-package uz.unnarsx.cherrygram.chats.translator;
+package uz.unnarsx.komarugram.chats.translator;
 
 import android.os.SystemClock;
 import android.util.LruCache;
@@ -23,7 +23,7 @@ import java.util.concurrent.atomic.AtomicReference;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
-import uz.unnarsx.cherrygram.core.configs.CherrygramChatsConfig;
+import uz.unnarsx.komarugram.core.configs.komarugramChatsConfig;
 
 abstract public class BaseTranslator {
 
@@ -157,11 +157,11 @@ abstract public class BaseTranslator {
     }
 
     public String getCurrentTargetLanguage() {
-        return getTargetLanguage(CherrygramChatsConfig.INSTANCE.getTranslationTarget());
+        return getTargetLanguage(komarugramChatsConfig.INSTANCE.getTranslationTarget());
     }
 
     public String getCurrentTargetKeyboardLanguage() {
-        return getTargetLanguage(CherrygramChatsConfig.INSTANCE.getTranslationKeyboardTarget());
+        return getTargetLanguage(komarugramChatsConfig.INSTANCE.getTranslationKeyboardTarget());
     }
 
     public static class Http429Exception extends IOException {

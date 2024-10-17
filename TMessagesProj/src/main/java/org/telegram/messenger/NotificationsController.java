@@ -94,7 +94,7 @@ import java.util.function.Consumer;
 
 import uz.unnarsx.komarugram.chats.helpers.ChatsHelper;
 import uz.unnarsx.komarugram.chats.helpers.ChatsPasswordHelper;
-import uz.unnarsx.komarugram.core.configs.CherrygramChatsConfig;
+import uz.unnarsx.komarugram.core.configs.komarugramChatsConfig;
 import uz.unnarsx.komarugram.core.VibrateUtil;
 import uz.unnarsx.komarugram.core.helpers.CGResourcesHelper;
 
@@ -1085,17 +1085,17 @@ public class NotificationsController extends BaseController {
                 long topicId = MessageObject.getTopicId(currentAccount, messageObject.messageOwner, getMessagesController().isForum(messageObject));
                 if (dialogId == openedDialogId && ApplicationLoader.isScreenOn && !messageObject.isStoryReactionPush) {
                     if (!isFcm) {
-                        if (CherrygramChatsConfig.INSTANCE.getNotificationSound() != CherrygramChatsConfig.NOTIF_SOUND_DISABLE) {
+                        if (komarugramChatsConfig.INSTANCE.getNotificationSound() != komarugramChatsConfig.NOTIF_SOUND_DISABLE) {
                             playInChatSound();
                         }
-                        if (!CherrygramChatsConfig.INSTANCE.getDisableVibration() && CherrygramChatsConfig.INSTANCE.getVibrateInChats() != CherrygramChatsConfig.VIBRATION_DISABLE) {
-                            if (CherrygramChatsConfig.INSTANCE.getVibrateInChats() == CherrygramChatsConfig.VIBRATION_CLICK) {
+                        if (!komarugramChatsConfig.INSTANCE.getDisableVibration() && komarugramChatsConfig.INSTANCE.getVibrateInChats() != komarugramChatsConfig.VIBRATION_DISABLE) {
+                            if (komarugramChatsConfig.INSTANCE.getVibrateInChats() == komarugramChatsConfig.VIBRATION_CLICK) {
                                 VibrateUtil.INSTANCE.makeClickVibration();
-                            } else if (CherrygramChatsConfig.INSTANCE.getVibrateInChats() == CherrygramChatsConfig.VIBRATION_WAVE_FORM) {
+                            } else if (komarugramChatsConfig.INSTANCE.getVibrateInChats() == komarugramChatsConfig.VIBRATION_WAVE_FORM) {
                                 VibrateUtil.INSTANCE.makeWaveVibration();
-                            } else if (CherrygramChatsConfig.INSTANCE.getVibrateInChats() == CherrygramChatsConfig.VIBRATION_KEYBOARD_TAP) {
+                            } else if (komarugramChatsConfig.INSTANCE.getVibrateInChats() == komarugramChatsConfig.VIBRATION_KEYBOARD_TAP) {
                                 VibrateUtil.vibrate(HapticFeedbackConstants.KEYBOARD_TAP);
-                            } else if (CherrygramChatsConfig.INSTANCE.getVibrateInChats() == CherrygramChatsConfig.VIBRATION_LONG) {
+                            } else if (komarugramChatsConfig.INSTANCE.getVibrateInChats() == komarugramChatsConfig.VIBRATION_LONG) {
                                 VibrateUtil.vibrate();
                             }
                         }
@@ -3133,9 +3133,9 @@ public class NotificationsController extends BaseController {
                     }
                     if (soundIn == 0 && !soundInLoaded) {
                         soundInLoaded = true;
-                        if (CherrygramChatsConfig.INSTANCE.getNotificationSound() == CherrygramChatsConfig.NOTIF_SOUND_DEFAULT) {
+                        if (komarugramChatsConfig.INSTANCE.getNotificationSound() == komarugramChatsConfig.NOTIF_SOUND_DEFAULT) {
                             soundIn = soundPool.load(ApplicationLoader.applicationContext, R.raw.sound_in, 1);
-                        } else if (CherrygramChatsConfig.INSTANCE.getNotificationSound() == CherrygramChatsConfig.NOTIF_SOUND_IOS) {
+                        } else if (komarugramChatsConfig.INSTANCE.getNotificationSound() == komarugramChatsConfig.NOTIF_SOUND_IOS) {
                             soundIn = soundPool.load(ApplicationLoader.applicationContext, R.raw.sound_in_ios, 1);
                         }
                     }
@@ -4125,7 +4125,7 @@ public class NotificationsController extends BaseController {
                 notifyDisabled = true;
             }
 
-            if (CherrygramChatsConfig.INSTANCE.getSilenceNonContacts() && getContactsController().contactsDict.get(userId) == null) {
+            if (komarugramChatsConfig.INSTANCE.getSilenceNonContacts() && getContactsController().contactsDict.get(userId) == null) {
                 notifyDisabled = true;
             }
 

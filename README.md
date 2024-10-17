@@ -18,9 +18,9 @@ This repo contains the official source code for [Telegram App for Android](https
 
 ## Discussion
 
-Join the [komaruGram official channel](https://t.me/Cherry_gram)
+Join the [komaruGram official channel](https://t.me/komarugram)
 
-Join the [komaruGram official group](https://t.me/komaruGramSupport)
+Join the [komaruGram official group](https://t.me/komaruGram)
 
 ## Changes:
 

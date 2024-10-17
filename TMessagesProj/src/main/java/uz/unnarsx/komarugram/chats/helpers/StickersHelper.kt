@@ -1,4 +1,4 @@
-package uz.unnarsx.cherrygram.chats.helpers
+package uz.unnarsx.komarugram.chats.helpers
 
 import android.content.res.AssetManager
 import kotlinx.coroutines.CoroutineScope
@@ -21,7 +21,7 @@ object StickersHelper: CoroutineScope by MainScope() {
 
     suspend fun getStickerSetIDs() = withContext(Dispatchers.IO) {
         try {
-            SET_IDS = URL("https://raw.githubusercontent.com/arsLan4k1390/Cherrygram/main/stickers.txt").readText().lines()
+            SET_IDS = URL("https://raw.githubusercontent.com/arsLan4k1390/komarugram/main/stickers.txt").readText().lines()
 //            Log.d("SetsDownloader", SET_IDS.toString())
         } catch (e: Exception) {
             e.printStackTrace()
@@ -55,11 +55,11 @@ object StickersHelper: CoroutineScope by MainScope() {
     //Get sticker from assets
     fun copyStickerFromAssets() {
         try {
-            val outFile = File(ApplicationLoader.applicationContext.getExternalFilesDir(null), "stickers/cherrygram.webm")
+            val outFile = File(ApplicationLoader.applicationContext.getExternalFilesDir(null), "stickers/komarugram.webm")
             if (outFile.exists()) return
             outFile.parentFile?.mkdirs()
             val am: AssetManager = ApplicationLoader.applicationContext.assets
-            val `in` = am.open("cherrygram.webm")
+            val `in` = am.open("komarugram.webm")
             val out: OutputStream = FileOutputStream(outFile)
             copyFile(`in`, out)
         } catch (e: IOException) {

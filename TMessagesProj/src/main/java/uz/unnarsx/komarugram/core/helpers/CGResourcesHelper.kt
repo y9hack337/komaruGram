@@ -1,4 +1,4 @@
-package uz.unnarsx.cherrygram.core.helpers
+package uz.unnarsx.komarugram.core.helpers
 
 import android.os.Build
 import android.text.Html
@@ -13,11 +13,11 @@ import org.telegram.messenger.LocaleController.getString
 import org.telegram.messenger.R
 import org.telegram.ui.Components.URLSpanNoUnderline
 import org.telegram.ui.LauncherIconController
-import uz.unnarsx.cherrygram.core.configs.CherrygramAppearanceConfig
-import uz.unnarsx.cherrygram.core.configs.CherrygramChatsConfig
-import uz.unnarsx.cherrygram.core.configs.CherrygramCameraConfig
-import uz.unnarsx.cherrygram.core.configs.CherrygramCoreConfig
-import uz.unnarsx.cherrygram.core.configs.CherrygramExperimentalConfig
+import uz.unnarsx.komarugram.core.configs.komarugramAppearanceConfig
+import uz.unnarsx.komarugram.core.configs.komarugramChatsConfig
+import uz.unnarsx.komarugram.core.configs.komarugramCameraConfig
+import uz.unnarsx.komarugram.core.configs.komarugramCoreConfig
+import uz.unnarsx.komarugram.core.configs.komarugramExperimentalConfig
 import java.util.Calendar
 import java.util.Date
 
@@ -25,28 +25,28 @@ object CGResourcesHelper {
 
     /** About app start **/
     fun getAppName(): String {
-        if (CherrygramCoreConfig.isStandaloneStableBuild() || CherrygramCoreConfig.isPlayStoreBuild()) {
-            return "Cherrygram"
-        } else if (CherrygramCoreConfig.isStandaloneBetaBuild()) {
-            return "Cherrygram Beta"
-        } else if (CherrygramCoreConfig.isStandalonePremiumBuild()) {
-            return "Cherrygram Premium"
-        } else if (CherrygramCoreConfig.isDevBuild()) {
-            return "Cherrygram Dev"
+        if (komarugramCoreConfig.isStandaloneStableBuild() || komarugramCoreConfig.isPlayStoreBuild()) {
+            return "komarugram"
+        } else if (komarugramCoreConfig.isStandaloneBetaBuild()) {
+            return "komarugram Beta"
+        } else if (komarugramCoreConfig.isStandalonePremiumBuild()) {
+            return "komarugram Premium"
+        } else if (komarugramCoreConfig.isDevBuild()) {
+            return "komarugram Dev"
         }
         return getString(R.string.CG_AppName)
     }
 
     fun getBuildType(): String {
-        if (CherrygramCoreConfig.isStandaloneStableBuild()) {
+        if (komarugramCoreConfig.isStandaloneStableBuild()) {
             return getString(R.string.UP_BTRelease)
-        } else if (CherrygramCoreConfig.isPlayStoreBuild()) {
+        } else if (komarugramCoreConfig.isPlayStoreBuild()) {
             return "Play Store"
-        } else if (CherrygramCoreConfig.isStandaloneBetaBuild()) {
+        } else if (komarugramCoreConfig.isStandaloneBetaBuild()) {
             return getString(R.string.UP_BTBeta)
-        } else if (CherrygramCoreConfig.isStandalonePremiumBuild()) {
+        } else if (komarugramCoreConfig.isStandalonePremiumBuild()) {
             return "Premium"
-        } else if (CherrygramCoreConfig.isDevBuild()) {
+        } else if (komarugramCoreConfig.isDevBuild()) {
             return "Dev"
         }
         return "Unknown"
@@ -74,20 +74,20 @@ object CGResourcesHelper {
     /** Camera start **/
     @JvmStatic
     fun getCameraName(): String { // Crashlytics.java:\ Camera type
-        return when (CherrygramCameraConfig.cameraType) {
-            CherrygramCameraConfig.TELEGRAM_CAMERA -> "Telegram"
-            CherrygramCameraConfig.CAMERA_X -> "CameraX"
-            CherrygramCameraConfig.CAMERA_2 -> "Camera 2 (Telegram)"
+        return when (komarugramCameraConfig.cameraType) {
+            komarugramCameraConfig.TELEGRAM_CAMERA -> "Telegram"
+            komarugramCameraConfig.CAMERA_X -> "CameraX"
+            komarugramCameraConfig.CAMERA_2 -> "Camera 2 (Telegram)"
             else -> getString(R.string.CP_CameraTypeSystem)
         }
     }
 
     @JvmStatic
     fun getCameraAdvise(): CharSequence {
-        val advise: String = when (CherrygramCameraConfig.cameraType) {
-            CherrygramCameraConfig.TELEGRAM_CAMERA -> getString(R.string.CP_DefaultCameraDesc)
-            CherrygramCameraConfig.CAMERA_X -> getString(R.string.CP_CameraXDesc)
-            CherrygramCameraConfig.CAMERA_2 -> getString(R.string.CP_Camera2Desc)
+        val advise: String = when (komarugramCameraConfig.cameraType) {
+            komarugramCameraConfig.TELEGRAM_CAMERA -> getString(R.string.CP_DefaultCameraDesc)
+            komarugramCameraConfig.CAMERA_X -> getString(R.string.CP_CameraXDesc)
+            komarugramCameraConfig.CAMERA_2 -> getString(R.string.CP_Camera2Desc)
             else -> getString(R.string.CP_SystemCameraDesc)
         }
 
@@ -101,45 +101,45 @@ object CGResourcesHelper {
 
     @JvmStatic
     fun getCameraAspectRatio(): String { // CameraPreferences.java:\Camera aspect ratio
-        return when (CherrygramCameraConfig.cameraAspectRatio) {
-            CherrygramCameraConfig.Camera1to1 -> "1:1"
-            CherrygramCameraConfig.Camera4to3 -> "4:3"
-            CherrygramCameraConfig.Camera16to9 -> "16:9"
+        return when (komarugramCameraConfig.cameraAspectRatio) {
+            komarugramCameraConfig.Camera1to1 -> "1:1"
+            komarugramCameraConfig.Camera4to3 -> "4:3"
+            komarugramCameraConfig.Camera16to9 -> "16:9"
             else -> getString(R.string.Default)
         }
     }
 
     @JvmStatic
     fun getCameraXFpsRange(): String { //CameraPreferences.java:\CameraX FPS
-        return when (CherrygramCameraConfig.cameraXFpsRange) {
-            CherrygramCameraConfig.CameraXFpsRange25to30 -> "25-30"
-            CherrygramCameraConfig.CameraXFpsRange30to60 -> "30-60"
-            CherrygramCameraConfig.CameraXFpsRange60to60 -> "60-60"
+        return when (komarugramCameraConfig.cameraXFpsRange) {
+            komarugramCameraConfig.CameraXFpsRange25to30 -> "25-30"
+            komarugramCameraConfig.CameraXFpsRange30to60 -> "30-60"
+            komarugramCameraConfig.CameraXFpsRange60to60 -> "60-60"
             else -> getString("Default", R.string.Default)
         }
     }
 
     @JvmStatic
     fun getCameraXCameraEffect(): String { //CameraPreferences.java:\CameraX Camera effect
-        return when (CherrygramCameraConfig.cameraXCameraEffect) {
-            CherrygramCameraConfig.CONTROL_EFFECT_MODE_MONO -> "MONO"
-            CherrygramCameraConfig.CONTROL_EFFECT_MODE_NEGATIVE -> "NEGATIVE"
-            CherrygramCameraConfig.CONTROL_EFFECT_MODE_SOLARIZE -> "SOLARIZE"
-            CherrygramCameraConfig.CONTROL_EFFECT_MODE_SEPIA -> "SEPIA"
-            CherrygramCameraConfig.CONTROL_EFFECT_MODE_POSTERIZE -> "POSTERIZE"
-            CherrygramCameraConfig.CONTROL_EFFECT_MODE_WHITEBOARD -> "WHITEBOARD"
-            CherrygramCameraConfig.CONTROL_EFFECT_MODE_BLACKBOARD -> "BLACKBOARD"
-            CherrygramCameraConfig.CONTROL_EFFECT_MODE_AQUA -> "AQUA"
+        return when (komarugramCameraConfig.cameraXCameraEffect) {
+            komarugramCameraConfig.CONTROL_EFFECT_MODE_MONO -> "MONO"
+            komarugramCameraConfig.CONTROL_EFFECT_MODE_NEGATIVE -> "NEGATIVE"
+            komarugramCameraConfig.CONTROL_EFFECT_MODE_SOLARIZE -> "SOLARIZE"
+            komarugramCameraConfig.CONTROL_EFFECT_MODE_SEPIA -> "SEPIA"
+            komarugramCameraConfig.CONTROL_EFFECT_MODE_POSTERIZE -> "POSTERIZE"
+            komarugramCameraConfig.CONTROL_EFFECT_MODE_WHITEBOARD -> "WHITEBOARD"
+            komarugramCameraConfig.CONTROL_EFFECT_MODE_BLACKBOARD -> "BLACKBOARD"
+            komarugramCameraConfig.CONTROL_EFFECT_MODE_AQUA -> "AQUA"
             else -> getString("Default", R.string.Default)
         }
     }
 
     @JvmStatic
     fun getExposureSliderPosition(): String { // CameraPreferences.java:\Exposure slider
-        return when (CherrygramCameraConfig.exposureSlider) {
-//            CherrygramCameraConfig.EXPOSURE_SLIDER_BOTTOM -> getString(R.string.CP_ZoomSliderPosition_Bottom)
-            CherrygramCameraConfig.EXPOSURE_SLIDER_RIGHT -> getString(R.string.CP_ZoomSliderPosition_Right)
-//            CherrygramCameraConfig.EXPOSURE_SLIDER_LEFT -> getString(R.string.CP_ZoomSliderPosition_Left)
+        return when (komarugramCameraConfig.exposureSlider) {
+//            komarugramCameraConfig.EXPOSURE_SLIDER_BOTTOM -> getString(R.string.CP_ZoomSliderPosition_Bottom)
+            komarugramCameraConfig.EXPOSURE_SLIDER_RIGHT -> getString(R.string.CP_ZoomSliderPosition_Right)
+//            komarugramCameraConfig.EXPOSURE_SLIDER_LEFT -> getString(R.string.CP_ZoomSliderPosition_Left)
             else -> getString(R.string.Disable)
         }
     }
@@ -147,16 +147,16 @@ object CGResourcesHelper {
 
     @JvmStatic
     fun getCameraCaptureTypeFront(): String { // CameraPreferences.java:\Camera capture type
-        return when (CherrygramCameraConfig.captureTypeFront) {
-            CherrygramCameraConfig.CaptureType_ImageCapture -> "ImageCapture"
+        return when (komarugramCameraConfig.captureTypeFront) {
+            komarugramCameraConfig.CaptureType_ImageCapture -> "ImageCapture"
             else -> "VideoCapture"
         }
     }
 
     @JvmStatic
     fun getCameraCaptureTypeBack(): String { // CameraPreferences.java:\Camera capture type
-        return when (CherrygramCameraConfig.captureTypeBack) {
-            CherrygramCameraConfig.CaptureType_ImageCapture -> "ImageCapture"
+        return when (komarugramCameraConfig.captureTypeBack) {
+            komarugramCameraConfig.CaptureType_ImageCapture -> "ImageCapture"
             else -> "VideoCapture"
         }
     }
@@ -165,30 +165,30 @@ object CGResourcesHelper {
     /** Chats start **/
     @JvmStatic
     fun getLeftButtonText(): String {
-        return when (CherrygramChatsConfig.leftBottomButton) {
-            CherrygramChatsConfig.LEFT_BUTTON_REPLY -> getString(R.string.Reply)
-            CherrygramChatsConfig.LEFT_BUTTON_SAVE_MESSAGE -> getString(R.string.CG_ToSaved)
-            CherrygramChatsConfig.LEFT_BUTTON_DIRECT_SHARE -> getString(R.string.DirectShare)
+        return when (komarugramChatsConfig.leftBottomButton) {
+            komarugramChatsConfig.LEFT_BUTTON_REPLY -> getString(R.string.Reply)
+            komarugramChatsConfig.LEFT_BUTTON_SAVE_MESSAGE -> getString(R.string.CG_ToSaved)
+            komarugramChatsConfig.LEFT_BUTTON_DIRECT_SHARE -> getString(R.string.DirectShare)
             else -> AndroidUtilities.capitalize(getString(R.string.CG_Without_Authorship))
         }
     }
 
     @JvmStatic
     fun getLeftButtonDrawable(): Int {
-        return when (CherrygramChatsConfig.leftBottomButton) {
-            CherrygramChatsConfig.LEFT_BUTTON_REPLY -> R.drawable.input_reply
-            CherrygramChatsConfig.LEFT_BUTTON_SAVE_MESSAGE -> R.drawable.msg_saved
-            CherrygramChatsConfig.LEFT_BUTTON_DIRECT_SHARE -> R.drawable.msg_share
+        return when (komarugramChatsConfig.leftBottomButton) {
+            komarugramChatsConfig.LEFT_BUTTON_REPLY -> R.drawable.input_reply
+            komarugramChatsConfig.LEFT_BUTTON_SAVE_MESSAGE -> R.drawable.msg_saved
+            komarugramChatsConfig.LEFT_BUTTON_DIRECT_SHARE -> R.drawable.msg_share
             else -> R.drawable.input_reply
         }
     }
 
     @JvmStatic
     fun getReplyIconDrawable(): Int {
-        return when (CherrygramChatsConfig.messageSlideAction) {
-            CherrygramChatsConfig.MESSAGE_SLIDE_ACTION_SAVE -> R.drawable.msg_saved_filled_solar
-            CherrygramChatsConfig.MESSAGE_SLIDE_ACTION_DIRECT_SHARE -> R.drawable.msg_share_filled
-            CherrygramChatsConfig.MESSAGE_SLIDE_ACTION_TRANSLATE -> R.drawable.msg_translate_filled_solar
+        return when (komarugramChatsConfig.messageSlideAction) {
+            komarugramChatsConfig.MESSAGE_SLIDE_ACTION_SAVE -> R.drawable.msg_saved_filled_solar
+            komarugramChatsConfig.MESSAGE_SLIDE_ACTION_DIRECT_SHARE -> R.drawable.msg_share_filled
+            komarugramChatsConfig.MESSAGE_SLIDE_ACTION_TRANSLATE -> R.drawable.msg_translate_filled_solar
             else -> R.drawable.filled_button_reply
         }
     }
@@ -219,7 +219,7 @@ object CGResourcesHelper {
     /** Misc start **/
     @JvmStatic
     fun getProperNotificationIcon(): Int { // App notification icon
-        return if (CherrygramCoreConfig.oldNotificationIcon) {
+        return if (komarugramCoreConfig.oldNotificationIcon) {
             R.drawable.notification
         } else {
             return if (LauncherIconController.isEnabled(LauncherIconController.LauncherIcon.DARK_CHERRY_BRA)
@@ -232,23 +232,23 @@ object CGResourcesHelper {
 
     @JvmStatic
     fun getResidentNotificationIcon(): Int {
-        return if (CherrygramCoreConfig.oldNotificationIcon) R.drawable.cg_notification else R.drawable.notification
+        return if (komarugramCoreConfig.oldNotificationIcon) R.drawable.cg_notification else R.drawable.notification
     }
 
     @JvmStatic
     fun getDownloadSpeedBoostText(): String { // ExperimentalPreferences.java:\Download speed boost
-        return when (CherrygramExperimentalConfig.downloadSpeedBoost) {
-            CherrygramExperimentalConfig.BOOST_NONE -> getString(R.string.EP_DownloadSpeedBoostNone)
-            CherrygramExperimentalConfig.BOOST_AVERAGE -> getString(R.string.EP_DownloadSpeedBoostAverage)
+        return when (komarugramExperimentalConfig.downloadSpeedBoost) {
+            komarugramExperimentalConfig.BOOST_NONE -> getString(R.string.EP_DownloadSpeedBoostNone)
+            komarugramExperimentalConfig.BOOST_AVERAGE -> getString(R.string.EP_DownloadSpeedBoostAverage)
             else -> getString(R.string.EP_DownloadSpeedBoostExtreme)
         }
     }
 
     @JvmStatic
     fun getShowDcIdText(): String { // MessagesAndProfilesPreferencesEntry.java:\Show dc id
-        return when (CherrygramAppearanceConfig.showIDDC) {
-            CherrygramAppearanceConfig.ID_ONLY -> "ID"
-            CherrygramAppearanceConfig.ID_DC -> "ID + DC"
+        return when (komarugramAppearanceConfig.showIDDC) {
+            komarugramAppearanceConfig.ID_ONLY -> "ID"
+            komarugramAppearanceConfig.ID_DC -> "ID + DC"
             else -> getString(R.string.Disable)
         }
     }

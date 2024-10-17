@@ -62,7 +62,7 @@ import java.util.Collections;
 import java.util.Locale;
 import java.util.Set;
 
-import uz.unnarsx.komarugram.core.configs.CherrygramChatsConfig;
+import uz.unnarsx.komarugram.core.configs.komarugramChatsConfig;
 
 public class VoIPHelper {
 
@@ -104,7 +104,7 @@ public class VoIPHelper {
 			return;
 		}
 
-		if (CherrygramChatsConfig.INSTANCE.getConfirmCalls() && !confirmed && activity instanceof LaunchActivity) {
+		if (komarugramChatsConfig.INSTANCE.getConfirmCalls() && !confirmed && activity instanceof LaunchActivity) {
 			final BaseFragment lastFragment = ((LaunchActivity) activity).getActionBarLayout().getLastFragment();
 			if (lastFragment != null) {
 				AlertsCreator.createCallDialogAlert(lastFragment, lastFragment.getMessagesController().getUser(user.id), videoCall);

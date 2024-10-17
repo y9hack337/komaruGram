@@ -1,6 +1,6 @@
-package uz.unnarsx.cherrygram.preferences.tgkit.preference;
+package uz.unnarsx.komarugram.preferences.tgkit.preference;
 
-import uz.unnarsx.cherrygram.preferences.tgkit.preference.types.TGPType;
+import uz.unnarsx.komarugram.preferences.tgkit.preference.types.TGPType;
 
 abstract public class TGKitPreference {
     public String title;

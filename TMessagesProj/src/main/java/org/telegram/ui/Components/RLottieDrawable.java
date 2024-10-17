@@ -46,7 +46,7 @@ import java.util.HashMap;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.atomic.AtomicInteger;
 
-import uz.unnarsx.komarugram.core.configs.CherrygramChatsConfig;
+import uz.unnarsx.komarugram.core.configs.komarugramChatsConfig;
 
 public class RLottieDrawable extends BitmapDrawable implements Animatable, BitmapsCache.Cacheable {
 
@@ -1247,7 +1247,7 @@ public class RLottieDrawable extends BitmapDrawable implements Animatable, Bitma
             } else if (nextRenderingBitmap != null && (renderingBitmap == null || (timeDiff >= timeCheck && !skipFrameUpdate))) {
                 if (vibrationPattern != null && currentParentView != null && allowVibration) {
                     Integer force = vibrationPattern.get(currentFrame - 1);
-                    if (force != null && !CherrygramChatsConfig.INSTANCE.getDisableVibration()) {
+                    if (force != null && !komarugramChatsConfig.INSTANCE.getDisableVibration()) {
                         currentParentView.performHapticFeedback(force == 1 ? HapticFeedbackConstants.LONG_PRESS : HapticFeedbackConstants.KEYBOARD_TAP, HapticFeedbackConstants.FLAG_IGNORE_GLOBAL_SETTING);
                     }
                 }

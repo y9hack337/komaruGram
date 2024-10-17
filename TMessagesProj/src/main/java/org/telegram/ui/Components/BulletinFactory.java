@@ -1322,7 +1322,7 @@ public final class BulletinFactory {
         public Runnable onAction;
     }
 
-    //Cherrygram
+    //komarugram
     public Bulletin createRestartBulletin(int iconRawId, CharSequence text, CharSequence button, Runnable onButtonClick) {
         return createRestartBulletin(iconRawId, text, button, text.length() < 20 ? Bulletin.DURATION_SHORT : Bulletin.DURATION_LONG, onButtonClick);
     }
@@ -1424,5 +1424,5 @@ public final class BulletinFactory {
             return createEmojiBulletin2(document, message, LocaleController.getString("ApplyTheme", R.string.ApplyTheme), selectedObject, () -> ChatsHelper.getInstance(UserConfig.selectedAccount).applyReplyBackground(selectedObject, fragment));
         }
     }
-    //Cherrygram
+    //komarugram
 }

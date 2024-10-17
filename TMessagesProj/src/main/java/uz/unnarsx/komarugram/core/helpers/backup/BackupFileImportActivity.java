@@ -1,4 +1,4 @@
-package uz.unnarsx.cherrygram.core.helpers.backup;
+package uz.unnarsx.komarugram.core.helpers.backup;
 
 import static org.telegram.messenger.LocaleController.getString;
 
@@ -84,7 +84,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.StringTokenizer;
 
-import uz.unnarsx.cherrygram.core.configs.CherrygramChatsConfig;
+import uz.unnarsx.komarugram.core.configs.komarugramChatsConfig;
 
 public class BackupFileImportActivity extends BaseFragment {
 
@@ -643,7 +643,7 @@ public class BackupFileImportActivity extends BaseFragment {
             view.getLocationInWindow(location);
             sendPopupWindow.showAtLocation(view, Gravity.LEFT | Gravity.TOP, location[0] + view.getMeasuredWidth() - sendPopupLayout.getMeasuredWidth() + AndroidUtilities.dp(8), location[1] - sendPopupLayout.getMeasuredHeight() - AndroidUtilities.dp(2));
             sendPopupWindow.dimBehind();
-            if (!CherrygramChatsConfig.INSTANCE.getDisableVibration()) {
+            if (!komarugramChatsConfig.INSTANCE.getDisableVibration()) {
                 view.performHapticFeedback(HapticFeedbackConstants.KEYBOARD_TAP, HapticFeedbackConstants.FLAG_IGNORE_GLOBAL_SETTING);
             }
 

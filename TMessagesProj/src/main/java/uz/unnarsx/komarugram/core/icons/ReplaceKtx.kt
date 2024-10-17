@@ -1,4 +1,4 @@
-package uz.unnarsx.cherrygram.core.icons
+package uz.unnarsx.komarugram.core.icons
 
 import android.util.SparseIntArray
 

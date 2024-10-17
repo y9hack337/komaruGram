@@ -102,8 +102,8 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import uz.unnarsx.komarugram.chats.helpers.ChatsHelper;
-import uz.unnarsx.komarugram.core.configs.CherrygramChatsConfig;
-import uz.unnarsx.komarugram.core.configs.CherrygramCoreConfig;
+import uz.unnarsx.komarugram.core.configs.komarugramChatsConfig;
+import uz.unnarsx.komarugram.core.configs.komarugramCoreConfig;
 
 public class MessageObject {
 
@@ -502,7 +502,7 @@ public class MessageObject {
     }
 
     public boolean hasMediaSpoilers() {
-        return CherrygramChatsConfig.INSTANCE.getSpoilersOnMedia() && (!isRepostPreview && (messageOwner.media != null && messageOwner.media.spoiler || needDrawBluredPreview()) || isHiddenSensitive());
+        return komarugramChatsConfig.INSTANCE.getSpoilersOnMedia() && (!isRepostPreview && (messageOwner.media != null && messageOwner.media.spoiler || needDrawBluredPreview()) || isHiddenSensitive());
     }
 
     public Boolean isSensitiveCached;
@@ -6367,7 +6367,7 @@ public class MessageObject {
     }
 
     public void replaceEmojiToLottieFrame(CharSequence text, int[] emojiOnly) {
-        if (!(text instanceof Spannable) || CherrygramCoreConfig.INSTANCE.getSystemEmoji()) {
+        if (!(text instanceof Spannable) || komarugramCoreConfig.INSTANCE.getSystemEmoji()) {
             return;
         }
         Spannable spannable = (Spannable) text;
@@ -6745,31 +6745,31 @@ public class MessageObject {
             return true;
         }
         if (((type == TYPE_STICKER || type == TYPE_ANIMATED_STICKER || type == TYPE_EMOJIS)) && !isOutOwner()) {
-            return CherrygramChatsConfig.INSTANCE.getStickersDrawShareButton();
+            return komarugramChatsConfig.INSTANCE.getStickersDrawShareButton();
         }
         if (messageOwner.fwd_from != null && messageOwner.fwd_from.saved_from_peer != null && !isOutOwner()) {
-            return CherrygramChatsConfig.INSTANCE.getChannelsDrawShareButton();
+            return komarugramChatsConfig.INSTANCE.getChannelsDrawShareButton();
         }
         if (isFromUser()) {
             TLRPC.User user = MessagesController.getInstance(currentAccount).getUser(messageOwner.from_id.user_id);
-            if ((user != null && user.bot && ("reviews_bot".equals(UserObject.getPublicUsername(user)) || "ReviewInsightsBot".equals(UserObject.getPublicUsername(user)))) && CherrygramChatsConfig.INSTANCE.getBotsDrawShareButton()) {
+            if ((user != null && user.bot && ("reviews_bot".equals(UserObject.getPublicUsername(user)) || "ReviewInsightsBot".equals(UserObject.getPublicUsername(user)))) && komarugramChatsConfig.INSTANCE.getBotsDrawShareButton()) {
                 return true;
             }
-            if (user != null && !isOut() && !isMegagroup() && ((!user.bot && CherrygramChatsConfig.INSTANCE.getUsersDrawShareButton())/* || (messageOwner.from_id.chat_id != 0 && CherrygramChatsConfig.INSTANCE.getGroupsDrawShareButton())*/)) {
+            if (user != null && !isOut() && !isMegagroup() && ((!user.bot && komarugramChatsConfig.INSTANCE.getUsersDrawShareButton())/* || (messageOwner.from_id.chat_id != 0 && komarugramChatsConfig.INSTANCE.getGroupsDrawShareButton())*/)) {
                 return true;
             }
             if (user != null && user.bot && !hasExtendedMedia()) {
-                return CherrygramChatsConfig.INSTANCE.getBotsDrawShareButton();
+                return komarugramChatsConfig.INSTANCE.getBotsDrawShareButton();
             }
             if (!isOut()) {
                 if (getMedia(messageOwner) instanceof TLRPC.TL_messageMediaGame || getMedia(messageOwner) instanceof TLRPC.TL_messageMediaInvoice && !hasExtendedMedia() || getMedia(messageOwner) instanceof TLRPC.TL_messageMediaWebPage) {
                     return true;
                 }
                 if (isMegagroup()) {
-                    if (CherrygramChatsConfig.INSTANCE.getSupergroupsDrawShareButton()) {
+                    if (komarugramChatsConfig.INSTANCE.getSupergroupsDrawShareButton()) {
                         return true;
                     }
-                    if (!ChatObject.isPublic(MessagesController.getInstance(currentAccount).getChat(messageOwner.peer_id.channel_id)) || (getMedia(messageOwner) instanceof TLRPC.TL_messageMediaContact) || (getMedia(messageOwner) instanceof TLRPC.TL_messageMediaGeo) || !CherrygramChatsConfig.INSTANCE.getSupergroupsDrawShareButton()) {
+                    if (!ChatObject.isPublic(MessagesController.getInstance(currentAccount).getChat(messageOwner.peer_id.channel_id)) || (getMedia(messageOwner) instanceof TLRPC.TL_messageMediaContact) || (getMedia(messageOwner) instanceof TLRPC.TL_messageMediaGeo) || !komarugramChatsConfig.INSTANCE.getSupergroupsDrawShareButton()) {
                         return false;
                     }
                     return true;
@@ -6778,13 +6778,13 @@ public class MessageObject {
         } else {
             if (messageOwner.from_id instanceof TLRPC.TL_peerChannel || messageOwner.post) {
                 if (getMedia(messageOwner) instanceof TLRPC.TL_messageMediaWebPage && !isOutOwner()) {
-                    return CherrygramChatsConfig.INSTANCE.getChannelsDrawShareButton();
+                    return komarugramChatsConfig.INSTANCE.getChannelsDrawShareButton();
                 }
                 if (isMegagroup()) {
                     return false;
                 }
                 if (messageOwner.peer_id.channel_id != 0 && (messageOwner.via_bot_id == 0 && messageOwner.reply_to == null) || !((type) == TYPE_STICKER || type == TYPE_ANIMATED_STICKER || type == TYPE_EMOJIS)) {
-                    return CherrygramChatsConfig.INSTANCE.getChannelsDrawShareButton();
+                    return komarugramChatsConfig.INSTANCE.getChannelsDrawShareButton();
                 }
             }
         }

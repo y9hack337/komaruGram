@@ -18,7 +18,7 @@ import org.telegram.ui.Charts.view_data.LineViewData;
 import org.telegram.ui.Charts.view_data.PieLegendView;
 import org.telegram.ui.Charts.view_data.TransitionParams;
 
-import uz.unnarsx.komarugram.core.configs.CherrygramChatsConfig;
+import uz.unnarsx.komarugram.core.configs.komarugramChatsConfig;
 
 public class PieChartView extends StackLinearChartView<PieChartViewData> {
 
@@ -384,7 +384,7 @@ public class PieChartView extends StackLinearChartView<PieChartViewData> {
 
             pieLegendView.setTranslationX(xl);
             pieLegendView.setTranslationY(yl);
-            if (!CherrygramChatsConfig.INSTANCE.getDisableVibration()) {
+            if (!komarugramChatsConfig.INSTANCE.getDisableVibration()) {
                 AndroidUtilities.vibrateCursor(this);
             }
         }

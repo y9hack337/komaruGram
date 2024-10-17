@@ -223,9 +223,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 
-import uz.unnarsx.komarugram.core.configs.CherrygramChatsConfig;
+import uz.unnarsx.komarugram.core.configs.komarugramChatsConfig;
 import uz.unnarsx.komarugram.chats.helpers.ChatsHelper2;
-import uz.unnarsx.komarugram.core.configs.CherrygramExperimentalConfig;
+import uz.unnarsx.komarugram.core.configs.komarugramExperimentalConfig;
 
 public class ArticleViewer implements NotificationCenter.NotificationCenterDelegate {
 
@@ -1257,7 +1257,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
             if (checkingForLongPress && windowView != null) {
                 checkingForLongPress = false;
                 if (pressedLink != null) {
-                    if (!CherrygramChatsConfig.INSTANCE.getDisableVibration()) {
+                    if (!komarugramChatsConfig.INSTANCE.getDisableVibration()) {
                         windowView.performHapticFeedback(HapticFeedbackConstants.LONG_PRESS, HapticFeedbackConstants.FLAG_IGNORE_GLOBAL_SETTING);
                     }
                     showCopyPopup(pressedLink.getSpan().getUrl());
@@ -1272,11 +1272,11 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
                     } else {
                         textSelectionHelper.trySelect(pressedLinkOwnerView);
                     }
-                    if (textSelectionHelper.isInSelectionMode() && !CherrygramChatsConfig.INSTANCE.getDisableVibration()) {
+                    if (textSelectionHelper.isInSelectionMode() && !komarugramChatsConfig.INSTANCE.getDisableVibration()) {
                         windowView.performHapticFeedback(HapticFeedbackConstants.LONG_PRESS, HapticFeedbackConstants.FLAG_IGNORE_GLOBAL_SETTING);
                     }
                 } else if (pressedLinkOwnerLayout != null && pressedLinkOwnerView != null) {
-                    if (!CherrygramChatsConfig.INSTANCE.getDisableVibration()) {
+                    if (!komarugramChatsConfig.INSTANCE.getDisableVibration()) {
                         windowView.performHapticFeedback(HapticFeedbackConstants.LONG_PRESS, HapticFeedbackConstants.FLAG_IGNORE_GLOBAL_SETTING);
                     }
                     int[] location = new int[2];
@@ -4346,7 +4346,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
                 final long selfId = UserConfig.getInstance(currentAccount).getClientUserId();
 
                 long chatID;
-                if (CherrygramExperimentalConfig.INSTANCE.getCustomChatForSavedMessages()) {
+                if (komarugramExperimentalConfig.INSTANCE.getCustomChatForSavedMessages()) {
                     chatID = ChatsHelper2.getCustomChatID();
                 } else {
                     chatID = selfId;
@@ -4371,7 +4371,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
                     BaseFragment lastFragment = LaunchActivity.getSafeLastFragment();
                     if (lastFragment != null) {
                         Bundle args = new Bundle();
-                        if (CherrygramExperimentalConfig.INSTANCE.getCustomChatForSavedMessages()) {
+                        if (komarugramExperimentalConfig.INSTANCE.getCustomChatForSavedMessages()) {
                             if (DialogObject.isChatDialog(chatID)) {
                                 args.putLong("chat_id", -chatID);
                             } else {

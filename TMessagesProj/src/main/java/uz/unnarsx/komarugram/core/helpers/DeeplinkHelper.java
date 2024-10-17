@@ -1,24 +1,22 @@
-package uz.unnarsx.cherrygram.core.helpers;
+package uz.unnarsx.komarugram.core.helpers;
 
 import android.content.Intent;
 import android.net.Uri;
-import android.os.Bundle;
 
 import org.telegram.messenger.browser.Browser;
 import org.telegram.ui.ActionBar.BaseFragment;
-import org.telegram.ui.ChatActivity;
 import org.telegram.ui.Components.Premium.LimitReachedBottomSheet;
 import org.telegram.ui.LaunchActivity;
 
 import java.util.Locale;
 
-import uz.unnarsx.cherrygram.Extra;
-import uz.unnarsx.cherrygram.core.configs.CherrygramCoreConfig;
-import uz.unnarsx.cherrygram.core.updater.UpdaterBottomSheet;
-import uz.unnarsx.cherrygram.preferences.CameraPreferencesEntry;
-import uz.unnarsx.cherrygram.preferences.ExperimentalPreferencesEntry;
-import uz.unnarsx.cherrygram.preferences.drawer.DrawerPreferencesEntry;
-import uz.unnarsx.cherrygram.preferences.tgkit.CherrygramPreferencesNavigator;
+import uz.unnarsx.komarugram.Extra;
+import uz.unnarsx.komarugram.core.configs.komarugramCoreConfig;
+import uz.unnarsx.komarugram.core.updater.UpdaterBottomSheet;
+import uz.unnarsx.komarugram.preferences.CameraPreferencesEntry;
+import uz.unnarsx.komarugram.preferences.ExperimentalPreferencesEntry;
+import uz.unnarsx.komarugram.preferences.drawer.DrawerPreferencesEntry;
+import uz.unnarsx.komarugram.preferences.tgkit.komarugramPreferencesNavigator;
 
 public class DeeplinkHelper {
 
@@ -36,31 +34,31 @@ public class DeeplinkHelper {
         if (segments.size() == 1) {
             var segment = segments.get(0).toLowerCase(Locale.US);
             switch (segment) {
-                case "cg_settings", "cg_main" -> fragment = CherrygramPreferencesNavigator.createMainMenu();
-                case "cg_about" -> fragment = CherrygramPreferencesNavigator.INSTANCE.createAbout();
-                case "cg_appearance" -> fragment = CherrygramPreferencesNavigator.INSTANCE.createAppearance();
+                case "cg_settings", "cg_main" -> fragment = komarugramPreferencesNavigator.createMainMenu();
+                case "cg_about" -> fragment = komarugramPreferencesNavigator.INSTANCE.createAbout();
+                case "cg_appearance" -> fragment = komarugramPreferencesNavigator.INSTANCE.createAppearance();
                 case "cg_camera", "cg_cam" -> fragment = new CameraPreferencesEntry();
-                case "cg_chats" -> fragment = CherrygramPreferencesNavigator.INSTANCE.createChats();
-                case "cg_debug" -> fragment = CherrygramPreferencesNavigator.INSTANCE.createDebug();
-                case "cg_donate", "cg_donates" -> fragment = CherrygramPreferencesNavigator.INSTANCE.createDonate();
+                case "cg_chats" -> fragment = komarugramPreferencesNavigator.INSTANCE.createChats();
+                case "cg_debug" -> fragment = komarugramPreferencesNavigator.INSTANCE.createDebug();
+                case "cg_donate", "cg_donates" -> fragment = komarugramPreferencesNavigator.INSTANCE.createDonate();
                 case "cg_drawer" -> fragment = new DrawerPreferencesEntry();
                 case "cg_experimental" -> fragment = new ExperimentalPreferencesEntry();
-                case "cg_general" -> fragment = CherrygramPreferencesNavigator.INSTANCE.createGeneral();
+                case "cg_general" -> fragment = komarugramPreferencesNavigator.INSTANCE.createGeneral();
                 case "cg_premium" -> {
                     // Fuckoff :)
                     unknown.run();
                     return;
                 }
-                case "cg_privacy", "cg_security" -> fragment = CherrygramPreferencesNavigator.INSTANCE.createPrivacyAndSecurity();
+                case "cg_privacy", "cg_security" -> fragment = komarugramPreferencesNavigator.INSTANCE.createPrivacyAndSecurity();
                 case "cg_restart", "cg_reboot", "restart", "reboot" -> {
                     AppRestartHelper.triggerRebirth(fragment.getContext(), new Intent(fragment.getContext(), LaunchActivity.class));
                     return;
                 }
                 case "cg_update", "cg_upgrade", "update", "upgrade" -> {
-                    if (CherrygramCoreConfig.INSTANCE.isPlayStoreBuild()) {
+                    if (komarugramCoreConfig.INSTANCE.isPlayStoreBuild()) {
                         Browser.openUrl(fragment.getContext(), Extra.PLAYSTORE_APP_URL);
                         return;
-                    } else if (CherrygramCoreConfig.INSTANCE.isStandalonePremiumBuild()) {
+                    } else if (komarugramCoreConfig.INSTANCE.isStandalonePremiumBuild()) {
                         // Fuckoff :)
                         unknown.run();
                         return;
@@ -70,13 +68,13 @@ public class DeeplinkHelper {
                     }
                 }
                 case "cg_updates", "updates" -> {
-                    if (CherrygramCoreConfig.INSTANCE.isPlayStoreBuild()) {
+                    if (komarugramCoreConfig.INSTANCE.isPlayStoreBuild()) {
                         Browser.openUrl(fragment.getContext(), Extra.PLAYSTORE_APP_URL);
-                    } else if (CherrygramCoreConfig.INSTANCE.isStandalonePremiumBuild()) {
+                    } else if (komarugramCoreConfig.INSTANCE.isStandalonePremiumBuild()) {
                         // Fuckoff :)
                         unknown.run();
                         return;
-                    } else if (!CherrygramCoreConfig.INSTANCE.isStandalonePremiumBuild()) {
+                    } else if (!komarugramCoreConfig.INSTANCE.isStandalonePremiumBuild()) {
                         UpdaterBottomSheet.showAlert(fragment.getContext(), fragment, false, null);
                     }
                     return;

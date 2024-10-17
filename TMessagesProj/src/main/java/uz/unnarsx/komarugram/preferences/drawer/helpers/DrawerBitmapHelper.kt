@@ -1,4 +1,4 @@
-package uz.unnarsx.cherrygram.preferences.drawer.helpers
+package uz.unnarsx.komarugram.preferences.drawer.helpers
 
 import android.content.res.Resources
 import android.graphics.*
@@ -15,7 +15,7 @@ import org.telegram.messenger.NotificationCenter
 import org.telegram.messenger.UserConfig
 import org.telegram.messenger.Utilities
 import org.telegram.tgnet.TLRPC
-import uz.unnarsx.cherrygram.core.configs.CherrygramAppearanceConfig
+import uz.unnarsx.komarugram.core.configs.komarugramAppearanceConfig
 import java.io.DataInputStream
 import java.io.File
 import java.io.FileInputStream
@@ -47,7 +47,7 @@ object DrawerBitmapHelper : CoroutineScope by CoroutineScope(
             DataInputStream(photoIn).readFully(photoData)
             photoIn.close()
             var bg = photoData?.let { BitmapFactory.decodeByteArray(photoData, 0, it.size) }
-            if (CherrygramAppearanceConfig.drawerBlur) bg = blurDrawerWallpaper(bg)
+            if (komarugramAppearanceConfig.drawerBlur) bg = blurDrawerWallpaper(bg)
             currentAccountBitmap = BitmapDrawable(Resources.getSystem(), bg)
         } catch (e: java.lang.Exception) {
             e.printStackTrace()
@@ -105,7 +105,7 @@ object DrawerBitmapHelper : CoroutineScope by CoroutineScope(
         val paint = Paint(Paint.FILTER_BITMAP_FLAG)
         val rect = Rect(0, 0, b.width, b.height)
         Canvas(b).drawBitmap(src, null, rect, paint)
-        Utilities.stackBlurBitmap(b, CherrygramAppearanceConfig.drawerBlurIntensity)
+        Utilities.stackBlurBitmap(b, komarugramAppearanceConfig.drawerBlurIntensity)
         return b
     }
 }

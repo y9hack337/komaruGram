@@ -12,7 +12,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Build;
 
-import uz.unnarsx.komarugram.core.configs.CherrygramCoreConfig;
+import uz.unnarsx.komarugram.core.configs.komarugramCoreConfig;
 import uz.unnarsx.komarugram.Extra;
 
 import com.android.billingclient.api.ProductDetails;
@@ -28,8 +28,8 @@ public class BuildVars {
     public static boolean CHECK_UPDATES = false;
     public static boolean NO_SCOPED_STORAGE = Build.VERSION.SDK_INT <= 29;
     public static String BUILD_VERSION_STRING = BuildConfig.BUILD_VERSION_STRING;
-    public static int APP_ID = 4;
-    public static String APP_HASH = "014b35b6184100b085b0d0572f9b5103";
+    public static int APP_ID = 999;
+    public static String APP_HASH = "";
 
     // SafetyNet key for Google Identity SDK, set it to empty to disable
     public static String SAFETYNET_KEY = "";
@@ -40,7 +40,7 @@ public class BuildVars {
     public static String HUAWEI_APP_ID = "106911607";
 
     // You can use this flag to disable Google Play Billing (If you're making fork and want it to be in Google Play)
-    public static boolean IS_BILLING_UNAVAILABLE = CherrygramCoreConfig.INSTANCE.isPlayStoreBuild();
+    public static boolean IS_BILLING_UNAVAILABLE = komarugramCoreConfig.INSTANCE.isPlayStoreBuild();
 
     static {
         APP_ID = Extra.APP_ID;
@@ -79,7 +79,7 @@ public class BuildVars {
             betaApp = ApplicationLoader.applicationContext != null && "org.telegram.messenger.beta".equals(ApplicationLoader.applicationContext.getPackageName());
         }
         return betaApp;*/
-        return CherrygramCoreConfig.INSTANCE.isStandaloneBetaBuild();
+        return komarugramCoreConfig.INSTANCE.isStandaloneBetaBuild();
     }
 
 

@@ -1,4 +1,4 @@
-package uz.unnarsx.cherrygram.preferences.helpers
+package uz.unnarsx.komarugram.preferences.helpers
 
 import android.content.Context
 import android.content.DialogInterface

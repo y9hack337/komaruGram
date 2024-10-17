@@ -86,8 +86,8 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.util.ArrayList;
 
-import uz.unnarsx.komarugram.core.configs.CherrygramAppearanceConfig;
-import uz.unnarsx.komarugram.core.configs.CherrygramChatsConfig;
+import uz.unnarsx.komarugram.core.configs.komarugramAppearanceConfig;
+import uz.unnarsx.komarugram.core.configs.komarugramChatsConfig;
 
 public class FragmentContextView extends FrameLayout implements NotificationCenter.NotificationCenterDelegate, VoIPService.StateListener {
     public final static int STYLE_NOT_SET = -1,
@@ -527,7 +527,7 @@ public class FragmentContextView extends FrameLayout implements NotificationCent
                 isMuted = false;
 
                 AndroidUtilities.runOnUIThread(toggleMicRunnable, 90);
-                if (!CherrygramChatsConfig.INSTANCE.getDisableVibration()) {
+                if (!komarugramChatsConfig.INSTANCE.getDisableVibration()) {
                     muteButton.performHapticFeedback(HapticFeedbackConstants.KEYBOARD_TAP, HapticFeedbackConstants.FLAG_IGNORE_GLOBAL_SETTING);
                 }
             };
@@ -621,7 +621,7 @@ public class FragmentContextView extends FrameLayout implements NotificationCent
             }
             muteButton.playAnimation();
             Theme.getFragmentContextViewWavesDrawable().updateState(true);
-            if (!CherrygramChatsConfig.INSTANCE.getDisableVibration()) {
+            if (!komarugramChatsConfig.INSTANCE.getDisableVibration()) {
                 muteButton.performHapticFeedback(HapticFeedbackConstants.KEYBOARD_TAP, HapticFeedbackConstants.FLAG_IGNORE_GLOBAL_SETTING);
             }
         });
@@ -1075,8 +1075,8 @@ public class FragmentContextView extends FrameLayout implements NotificationCent
         }
         if (style == STYLE_IMPORTING_MESSAGES) {
             selector.setBackground(Theme.getSelectorDrawable(false));
-            frameLayout.setBackgroundColor(getThemedColor((CherrygramAppearanceConfig.INSTANCE.getOverrideHeaderColor() && (Theme.isCurrentThemeDark() || Theme.isCurrentThemeNight())) ? Theme.key_windowBackgroundWhite : Theme.key_inappPlayerBackground));
-            frameLayout.setTag((CherrygramAppearanceConfig.INSTANCE.getOverrideHeaderColor() && (Theme.isCurrentThemeDark() || Theme.isCurrentThemeNight())) ? Theme.key_windowBackgroundWhite : Theme.key_inappPlayerBackground);
+            frameLayout.setBackgroundColor(getThemedColor((komarugramAppearanceConfig.INSTANCE.getOverrideHeaderColor() && (Theme.isCurrentThemeDark() || Theme.isCurrentThemeNight())) ? Theme.key_windowBackgroundWhite : Theme.key_inappPlayerBackground));
+            frameLayout.setTag((komarugramAppearanceConfig.INSTANCE.getOverrideHeaderColor() && (Theme.isCurrentThemeDark() || Theme.isCurrentThemeNight())) ? Theme.key_windowBackgroundWhite : Theme.key_inappPlayerBackground);
 
             for (int i = 0; i < 2; i++) {
                 TextView textView = i == 0 ? titleTextView.getTextView() : titleTextView.getNextTextView();
@@ -1105,8 +1105,8 @@ public class FragmentContextView extends FrameLayout implements NotificationCent
             titleTextView.setLayoutParams(LayoutHelper.createFrame(LayoutHelper.MATCH_PARENT, 36, Gravity.LEFT | Gravity.TOP, 35, 0, 36, 0));
         } else if (style == STYLE_AUDIO_PLAYER || style == STYLE_LIVE_LOCATION) {
             selector.setBackground(Theme.getSelectorDrawable(false));
-            frameLayout.setBackgroundColor(getThemedColor((CherrygramAppearanceConfig.INSTANCE.getOverrideHeaderColor() && (Theme.isCurrentThemeDark() || Theme.isCurrentThemeNight())) ? Theme.key_windowBackgroundWhite : Theme.key_inappPlayerBackground));
-            frameLayout.setTag((CherrygramAppearanceConfig.INSTANCE.getOverrideHeaderColor() && (Theme.isCurrentThemeDark() || Theme.isCurrentThemeNight())) ? Theme.key_windowBackgroundWhite : Theme.key_inappPlayerBackground);
+            frameLayout.setBackgroundColor(getThemedColor((komarugramAppearanceConfig.INSTANCE.getOverrideHeaderColor() && (Theme.isCurrentThemeDark() || Theme.isCurrentThemeNight())) ? Theme.key_windowBackgroundWhite : Theme.key_inappPlayerBackground));
+            frameLayout.setTag((komarugramAppearanceConfig.INSTANCE.getOverrideHeaderColor() && (Theme.isCurrentThemeDark() || Theme.isCurrentThemeNight())) ? Theme.key_windowBackgroundWhite : Theme.key_inappPlayerBackground);
 
             subtitleTextView.setVisibility(GONE);
             joinButton.setVisibility(GONE);
@@ -1143,8 +1143,8 @@ public class FragmentContextView extends FrameLayout implements NotificationCent
             }
         } else if (style == STYLE_INACTIVE_GROUP_CALL) {
             selector.setBackground(Theme.getSelectorDrawable(false));
-            frameLayout.setBackgroundColor(getThemedColor((CherrygramAppearanceConfig.INSTANCE.getOverrideHeaderColor() && (Theme.isCurrentThemeDark() || Theme.isCurrentThemeNight())) ? Theme.key_windowBackgroundWhite : Theme.key_inappPlayerBackground));
-            frameLayout.setTag((CherrygramAppearanceConfig.INSTANCE.getOverrideHeaderColor() && (Theme.isCurrentThemeDark() || Theme.isCurrentThemeNight())) ? Theme.key_windowBackgroundWhite : Theme.key_inappPlayerBackground);
+            frameLayout.setBackgroundColor(getThemedColor((komarugramAppearanceConfig.INSTANCE.getOverrideHeaderColor() && (Theme.isCurrentThemeDark() || Theme.isCurrentThemeNight())) ? Theme.key_windowBackgroundWhite : Theme.key_inappPlayerBackground));
+            frameLayout.setTag((komarugramAppearanceConfig.INSTANCE.getOverrideHeaderColor() && (Theme.isCurrentThemeDark() || Theme.isCurrentThemeNight())) ? Theme.key_windowBackgroundWhite : Theme.key_inappPlayerBackground);
             muteButton.setVisibility(GONE);
             subtitleTextView.setVisibility(VISIBLE);
 

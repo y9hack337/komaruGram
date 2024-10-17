@@ -1,0 +1,124 @@
+package uz.unnarsx.komarugram.core.configs
+
+import android.app.Activity
+import android.content.SharedPreferences
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.SupervisorJob
+import org.telegram.messenger.ApplicationLoader
+import org.telegram.messenger.SharedConfig
+import uz.unnarsx.komarugram.camera.CameraXUtils
+import uz.unnarsx.komarugram.helpers.komarugramToasts
+import uz.unnarsx.komarugram.preferences.boolean
+import uz.unnarsx.komarugram.preferences.int
+
+object komarugramCameraConfig: CoroutineScope by CoroutineScope(
+    context = SupervisorJob() + Dispatchers.Main.immediate
+) {
+
+    private val sharedPreferences: SharedPreferences = ApplicationLoader.applicationContext.getSharedPreferences("mainconfig", Activity.MODE_PRIVATE)
+
+    fun putBoolean(key: String, value: Boolean) {
+        val preferences = ApplicationLoader.applicationContext.getSharedPreferences("mainconfig", Activity.MODE_PRIVATE)
+        val editor = preferences.edit()
+        editor.putBoolean(key, value)
+        editor.apply()
+    }
+
+    /** Camera type start **/
+    const val TELEGRAM_CAMERA = 0
+    const val CAMERA_X = 1
+    const val CAMERA_2 = 2
+    const val SYSTEM_CAMERA = 3
+    var cameraType by sharedPreferences.int("CP_CameraType", if (CameraXUtils.isCameraXSupported()) CAMERA_X else TELEGRAM_CAMERA)
+    /** Camera type finish **/
+
+    /** Camera start **/
+    var disableAttachCamera by sharedPreferences.boolean("CP_DisableCam", SharedConfig.getDevicePerformanceClass() == SharedConfig.PERFORMANCE_CLASS_LOW)
+    fun toggleDisableAttachCamera() {
+        disableAttachCamera = !disableAttachCamera
+        putBoolean("CP_DisableCam", disableAttachCamera)
+    }
+
+    var useDualCamera by sharedPreferences.boolean("CP_UseDualCamera", false)
+    fun toggleUseDualCamera() {
+        useDualCamera = !useDualCamera
+        putBoolean("CP_UseDualCamera", useDualCamera)
+    }
+
+    const val Camera16to9 = 0
+    const val Camera4to3 = 1
+    const val Camera1to1 = 2
+    const val CameraAspectDefault = 3
+    var cameraAspectRatio by sharedPreferences.int("CP_CameraAspectRatio", CameraAspectDefault)
+    /** Camera finish **/
+
+    /** Videomessages start **/
+    var cameraResolution by sharedPreferences.int("CP_CameraResolution", -1)
+
+    var startFromUltraWideCam by sharedPreferences.boolean("CP_StartFromUltraWideCam", true)
+    fun toggleStartFromUltraWideCam() {
+        startFromUltraWideCam = !startFromUltraWideCam
+        putBoolean("CP_StartFromUltraWideCam", startFromUltraWideCam)
+    }
+
+    /** CameraX FPS start **/
+    const val CameraXFpsRangeDefault = 0
+    const val CameraXFpsRange25to30 = 1
+    const val CameraXFpsRange30to60 = 2
+    const val CameraXFpsRange60to60 = 3
+    var cameraXFpsRange by sharedPreferences.int("CP_CameraXFpsRange", CameraXFpsRangeDefault)
+    /** CameraX FPS finish **/
+
+    /** CameraX camera effects start **/
+    const val CONTROL_EFFECT_MODE_OFF = 0
+    const val CONTROL_EFFECT_MODE_MONO = 1
+    const val CONTROL_EFFECT_MODE_NEGATIVE = 2
+    const val CONTROL_EFFECT_MODE_SOLARIZE = 3
+    const val CONTROL_EFFECT_MODE_SEPIA = 4
+    const val CONTROL_EFFECT_MODE_POSTERIZE = 5
+    const val CONTROL_EFFECT_MODE_WHITEBOARD = 6
+    const val CONTROL_EFFECT_MODE_BLACKBOARD = 7
+    const val CONTROL_EFFECT_MODE_AQUA = 8
+    var cameraXCameraEffect by sharedPreferences.int("CP_CameraXCameraEffect", CONTROL_EFFECT_MODE_OFF)
+    private var tweakAvailableEffectsArray by sharedPreferences.boolean("tweakAvailableEffectsArray", false)
+    /** CameraX camera effects finish **/
+
+    var cameraStabilisation by sharedPreferences.boolean("CP_CameraStabilisation", false)
+    fun toggleCameraStabilisation() {
+        cameraStabilisation = !cameraStabilisation
+        putBoolean("CP_CameraStabilisation", cameraStabilisation)
+    }
+
+    var centerCameraControlButtons by sharedPreferences.boolean("CP_CenterCameraControlButtons", true)
+    fun toggleCenterCameraControlButtons() {
+        centerCameraControlButtons = !centerCameraControlButtons
+        putBoolean("CP_CenterCameraControlButtons", centerCameraControlButtons)
+    }
+
+    const val EXPOSURE_SLIDER_NONE = 0
+//    const val EXPOSURE_SLIDER_BOTTOM = 1
+    const val EXPOSURE_SLIDER_RIGHT = 2
+//    const val EXPOSURE_SLIDER_LEFT = 3
+    var exposureSlider by sharedPreferences.int("CP_ExposureSlider", EXPOSURE_SLIDER_RIGHT)
+
+    var rearCam by sharedPreferences.boolean("CP_RearCam", false)
+    fun toggleRearCam() {
+        rearCam = !rearCam
+        putBoolean("CP_RearCam", rearCam)
+    }
+
+    const val CaptureType_VideoCapture = 0
+    const val CaptureType_ImageCapture = 1
+    var captureTypeFront by sharedPreferences.int("CP_CaptureTypeFront", CaptureType_VideoCapture)
+    var captureTypeBack by sharedPreferences.int("CP_CaptureTypeBack", CaptureType_VideoCapture)
+
+    var whiteBackground by sharedPreferences.boolean("CG_WhiteBG", false)
+    var videoMessagesResolution by sharedPreferences.int("CG_Round_Video_Resolution", 512)
+    /** Videomessages finish **/
+
+    init {
+        komarugramToasts.init(sharedPreferences)
+    }
+
+}

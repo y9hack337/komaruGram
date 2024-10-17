@@ -135,7 +135,7 @@ import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Objects;
 
-import uz.unnarsx.komarugram.core.configs.CherrygramChatsConfig;
+import uz.unnarsx.komarugram.core.configs.komarugramChatsConfig;
 
 public class SelectAnimatedEmojiDialog extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
 
@@ -690,7 +690,7 @@ public class SelectAnimatedEmojiDialog extends FrameLayout implements Notificati
             };
             emojiTabs.recentTab.setOnLongClickListener(e -> {
                 onRecentLongClick();
-                if (!CherrygramChatsConfig.INSTANCE.getDisableVibration()) {
+                if (!komarugramChatsConfig.INSTANCE.getDisableVibration()) {
                     try {
                         performHapticFeedback(HapticFeedbackConstants.LONG_PRESS, HapticFeedbackConstants.FLAG_IGNORE_VIEW_SETTING);
                     } catch (Exception ignore) {
@@ -952,7 +952,7 @@ public class SelectAnimatedEmojiDialog extends FrameLayout implements Notificati
                 if (type == TYPE_TAGS || type == TYPE_STICKER_SET_EMOJI) return false;
                 if (view instanceof ImageViewEmoji && (type == TYPE_REACTIONS || type == TYPE_EXPANDABLE_REACTIONS)) {
                     incrementHintUse();
-                    if (!CherrygramChatsConfig.INSTANCE.getDisableVibration()) {
+                    if (!komarugramChatsConfig.INSTANCE.getDisableVibration()) {
                         performHapticFeedback(HapticFeedbackConstants.LONG_PRESS);
                     }
                     ImageViewEmoji imageViewEmoji = (ImageViewEmoji) view;
@@ -1017,7 +1017,7 @@ public class SelectAnimatedEmojiDialog extends FrameLayout implements Notificati
                     };
                     dialog.show();
 
-                    if (!CherrygramChatsConfig.INSTANCE.getDisableVibration()) {
+                    if (!komarugramChatsConfig.INSTANCE.getDisableVibration()) {
                         try {
                             view.performHapticFeedback(HapticFeedbackConstants.LONG_PRESS, HapticFeedbackConstants.FLAG_IGNORE_VIEW_SETTING);
                         } catch (Exception ignore) {}
@@ -1061,7 +1061,7 @@ public class SelectAnimatedEmojiDialog extends FrameLayout implements Notificati
                     onEmojiClick(viewEmoji, viewEmoji.span);
                 }
                 if (type != TYPE_REACTIONS && type != TYPE_TAGS) {
-                    if (!CherrygramChatsConfig.INSTANCE.getDisableVibration()) {
+                    if (!komarugramChatsConfig.INSTANCE.getDisableVibration()) {
                         try {
                             performHapticFeedback(HapticFeedbackConstants.KEYBOARD_TAP, HapticFeedbackConstants.FLAG_IGNORE_VIEW_SETTING);
                         } catch (Exception ignore) {}
@@ -1070,7 +1070,7 @@ public class SelectAnimatedEmojiDialog extends FrameLayout implements Notificati
             } else if (view instanceof ImageView) {
                 onEmojiClick(view, null);
                 if (type != TYPE_REACTIONS && type != TYPE_TAGS) {
-                    if (!CherrygramChatsConfig.INSTANCE.getDisableVibration()) {
+                    if (!komarugramChatsConfig.INSTANCE.getDisableVibration()) {
                         try {
                             performHapticFeedback(HapticFeedbackConstants.KEYBOARD_TAP, HapticFeedbackConstants.FLAG_IGNORE_VIEW_SETTING);
                         } catch (Exception ignore) {}
@@ -1080,7 +1080,7 @@ public class SelectAnimatedEmojiDialog extends FrameLayout implements Notificati
                 EmojiPackExpand button = (EmojiPackExpand) view;
                 expand(position, button);
                 if (type != TYPE_REACTIONS && type != TYPE_TAGS) {
-                    if (!CherrygramChatsConfig.INSTANCE.getDisableVibration()) {
+                    if (!komarugramChatsConfig.INSTANCE.getDisableVibration()) {
                         try {
                             performHapticFeedback(HapticFeedbackConstants.KEYBOARD_TAP, HapticFeedbackConstants.FLAG_IGNORE_VIEW_SETTING);
                         } catch (Exception ignore) {}
@@ -5943,7 +5943,7 @@ public class SelectAnimatedEmojiDialog extends FrameLayout implements Notificati
                 }
             }, () -> {
                 if (date != null) {
-                    if (!CherrygramChatsConfig.INSTANCE.getDisableVibration()) {
+                    if (!komarugramChatsConfig.INSTANCE.getDisableVibration()) {
                         try {
                             performHapticFeedback(HapticFeedbackConstants.LONG_PRESS, HapticFeedbackConstants.FLAG_IGNORE_VIEW_SETTING);
                         } catch (Exception ignore) {}

@@ -1,19 +1,19 @@
-package uz.unnarsx.cherrygram.preferences
+package uz.unnarsx.komarugram.preferences
 
 import android.content.Intent
 import org.telegram.messenger.*
 import org.telegram.messenger.LocaleController.getString
 import org.telegram.ui.ActionBar.BaseFragment
 import org.telegram.ui.LaunchActivity
-import uz.unnarsx.cherrygram.core.configs.CherrygramCoreConfig
-import uz.unnarsx.cherrygram.misc.CherrygramExtras
-import uz.unnarsx.cherrygram.core.helpers.AppRestartHelper
-import uz.unnarsx.cherrygram.core.helpers.backup.BackupHelper
-import uz.unnarsx.cherrygram.preferences.tgkit.CherrygramPreferencesNavigator
-import uz.unnarsx.cherrygram.preferences.tgkit.preference.category
-import uz.unnarsx.cherrygram.preferences.tgkit.preference.textIcon
-import uz.unnarsx.cherrygram.preferences.tgkit.preference.tgKitScreen
-import uz.unnarsx.cherrygram.preferences.tgkit.preference.types.TGKitTextIconRow
+import uz.unnarsx.komarugram.core.configs.komarugramCoreConfig
+import uz.unnarsx.komarugram.misc.KomarugramExtras
+import uz.unnarsx.komarugram.core.helpers.AppRestartHelper
+import uz.unnarsx.komarugram.core.helpers.backup.BackupHelper
+import uz.unnarsx.komarugram.preferences.tgkit.komarugramPreferencesNavigator
+import uz.unnarsx.komarugram.preferences.tgkit.preference.category
+import uz.unnarsx.komarugram.preferences.tgkit.preference.textIcon
+import uz.unnarsx.komarugram.preferences.tgkit.preference.tgKitScreen
+import uz.unnarsx.komarugram.preferences.tgkit.preference.types.TGKitTextIconRow
 
 class MainPreferencesEntry : BasePreferencesEntry {
     override fun getPreferences(bf: BaseFragment) = tgKitScreen(getString(R.string.CGP_AdvancedSettings)) {
@@ -22,21 +22,21 @@ class MainPreferencesEntry : BasePreferencesEntry {
                 title = getString(R.string.AP_Header_General)
                 icon = R.drawable.msg_settings_solar
                 listener = TGKitTextIconRow.TGTIListener {
-                    it.presentFragment(CherrygramPreferencesNavigator.createGeneral())
+                    it.presentFragment(komarugramPreferencesNavigator.createGeneral())
                 }
             }
             textIcon {
                 title = getString(R.string.AP_Header_Appearance)
                 icon = R.drawable.msg_theme_solar
                 listener = TGKitTextIconRow.TGTIListener {
-                    it.presentFragment(CherrygramPreferencesNavigator.createAppearance())
+                    it.presentFragment(komarugramPreferencesNavigator.createAppearance())
                 }
             }
             textIcon {
                 title = getString(R.string.CP_Header_Chats)
                 icon = R.drawable.msg_msgbubble3_solar
                 listener = TGKitTextIconRow.TGTIListener {
-                    it.presentFragment(CherrygramPreferencesNavigator.createChats())
+                    it.presentFragment(komarugramPreferencesNavigator.createChats())
                 }
             }
             textIcon {
@@ -57,7 +57,7 @@ class MainPreferencesEntry : BasePreferencesEntry {
                 title = getString(R.string.SP_Category_PrivacyAndSecurity)
                 icon = R.drawable.msg_secret_solar
                 listener = TGKitTextIconRow.TGTIListener {
-                    it.presentFragment(CherrygramPreferencesNavigator.createPrivacyAndSecurity())
+                    it.presentFragment(komarugramPreferencesNavigator.createPrivacyAndSecurity())
                 }
                 //divider = true
             }
@@ -71,17 +71,17 @@ class MainPreferencesEntry : BasePreferencesEntry {
                 title = getString(R.string.DP_Donate)
 
                 listener = TGKitTextIconRow.TGTIListener {
-                    it.presentFragment(CherrygramPreferencesNavigator.createDonate())
+                    it.presentFragment(komarugramPreferencesNavigator.createDonate())
                 }
             }
             textIcon {
-                isAvailable = CherrygramCoreConfig.isPlayStoreBuild()
+                isAvailable = komarugramCoreConfig.isPlayStoreBuild()
 
                 icon = R.drawable.heart_angle_solar
                 title = getString(R.string.DP_RateUs)
 
                 listener = TGKitTextIconRow.TGTIListener {
-                    CherrygramExtras.requestReviewFlow(bf, bf.context, bf.parentActivity)
+                    KomarugramExtras.requestReviewFlow(bf, bf.context, bf.parentActivity)
                 }
             }
             textIcon {
@@ -113,7 +113,7 @@ class MainPreferencesEntry : BasePreferencesEntry {
                 icon = R.drawable.msg_info_solar
 
                 listener = TGKitTextIconRow.TGTIListener {
-                    it.presentFragment(CherrygramPreferencesNavigator.createAbout())
+                    it.presentFragment(komarugramPreferencesNavigator.createAbout())
                 }
             }
         }

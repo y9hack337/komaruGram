@@ -1,4 +1,4 @@
-package uz.unnarsx.cherrygram.core;
+package uz.unnarsx.komarugram.core;
 
 import android.Manifest;
 import android.app.Activity;

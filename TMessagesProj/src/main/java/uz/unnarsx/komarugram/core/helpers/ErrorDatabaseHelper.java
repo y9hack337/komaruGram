@@ -1,4 +1,4 @@
-package uz.unnarsx.cherrygram.core.helpers;
+package uz.unnarsx.komarugram.core.helpers;
 
 import android.widget.Toast;
 

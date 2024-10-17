@@ -1,4 +1,4 @@
-package uz.unnarsx.cherrygram.core.crashlytics;
+package uz.unnarsx.komarugram.core.crashlytics;
 
 import android.os.Build;
 
@@ -21,8 +21,8 @@ import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.io.Writer;
 
-import uz.unnarsx.cherrygram.misc.Constants;
-import uz.unnarsx.cherrygram.core.helpers.CGResourcesHelper;
+import uz.unnarsx.komarugram.misc.Constants;
+import uz.unnarsx.komarugram.core.helpers.CGResourcesHelper;
 
 public class Crashlytics implements Thread.UncaughtExceptionHandler {
     private final Thread.UncaughtExceptionHandler defaultUEH;
@@ -105,7 +105,7 @@ public class Crashlytics implements Thread.UncaughtExceptionHandler {
         return  "Steps to reproduce:\n" +
                 "Write here the steps to reproduce\n\n" +
                 "Details:\n"+
-                "• Cherrygram Version: " + Constants.INSTANCE.getCG_VERSION() + " (" + CGResourcesHelper.INSTANCE.getAbiCode() + ")\n" +
+                "• komarugram Version: " + Constants.INSTANCE.getCG_VERSION() + " (" + CGResourcesHelper.INSTANCE.getAbiCode() + ")\n" +
                 "• Telegram Version: " + BuildVars.BUILD_VERSION_STRING + "\n" +
                 "• Build Type: " + CGResourcesHelper.INSTANCE.getBuildType() + "\n" +
                 "• Device: " + AndroidUtilities.capitalize(Build.MANUFACTURER) + " " + Build.MODEL + "\n" +

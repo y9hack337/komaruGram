@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- by t.me/arsLan-->
-    <string name="CG_FollowChannelLink">\@Cherry_Gram\'a abone olun!</string>
+    <string name="CG_FollowChannelLink">\@komarugram\'a abone olun!</string>
     <string name="CG_FollowChannelTitle">Resmi kanala abone olun</string>
-    <string name="CG_FollowChannelInfo">Cherrygram\'ın tüm haberleri ve özelliklerinden haberdar olmak için kanalımıza katılın!</string>
+    <string name="CG_FollowChannelInfo">komarugram\'ın tüm haberleri ve özelliklerinden haberdar olmak için kanalımıza katılın!</string>
     <string name="CG_DoNotRemindAgain">Bir daha hatırlatma</string>
     <!--Telegram screens-->
     <string name="CG_RegistrationDate">Kayıt tarihi:</string>
@@ -62,8 +62,8 @@
     <string name="CG_CopyInlineQuery">Satır İçi Sorguyu Kopyala</string>
     <string name="CG_CopyID">Kullanıcı kimliğini kopyala</string>
     <!--Location screen-->
-    <string name="CG_LocationPermission">Cherrygram\'in konumunuzu arkadaşlarınızla paylaşabilmeniz için konum erişimine ihtiyacı var. Şimdi konumunuzun kullanılmasına izin vermeniz istenecek (uygulama açıkken).</string>
-    <string name="CG_LocationPermission_Desc">Bununla birlikte, Cherrygram kapalıyken ve arka planda çalışırken konumunuzun arkadaşlarınıza açık olmasını istiyorsanız, \"Canlı Konum\" özelliğine gidin. Canlı Konum özelliğini kullanmayı kabul edene kadar konumunuz arka planda kullanılamayacaktır.</string>
+    <string name="CG_LocationPermission">komarugram\'in konumunuzu arkadaşlarınızla paylaşabilmeniz için konum erişimine ihtiyacı var. Şimdi konumunuzun kullanılmasına izin vermeniz istenecek (uygulama açıkken).</string>
+    <string name="CG_LocationPermission_Desc">Bununla birlikte, komarugram kapalıyken ve arka planda çalışırken konumunuzun arkadaşlarınıza açık olmasını istiyorsanız, \"Canlı Konum\" özelliğine gidin. Canlı Konum özelliğini kullanmayı kabul edene kadar konumunuz arka planda kullanılamayacaktır.</string>
     <!--Location screen-->
     <!--Search filter-->
     <string name="CG_SearchFilter">Arama sonuçlarını filtrele</string>
@@ -83,13 +83,13 @@
     <!--Misc-->
     <string name="CG_Restart">Uygulamayı yeniden başlat</string>
     <string name="CG_RestartToApply">Değişiklikleri uygulamak için uygulamayı yeniden başlatın</string>
-    <string name="CG_PushService">Cherrygram Bildirim Servisi.</string>
+    <string name="CG_PushService">komarugram Bildirim Servisi.</string>
     <string name="CG_ForceClean">Telegram Önbelleğini Zorla Temizle</string>
     <string name="CG_ForceCleanInfo">Önbelleği temizlemeye çalışırken uzun süre \"Hesaplanıyor...\" mesajı görüyorsanız bunu kullanın.\nBu, önbelleğinizdeki HER ŞEYİ silecektir - dikkatli olun!</string>
     <string name="CG_ForceCleanInfo1">Telegram önbelleğinizdeki HER ŞEYİ silmek istediğinizden emin misiniz?</string>
-    <string name="CG_Kaboom">Bu özelliğe Cherrygram şifresi olmadan, sistem ayarları üzerinden erişilebilir. Bu özellik, tüm yerel (Cherrygram\'a ait) verilerinizi tamamen siler. Acil durumlarda kullanılabilir.</string>
+    <string name="CG_Kaboom">Bu özelliğe komarugram şifresi olmadan, sistem ayarları üzerinden erişilebilir. Bu özellik, tüm yerel (komarugram\'a ait) verilerinizi tamamen siler. Acil durumlarda kullanılabilir.</string>
     <string name="CG_AppCrashed">Bir şeyler yanlış gitti</string>
-    <string name="CG_AppCrashedDesc">Cherrygram çalışmayı durdurdu. Lütfen bu hatanın en kısa sürede düzeltilebilmesi için günlükleri geliştiricilere gönderin.</string>
+    <string name="CG_AppCrashedDesc">komarugram çalışmayı durdurdu. Lütfen bu hatanın en kısa sürede düzeltilebilmesi için günlükleri geliştiricilere gönderin.</string>
     <string name="CG_CopyReportDetails">Rapor Detaylarını Kopyala</string>
     <string name="CG_ReportDetailsCopied">Rapor detayları panoya kopyalandı.</string>
     <string name="CG_TranslationLanguage">Çeviri Dili</string>
@@ -111,11 +111,11 @@
     <string name="CG_MessageContainsCustomReactions_other">Tepkiler %1$d paketten \nözel emojiler içeriyor.</string>
     <!--Misc-->
     <!--Telegram screens-->
-    <!--Cherrygram screens-->
-    <!--Cherrygram Preferences-->
-    <string name="CGP_AdvancedSettings">Cherrygram Tercihleri</string>
+    <!--komarugram screens-->
+    <!--komarugram Preferences-->
+    <string name="CGP_AdvancedSettings">komarugram Tercihleri</string>
     <string name="CGP_About_Desc">Deneysel bir Telegram uygulama modifikasyonu. Uygulamanın özellik listesini okumak için buraya dokunun.</string>
-    <string name="CGP_Header_About">Cherrygram Hakkında</string>
+    <string name="CGP_Header_About">komarugram Hakkında</string>
     <string name="CGP_Header_About_Desc">Güncellemeler, kaynak kodu ve daha fazlası</string>
     <string name="CGP_Links">Bağlantılar</string>
     <string name="CGP_ToChannel">Resmi kanal</string>
@@ -123,7 +123,7 @@
     <string name="CGP_Source">Kaynak kodu</string>
     <string name="CGP_Crowdin">Çeviriye yardım et</string>
     <string name="CGP_Header_Categories">Kategoriler</string>
-    <!--Cherrygram Preferences-->
+    <!--komarugram Preferences-->
     <!--General Preferences-->
     <string name="AP_Header_General">Genel</string>
     <!--General Preferences-->
@@ -183,8 +183,8 @@
     <string name="CP_DisablePremStickAutoPlay">Premium çıkartmaların otomatik oynatılmasını devre dışı bırak</string>
     <string name="CP_DisablePremStickAutoPlay_Desc">Premium çıkartma animasyonu otomatik olarak oynatılmayacak (premium çıkartmalara dokunmayı devre dışı bıraktıysanız bu özellik çalışmayacak)</string>
     <string name="CP_Filters_Header">Klasörler</string>
-    <string name="AP_FolderNameInHeader">\"Cherrygram\" yerine klasör adı</string>
-    <string name="AP_FolderNameInHeader_Desc">Bu, eylem çubuğundaki \"Cherrygram\" yazısını klasörünüzün adıyla değiştirecek (klasör adları yerine sadece simgeleriniz varsa kullanışlıdır)</string>
+    <string name="AP_FolderNameInHeader">\"komarugram\" yerine klasör adı</string>
+    <string name="AP_FolderNameInHeader_Desc">Bu, eylem çubuğundaki \"komarugram\" yazısını klasörünüzün adıyla değiştirecek (klasör adları yerine sadece simgeleriniz varsa kullanışlıdır)</string>
     <string name="CP_NewTabs_RemoveAllChats">\"Tüm sohbetler\" sekmesini gizle</string>
     <string name="AP_Tab_Style">Sekme stili</string>
     <string name="AP_Tab_Style_Default">Varsayılan</string>
@@ -269,7 +269,7 @@
     <string name="CP_CameraAspectRatio">Kamera en boy oranı</string>
     <string name="CP_RearCam">Arka kamerayı kullan</string>
     <string name="CP_RearCam_Desc">Video mesajları için ön kamera yerine</string>
-    <string name="CP_CaptureType_Desc">Varsayılan olarak \"VideoCapture\" kullanın. \nCherrygram bir video mesajı kaydetmeye başlamadan önce bir saniye donuyorsa, sadece \"ImageCapture\"ı seçin (kaliteyi düşürür).</string>
+    <string name="CP_CaptureType_Desc">Varsayılan olarak \"VideoCapture\" kullanın. \nkomarugram bir video mesajı kaydetmeye başlamadan önce bir saniye donuyorsa, sadece \"ImageCapture\"ı seçin (kaliteyi düşürür).</string>
     <string name="CP_DisableCam">Medya ekleme menüsünde kamerayı devre dışı bırak</string>
     <string name="CP_DisableCam_Desc">Kamera düğmesi galeri düğmesinin yanında olacak. \nDüğmeye basmak Telegram kamerasını açacak, basılı tutmak ise sistem kamerasını başlatacak.</string>
     <string name="CP_Header_Videomessages">Video mesajları</string>
@@ -308,7 +308,7 @@
     <string name="SP_AskPinBeforeDelete">Bir sohbeti silmeden önce biyometrik onay iste.</string>
     <string name="SP_AskPinBeforeDelete_Desc">Bir sohbeti silmek veya geçmişi temizlemek isterseniz, biyometrik onay gerekecek. Sistem PIN kodu ve biyometrik onay etkin olmalıdır.</string>
     <string name="SP_AllowUseSystemPasscode">Sistem PIN/Desen kullanımına izin ver</string>
-    <string name="SP_AllowUseSystemPasscode_Desc">Parmak izi onay ekranındaki \"İptal\" düğmesi \"Pin/Desen\" düğmesi ile değiştirilecek ve Cherrygram\'i açmak için sistem geçişini kullanabileceksiniz.</string>
+    <string name="SP_AllowUseSystemPasscode_Desc">Parmak izi onay ekranındaki \"İptal\" düğmesi \"Pin/Desen\" düğmesi ile değiştirilecek ve komarugram\'i açmak için sistem geçişini kullanabileceksiniz.</string>
     <string name="SP_TestFingerprint">Parmak izini test et</string>
     <string name="SP_Category_Account">Hesap</string>
     <string name="SP_DeleteAccount">Telegram hesabını sil</string>
@@ -327,7 +327,7 @@
     <string name="UP_ClearedUpdatesCache">%1$s önbellek temizlendi.</string>
     <string name="UP_NothingToClear">Temizlenecek bir şey yok.</string>
     <string name="UP_CheckForUpdates">Güncellemeleri kontrol et</string>
-    <string name="UP_Not_Found">Cherrygram güncel.</string>
+    <string name="UP_Not_Found">komarugram güncel.</string>
     <string name="UP_UpdateAvailable">Güncelleme mevcut!</string>
     <string name="UP_Version">Sürüm</string>
     <string name="UP_UpdateSize">Güncelleme boyutu</string>
@@ -336,9 +336,9 @@
     <string name="UP_Download">İndir</string>
     <!--Updates Preferences-->
     <!--Donations-->
-    <string name="DP_RateUs">Cherrygram\'i Oyla</string>
+    <string name="DP_RateUs">komarugram\'i Oyla</string>
     <string name="DP_Donate">Bağış Yap</string>
     <string name="DP_Donate_Method">Yöntem seç</string>
     <!--Donations-->
-    <!--Cherrygram screens-->
+    <!--komarugram screens-->
 </resources>

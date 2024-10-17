@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- by t.me/arsLan-->
-    <string name="CG_FollowChannelLink">訂閱 @Cherry_Gram 頻道！</string>
+    <string name="CG_FollowChannelLink">訂閱 @komaruGram 頻道！</string>
     <string name="CG_FollowChannelTitle">訂閱官方頻道</string>
-    <string name="CG_FollowChannelInfo">加入我們的頻道以隨時了解 Cherrygram 的所有新聞和功能！</string>
+    <string name="CG_FollowChannelInfo">加入我們的頻道以隨時了解 komarugram 的所有新聞和功能！</string>
     <string name="CG_DoNotRemindAgain">下次不要顯示</string>
     <!--Telegram screens-->
     <string name="CG_RegistrationDate">註冊日期：</string>
@@ -75,13 +75,13 @@
     <!--Misc-->
     <string name="CG_Restart">重新啟動應用程式</string>
     <string name="CG_RestartToApply">重啟應用程式以套用變更</string>
-    <string name="CG_PushService">Cherrygram 推播服務</string>
+    <string name="CG_PushService">komarugram 推播服務</string>
     <string name="CG_ForceClean">強制清除 Telegram 快取</string>
     <string name="CG_ForceCleanInfo">當您嘗試清除快取時，長時間停留在「正在計算…」，則可以使用本功能。\n本功能會清除您所有的資料，請謹慎使用！</string>
     <string name="CG_ForceCleanInfo1">是否刪除所有 Telegram 資料？</string>
-    <string name="CG_Kaboom">無需 Cherrygram 密碼即可透過系統設定取用此功能。此功能會完全清除您所有的本地 (Cherrygram) 資料，您可以在緊急情況下使用此功能。</string>
+    <string name="CG_Kaboom">無需 komarugram 密碼即可透過系統設定取用此功能。此功能會完全清除您所有的本地 (komarugram) 資料，您可以在緊急情況下使用此功能。</string>
     <string name="CG_AppCrashed">出現錯誤</string>
-    <string name="CG_AppCrashedDesc">Cherrygram 已停止執行。請將日誌傳送至開發者，以協助修復這個問題</string>
+    <string name="CG_AppCrashedDesc">komarugram 已停止執行。請將日誌傳送至開發者，以協助修復這個問題</string>
     <string name="CG_CopyReportDetails">複製崩潰錯誤訊息</string>
     <string name="CG_ReportDetailsCopied">崩潰錯誤訊息已複製至剪貼簿</string>
     <string name="CG_TranslationLanguage">翻譯語言</string>
@@ -103,11 +103,11 @@
     <string name="CG_MessageContainsCustomReactions_other">回應包含 %1$d 表情包內的自訂 emoji \n</string>
     <!--Misc-->
     <!--Telegram screens-->
-    <!--Cherrygram screens-->
-    <!--Cherrygram Preferences-->
+    <!--komarugram screens-->
+    <!--komarugram Preferences-->
     <string name="CGP_AdvancedSettings">偏好設定</string>
     <string name="CGP_About_Desc">此應用程式是對 Telegram 新增實驗性功能。按一下這裡以閱讀新功能清單。</string>
-    <string name="CGP_Header_About">關於 Cherrygram</string>
+    <string name="CGP_Header_About">關於 komarugram</string>
     <string name="CGP_Header_About_Desc">更新、原始碼和更多</string>
     <string name="CGP_Links">連結</string>
     <string name="CGP_ToChannel">官方頻道</string>
@@ -115,7 +115,7 @@
     <string name="CGP_Source">開放原始碼</string>
     <string name="CGP_Crowdin">協助翻譯</string>
     <string name="CGP_Header_Categories">偏好</string>
-    <!--Cherrygram Preferences-->
+    <!--komarugram Preferences-->
     <!--General Preferences-->
     <string name="AP_Header_General">一般</string>
     <!--General Preferences-->
@@ -175,8 +175,8 @@
     <string name="CP_DisablePremStickAutoPlay">禁止自動播放 Premium 動態貼圖</string>
     <string name="CP_DisablePremStickAutoPlay_Desc">Premium 動態貼圖不會自動播放 (開啟禁止點擊 Premium 功能時，此功能為無效)</string>
     <string name="CP_Filters_Header">資料夾</string>
-    <string name="AP_FolderNameInHeader">使用資料夾名稱而非「Cherrygram」</string>
-    <string name="AP_FolderNameInHeader_Desc">這會將操作列中的「Cherrygram」變更為資料夾名稱 (開啟僅顯示圖示時效果為最佳)</string>
+    <string name="AP_FolderNameInHeader">使用資料夾名稱而非「komarugram」</string>
+    <string name="AP_FolderNameInHeader_Desc">這會將操作列中的「komarugram」變更為資料夾名稱 (開啟僅顯示圖示時效果為最佳)</string>
     <string name="CP_NewTabs_RemoveAllChats">隱藏所有對話 Tab</string>
     <string name="AP_Tab_Style">Tab 樣式</string>
     <string name="AP_Tab_Style_Default">預設</string>
@@ -261,7 +261,7 @@
     <string name="CP_CameraAspectRatio">相機縱橫比</string>
     <string name="CP_RearCam">使用後置鏡頭</string>
     <string name="CP_RearCam_Desc">視訊訊息不使用前置鏡頭</string>
-    <string name="CP_CaptureType_Desc">預設使用「VideoCapture」。 \n只有當 Cherrygram 在開始錄製影片訊息之前，被系統凍結一秒鐘的話，才選擇「ImageCapture」（品質會被降低）。</string>
+    <string name="CP_CaptureType_Desc">預設使用「VideoCapture」。 \n只有當 komarugram 在開始錄製影片訊息之前，被系統凍結一秒鐘的話，才選擇「ImageCapture」（品質會被降低）。</string>
     <string name="CP_DisableCam">在多媒體選單中停用相機</string>
     <string name="CP_DisableCam_Desc">如果多媒體選單開啟過慢，請開啟本功能</string>
     <string name="CP_Header_Videomessages">視訊訊息</string>
@@ -300,7 +300,7 @@
     <string name="SP_AskPinBeforeDelete">要求生物識別確認，才能刪除對話。</string>
     <string name="SP_AskPinBeforeDelete_Desc">如果您想刪除對話或清除歷史記錄，則需要進行生物辨識確認。您需要事先在手機系統設定中，啟用密碼和生物辨識功能。</string>
     <string name="SP_AllowUseSystemPasscode">允許使用系統 PIN 碼/解鎖圖案</string>
-    <string name="SP_AllowUseSystemPasscode_Desc">指紋確認對話方塊中的「取消」按鈕將被「Pin碼/解鎖圖案」按鈕取代，您將能夠使用系統密碼管理器解鎖 Cherrygram。</string>
+    <string name="SP_AllowUseSystemPasscode_Desc">指紋確認對話方塊中的「取消」按鈕將被「Pin碼/解鎖圖案」按鈕取代，您將能夠使用系統密碼管理器解鎖 komarugram。</string>
     <string name="SP_TestFingerprint">測試指紋</string>
     <string name="SP_Category_Account">帳戶</string>
     <string name="SP_DeleteAccount">刪除 Telegram 帳戶</string>
@@ -319,7 +319,7 @@
     <string name="UP_ClearedUpdatesCache">已清除 %1$s 快取</string>
     <string name="UP_NothingToClear">暫無可清理內容</string>
     <string name="UP_CheckForUpdates">檢查更新</string>
-    <string name="UP_Not_Found">Cherrygram 已經是最新版本</string>
+    <string name="UP_Not_Found">komarugram 已經是最新版本</string>
     <string name="UP_UpdateAvailable">有可用更新！</string>
     <string name="UP_Version">版本</string>
     <string name="UP_UpdateSize">更新檔大小</string>
@@ -328,9 +328,9 @@
     <string name="UP_Download">下載</string>
     <!--Updates Preferences-->
     <!--Donations-->
-    <string name="DP_RateUs">Rate Cherrygram</string>
+    <string name="DP_RateUs">Rate komarugram</string>
     <string name="DP_Donate">捐贈</string>
     <string name="DP_Donate_Method">選擇付款方式</string>
     <!--Donations-->
-    <!--Cherrygram screens-->
+    <!--komarugram screens-->
 </resources>

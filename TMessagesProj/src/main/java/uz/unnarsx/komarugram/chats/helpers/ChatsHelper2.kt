@@ -1,4 +1,4 @@
-package uz.unnarsx.cherrygram.chats.helpers
+package uz.unnarsx.komarugram.chats.helpers
 
 import android.view.View
 import android.widget.FrameLayout
@@ -18,13 +18,13 @@ import org.telegram.ui.Components.BulletinFactory
 import org.telegram.ui.Components.ShareAlert
 import org.telegram.ui.Components.TranslateAlert2
 import org.telegram.ui.Components.UndoView
-import uz.unnarsx.cherrygram.core.configs.CherrygramChatsConfig
-import uz.unnarsx.cherrygram.chats.JsonBottomSheet
-import uz.unnarsx.cherrygram.core.configs.CherrygramCoreConfig
-import uz.unnarsx.cherrygram.core.configs.CherrygramExperimentalConfig
-import uz.unnarsx.cherrygram.core.helpers.CGResourcesHelper
-import uz.unnarsx.cherrygram.core.helpers.LocalVerificationsHelper
-import uz.unnarsx.cherrygram.helpers.ui.ActionBarPopupWindowHelper
+import uz.unnarsx.komarugram.core.configs.komarugramChatsConfig
+import uz.unnarsx.komarugram.chats.JsonBottomSheet
+import uz.unnarsx.komarugram.core.configs.komarugramCoreConfig
+import uz.unnarsx.komarugram.core.configs.komarugramExperimentalConfig
+import uz.unnarsx.komarugram.core.helpers.CGResourcesHelper
+import uz.unnarsx.komarugram.core.helpers.LocalVerificationsHelper
+import uz.unnarsx.komarugram.helpers.ui.ActionBarPopupWindowHelper
 
 object ChatsHelper2 {
 
@@ -105,35 +105,35 @@ object ChatsHelper2 {
     /** Chat search filter start **/
     @JvmStatic
     fun getSearchFilterType(): TLRPC.MessagesFilter {
-        val filter: TLRPC.MessagesFilter = when (CherrygramChatsConfig.messagesSearchFilter) {
-            CherrygramChatsConfig.FILTER_PHOTOS -> {
+        val filter: TLRPC.MessagesFilter = when (komarugramChatsConfig.messagesSearchFilter) {
+            komarugramChatsConfig.FILTER_PHOTOS -> {
                 TLRPC.TL_inputMessagesFilterPhotos()
             }
-            CherrygramChatsConfig.FILTER_VIDEOS -> {
+            komarugramChatsConfig.FILTER_VIDEOS -> {
                 TLRPC.TL_inputMessagesFilterVideo()
             }
-            CherrygramChatsConfig.FILTER_VOICE_MESSAGES -> {
+            komarugramChatsConfig.FILTER_VOICE_MESSAGES -> {
                 TLRPC.TL_inputMessagesFilterVoice()
             }
-            CherrygramChatsConfig.FILTER_VIDEO_MESSAGES -> {
+            komarugramChatsConfig.FILTER_VIDEO_MESSAGES -> {
                 TLRPC.TL_inputMessagesFilterRoundVideo()
             }
-            CherrygramChatsConfig.FILTER_FILES -> {
+            komarugramChatsConfig.FILTER_FILES -> {
                 TLRPC.TL_inputMessagesFilterDocument()
             }
-            CherrygramChatsConfig.FILTER_MUSIC -> {
+            komarugramChatsConfig.FILTER_MUSIC -> {
                 TLRPC.TL_inputMessagesFilterMusic()
             }
-            CherrygramChatsConfig.FILTER_GIFS -> {
+            komarugramChatsConfig.FILTER_GIFS -> {
                 TLRPC.TL_inputMessagesFilterGif()
             }
-            CherrygramChatsConfig.FILTER_GEO -> {
+            komarugramChatsConfig.FILTER_GEO -> {
                 TLRPC.TL_inputMessagesFilterGeo()
             }
-            CherrygramChatsConfig.FILTER_CONTACTS -> {
+            komarugramChatsConfig.FILTER_CONTACTS -> {
                 TLRPC.TL_inputMessagesFilterContacts()
             }
-            CherrygramChatsConfig.FILTER_MENTIONS -> {
+            komarugramChatsConfig.FILTER_MENTIONS -> {
                 TLRPC.TL_inputMessagesFilterMyMentions()
             }
             else -> {
@@ -150,7 +150,7 @@ object ChatsHelper2 {
         val preferences = MessagesController.getMainSettings(currentAccount)
         val empty = preferences.getString("CP_CustomChatIDSM", "CP_CustomChatIDSM").equals("")
         if (empty) {
-            CherrygramCoreConfig.putStringForUserPrefs("CP_CustomChatIDSM",
+            komarugramCoreConfig.putStringForUserPrefs("CP_CustomChatIDSM",
                 UserConfig.getInstance(currentAccount).getClientUserId().toString()
             )
 //            FileLog.e("changed the id")
@@ -165,7 +165,7 @@ object ChatsHelper2 {
             preferences.getString("CP_CustomChatIDSM", UserConfig.getInstance(UserConfig.selectedAccount).getClientUserId().toString())
         val chatID = savedMessagesChatID!!.replace("-100", "-").toLong()
 
-        id = if (CherrygramExperimentalConfig.customChatForSavedMessages) {
+        id = if (komarugramExperimentalConfig.customChatForSavedMessages) {
             chatID
         } else {
             UserConfig.getInstance(UserConfig.selectedAccount).getClientUserId()
@@ -180,35 +180,35 @@ object ChatsHelper2 {
     fun showForwardMenu(sa: ShareAlert, field: FrameLayout) {
         currentPopup = ActionBarPopupWindowHelper.createPopupWindow(sa.container, field, sa.context, listOf(
             ActionBarPopupWindowHelper.PopupItem(
-                if (CherrygramChatsConfig.forwardNoAuthorship)
+                if (komarugramChatsConfig.forwardNoAuthorship)
                     getString(R.string.CG_FwdMenu_DisableNoForward)
                 else getString(R.string.CG_FwdMenu_EnableNoForward),
                 R.drawable.msg_forward
             ) {
                 // Toggle!
-                CherrygramChatsConfig.forwardNoAuthorship = !CherrygramChatsConfig.forwardNoAuthorship
+                komarugramChatsConfig.forwardNoAuthorship = !komarugramChatsConfig.forwardNoAuthorship
                 currentPopup?.dismiss()
                 currentPopup = null
             },
             ActionBarPopupWindowHelper.PopupItem(
-                if (CherrygramChatsConfig.forwardWithoutCaptions)
+                if (komarugramChatsConfig.forwardWithoutCaptions)
                     getString(R.string.CG_FwdMenu_EnableCaptions)
                 else getString(R.string.CG_FwdMenu_DisableCaptions),
                 R.drawable.msg_edit
             ) {
                 // Toggle!
-                CherrygramChatsConfig.forwardWithoutCaptions = !CherrygramChatsConfig.forwardWithoutCaptions
+                komarugramChatsConfig.forwardWithoutCaptions = !komarugramChatsConfig.forwardWithoutCaptions
                 currentPopup?.dismiss()
                 currentPopup = null
             },
             ActionBarPopupWindowHelper.PopupItem(
-                if (CherrygramChatsConfig.forwardNotify)
+                if (komarugramChatsConfig.forwardNotify)
                     getString(R.string.CG_FwdMenu_NoNotify)
                 else getString(R.string.CG_FwdMenu_Notify),
                 R.drawable.input_notify_on
             ) {
                 // Toggle!
-                CherrygramChatsConfig.forwardNotify = !CherrygramChatsConfig.forwardNotify
+                komarugramChatsConfig.forwardNotify = !komarugramChatsConfig.forwardNotify
                 currentPopup?.dismiss()
                 currentPopup = null
             },
@@ -234,12 +234,12 @@ object ChatsHelper2 {
     /** Message slide action start **/
     @JvmStatic
     fun injectChatActivityMsgSlideAction(cf: ChatActivity, msg: MessageObject, isChannel: Boolean, classGuid: Int) {
-        when (CherrygramChatsConfig.messageSlideAction) {
-            CherrygramChatsConfig.MESSAGE_SLIDE_ACTION_REPLY -> {
+        when (komarugramChatsConfig.messageSlideAction) {
+            komarugramChatsConfig.MESSAGE_SLIDE_ACTION_REPLY -> {
                 // Reply (default)
                 cf.showFieldPanelForReply(msg)
             }
-            CherrygramChatsConfig.MESSAGE_SLIDE_ACTION_SAVE -> {
+            komarugramChatsConfig.MESSAGE_SLIDE_ACTION_SAVE -> {
                 // Save message
                 val id = ChatsHelper2.getCustomChatID()
 
@@ -249,7 +249,7 @@ object ChatsHelper2 {
                 if (cf.undoView == null) {
                     return
                 }
-                if (!CherrygramExperimentalConfig.customChatForSavedMessages) {
+                if (!komarugramExperimentalConfig.customChatForSavedMessages) {
                     if (!BulletinFactory.of(cf).showForwardedBulletinWithTag(id, arrayListOf(msg).size)) {
                         cf.undoView!!.showWithAction(id, UndoView.ACTION_FWD_MESSAGES, arrayListOf(msg).size)
                     }
@@ -257,7 +257,7 @@ object ChatsHelper2 {
                     cf.undoView!!.showWithAction(id, UndoView.ACTION_FWD_MESSAGES, arrayListOf(msg).size)
                 }
             }
-            CherrygramChatsConfig.MESSAGE_SLIDE_ACTION_TRANSLATE -> {
+            komarugramChatsConfig.MESSAGE_SLIDE_ACTION_TRANSLATE -> {
                 // Translate
                 val languageAndTextToTranslate: String = msg.messageOwner.message
                 val toLang = TranslateAlert2.getToLanguage()
@@ -275,7 +275,7 @@ object ChatsHelper2 {
                 alert.setDimBehindAlpha(100)
                 alert.setDimBehind(true)
             }
-            CherrygramChatsConfig.MESSAGE_SLIDE_ACTION_DIRECT_SHARE -> {
+            komarugramChatsConfig.MESSAGE_SLIDE_ACTION_DIRECT_SHARE -> {
                 // Direct Share
                 cf.showDialog(object : ShareAlert(cf.parentActivity, arrayListOf(msg), null, isChannel, null, false) {
                     override fun dismissInternal() {

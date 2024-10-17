@@ -1,4 +1,4 @@
-package uz.unnarsx.cherrygram.preferences;
+package uz.unnarsx.komarugram.preferences;
 
 import static org.telegram.messenger.LocaleController.getString;
 
@@ -32,11 +32,11 @@ import org.telegram.ui.Components.RecyclerListView;
 
 import java.util.ArrayList;
 
-import uz.unnarsx.cherrygram.core.configs.CherrygramExperimentalConfig;
-import uz.unnarsx.cherrygram.core.helpers.AppRestartHelper;
-import uz.unnarsx.cherrygram.core.helpers.CGResourcesHelper;
-import uz.unnarsx.cherrygram.helpers.ui.PopupHelper;
-import uz.unnarsx.cherrygram.preferences.helpers.TextFieldAlert;
+import uz.unnarsx.komarugram.core.configs.komarugramExperimentalConfig;
+import uz.unnarsx.komarugram.core.helpers.AppRestartHelper;
+import uz.unnarsx.komarugram.core.helpers.CGResourcesHelper;
+import uz.unnarsx.komarugram.helpers.ui.PopupHelper;
+import uz.unnarsx.komarugram.preferences.helpers.TextFieldAlert;
 
 public class ExperimentalPreferencesEntry extends BaseFragment implements NotificationCenter.NotificationCenterDelegate {
 
@@ -129,34 +129,34 @@ public class ExperimentalPreferencesEntry extends BaseFragment implements Notifi
                 ArrayList<Integer> configValues = new ArrayList<>();
 
                 configStringKeys.add(getString(R.string.EP_NavigationAnimationSpring));
-                configValues.add(CherrygramExperimentalConfig.ANIMATION_SPRING);
+                configValues.add(komarugramExperimentalConfig.ANIMATION_SPRING);
 
                 configStringKeys.add(getString(R.string.EP_NavigationAnimationBezier));
-                configValues.add(CherrygramExperimentalConfig.ANIMATION_CLASSIC);
+                configValues.add(komarugramExperimentalConfig.ANIMATION_CLASSIC);
 
-                PopupHelper.show(configStringKeys, getString(R.string.EP_NavigationAnimation), configValues.indexOf(CherrygramExperimentalConfig.INSTANCE.getSpringAnimation()), context, i -> {
-                    CherrygramExperimentalConfig.INSTANCE.setSpringAnimation(configValues.get(i));
+                PopupHelper.show(configStringKeys, getString(R.string.EP_NavigationAnimation), configValues.indexOf(komarugramExperimentalConfig.INSTANCE.getSpringAnimation()), context, i -> {
+                    komarugramExperimentalConfig.INSTANCE.setSpringAnimation(configValues.get(i));
 
                     listAdapter.notifyItemChanged(springAnimationRow);
                     updateRowsId(false);
                     AppRestartHelper.createRestartBulletin(this);
                 });
             } else if (position == actionbarCrossfadeRow) {
-                CherrygramExperimentalConfig.INSTANCE.toggleActionbarCrossfade();
+                komarugramExperimentalConfig.INSTANCE.toggleActionbarCrossfade();
                 if (view instanceof TextCheckCell) {
-                    ((TextCheckCell) view).setChecked(CherrygramExperimentalConfig.INSTANCE.getActionbarCrossfade());
+                    ((TextCheckCell) view).setChecked(komarugramExperimentalConfig.INSTANCE.getActionbarCrossfade());
                 }
                 AppRestartHelper.createRestartBulletin(this);
             } else if (position == residentNotificationRow) {
-                CherrygramExperimentalConfig.INSTANCE.toggleResidentNotification();
+                komarugramExperimentalConfig.INSTANCE.toggleResidentNotification();
                 if (view instanceof TextCheckCell) {
-                    ((TextCheckCell) view).setChecked(CherrygramExperimentalConfig.INSTANCE.getResidentNotification());
+                    ((TextCheckCell) view).setChecked(komarugramExperimentalConfig.INSTANCE.getResidentNotification());
                 }
                 AppRestartHelper.createRestartBulletin(this);
             } else if (position == customChatRow) {
-                CherrygramExperimentalConfig.INSTANCE.toggleCustomChatForSavedMessages();
+                komarugramExperimentalConfig.INSTANCE.toggleCustomChatForSavedMessages();
                 if (view instanceof TextCheckCell) {
-                    ((TextCheckCell) view).setChecked(CherrygramExperimentalConfig.INSTANCE.getCustomChatForSavedMessages());
+                    ((TextCheckCell) view).setChecked(komarugramExperimentalConfig.INSTANCE.getCustomChatForSavedMessages());
                 }
                 updateRowsId(false);
             } else if (position == customChatIdRow) {
@@ -184,30 +184,30 @@ public class ExperimentalPreferencesEntry extends BaseFragment implements Notifi
                 ArrayList<Integer> configValues = new ArrayList<>();
 
                 configStringKeys.add(getString(R.string.EP_DownloadSpeedBoostNone));
-                configValues.add(CherrygramExperimentalConfig.BOOST_NONE);
+                configValues.add(komarugramExperimentalConfig.BOOST_NONE);
 
                 configStringKeys.add(getString(R.string.EP_DownloadSpeedBoostAverage));
-                configValues.add(CherrygramExperimentalConfig.BOOST_AVERAGE);
+                configValues.add(komarugramExperimentalConfig.BOOST_AVERAGE);
 
                 configStringKeys.add(getString(R.string.EP_DownloadSpeedBoostExtreme));
-                configValues.add(CherrygramExperimentalConfig.BOOST_EXTREME);
+                configValues.add(komarugramExperimentalConfig.BOOST_EXTREME);
 
-                PopupHelper.show(configStringKeys, getString(R.string.EP_DownloadSpeedBoost), configValues.indexOf(CherrygramExperimentalConfig.INSTANCE.getDownloadSpeedBoost()), context, i -> {
-                    CherrygramExperimentalConfig.INSTANCE.setDownloadSpeedBoost(configValues.get(i));
+                PopupHelper.show(configStringKeys, getString(R.string.EP_DownloadSpeedBoost), configValues.indexOf(komarugramExperimentalConfig.INSTANCE.getDownloadSpeedBoost()), context, i -> {
+                    komarugramExperimentalConfig.INSTANCE.setDownloadSpeedBoost(configValues.get(i));
 
                     listAdapter.notifyItemChanged(downloadSpeedBoostRow);
                     AppRestartHelper.createRestartBulletin(this);
                 });
             } else if (position == uploadSpeedBoostRow) {
-                CherrygramExperimentalConfig.INSTANCE.toggleUploadSpeedBoost();
+                komarugramExperimentalConfig.INSTANCE.toggleUploadSpeedBoost();
                 if (view instanceof TextCheckCell) {
-                    ((TextCheckCell) view).setChecked(CherrygramExperimentalConfig.INSTANCE.getUploadSpeedBoost());
+                    ((TextCheckCell) view).setChecked(komarugramExperimentalConfig.INSTANCE.getUploadSpeedBoost());
                 }
                 AppRestartHelper.createRestartBulletin(this);
             } else if (position == slowNetworkMode) {
-                CherrygramExperimentalConfig.INSTANCE.toggleSlowNetworkMode();
+                komarugramExperimentalConfig.INSTANCE.toggleSlowNetworkMode();
                 if (view instanceof TextCheckCell) {
-                    ((TextCheckCell) view).setChecked(CherrygramExperimentalConfig.INSTANCE.getSlowNetworkMode());
+                    ((TextCheckCell) view).setChecked(komarugramExperimentalConfig.INSTANCE.getSlowNetworkMode());
                 }
                 AppRestartHelper.createRestartBulletin(this);
             }
@@ -225,7 +225,7 @@ public class ExperimentalPreferencesEntry extends BaseFragment implements Notifi
         experimentalHeaderRow = rowCount++;
         springAnimationRow = rowCount++;
         actionbarCrossfadeRow = -1;
-        if (CherrygramExperimentalConfig.INSTANCE.getSpringAnimation() == CherrygramExperimentalConfig.ANIMATION_SPRING) actionbarCrossfadeRow = rowCount++;
+        if (komarugramExperimentalConfig.INSTANCE.getSpringAnimation() == komarugramExperimentalConfig.ANIMATION_SPRING) actionbarCrossfadeRow = rowCount++;
         if (listAdapter != null) {
             if (prevActionbarCrossfadeRow == -1 && actionbarCrossfadeRow != -1) {
                 listAdapter.notifyItemInserted(actionbarCrossfadeRow);
@@ -238,7 +238,7 @@ public class ExperimentalPreferencesEntry extends BaseFragment implements Notifi
 
         customChatRow = rowCount++;
         customChatIdRow = -1;
-        if (CherrygramExperimentalConfig.INSTANCE.getCustomChatForSavedMessages()) customChatIdRow = rowCount++;
+        if (komarugramExperimentalConfig.INSTANCE.getCustomChatForSavedMessages()) customChatIdRow = rowCount++;
         if (listAdapter != null) {
             if (prevCustomChatIdRow == -1 && customChatIdRow != -1) {
                 listAdapter.notifyItemInserted(customChatIdRow);
@@ -298,15 +298,15 @@ public class ExperimentalPreferencesEntry extends BaseFragment implements Notifi
                     TextCheckCell textCheckCell = (TextCheckCell) holder.itemView;
                     textCheckCell.setEnabled(true, null);
                     if (position == actionbarCrossfadeRow) {
-                        textCheckCell.setTextAndCheck(getString(R.string.EP_NavigationAnimationCrossfading), CherrygramExperimentalConfig.INSTANCE.getActionbarCrossfade(), true);
+                        textCheckCell.setTextAndCheck(getString(R.string.EP_NavigationAnimationCrossfading), komarugramExperimentalConfig.INSTANCE.getActionbarCrossfade(), true);
                     } else if (position == residentNotificationRow) {
-                        textCheckCell.setTextAndCheck(getString(R.string.CG_ResidentNotification), CherrygramExperimentalConfig.INSTANCE.getResidentNotification(), true);
+                        textCheckCell.setTextAndCheck(getString(R.string.CG_ResidentNotification), komarugramExperimentalConfig.INSTANCE.getResidentNotification(), true);
                     } else if (position == customChatRow) {
-                        textCheckCell.setTextAndValueAndCheck(getString(R.string.EP_CustomChat), getString(R.string.EP_CustomChat_Desc), CherrygramExperimentalConfig.INSTANCE.getCustomChatForSavedMessages(), true, true);
+                        textCheckCell.setTextAndValueAndCheck(getString(R.string.EP_CustomChat), getString(R.string.EP_CustomChat_Desc), komarugramExperimentalConfig.INSTANCE.getCustomChatForSavedMessages(), true, true);
                     } else if (position == uploadSpeedBoostRow) {
-                        textCheckCell.setTextAndCheck(getString(R.string.EP_UploadloadSpeedBoost), CherrygramExperimentalConfig.INSTANCE.getUploadSpeedBoost(), true);
+                        textCheckCell.setTextAndCheck(getString(R.string.EP_UploadloadSpeedBoost), komarugramExperimentalConfig.INSTANCE.getUploadSpeedBoost(), true);
                     } else if (position == slowNetworkMode) {
-                        textCheckCell.setTextAndCheck(getString(R.string.EP_SlowNetworkMode), CherrygramExperimentalConfig.INSTANCE.getSlowNetworkMode(), true);
+                        textCheckCell.setTextAndCheck(getString(R.string.EP_SlowNetworkMode), komarugramExperimentalConfig.INSTANCE.getSlowNetworkMode(), true);
                     }
                     break;
                 case 4:
@@ -314,12 +314,12 @@ public class ExperimentalPreferencesEntry extends BaseFragment implements Notifi
                     textCell.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteBlackText));
                     if (position == springAnimationRow) {
                         String value;
-                        switch (CherrygramExperimentalConfig.INSTANCE.getSpringAnimation()) {
-                            case CherrygramExperimentalConfig.ANIMATION_CLASSIC:
+                        switch (komarugramExperimentalConfig.INSTANCE.getSpringAnimation()) {
+                            case komarugramExperimentalConfig.ANIMATION_CLASSIC:
                                 value = getString(R.string.EP_NavigationAnimationBezier);
                                 break;
                             default:
-                            case CherrygramExperimentalConfig.ANIMATION_SPRING:
+                            case komarugramExperimentalConfig.ANIMATION_SPRING:
                                 value = getString(R.string.EP_NavigationAnimationSpring);
                                 break;
                         }

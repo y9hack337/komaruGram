@@ -210,8 +210,8 @@ import java.util.Locale;
 import java.util.Stack;
 import java.util.concurrent.atomic.AtomicReference;
 
-import uz.unnarsx.komarugram.core.configs.CherrygramAppearanceConfig;
-import uz.unnarsx.komarugram.core.configs.CherrygramChatsConfig;
+import uz.unnarsx.komarugram.core.configs.komarugramAppearanceConfig;
+import uz.unnarsx.komarugram.core.configs.komarugramChatsConfig;
 import uz.unnarsx.komarugram.core.helpers.CGResourcesHelper;
 import uz.unnarsx.komarugram.chats.helpers.ChatsHelper;
 
@@ -7771,7 +7771,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                 }
 
                 int maxVote = 0;
-                if (!animatePollAnswer && pollVoteInProgress && vibrateOnPollVote && !CherrygramChatsConfig.INSTANCE.getDisableVibration()) {
+                if (!animatePollAnswer && pollVoteInProgress && vibrateOnPollVote && !komarugramChatsConfig.INSTANCE.getDisableVibration()) {
                     performHapticFeedback(HapticFeedbackConstants.KEYBOARD_TAP, HapticFeedbackConstants.FLAG_IGNORE_GLOBAL_SETTING);
                 }
                 animatePollAnswerAlpha = animatePollAnswer = attachedToWindow && (pollVoteInProgress || pollUnvoteInProgress);
@@ -8478,16 +8478,16 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                         }
                     }
 
-                    //uz.unnarsx.CherrygramLogger.d("Stickers:BeforeAmplifier", "photoWidth = "+photoWidth+", photoHeight = "+photoHeight+", max: W = "+maxWidth+" / H = "+maxHeight);
+                    //uz.unnarsx.komarugramLogger.d("Stickers:BeforeAmplifier", "photoWidth = "+photoWidth+", photoHeight = "+photoHeight+", max: W = "+maxWidth+" / H = "+maxHeight);
 
-                    float modifier = CherrygramChatsConfig.INSTANCE.getSlider_stickerAmplifier() / 100f;
+                    float modifier = komarugramChatsConfig.INSTANCE.getSlider_stickerAmplifier() / 100f;
 
                     photoWidth = (int) (photoWidth * modifier);
                     photoHeight = (int) (photoHeight * modifier);
                     maxWidth = (int) (maxWidth * modifier);
                     maxHeight = (int) (maxHeight * modifier);
 
-                    //uz.unnarsx.CherrygramLogger.d("Stickers:AfterAmplifier", "photoWidth = "+photoWidth+", photoHeight = "+photoHeight+", max: W = "+maxWidth+" / H = "+maxHeight+", amplifier = "+modifier+" [pref = "+CherrygramChatsConfig.INSTANCE.getSlider_stickerAmplifier()+"]");
+                    //uz.unnarsx.komarugramLogger.d("Stickers:AfterAmplifier", "photoWidth = "+photoWidth+", photoHeight = "+photoHeight+", max: W = "+maxWidth+" / H = "+maxHeight+", amplifier = "+modifier+" [pref = "+komarugramChatsConfig.INSTANCE.getSlider_stickerAmplifier()+"]");
 
                     Object parentObject = messageObject;
                     int w = (int) (photoWidth / AndroidUtilities.density);
@@ -15912,7 +15912,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
             timeString = LocaleController.formatSmallDateChat(messageObject.messageOwner.date) + ", " + LocaleController.getInstance().getFormatterDay().format((long) (messageObject.messageOwner.date) * 1000);
         } else if (edited) {
             timeString = ChatsHelper.createEditedString(currentMessageObject);
-        } else if (CherrygramChatsConfig.INSTANCE.getMsgForwardDate() && (currentMessageObject.isSaved && currentMessageObject.messageOwner.fwd_from != null && (currentMessageObject.messageOwner.fwd_from.date != 0 || currentMessageObject.messageOwner.fwd_from.saved_date != 0))) {
+        } else if (komarugramChatsConfig.INSTANCE.getMsgForwardDate() && (currentMessageObject.isSaved && currentMessageObject.messageOwner.fwd_from != null && (currentMessageObject.messageOwner.fwd_from.date != 0 || currentMessageObject.messageOwner.fwd_from.saved_date != 0))) {
             int date = currentMessageObject.messageOwner.fwd_from.saved_date;
             if (date == 0) {
                 date = currentMessageObject.messageOwner.fwd_from.date;
@@ -15936,7 +15936,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
             if (!messageObject.isMusic() && messageObject.messageOwner.forwards > 0 && ChatsHelper.forwardsDrawable != null) {
                 timeTextWidth = timeWidth += ChatsHelper.forwardsDrawable.getIntrinsicWidth();
             }
-            if (edited && CherrygramChatsConfig.INSTANCE.getShowPencilIcon() && ChatsHelper.editedDrawable != null) {
+            if (edited && komarugramChatsConfig.INSTANCE.getShowPencilIcon() && ChatsHelper.editedDrawable != null) {
                 timeTextWidth = timeWidth += ChatsHelper.editedDrawable.getIntrinsicWidth();
             }
         }
@@ -16394,7 +16394,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                     }
 
                     forwardedNameWidth = getMaxNameWidth();
-                    if (CherrygramChatsConfig.INSTANCE.getMsgForwardDate() && !currentMessageObject.isSaved) {
+                    if (komarugramChatsConfig.INSTANCE.getMsgForwardDate() && !currentMessageObject.isSaved) {
                         forwardedString = String.format("➥ %s", CGResourcesHelper.INSTANCE.createDateAndTime(messageObject.messageOwner.fwd_from.date));
                     } else {
                         forwardedString = getForwardedMessageText(messageObject);
@@ -16975,7 +16975,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
     }
 
     private Object getAuthorStatus() {
-        if (CherrygramAppearanceConfig.INSTANCE.getDisablePremiumStatuses()) return null;
+        if (komarugramAppearanceConfig.INSTANCE.getDisablePremiumStatuses()) return null;
         if (currentUser != null) {
             Long emojiStatusId = UserObject.getEmojiStatusDocumentId(currentUser);
             if (emojiStatusId != null) {
@@ -17411,7 +17411,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
         if ((!autoPlayingMedia || !MediaController.getInstance().isPlayingMessageAndReadyToDraw(currentMessageObject) || isRoundVideo) && !transitionParams.animateBackgroundBoundsInner && !(currentMessageObject != null && currentMessageObject.preview)) {
             drawOverlays(canvas);
         }
-        if ((drawTime || !mediaBackground) && !forceNotDrawTime && !transitionParams.animateBackgroundBoundsInner && !(enterTransitionInProgress && !currentMessageObject.isVoice()) && (!currentMessageObject.isQuickReply() || currentMessageObject.isSendError()) && (!currentMessageObject.isAnyKindOfSticker() || !CherrygramChatsConfig.INSTANCE.getHideStickerTime())) {
+        if ((drawTime || !mediaBackground) && !forceNotDrawTime && !transitionParams.animateBackgroundBoundsInner && !(enterTransitionInProgress && !currentMessageObject.isVoice()) && (!currentMessageObject.isQuickReply() || currentMessageObject.isSendError()) && (!currentMessageObject.isAnyKindOfSticker() || !komarugramChatsConfig.INSTANCE.getHideStickerTime())) {
             drawTime(canvas, 1f, false);
         }
 
@@ -19355,7 +19355,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                 // draw reply background
                 leftRad = bottomRad; // line redesign
                 replyLine.setLoading(loading);
-                replyLine.drawBackground(canvas, replySelectorRect, leftRad, rightRad, bottomRad, alpha, isReplyQuote, currentMessageObject.shouldDrawWithoutBackground() || !CherrygramAppearanceConfig.INSTANCE.getReplyBackground());
+                replyLine.drawBackground(canvas, replySelectorRect, leftRad, rightRad, bottomRad, alpha, isReplyQuote, currentMessageObject.shouldDrawWithoutBackground() || !komarugramAppearanceConfig.INSTANCE.getReplyBackground());
 
                 if (replySelector == null) {
                     replySelector = Theme.createRadSelectorDrawable(replySelectorColor = rippleColor, 0, 0);

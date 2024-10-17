@@ -1,4 +1,4 @@
-package uz.unnarsx.cherrygram.preferences.tgkit;
+package uz.unnarsx.komarugram.preferences.tgkit;
 
 import static org.telegram.messenger.LocaleController.getString;
 
@@ -34,19 +34,19 @@ import org.telegram.ui.Components.RecyclerListView;
 
 import java.util.ArrayList;
 
-import uz.unnarsx.cherrygram.preferences.tgkit.preference.TGKitCategory;
-import uz.unnarsx.cherrygram.preferences.tgkit.preference.TGKitPreference;
-import uz.unnarsx.cherrygram.preferences.tgkit.preference.TGKitSettings;
-import uz.unnarsx.cherrygram.preferences.tgkit.preference.types.TGKitHeaderRow;
-import uz.unnarsx.cherrygram.preferences.tgkit.preference.types.TGKitListPreference;
-import uz.unnarsx.cherrygram.preferences.tgkit.preference.types.TGKitSectionRow;
-import uz.unnarsx.cherrygram.preferences.tgkit.preference.types.TGKitSettingsCellRow;
-import uz.unnarsx.cherrygram.preferences.tgkit.preference.types.TGKitSliderPreference;
-import uz.unnarsx.cherrygram.preferences.tgkit.preference.types.TGKitSwitchPreference;
-import uz.unnarsx.cherrygram.preferences.tgkit.preference.types.TGKitTextDetailRow;
-import uz.unnarsx.cherrygram.preferences.tgkit.preference.types.TGKitTextIconRow;
-import uz.unnarsx.cherrygram.preferences.BasePreferencesEntry;
-import uz.unnarsx.cherrygram.preferences.cells.StickerSliderCell;
+import uz.unnarsx.komarugram.preferences.tgkit.preference.TGKitCategory;
+import uz.unnarsx.komarugram.preferences.tgkit.preference.TGKitPreference;
+import uz.unnarsx.komarugram.preferences.tgkit.preference.TGKitSettings;
+import uz.unnarsx.komarugram.preferences.tgkit.preference.types.TGKitHeaderRow;
+import uz.unnarsx.komarugram.preferences.tgkit.preference.types.TGKitListPreference;
+import uz.unnarsx.komarugram.preferences.tgkit.preference.types.TGKitSectionRow;
+import uz.unnarsx.komarugram.preferences.tgkit.preference.types.TGKitSettingsCellRow;
+import uz.unnarsx.komarugram.preferences.tgkit.preference.types.TGKitSliderPreference;
+import uz.unnarsx.komarugram.preferences.tgkit.preference.types.TGKitSwitchPreference;
+import uz.unnarsx.komarugram.preferences.tgkit.preference.types.TGKitTextDetailRow;
+import uz.unnarsx.komarugram.preferences.tgkit.preference.types.TGKitTextIconRow;
+import uz.unnarsx.komarugram.preferences.BasePreferencesEntry;
+import uz.unnarsx.komarugram.preferences.cells.StickerSliderCell;
 
 public class TGKitSettingsFragment extends BaseFragment {
     private final TGKitSettings settings;

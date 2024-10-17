@@ -22,7 +22,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicBoolean;
 
-import uz.unnarsx.komarugram.core.configs.CherrygramCoreConfig;
+import uz.unnarsx.komarugram.core.configs.komarugramCoreConfig;
 import uz.unnarsx.komarugram.chats.helpers.ChatsPasswordHelper;
 import uz.unnarsx.komarugram.core.CGBiometricPrompt;
 
@@ -250,7 +250,7 @@ public interface INavigationLayout {
     default boolean presentFragment(BaseFragment fragment) {
         AtomicBoolean fragment1 = new AtomicBoolean(false);
         if (fragment instanceof ChatActivity && ChatsPasswordHelper.INSTANCE.getAskPasscodeForChats()) {
-            if (CherrygramCoreConfig.INSTANCE.isDevBuild()) FileLog.d("fragment is chat activity");
+            if (komarugramCoreConfig.INSTANCE.isDevBuild()) FileLog.d("fragment is chat activity");
             if (getParentActivity() != null
                     && (
                             fragment.arguments.getLong("user_id") != 0
@@ -275,7 +275,7 @@ public interface INavigationLayout {
 //        return presentFragment(new NavigationParams(fragment).setRemoveLast(removeLast)); // forwards
         AtomicBoolean fragment1 = new AtomicBoolean(false);
         if (fragment instanceof ChatActivity && !removeLast && ChatsPasswordHelper.INSTANCE.getAskPasscodeForChats()) {
-            if (CherrygramCoreConfig.INSTANCE.isDevBuild()) FileLog.d("fragment is chat activity1");
+            if (komarugramCoreConfig.INSTANCE.isDevBuild()) FileLog.d("fragment is chat activity1");
             if (getParentActivity() != null
                     && (
                             fragment.arguments.getLong("user_id") != 0
@@ -299,7 +299,7 @@ public interface INavigationLayout {
     default boolean presentFragmentAsPreview(BaseFragment fragment) {
         AtomicBoolean fragment1 = new AtomicBoolean(false);
         if (fragment instanceof ChatActivity && ChatsPasswordHelper.INSTANCE.getAskPasscodeForChats()) {
-            if (CherrygramCoreConfig.INSTANCE.isDevBuild()) FileLog.d("fragment is chat activity2");
+            if (komarugramCoreConfig.INSTANCE.isDevBuild()) FileLog.d("fragment is chat activity2");
             if (getParentActivity() != null
                     && (
                             fragment.arguments.getLong("user_id") != 0
@@ -323,7 +323,7 @@ public interface INavigationLayout {
     default boolean presentFragmentAsPreviewWithMenu(BaseFragment fragment, ActionBarPopupWindow.ActionBarPopupWindowLayout menuView) {
         AtomicBoolean fragment1 = new AtomicBoolean(false);
         if (fragment instanceof ChatActivity && ChatsPasswordHelper.INSTANCE.getAskPasscodeForChats()) {
-            if (CherrygramCoreConfig.INSTANCE.isDevBuild()) FileLog.d("fragment is chat activity3");
+            if (komarugramCoreConfig.INSTANCE.isDevBuild()) FileLog.d("fragment is chat activity3");
             if (getParentActivity() != null
                     && (
                             fragment.arguments.getLong("user_id") != 0
@@ -351,7 +351,7 @@ public interface INavigationLayout {
     default boolean presentFragment(BaseFragment fragment, boolean removeLast, boolean forceWithoutAnimation, boolean check, boolean preview) {
         AtomicBoolean fragment1 = new AtomicBoolean(false);
         if (fragment instanceof ChatActivity && !check && ChatsPasswordHelper.INSTANCE.getAskPasscodeForChats()) {
-            if (CherrygramCoreConfig.INSTANCE.isDevBuild()) FileLog.d("fragment is chat activity4");
+            if (komarugramCoreConfig.INSTANCE.isDevBuild()) FileLog.d("fragment is chat activity4");
             if (getParentActivity() != null
                     && (
                             fragment.arguments.getLong("user_id") != 0
@@ -379,7 +379,7 @@ public interface INavigationLayout {
     default boolean presentFragment(BaseFragment fragment, boolean removeLast, boolean forceWithoutAnimation, boolean check, boolean preview, ActionBarPopupWindow.ActionBarPopupWindowLayout menuView) {
         AtomicBoolean fragment1 = new AtomicBoolean(false);
         if (fragment instanceof ChatActivity && ChatsPasswordHelper.INSTANCE.getAskPasscodeForChats()) {
-            if (CherrygramCoreConfig.INSTANCE.isDevBuild()) FileLog.d("fragment is chat activity5");
+            if (komarugramCoreConfig.INSTANCE.isDevBuild()) FileLog.d("fragment is chat activity5");
             if (getParentActivity() != null
                     && (
                             fragment.arguments.getLong("user_id") != 0
@@ -435,6 +435,7 @@ public interface INavigationLayout {
         /**
          * @deprecated You should override {@link INavigationLayoutDelegate#needPresentFragment(INavigationLayout, NavigationParams)} for more fields
          */
+        @Deprecated
         default boolean needPresentFragment(BaseFragment fragment, boolean removeLast, boolean forceWithoutAnimation, INavigationLayout layout) {
             return true;
         }

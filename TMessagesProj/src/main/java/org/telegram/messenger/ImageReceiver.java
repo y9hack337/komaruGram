@@ -45,7 +45,7 @@ import org.telegram.ui.Components.VectorAvatarThumbDrawable;
 import java.util.ArrayList;
 import java.util.List;
 
-import uz.unnarsx.komarugram.core.configs.CherrygramCoreConfig;
+import uz.unnarsx.komarugram.core.configs.komarugramCoreConfig;
 
 public class ImageReceiver implements NotificationCenter.NotificationCenterDelegate {
 
@@ -440,7 +440,7 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
                         }
                     }
                 }
-                if (!CherrygramCoreConfig.INSTANCE.getDisableAnimatedAvatars() && vectorImageMarkup == null && animationEnabled && MessagesController.getInstance(currentAccount).isPremiumUser(user) && user.photo.has_video && LiteMode.isEnabled(LiteMode.FLAG_AUTOPLAY_VIDEOS)) {
+                if (!komarugramCoreConfig.INSTANCE.getDisableAnimatedAvatars() && vectorImageMarkup == null && animationEnabled && MessagesController.getInstance(currentAccount).isPremiumUser(user) && user.photo.has_video && LiteMode.isEnabled(LiteMode.FLAG_AUTOPLAY_VIDEOS)) {
                     final TLRPC.UserFull userFull = MessagesController.getInstance(currentAccount).getUserFull(user.id);
                     if (userFull == null) {
                         MessagesController.getInstance(currentAccount).loadFullUser(user, currentGuid, false);

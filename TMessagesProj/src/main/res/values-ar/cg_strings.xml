@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- by t.me/arsLan-->
-    <string name="CG_FollowChannelLink">اشترك في @Cherry_Gram!</string>
+    <string name="CG_FollowChannelLink">اشترك في @komarugram!</string>
     <string name="CG_FollowChannelTitle">إشترك في القناة الرسمية</string>
-    <string name="CG_FollowChannelInfo">إنضم إلى قناتنا للبقاء على إطلاع بكل أخبار وميزات Cherrygram!</string>
+    <string name="CG_FollowChannelInfo">إنضم إلى قناتنا للبقاء على إطلاع بكل أخبار وميزات komarugram!</string>
     <string name="CG_DoNotRemindAgain">عدم التذكير مرة أُخرى</string>
     <!--Telegram screens-->
     <string name="CG_RegistrationDate"> تاريخ التسجيل</string>
@@ -75,13 +75,13 @@
     <!--Misc-->
     <string name="CG_Restart">إعادة تشغيل التطبيق</string>
     <string name="CG_RestartToApply">أعد تشغيل التطبيق لتطبيق التغييرات</string>
-    <string name="CG_PushService">Cherrygram Push Service</string>
+    <string name="CG_PushService">komarugram Push Service</string>
     <string name="CG_ForceClean">إجبار مسح ذاكرة التخزين المؤقت</string>
     <string name="CG_ForceCleanInfo">استخدم هذا إذا واجهت عبارة \"جارِ التنظيف\" لوقت طويل عند محاولة تنظيف ذاكرة التخزين المؤقت. سيؤدي هذا إلى حذف كل شيء من ذاكرة التخزين المؤقت - كن حذرًا!</string>
     <string name="CG_ForceCleanInfo1">هل تريد حقا حذف كل شيء من ذاكرة التخزين المؤقت من تيليجرام ؟</string>
-    <string name="CG_Kaboom">يمكن الوصول إلى هذه الميزة بدون كلمة مرور Cherrygram ،من خلال إعدادات النظام. هذه الميزة تمحو تماما كل ما تبذلونه من البيانات المحلية (Cherrygram). يمكن استخدامه في حالات الطوارئ.</string>
+    <string name="CG_Kaboom">يمكن الوصول إلى هذه الميزة بدون كلمة مرور komarugram ،من خلال إعدادات النظام. هذه الميزة تمحو تماما كل ما تبذلونه من البيانات المحلية (komarugram). يمكن استخدامه في حالات الطوارئ.</string>
     <string name="CG_AppCrashed">حدث خطأ ما</string>
-    <string name="CG_AppCrashedDesc">توقف Cherrygram عن العمل. يرجى إرسال السجلات إلى المطورين حتى يتمكنوا من إصلاح هذا الخطأ في أقرب وقت ممكن.</string>
+    <string name="CG_AppCrashedDesc">توقف komarugram عن العمل. يرجى إرسال السجلات إلى المطورين حتى يتمكنوا من إصلاح هذا الخطأ في أقرب وقت ممكن.</string>
     <string name="CG_CopyReportDetails">نسخ تفاصيل التقرير</string>
     <string name="CG_ReportDetailsCopied">تم نسخ تفاصيل التقرير إلى الحافظة.</string>
     <string name="CG_TranslationLanguage">لغة الترجمة</string>
@@ -103,11 +103,11 @@
     <string name="CG_MessageContainsCustomReactions_other">تحتوي التفاعلات على رموز تعبيرية مخصصة \n من حزمة %1$d.</string>
     <!--Misc-->
     <!--Telegram screens-->
-    <!--Cherrygram screens-->
-    <!--Cherrygram Preferences-->
-    <string name="CGP_AdvancedSettings">Cherrygram إعدادات</string>
+    <!--komarugram screens-->
+    <!--komarugram Preferences-->
+    <string name="CGP_AdvancedSettings">komarugram إعدادات</string>
     <string name="CGP_About_Desc">تعديل تجريبي لتطبيق Telegram. أُنقر هنا لقراءة قائمة ميزات التطبيقات.</string>
-    <string name="CGP_Header_About">حول Cherrygram</string>
+    <string name="CGP_Header_About">حول komarugram</string>
     <string name="CGP_Header_About_Desc">التحديثات، الكود المصدري والمزيد</string>
     <string name="CGP_Links">الروابط</string>
     <string name="CGP_ToChannel">القناة الرسمية</string>
@@ -115,7 +115,7 @@
     <string name="CGP_Source">شفرة المصدر</string>
     <string name="CGP_Crowdin">المساعدة في الترجمة</string>
     <string name="CGP_Header_Categories">الفئات</string>
-    <!--Cherrygram Preferences-->
+    <!--komarugram Preferences-->
     <!--General Preferences-->
     <string name="AP_Header_General">عام</string>
     <!--General Preferences-->
@@ -175,8 +175,8 @@
     <string name="CP_DisablePremStickAutoPlay">تعطيل التشغيل التلقائي للملصقات المميزه</string>
     <string name="CP_DisablePremStickAutoPlay_Desc">لن يتم تشغيل الرسوم المتحركة للملصقات المميزة تلقائيًا (لن تعمل الميزة إذا قمت بتعطيل النقرات على الملصقات المميزة)</string>
     <string name="CP_Filters_Header">المجلدات</string>
-    <string name="AP_FolderNameInHeader">اسم المجلد بدلا من \"Cherrygram\"</string>
-    <string name="AP_FolderNameInHeader_Desc">سيؤدي هذا إلى تغيير \" Cherrygram\ \" في شريط الإجراءات إلى اسم المجلد الخاص بك (مفيد إذا كان لديك أيقونات فقط بدلا من أسماء المجلدات)</string>
+    <string name="AP_FolderNameInHeader">اسم المجلد بدلا من \"komarugram\"</string>
+    <string name="AP_FolderNameInHeader_Desc">سيؤدي هذا إلى تغيير \" komarugram\ \" في شريط الإجراءات إلى اسم المجلد الخاص بك (مفيد إذا كان لديك أيقونات فقط بدلا من أسماء المجلدات)</string>
     <string name="CP_NewTabs_RemoveAllChats">إخفاء تبويب \"الكل\"</string>
     <string name="AP_Tab_Style">نمط المجلد</string>
     <string name="AP_Tab_Style_Default">افتراضي</string>
@@ -293,7 +293,7 @@
     <string name="SP_AskPinBeforeDelete">أطلب التأكيد البيومتري قبل حذف الدردشة.</string>
     <string name="SP_AskPinBeforeDelete_Desc">إذا كنت تريد حذف محادثة أو مسح السجل، فستكون هناك حاجة إلى تأكيد البيومترية. يلزم تمكين رمز المرور والتأكيد البيومتري في النظام.</string>
     <string name="SP_AllowUseSystemPasscode">السماح باستخدام رمز المرور/نمط النظام</string>
-    <string name="SP_AllowUseSystemPasscode_Desc">سيتم استبدال زر \"إلغاء\" الموجود في مربع حوار تأكيد بصمة الإصبع بزر \"كلمة مرور/النمط\" وستتمكن من استخدام تصريح النظام لفتح Cherrygram.</string>
+    <string name="SP_AllowUseSystemPasscode_Desc">سيتم استبدال زر \"إلغاء\" الموجود في مربع حوار تأكيد بصمة الإصبع بزر \"كلمة مرور/النمط\" وستتمكن من استخدام تصريح النظام لفتح komarugram.</string>
     <string name="SP_TestFingerprint">معاينة </string>
     <string name="SP_Category_Account">الحساب</string>
     <string name="SP_DeleteAccount">حذف حساب تيليجرام</string>
@@ -312,7 +312,7 @@
     <string name="UP_ClearedUpdatesCache">تم مسح %1$s من ذاكرة التخزين المؤقت.</string>
     <string name="UP_NothingToClear">لا شيء لمسحته.</string>
     <string name="UP_CheckForUpdates">التحقق من وجود تحديثات</string>
-    <string name="UP_Not_Found">Cherrygram محدّث.</string>
+    <string name="UP_Not_Found">komarugram محدّث.</string>
     <string name="UP_UpdateAvailable">تحديث متاح!</string>
     <string name="UP_Version">الإصدار</string>
     <string name="UP_UpdateSize">حجم التحديث</string>
@@ -324,5 +324,5 @@
     <string name="DP_Donate">تبرع</string>
     <string name="DP_Donate_Method">اختر الطريقة</string>
     <!--Donations-->
-    <!--Cherrygram screens-->
+    <!--komarugram screens-->
 </resources>

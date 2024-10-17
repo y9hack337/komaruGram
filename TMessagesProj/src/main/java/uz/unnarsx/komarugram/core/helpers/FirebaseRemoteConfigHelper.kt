@@ -1,4 +1,4 @@
-package uz.unnarsx.cherrygram.core.helpers
+package uz.unnarsx.komarugram.core.helpers
 
 import android.widget.Toast
 import com.google.firebase.remoteconfig.FirebaseRemoteConfig
@@ -9,10 +9,10 @@ import org.telegram.messenger.AndroidUtilities
 import org.telegram.messenger.ApplicationLoader
 import org.telegram.messenger.BuildVars
 import org.telegram.messenger.FileLog
-import uz.unnarsx.cherrygram.core.configs.CherrygramCoreConfig
-import uz.unnarsx.cherrygram.core.configs.CherrygramCameraConfig
-import uz.unnarsx.cherrygram.core.configs.CherrygramDebugConfig
-import uz.unnarsx.cherrygram.misc.Constants
+import uz.unnarsx.komarugram.core.configs.komarugramCoreConfig
+import uz.unnarsx.komarugram.core.configs.komarugramCameraConfig
+import uz.unnarsx.komarugram.core.configs.komarugramDebugConfig
+import uz.unnarsx.komarugram.misc.Constants
 import kotlin.coroutines.resume
 
 object FirebaseRemoteConfigHelper {
@@ -38,21 +38,21 @@ object FirebaseRemoteConfigHelper {
     }
 
     suspend fun initRemoteConfig() = withContext(Dispatchers.IO) {
-        val fetchInterval = if (CherrygramCoreConfig.isDevBuild()) 10800 else 43200 // 12 hours
+        val fetchInterval = if (komarugramCoreConfig.isDevBuild()) 10800 else 43200 // 12 hours
 
         activate(fetchInterval.toLong())
             .onSuccess {
                 if (it.getLong(Constants.Videomessages_Resolution) != 0L) {
                     setRoundVideoResolution(it.getLong(Constants.Videomessages_Resolution))
                 }
-                if (CherrygramCoreConfig.isDevBuild() || CherrygramDebugConfig.showRPCErrors) {
+                if (komarugramCoreConfig.isDevBuild() || komarugramDebugConfig.showRPCErrors) {
                     AndroidUtilities.runOnUIThread {
                         Toast.makeText(ApplicationLoader.applicationContext, "Fetch and activate succeeded", Toast.LENGTH_SHORT).show()
                     }
                 }
             }
             .onFailure {
-                if (CherrygramCoreConfig.isDevBuild() || CherrygramDebugConfig.showRPCErrors) {
+                if (komarugramCoreConfig.isDevBuild() || komarugramDebugConfig.showRPCErrors) {
                     AndroidUtilities.runOnUIThread {
                         Toast.makeText(ApplicationLoader.applicationContext, "Fetch failed", Toast.LENGTH_SHORT).show()
                     }
@@ -66,14 +66,14 @@ object FirebaseRemoteConfigHelper {
     }
 
     private fun setRoundVideoResolution(resolution: Long) {
-        if (CherrygramCoreConfig.isDevBuild() || BuildVars.LOGS_ENABLED) {
-            FileLog.d("Old videomessages resolution:" + CherrygramCameraConfig.videoMessagesResolution)
+        if (komarugramCoreConfig.isDevBuild() || BuildVars.LOGS_ENABLED) {
+            FileLog.d("Old videomessages resolution:" + komarugramCameraConfig.videoMessagesResolution)
         }
 
-        CherrygramCameraConfig.videoMessagesResolution = resolution.toInt()
+        komarugramCameraConfig.videoMessagesResolution = resolution.toInt()
 
-        if (CherrygramCoreConfig.isDevBuild() || BuildVars.LOGS_ENABLED) {
-            FileLog.d("New videomessages resolution:" + CherrygramCameraConfig.videoMessagesResolution)
+        if (komarugramCoreConfig.isDevBuild() || BuildVars.LOGS_ENABLED) {
+            FileLog.d("New videomessages resolution:" + komarugramCameraConfig.videoMessagesResolution)
         }
     }
 
@@ -84,7 +84,7 @@ object FirebaseRemoteConfigHelper {
             512
         }
 
-        if (CherrygramConfig.isDevBuild()) {
+        if (komarugramConfig.isDevBuild()) {
             FileLog.d("VideoMessages resolution: $res")
         }
 

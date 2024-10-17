@@ -226,23 +226,17 @@ import java.util.regex.Pattern;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
 
-import uz.unnarsx.komarugram.Extra;
-import uz.unnarsx.komarugram.core.configs.CherrygramAppearanceConfig;
-import uz.unnarsx.komarugram.core.configs.CherrygramChatsConfig;
-import uz.unnarsx.komarugram.core.configs.CherrygramCoreConfig;
+import uz.unnarsx.komarugram.core.configs.komarugramAppearanceConfig;
+import uz.unnarsx.komarugram.core.configs.komarugramChatsConfig;
+import uz.unnarsx.komarugram.core.configs.komarugramCoreConfig;
 import uz.unnarsx.komarugram.chats.helpers.ChatsPasswordHelper;
 import uz.unnarsx.komarugram.core.CGBiometricPrompt;
 import uz.unnarsx.komarugram.core.helpers.DeeplinkHelper;
-import uz.unnarsx.komarugram.misc.CherrygramExtras;
-import uz.unnarsx.komarugram.core.helpers.AppRestartHelper;
+import uz.unnarsx.komarugram.misc.KomarugramExtras;
 import uz.unnarsx.komarugram.chats.helpers.ChatsHelper2;
-import uz.unnarsx.komarugram.preferences.folders.FoldersPreferencesEntry;
-import uz.unnarsx.komarugram.preferences.drawer.DrawerPreferencesEntry;
-import uz.unnarsx.komarugram.preferences.tgkit.CherrygramPreferencesNavigator;
+import uz.unnarsx.komarugram.preferences.tgkit.komarugramPreferencesNavigator;
 import uz.unnarsx.komarugram.helpers.ui.MonetHelper;
 import uz.unnarsx.komarugram.core.updater.UpdaterUtils;
-import uz.unnarsx.komarugram.preferences.CameraPreferencesEntry;
-import uz.unnarsx.komarugram.preferences.ExperimentalPreferencesEntry;
 import uz.unnarsx.komarugram.core.icons.CGUIResources;
 import uz.unnarsx.komarugram.core.crashlytics.Crashlytics;
 
@@ -730,7 +724,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
                     presentFragment(new DialogsActivity(args));
                     drawerLayoutContainer.closeDrawer(false);
                 } else if (id == 1002) {
-                    presentFragment(CherrygramPreferencesNavigator.createMainMenu());
+                    presentFragment(komarugramPreferencesNavigator.createMainMenu());
                     drawerLayoutContainer.closeDrawer(false);
                 }
             }
@@ -1046,12 +1040,12 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
                     });
         }
 
-        if (CherrygramCoreConfig.INSTANCE.getAutoOTA()) {
+        if (komarugramCoreConfig.INSTANCE.getAutoOTA()) {
             try {
                 UpdaterUtils.checkUpdates(actionBarLayout.getFragmentStack().size() > 0 ? actionBarLayout.getFragmentStack().get(0) : layersActionBarLayout.getFragmentStack().get(0), false);
             } catch (Exception ignored) {}
         }
-        if (!CherrygramCoreConfig.INSTANCE.isPlayStoreBuild()) CherrygramExtras.postCheckFollowChannel(this, currentAccount);
+        KomarugramExtras.postCheckFollowChannel(this, currentAccount);
         ChatsHelper2.checkCustomChatID(currentAccount);
 
         BackupAgent.requestBackup(this);
@@ -1449,8 +1443,8 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
             }
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O && checkNavigationBar && (!useCurrentFragment || currentFragment == null || !currentFragment.isInPreviewMode())) {
                 final Window window = getWindow();
-                int color = Theme.getColor(CherrygramAppearanceConfig.INSTANCE.getFlatNavbar() ? Theme.key_chat_messagePanelBackground : Theme.key_windowBackgroundGray, null, true);
-                if (window.getNavigationBarColor() != color || CherrygramAppearanceConfig.INSTANCE.getFlatNavbar() ) {
+                int color = Theme.getColor(komarugramAppearanceConfig.INSTANCE.getFlatNavbar() ? Theme.key_chat_messagePanelBackground : Theme.key_windowBackgroundGray, null, true);
+                if (window.getNavigationBarColor() != color || komarugramAppearanceConfig.INSTANCE.getFlatNavbar() ) {
                     window.setNavigationBarColor(color);
                     final float brightness = AndroidUtilities.computePerceivedBrightness(color);
                     AndroidUtilities.setLightNavigationBar(getWindow(), brightness >= 0.721f);
@@ -7946,7 +7940,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
                         showVoiceChatTooltip(mute ? UndoView.ACTION_VOIP_SOUND_MUTED : UndoView.ACTION_VOIP_SOUND_UNMUTED);
                     }
                 }
-            } else if (CherrygramChatsConfig.INSTANCE.getPlayVideoOnVolume() && (!mainFragmentsStack.isEmpty() && (!PhotoViewer.hasInstance() || !PhotoViewer.getInstance().isVisible()) && event.getRepeatCount() == 0)) {
+            } else if (komarugramChatsConfig.INSTANCE.getPlayVideoOnVolume() && (!mainFragmentsStack.isEmpty() && (!PhotoViewer.hasInstance() || !PhotoViewer.getInstance().isVisible()) && event.getRepeatCount() == 0)) {
                 BaseFragment fragment = mainFragmentsStack.get(mainFragmentsStack.size() - 1);
                 if (fragment instanceof ChatActivity && !BaseFragment.hasSheets(fragment)) {
                     if (((ChatActivity) fragment).maybePlayVisibleVideo()) {
@@ -8683,6 +8677,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
     public static void makeRipple(float x, float y, float intensity) {
         if (instance == null) return;
         instance.makeRippleInternal(x, y, intensity);
+
     }
 
     private ISuperRipple currentRipple;

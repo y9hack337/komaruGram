@@ -1,4 +1,4 @@
-package uz.unnarsx.cherrygram.camera;
+package uz.unnarsx.komarugram.camera;
 
 import static android.hardware.camera2.CameraCharacteristics.LENS_INFO_AVAILABLE_FOCAL_LENGTHS;
 import static android.hardware.camera2.CameraMetadata.LENS_FACING_BACK;
@@ -32,7 +32,7 @@ import java.util.Optional;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
-import uz.unnarsx.cherrygram.core.configs.CherrygramCameraConfig;
+import uz.unnarsx.komarugram.core.configs.komarugramCameraConfig;
 
 public class CameraXUtils {
 
@@ -45,15 +45,15 @@ public class CameraXUtils {
     }
 
     public static boolean isCurrentCameraCameraX() {
-        return /*isCameraXSupported() &&*/ CherrygramCameraConfig.INSTANCE.getCameraType() == CherrygramCameraConfig.CAMERA_X;
+        return /*isCameraXSupported() &&*/ komarugramCameraConfig.INSTANCE.getCameraType() == komarugramCameraConfig.CAMERA_X;
     }
 
     public static boolean isCurrentCameraNotCameraX() {
-        return /*!isCameraXSupported() ||*/ CherrygramCameraConfig.INSTANCE.getCameraType() != CherrygramCameraConfig.CAMERA_X;
+        return /*!isCameraXSupported() ||*/ komarugramCameraConfig.INSTANCE.getCameraType() != komarugramCameraConfig.CAMERA_X;
     }
 
     /*public static int getDefaultCamera() { // Used for Config
-        return isCameraXSupported() ? CherrygramCameraConfig.CAMERA_X : CherrygramCameraConfig.TELEGRAM_CAMERA;
+        return isCameraXSupported() ? komarugramCameraConfig.CAMERA_X : komarugramCameraConfig.TELEGRAM_CAMERA;
     }*/
 
     public static boolean isWideAngleAvailable(ProcessCameraProvider provider) {
@@ -145,8 +145,8 @@ public class CameraXUtils {
                 .findFirst()
                 .ifPresent(height -> {
                     cameraResolution = height;
-                    if (CherrygramCameraConfig.INSTANCE.getCameraResolution() == -1 || CherrygramCameraConfig.INSTANCE.getCameraResolution() > max || CherrygramCameraConfig.INSTANCE.getCameraResolution() < min) {
-                        CherrygramCameraConfig.INSTANCE.setCameraResolution(height);
+                    if (komarugramCameraConfig.INSTANCE.getCameraResolution() == -1 || komarugramCameraConfig.INSTANCE.getCameraResolution() > max || komarugramCameraConfig.INSTANCE.getCameraResolution() < min) {
+                        komarugramCameraConfig.INSTANCE.setCameraResolution(height);
                     }
                 });
     }
@@ -154,14 +154,14 @@ public class CameraXUtils {
     public static Size getPreviewBestSize() {
         int suggestedRes = getSuggestedResolution(true);
         return getAvailableVideoSizes().values().stream()
-                .filter(size -> size.getHeight() <= CherrygramCameraConfig.INSTANCE.getCameraResolution() && size.getHeight() <= suggestedRes)
+                .filter(size -> size.getHeight() <= komarugramCameraConfig.INSTANCE.getCameraResolution() && size.getHeight() <= suggestedRes)
                 .max(Comparator.comparingInt(Size::getHeight))
                 .orElse(new Size(0, 0));
     }
 
     public static Quality getVideoQuality() {
         return getAvailableVideoSizes().entrySet().stream()
-                .filter(entry -> entry.getValue().getHeight() == CherrygramCameraConfig.INSTANCE.getCameraResolution())
+                .filter(entry -> entry.getValue().getHeight() == komarugramCameraConfig.INSTANCE.getCameraResolution())
                 .map(Map.Entry::getKey)
                 .findFirst()
                 .orElse(Quality.HIGHEST);

@@ -2,7 +2,7 @@
 <resources>
     <!-- by t.me/arsLan-->
     <string name="CG_FollowChannelTitle">Suscríbete al canal oficial</string>
-    <string name="CG_FollowChannelInfo">¡Únete a nuestro canal para estar al día de todas las novedades y características de Cherrygram!</string>
+    <string name="CG_FollowChannelInfo">¡Únete a nuestro canal para estar al día de todas las novedades y características de komarugram!</string>
     <string name="CG_DoNotRemindAgain">No volver a recordar</string>
     <!--Telegram screens-->
     <!--Sign in screen-->
@@ -53,13 +53,13 @@
     <!--Misc-->
     <string name="CG_Restart">Reiniciar app</string>
     <string name="CG_RestartToApply">Reinicie la aplicación para aplicar los cambios</string>
-    <string name="CG_PushService">Servicio Push de Cherrygram.</string>
+    <string name="CG_PushService">Servicio Push de komarugram.</string>
     <string name="CG_ForceClean">Forzar Borrar caché de Telegram</string>
     <string name="CG_ForceCleanInfo">Usa esto si te encuentras con un largo \"Calculando…\" al intentar limpiar la caché.\nEsto borrará TODO de tu caché - ¡Ten cuidado!</string>
     <string name="CG_ForceCleanInfo1">¿Realmente quieres eliminar TODO de tu caché de Telegram?</string>
-    <string name="CG_Kaboom">Se puede acceder a esta función sin la contraseña de Cherrygram, a través de los ajustes del sistema. Esta característica borra por completo todos los datos locales (Cherrygram). Puede ser usada en situaciones de emergencia.</string>
+    <string name="CG_Kaboom">Se puede acceder a esta función sin la contraseña de komarugram, a través de los ajustes del sistema. Esta característica borra por completo todos los datos locales (komarugram). Puede ser usada en situaciones de emergencia.</string>
     <string name="CG_AppCrashed">Algo salió mal</string>
-    <string name="CG_AppCrashedDesc">Cherrygram ha dejado de funcionar. Por favor, envíe registros a los desarrolladores para que puedan arreglar este error tan pronto como sea posible.</string>
+    <string name="CG_AppCrashedDesc">komarugram ha dejado de funcionar. Por favor, envíe registros a los desarrolladores para que puedan arreglar este error tan pronto como sea posible.</string>
     <string name="CG_CopyReportDetails">Copiar detalles del informe</string>
     <string name="CG_ReportDetailsCopied">Detalles del informe copiados al portapapeles.</string>
     <string name="CG_TranslationLanguage">Idioma de traducción</string>
@@ -78,11 +78,11 @@
     <string name="CG_ProfileBackground">Aplicar fondo de perfil</string>
     <!--Misc-->
     <!--Telegram screens-->
-    <!--Cherrygram screens-->
-    <!--Cherrygram Preferences-->
-    <string name="CGP_AdvancedSettings">Preferencias de Cherrygram</string>
+    <!--komarugram screens-->
+    <!--komarugram Preferences-->
+    <string name="CGP_AdvancedSettings">Preferencias de komarugram</string>
     <string name="CGP_About_Desc">Una modificación experimental de Telegram. Pulse aquí para leer la lista de características de la app.</string>
-    <string name="CGP_Header_About">Acerca de Cherrygram</string>
+    <string name="CGP_Header_About">Acerca de komarugram</string>
     <string name="CGP_Header_About_Desc">Actualizaciones, código fuente y más</string>
     <string name="CGP_Links">Enlaces</string>
     <string name="CGP_ToChannel">Canal oficial</string>
@@ -90,7 +90,7 @@
     <string name="CGP_Source">Código fuente</string>
     <string name="CGP_Crowdin">Ayuda con la traducción</string>
     <string name="CGP_Header_Categories">Categorías</string>
-    <!--Cherrygram Preferences-->
+    <!--komarugram Preferences-->
     <!--General Preferences-->
     <string name="AP_Header_General">General</string>
     <!--General Preferences-->
@@ -137,8 +137,8 @@
     <string name="CP_DisablePremStickAutoPlay">Desactivar auto-reproducción de stickers premium</string>
     <string name="CP_DisablePremStickAutoPlay_Desc">La animación premium de stickers no se reproducirá automáticamente (no funcionará si deshabilitas toques en stickers premium)</string>
     <string name="CP_Filters_Header">Carpetas</string>
-    <string name="AP_FolderNameInHeader">Nombre de la carpeta en lugar de \"Cherrygram\"</string>
-    <string name="AP_FolderNameInHeader_Desc">Esto cambiará \"Cherrygram\" en la barra de acción al nombre de tu carpeta (útil si solo tienes iconos en lugar de nombres de carpetas)</string>
+    <string name="AP_FolderNameInHeader">Nombre de la carpeta en lugar de \"komarugram\"</string>
+    <string name="AP_FolderNameInHeader_Desc">Esto cambiará \"komarugram\" en la barra de acción al nombre de tu carpeta (útil si solo tienes iconos en lugar de nombres de carpetas)</string>
     <string name="CP_NewTabs_RemoveAllChats">Ocultar carpeta \"Todos\"</string>
     <string name="AP_Tab_Style">Estilo Tabs (Pestañas)</string>
     <string name="AP_Tab_Style_Default">Por defecto</string>
@@ -253,7 +253,7 @@
     <string name="UP_ClearedUpdatesCache">Se ha limpiado %1$s de caché.</string>
     <string name="UP_NothingToClear">Nada que limpiar.</string>
     <string name="UP_CheckForUpdates">Buscar actualizaciones</string>
-    <string name="UP_Not_Found">Cherrygram está actualizado.</string>
+    <string name="UP_Not_Found">komarugram está actualizado.</string>
     <string name="UP_UpdateAvailable">¡Actualización disponible!</string>
     <string name="UP_Version">Versión</string>
     <string name="UP_UpdateSize">Tamaño de actualización</string>
@@ -264,5 +264,5 @@
     <string name="DP_Donate">Donar</string>
     <string name="DP_Donate_Method">Elegir método</string>
     <!--Donations-->
-    <!--Cherrygram screens-->
+    <!--komarugram screens-->
 </resources>

@@ -10,20 +10,21 @@ import org.telegram.messenger.browser.Browser
 import org.telegram.ui.ActionBar.BaseFragment
 import org.telegram.ui.ChatActivity
 import org.telegram.ui.Components.BulletinFactory
-import uz.unnarsx.komarugram.komaruGramConfig
-import uz.unnarsx.komarugram.Extra
-import uz.unnarsx.komarugram.core.crashlytics.Crashlytics
-import uz.unnarsx.komarugram.misc.Constants
-import uz.unnarsx.komarugram.core.helpers.CGResourcesHelper
-import uz.unnarsx.komarugram.preferences.tgkit.komaruGramPreferencesNavigator
+import uz.unnarsx.komarugram.preferences.BasePreferencesEntry
 import uz.unnarsx.komarugram.preferences.tgkit.preference.category
 import uz.unnarsx.komarugram.preferences.tgkit.preference.textDetail
 import uz.unnarsx.komarugram.preferences.tgkit.preference.textIcon
 import uz.unnarsx.komarugram.preferences.tgkit.preference.tgKitScreen
-import uz.unnarsx.komarugram.preferences.tgkit.preference.types.TGKitTextDetailRow
-import uz.unnarsx.komarugram.preferences.tgkit.preference.types.TGKitTextIconRow
+import uz.unnarsx.komarugram.Extra
+import uz.unnarsx.komarugram.core.configs.komarugramCoreConfig
+import uz.unnarsx.komarugram.core.crashlytics.Crashlytics
+import uz.unnarsx.komarugram.core.helpers.CGResourcesHelper
 import uz.unnarsx.komarugram.core.updater.UpdaterBottomSheet
 import uz.unnarsx.komarugram.core.updater.UpdaterUtils
+import uz.unnarsx.komarugram.misc.Constants
+import uz.unnarsx.komarugram.preferences.tgkit.komarugramPreferencesNavigator
+import uz.unnarsx.komarugram.preferences.tgkit.preference.types.TGKitTextDetailRow
+import uz.unnarsx.komarugram.preferences.tgkit.preference.types.TGKitTextIconRow
 
 class AboutPreferencesEntry : BasePreferencesEntry {
     override fun getPreferences(bf: BaseFragment) = tgKitScreen(LocaleController.getString("CGP_Header_About", R.string.CGP_Header_About)) {
@@ -43,12 +44,12 @@ class AboutPreferencesEntry : BasePreferencesEntry {
                 detail = UpdaterUtils.getLastCheckUpdateTime()
 
                 listener = TGKitTextDetailRow.TGTDListener {
-                    if (komaruGramConfig.isPlayStoreBuild()) {
-                        komaruGramConfig.lastUpdateCheckTime = System.currentTimeMillis()
+                    if (komarugramCoreConfig.isPlayStoreBuild()) {
+                        komarugramCoreConfig.lastUpdateCheckTime = System.currentTimeMillis()
                         detail = UpdaterUtils.getLastCheckUpdateTime()
 
                         Browser.openUrl(bf.context, Extra.PLAYSTORE_APP_URL)
-                    } else if (komaruGramConfig.isPremiumBuild()) {
+                    } else if (komarugramCoreConfig.isPremiumBuild()) {
                         // Fuckoff :)
                     } else {
                         UpdaterBottomSheet.showAlert(bf.context, bf, false, null)
@@ -70,7 +71,7 @@ class AboutPreferencesEntry : BasePreferencesEntry {
                 title = "Debug // WIP"
 
                 listener = TGKitTextIconRow.TGTIListener {
-                    it.presentFragment(komaruGramPreferencesNavigator.createDebug())
+                    it.presentFragment(komarugramPreferencesNavigator.createDebug())
                 }
             }
         }
@@ -94,19 +95,19 @@ class AboutPreferencesEntry : BasePreferencesEntry {
                     Browser.openUrl(bf.parentActivity, "https://t.me/komarugram")
                 }
             }
-            if (!komaruGramConfig.isPremiumBuild()) {
+            if (!komarugramCoreConfig.isPremiumBuild()) {
                 textIcon {
                     icon = R.drawable.github_logo_white
                     title = LocaleController.getString("CGP_Source", R.string.CGP_Source)
 
-                    value = if (komaruGramConfig.isBetaBuild() || komaruGramConfig.isDevBuild()) {
+                    value = if (komarugramCoreConfig.isBetaBuild() || komarugramCoreConfig.isDevBuild()) {
                         "GitHub"
                     } else {
                         "commit " + BuildConfig.GIT_COMMIT_HASH
                     }
 
                     listener = TGKitTextIconRow.TGTIListener {
-                        if (komaruGramConfig.isBetaBuild() || komaruGramConfig.isDevBuild()) {
+                        if (komarugramCoreConfig.isBetaBuild() || komarugramCoreConfig.isDevBuild()) {
                             Browser.openUrl(bf.parentActivity, "https://github.com/y9hack337/komaruGram/")
                         } else {
                             Browser.openUrl(bf.parentActivity, "https://github.com/y9hack337/komaruGram/commit/" + BuildConfig.GIT_COMMIT_HASH)
@@ -124,7 +125,7 @@ class AboutPreferencesEntry : BasePreferencesEntry {
                 }
             }
 
-            if (komaruGramConfig.isPlayStoreBuild()) {
+            if (komarugramCoreConfig.isPlayStoreBuild()) {
                 textIcon {
                     icon = R.drawable.msg2_policy
                     title = LocaleController.getString("PrivacyPolicy", R.string.PrivacyPolicy)
@@ -134,14 +135,14 @@ class AboutPreferencesEntry : BasePreferencesEntry {
                     }
                 }
             }
-            textIcon {
-                icon = R.drawable.heart_angle_solar
-                title = LocaleController.getString("DP_Donate", R.string.DP_Donate)
-
-                listener = TGKitTextIconRow.TGTIListener {
-                    it.presentFragment(komaruGramPreferencesNavigator.createDonate())
-                }
-            }
+            //textIcon {
+            //    icon = R.drawable.heart_angle_solar
+            //    title = LocaleController.getString("DP_Donate", R.string.DP_Donate)
+            //
+            //    listener = TGKitTextIconRow.TGTIListener {
+            //        it.presentFragment(komaruGramPreferencesNavigator.createDonate())
+            //    }
+            //}
         }
 
     }

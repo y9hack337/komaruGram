@@ -738,7 +738,7 @@ public class EditTextCaption extends EditTextBoldCursor {
         return super.onTextContextMenuItem(id);
     }
 
-    //Cherrygram
+    //komarugram
     public void makeSelectedCode() {
         AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
         builder.setTitle(LocaleController.getString("CG_CreateCode", R.string.CG_CreateCode));
@@ -906,5 +906,5 @@ public class EditTextCaption extends EditTextBoldCursor {
             editText.setSelection(0, editText.getText().length());
         }
     }
-    //Cherrygram
+    //komarugram
 }

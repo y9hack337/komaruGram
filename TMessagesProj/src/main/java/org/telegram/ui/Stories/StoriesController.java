@@ -82,7 +82,7 @@ import java.util.Objects;
 import java.util.SortedSet;
 import java.util.TreeSet;
 
-import uz.unnarsx.komarugram.core.configs.CherrygramCoreConfig;
+import uz.unnarsx.komarugram.core.configs.komarugramCoreConfig;
 
 public class StoriesController {
 
@@ -272,7 +272,7 @@ public class StoriesController {
     }
 
     public boolean hasStories() {
-        if (CherrygramCoreConfig.INSTANCE.getHideStories()) {
+        if (komarugramCoreConfig.INSTANCE.getHideStories()) {
             return false;
         }
         return (dialogListStories != null && dialogListStories.size() > 0) || hasSelfStories();

@@ -22,7 +22,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 
-import uz.unnarsx.komarugram.core.configs.CherrygramCoreConfig;
+import uz.unnarsx.komarugram.core.configs.komarugramCoreConfig;
 
 public class ChatThemeController extends BaseController {
 
@@ -301,16 +301,16 @@ public class ChatThemeController extends BaseController {
     public TLRPC.WallPaper getDialogWallpaper(long dialogId) {
         if (dialogId >= 0) {
             TLRPC.UserFull userFull = getMessagesController().getUserFull(dialogId);
-            if (userFull != null && CherrygramCoreConfig.INSTANCE.getCustomWallpapers()) {
+            if (userFull != null && komarugramCoreConfig.INSTANCE.getCustomWallpapers()) {
                 return userFull.wallpaper;
             }
         } else {
             TLRPC.ChatFull chatFull = getMessagesController().getChatFull(-dialogId);
-            if (chatFull != null && CherrygramCoreConfig.INSTANCE.getCustomWallpapers()) {
+            if (chatFull != null && komarugramCoreConfig.INSTANCE.getCustomWallpapers()) {
                 return chatFull.wallpaper;
             }
         }
-        String wallpaperString = CherrygramCoreConfig.INSTANCE.getCustomWallpapers() ?
+        String wallpaperString = komarugramCoreConfig.INSTANCE.getCustomWallpapers() ?
                 getEmojiSharedPreferences().getString("chatWallpaper_" + currentAccount + "_" + dialogId, null) : Theme.getActiveTheme().pathToWallpaper;
         if (wallpaperString != null) {
             SerializedData serializedData = new SerializedData(Utilities.hexToBytes(wallpaperString));

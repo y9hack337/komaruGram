@@ -1,4 +1,4 @@
-package uz.unnarsx.cherrygram.preferences.folders.helpers;
+package uz.unnarsx.komarugram.preferences.folders.helpers;
 
 import static org.telegram.messenger.LocaleController.getString;
 
@@ -8,7 +8,7 @@ import org.telegram.messenger.R;
 
 import java.util.LinkedHashMap;
 
-import uz.unnarsx.cherrygram.core.configs.CherrygramAppearanceConfig;
+import uz.unnarsx.komarugram.core.configs.komarugramAppearanceConfig;
 
 public class FolderIconHelper {
     public static LinkedHashMap<String, Integer> folderIcons = new LinkedHashMap<>();
@@ -104,7 +104,7 @@ public class FolderIconHelper {
     }
 
     public static int getPadding() {
-        if (CherrygramAppearanceConfig.INSTANCE.getTabMode() == CherrygramAppearanceConfig.TAB_TYPE_MIX) {
+        if (komarugramAppearanceConfig.INSTANCE.getTabMode() == komarugramAppearanceConfig.TAB_TYPE_MIX) {
             return AndroidUtilities.dp(6);
         }
         return 0;
@@ -112,15 +112,15 @@ public class FolderIconHelper {
 
     public static int getTotalIconWidth() {
         int result = 0;
-        if (CherrygramAppearanceConfig.INSTANCE.getTabMode() != CherrygramAppearanceConfig.TAB_TYPE_TEXT) {
+        if (komarugramAppearanceConfig.INSTANCE.getTabMode() != komarugramAppearanceConfig.TAB_TYPE_TEXT) {
             result = getIconWidth() + getPadding();
         }
         return result;
     }
 
     public static int getPaddingTab() {
-        if (CherrygramAppearanceConfig.INSTANCE.getTabMode() != CherrygramAppearanceConfig.TAB_TYPE_ICON ||
-                CherrygramAppearanceConfig.INSTANCE.getTabStyle() >= CherrygramAppearanceConfig.TAB_STYLE_VKUI) {
+        if (komarugramAppearanceConfig.INSTANCE.getTabMode() != komarugramAppearanceConfig.TAB_TYPE_ICON ||
+                komarugramAppearanceConfig.INSTANCE.getTabStyle() >= komarugramAppearanceConfig.TAB_STYLE_VKUI) {
             return AndroidUtilities.dp(32);
         }
         return AndroidUtilities.dp(16);

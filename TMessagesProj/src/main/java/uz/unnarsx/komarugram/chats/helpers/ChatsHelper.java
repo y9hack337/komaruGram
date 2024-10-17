@@ -1,4 +1,4 @@
-package uz.unnarsx.cherrygram.chats.helpers;
+package uz.unnarsx.komarugram.chats.helpers;
 
 import static org.telegram.messenger.LocaleController.getString;
 
@@ -74,10 +74,10 @@ import java.util.Collections;
 import java.util.HashSet;
 import java.util.Objects;
 
-import uz.unnarsx.cherrygram.core.CGFeatureHooks;
-import uz.unnarsx.cherrygram.core.configs.CherrygramChatsConfig;
-import uz.unnarsx.cherrygram.core.helpers.CGResourcesHelper;
-import uz.unnarsx.cherrygram.helpers.ui.PopupHelper;
+import uz.unnarsx.komarugram.core.CGFeatureHooks;
+import uz.unnarsx.komarugram.core.configs.komarugramChatsConfig;
+import uz.unnarsx.komarugram.core.helpers.CGResourcesHelper;
+import uz.unnarsx.komarugram.helpers.ui.PopupHelper;
 
 // I've created this so CG features can be injected in a source file with 1 line only (maybe)
 // Because manual editing of drklo's sources harms your mental health.
@@ -156,7 +156,7 @@ public class ChatsHelper extends BaseController {
                 .append(hasForwards && !isMusic ? String.format("%d", messageObject.messageOwner.forwards) : "")
                 .append(isMusic ? "" : " ")
                 .append(hasForwards && !isMusic ? "• " : "")
-                .append(CherrygramChatsConfig.INSTANCE.getShowPencilIcon() ? editedSpan : getString(R.string.EditedMessage))
+                .append(komarugramChatsConfig.INSTANCE.getShowPencilIcon() ? editedSpan : getString(R.string.EditedMessage))
                 .append(hasForwards && !isMusic ? " • " : " ")
                 .append(LocaleController.getInstance().getFormatterDay().format((long) (messageObject.messageOwner.date) * 1000));
         return spannableStringBuilder;
@@ -391,7 +391,7 @@ public class ChatsHelper extends BaseController {
 
     public void showPlasticCardMenu(ChatActivity chatActivity, ItemOptions options, ScrimOptions dialog, String card) {
         if (getUserConfig().getCurrentUser().phone.startsWith("998")
-                /*CherrygramChatsConfig.INSTANCE.isDev() && (card.startsWith("9860") || card.startsWith("555536")
+                /*komarugramChatsConfig.INSTANCE.isDev() && (card.startsWith("9860") || card.startsWith("555536")
                     || card.startsWith("429434") || card.startsWith("418783") || card.startsWith("400847") || card.startsWith("472887") || card.startsWith("406228") || card.startsWith("419813") || card.startsWith("407342")
                     || card.startsWith("8600") || card.startsWith("561468") || card.startsWith("5440") || card.startsWith("6262") || card.startsWith("6264"))*/
         ) {
@@ -436,18 +436,18 @@ public class ChatsHelper extends BaseController {
     }
 
     public void makeReplyButtonClick(ChatActivity chatActivity) {
-        switch (CherrygramChatsConfig.INSTANCE.getLeftBottomButton()) {
-            case CherrygramChatsConfig.LEFT_BUTTON_REPLY:
+        switch (komarugramChatsConfig.INSTANCE.getLeftBottomButton()) {
+            case komarugramChatsConfig.LEFT_BUTTON_REPLY:
                 createReplyAction(chatActivity);
                 break;
-            case CherrygramChatsConfig.LEFT_BUTTON_SAVE_MESSAGE:
+            case komarugramChatsConfig.LEFT_BUTTON_SAVE_MESSAGE:
                 createCGSaveMessagesSelected(chatActivity);
                 break;
-            case CherrygramChatsConfig.LEFT_BUTTON_DIRECT_SHARE:
+            case komarugramChatsConfig.LEFT_BUTTON_DIRECT_SHARE:
                 createCGShareAlertSelected(chatActivity);
                 break;
             default:
-            case CherrygramChatsConfig.LEFT_BUTTON_FORWARD_WO_AUTHORSHIP:
+            case komarugramChatsConfig.LEFT_BUTTON_FORWARD_WO_AUTHORSHIP:
                 CGFeatureHooks.switchNoAuthor(true);
                 chatActivity.openForward(false);
                 break;
@@ -459,19 +459,19 @@ public class ChatsHelper extends BaseController {
         ArrayList<Integer> configValues = new ArrayList<>();
 
         configStringKeys.add(getString("Forward", R.string.Forward) + " " + getString("CG_Without_Authorship", R.string.CG_Without_Authorship));
-        configValues.add(CherrygramChatsConfig.LEFT_BUTTON_FORWARD_WO_AUTHORSHIP);
+        configValues.add(komarugramChatsConfig.LEFT_BUTTON_FORWARD_WO_AUTHORSHIP);
 
         configStringKeys.add(getString("Reply", R.string.Reply));
-        configValues.add(CherrygramChatsConfig.LEFT_BUTTON_REPLY);
+        configValues.add(komarugramChatsConfig.LEFT_BUTTON_REPLY);
 
         configStringKeys.add(getString("CG_ToSaved", R.string.CG_ToSaved));
-        configValues.add(CherrygramChatsConfig.LEFT_BUTTON_SAVE_MESSAGE);
+        configValues.add(komarugramChatsConfig.LEFT_BUTTON_SAVE_MESSAGE);
 
         configStringKeys.add(getString("DirectShare", R.string.DirectShare));
-        configValues.add(CherrygramChatsConfig.LEFT_BUTTON_DIRECT_SHARE);
+        configValues.add(komarugramChatsConfig.LEFT_BUTTON_DIRECT_SHARE);
 
-        PopupHelper.show(configStringKeys, getString("CP_LeftBottomButtonAction", R.string.CP_LeftBottomButtonAction), configValues.indexOf(CherrygramChatsConfig.INSTANCE.getLeftBottomButton()), chatActivity.getContext(), i -> {
-            CherrygramChatsConfig.INSTANCE.setLeftBottomButton(configValues.get(i));
+        PopupHelper.show(configStringKeys, getString("CP_LeftBottomButtonAction", R.string.CP_LeftBottomButtonAction), configValues.indexOf(komarugramChatsConfig.INSTANCE.getLeftBottomButton()), chatActivity.getContext(), i -> {
+            komarugramChatsConfig.INSTANCE.setLeftBottomButton(configValues.get(i));
 
             if (chatActivity.replyButton == null) return;
 
@@ -635,40 +635,40 @@ public class ChatsHelper extends BaseController {
         ArrayList<Integer> configValues = new ArrayList<>();
 
         configStringKeys.add(getString("CG_SearchFilter_None", R.string.CG_SearchFilter_None));
-        configValues.add(CherrygramChatsConfig.FILTER_NONE);
+        configValues.add(komarugramChatsConfig.FILTER_NONE);
 
         configStringKeys.add(getString("CG_SearchFilter_Photos", R.string.CG_SearchFilter_Photos));
-        configValues.add(CherrygramChatsConfig.FILTER_PHOTOS);
+        configValues.add(komarugramChatsConfig.FILTER_PHOTOS);
 
         configStringKeys.add(getString("CG_SearchFilter_Videos", R.string.CG_SearchFilter_Videos));
-        configValues.add(CherrygramChatsConfig.FILTER_VIDEOS);
+        configValues.add(komarugramChatsConfig.FILTER_VIDEOS);
 
         configStringKeys.add(getString("CG_SearchFilter_VoiceMessages", R.string.CG_SearchFilter_VoiceMessages));
-        configValues.add(CherrygramChatsConfig.FILTER_VOICE_MESSAGES);
+        configValues.add(komarugramChatsConfig.FILTER_VOICE_MESSAGES);
 
         configStringKeys.add(getString("CG_SearchFilter_VideoMessages", R.string.CG_SearchFilter_VideoMessages));
-        configValues.add(CherrygramChatsConfig.FILTER_VIDEO_MESSAGES);
+        configValues.add(komarugramChatsConfig.FILTER_VIDEO_MESSAGES);
 
         configStringKeys.add(getString("CG_SearchFilter_Files", R.string.CG_SearchFilter_Files));
-        configValues.add(CherrygramChatsConfig.FILTER_FILES);
+        configValues.add(komarugramChatsConfig.FILTER_FILES);
 
         configStringKeys.add(getString("CG_SearchFilter_Music", R.string.CG_SearchFilter_Music));
-        configValues.add(CherrygramChatsConfig.FILTER_MUSIC);
+        configValues.add(komarugramChatsConfig.FILTER_MUSIC);
 
         configStringKeys.add(getString("CG_SearchFilter_GIFs", R.string.CG_SearchFilter_GIFs));
-        configValues.add(CherrygramChatsConfig.FILTER_GIFS);
+        configValues.add(komarugramChatsConfig.FILTER_GIFS);
 
         configStringKeys.add(getString("CG_SearchFilter_Geolocation", R.string.CG_SearchFilter_Geolocation));
-        configValues.add(CherrygramChatsConfig.FILTER_GEO);
+        configValues.add(komarugramChatsConfig.FILTER_GEO);
 
         configStringKeys.add(getString("CG_SearchFilter_Contacts", R.string.CG_SearchFilter_Contacts));
-        configValues.add(CherrygramChatsConfig.FILTER_CONTACTS);
+        configValues.add(komarugramChatsConfig.FILTER_CONTACTS);
 
         configStringKeys.add(getString("CG_SearchFilter_MyMentions", R.string.CG_SearchFilter_MyMentions));
-        configValues.add(CherrygramChatsConfig.FILTER_MENTIONS);
+        configValues.add(komarugramChatsConfig.FILTER_MENTIONS);
 
-        PopupHelper.show(configStringKeys, getString("CG_SearchFilter", R.string.CG_SearchFilter), configValues.indexOf(CherrygramChatsConfig.INSTANCE.getMessagesSearchFilter()), chatActivity.getContext(), i -> {
-            CherrygramChatsConfig.INSTANCE.setMessagesSearchFilter(configValues.get(i));
+        PopupHelper.show(configStringKeys, getString("CG_SearchFilter", R.string.CG_SearchFilter), configValues.indexOf(komarugramChatsConfig.INSTANCE.getMessagesSearchFilter()), chatActivity.getContext(), i -> {
+            komarugramChatsConfig.INSTANCE.setMessagesSearchFilter(configValues.get(i));
 
             chatActivity.openSearchWithText(null);
             chatActivity.showMessagesSearchListView(true);

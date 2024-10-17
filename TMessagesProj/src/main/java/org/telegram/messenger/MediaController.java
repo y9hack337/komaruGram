@@ -108,7 +108,7 @@ import java.util.TimerTask;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.CountDownLatch;
 
-import uz.unnarsx.komarugram.core.configs.CherrygramChatsConfig;
+import uz.unnarsx.komarugram.core.configs.komarugramChatsConfig;
 import uz.unnarsx.komarugram.chats.AudioEnhance;
 import uz.unnarsx.komarugram.core.PermissionsUtils;
 
@@ -4058,7 +4058,7 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
         manualRecording = manual;
         requestRecordAudioFocus(true);
 
-        if (!CherrygramChatsConfig.INSTANCE.getDisableVibration()) {
+        if (!komarugramChatsConfig.INSTANCE.getDisableVibration()) {
             try {
                 feedbackView.performHapticFeedback(HapticFeedbackConstants.KEYBOARD_TAP, HapticFeedbackConstants.FLAG_IGNORE_GLOBAL_SETTING);
             } catch (Exception ignore) {
@@ -4332,7 +4332,7 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
             if (send == 0) {
                 stopRecordingInternal(0, false, 0, false);
             }
-            if (!CherrygramChatsConfig.INSTANCE.getDisableVibration()) {
+            if (!komarugramChatsConfig.INSTANCE.getDisableVibration()) {
                 try {
                     feedbackView.performHapticFeedback(HapticFeedbackConstants.KEYBOARD_TAP, HapticFeedbackConstants.FLAG_IGNORE_GLOBAL_SETTING);
                 } catch (Exception ignore) {

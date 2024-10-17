@@ -1,8 +1,8 @@
-package uz.unnarsx.cherrygram.core.icons.icon_replaces
+package uz.unnarsx.komarugram.core.icons.icon_replaces
 
 import android.util.SparseIntArray
 import org.telegram.messenger.R
-import uz.unnarsx.cherrygram.core.icons.newSparseInt
+import uz.unnarsx.komarugram.core.icons.newSparseInt
 
 class SolarIconReplace : BaseIconReplace() {
     override val replaces: SparseIntArray = newSparseInt(
@@ -220,7 +220,7 @@ class SolarIconReplace : BaseIconReplace() {
         R.drawable.msg_invited to R.drawable.msg_invited_solar,
         R.drawable.msg_jobtitle to R.drawable.msg_jobtitle_solar,
         R.drawable.msg_language to R.drawable.msg_language_solar,
-        R.drawable.msg_retry to R.drawable.msg_retry_solar, // Restart Cherrygram
+        R.drawable.msg_retry to R.drawable.msg_retry_solar, // Restart komarugram
         R.drawable.msg_leave to R.drawable.msg_leave_solar,
         R.drawable.msg_link to R.drawable.msg_link2_solar,
         R.drawable.msg_link2 to R.drawable.msg_link2_solar,

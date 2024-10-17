@@ -74,7 +74,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 import uz.unnarsx.komarugram.chats.helpers.ChatsHelper2;
-import uz.unnarsx.komarugram.core.configs.CherrygramExperimentalConfig;
+import uz.unnarsx.komarugram.core.configs.komarugramExperimentalConfig;
 
 public class AddressBarList extends FrameLayout {
 
@@ -1116,7 +1116,7 @@ public class AddressBarList extends FrameLayout {
             loading = true;
             final long selfId = UserConfig.getInstance(currentAccount).getClientUserId();
             long chatID;
-            if (CherrygramExperimentalConfig.INSTANCE.getCustomChatForSavedMessages()) {
+            if (komarugramExperimentalConfig.INSTANCE.getCustomChatForSavedMessages()) {
                 chatID = ChatsHelper2.getCustomChatID();
             } else {
                 chatID = selfId;

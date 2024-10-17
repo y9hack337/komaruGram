@@ -97,7 +97,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import uz.unnarsx.komarugram.core.configs.CherrygramChatsConfig;
+import uz.unnarsx.komarugram.core.configs.komarugramChatsConfig;
 import uz.unnarsx.komarugram.core.VibrateUtil;
 
 /**
@@ -7053,7 +7053,7 @@ public class RecyclerView extends ViewGroup implements ScrollingView,
             try {
                 TraceCompat.beginSection(TRACE_CREATE_VIEW_TAG);
                 final VH holder = onCreateViewHolder(parent, viewType);
-                if (CherrygramChatsConfig.INSTANCE.getDisableVibration()) {
+                if (komarugramChatsConfig.INSTANCE.getDisableVibration()) {
                     VibrateUtil.disableHapticFeedback(holder.itemView);
                 }
                 if (holder.itemView.getParent() != null) {

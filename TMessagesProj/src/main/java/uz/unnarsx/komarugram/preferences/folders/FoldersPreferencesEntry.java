@@ -1,4 +1,4 @@
-package uz.unnarsx.cherrygram.preferences.folders;
+package uz.unnarsx.komarugram.preferences.folders;
 
 import static org.telegram.messenger.LocaleController.getString;
 
@@ -30,9 +30,9 @@ import org.telegram.ui.Components.RecyclerListView;
 
 import java.util.ArrayList;
 
-import uz.unnarsx.cherrygram.core.configs.CherrygramAppearanceConfig;
-import uz.unnarsx.cherrygram.helpers.ui.PopupHelper;
-import uz.unnarsx.cherrygram.preferences.folders.cells.FoldersPreviewCell;
+import uz.unnarsx.komarugram.core.configs.komarugramAppearanceConfig;
+import uz.unnarsx.komarugram.helpers.ui.PopupHelper;
+import uz.unnarsx.komarugram.preferences.folders.cells.FoldersPreviewCell;
 
 public class FoldersPreferencesEntry extends BaseFragment implements NotificationCenter.NotificationCenterDelegate {
 
@@ -128,25 +128,25 @@ public class FoldersPreferencesEntry extends BaseFragment implements Notificatio
         frameLayout.addView(listView, LayoutHelper.createFrame(LayoutHelper.MATCH_PARENT, LayoutHelper.MATCH_PARENT));
         listView.setOnItemClickListener((view, position, x, y) -> {
             if (position == folderNameAppHeaderRow) {
-                CherrygramAppearanceConfig.INSTANCE.toggleFolderNameInHeader();
+                komarugramAppearanceConfig.INSTANCE.toggleFolderNameInHeader();
                 if (view instanceof TextCheckCell) {
-                    ((TextCheckCell) view).setChecked(CherrygramAppearanceConfig.INSTANCE.getFolderNameInHeader());
+                    ((TextCheckCell) view).setChecked(komarugramAppearanceConfig.INSTANCE.getFolderNameInHeader());
                 }
                 parentLayout.rebuildAllFragmentViews(false, false);
                 getNotificationCenter().postNotificationName(NotificationCenter.dialogFiltersUpdated);
             } else if (position == hideAllChatsTabRow) {
-                CherrygramAppearanceConfig.INSTANCE.toggleTabsHideAllChats();
+                komarugramAppearanceConfig.INSTANCE.toggleTabsHideAllChats();
                 if (view instanceof TextCheckCell) {
-                    ((TextCheckCell) view).setChecked(CherrygramAppearanceConfig.INSTANCE.getTabsHideAllChats());
+                    ((TextCheckCell) view).setChecked(komarugramAppearanceConfig.INSTANCE.getTabsHideAllChats());
                 }
                 foldersPreviewCell.updateAllChatsTabName(true);
                 parentLayout.rebuildAllFragmentViews(false, false);
                 getNotificationCenter().postNotificationName(NotificationCenter.dialogFiltersUpdated);
                 getNotificationCenter().postNotificationName(NotificationCenter.mainUserInfoChanged);
             } else if (position == hideCounterRow) {
-                CherrygramAppearanceConfig.INSTANCE.toggleTabsNoUnread();
+                komarugramAppearanceConfig.INSTANCE.toggleTabsNoUnread();
                 if (view instanceof TextCheckCell) {
-                    ((TextCheckCell) view).setChecked(CherrygramAppearanceConfig.INSTANCE.getTabsNoUnread());
+                    ((TextCheckCell) view).setChecked(komarugramAppearanceConfig.INSTANCE.getTabsNoUnread());
                 }
                 foldersPreviewCell.updateTabCounter(true);
                 parentLayout.rebuildAllFragmentViews(false, false);
@@ -156,14 +156,14 @@ public class FoldersPreferencesEntry extends BaseFragment implements Notificatio
                 ArrayList<Integer> types = new ArrayList<>();
 
                 arrayList.add(getString(R.string.CG_FoldersTypeIconsTitles));
-                types.add(CherrygramAppearanceConfig.TAB_TYPE_MIX);
+                types.add(komarugramAppearanceConfig.TAB_TYPE_MIX);
                 arrayList.add(getString(R.string.CG_FoldersTypeTitles));
-                types.add(CherrygramAppearanceConfig.TAB_TYPE_TEXT);
+                types.add(komarugramAppearanceConfig.TAB_TYPE_TEXT);
                 arrayList.add(getString(R.string.CG_FoldersTypeIcons));
-                types.add(CherrygramAppearanceConfig.TAB_TYPE_ICON);
+                types.add(komarugramAppearanceConfig.TAB_TYPE_ICON);
 
-                PopupHelper.show(arrayList, getString(R.string.CG_FoldersType_Header), types.indexOf(CherrygramAppearanceConfig.INSTANCE.getTabMode()), context, i -> {
-                    CherrygramAppearanceConfig.INSTANCE.setTabMode(types.get(i));
+                PopupHelper.show(arrayList, getString(R.string.CG_FoldersType_Header), types.indexOf(komarugramAppearanceConfig.INSTANCE.getTabMode()), context, i -> {
+                    komarugramAppearanceConfig.INSTANCE.setTabMode(types.get(i));
 
                     foldersPreviewCell.updateTabIcons(true);
                     foldersPreviewCell.updateTabTitle(true);
@@ -176,22 +176,22 @@ public class FoldersPreferencesEntry extends BaseFragment implements Notificatio
                 ArrayList<Integer> configValues = new ArrayList<>();
 
                 configStringKeys.add(getString(R.string.AP_Tab_Style_Default));
-                configValues.add(CherrygramAppearanceConfig.TAB_STYLE_DEFAULT);
+                configValues.add(komarugramAppearanceConfig.TAB_STYLE_DEFAULT);
 
                 configStringKeys.add(getString(R.string.AP_Tab_Style_Rounded));
-                configValues.add(CherrygramAppearanceConfig.TAB_STYLE_ROUNDED);
+                configValues.add(komarugramAppearanceConfig.TAB_STYLE_ROUNDED);
 
                 configStringKeys.add(getString(R.string.AP_Tab_Style_Text));
-                configValues.add(CherrygramAppearanceConfig.TAB_STYLE_TEXT);
+                configValues.add(komarugramAppearanceConfig.TAB_STYLE_TEXT);
 
                 configStringKeys.add("VKUI");
-                configValues.add(CherrygramAppearanceConfig.TAB_STYLE_VKUI);
+                configValues.add(komarugramAppearanceConfig.TAB_STYLE_VKUI);
 
                 configStringKeys.add(getString(R.string.AP_Tab_Style_Pills));
-                configValues.add(CherrygramAppearanceConfig.TAB_STYLE_PILLS);
+                configValues.add(komarugramAppearanceConfig.TAB_STYLE_PILLS);
 
-                PopupHelper.show(configStringKeys, getString(R.string.AP_Tab_Style), configValues.indexOf(CherrygramAppearanceConfig.INSTANCE.getTabStyle()), context, i -> {
-                    CherrygramAppearanceConfig.INSTANCE.setTabStyle(configValues.get(i));
+                PopupHelper.show(configStringKeys, getString(R.string.AP_Tab_Style), configValues.indexOf(komarugramAppearanceConfig.INSTANCE.getTabStyle()), context, i -> {
+                    komarugramAppearanceConfig.INSTANCE.setTabStyle(configValues.get(i));
 
                     foldersPreviewCell.updateTabStyle(true);
                     listAdapter.notifyItemChanged(tabStyleRow);
@@ -200,9 +200,9 @@ public class FoldersPreferencesEntry extends BaseFragment implements Notificatio
                     updateRowsId(false);
                 });
             } else if (position == addStrokeRow) {
-                CherrygramAppearanceConfig.INSTANCE.toggleTabStyleStroke();
+                komarugramAppearanceConfig.INSTANCE.toggleTabStyleStroke();
                 if (view instanceof TextCheckCell) {
-                    ((TextCheckCell) view).setChecked(CherrygramAppearanceConfig.INSTANCE.getTabStyleStroke());
+                    ((TextCheckCell) view).setChecked(komarugramAppearanceConfig.INSTANCE.getTabStyleStroke());
                 }
                 foldersPreviewCell.updateTabStroke(true);
                 parentLayout.rebuildAllFragmentViews(false, false);
@@ -229,7 +229,7 @@ public class FoldersPreferencesEntry extends BaseFragment implements Notificatio
 
         int prevAddStrokeRow = addStrokeRow;
         addStrokeRow = -1;
-        if (CherrygramAppearanceConfig.INSTANCE.getTabStyle() >= CherrygramAppearanceConfig.TAB_STYLE_VKUI) addStrokeRow = rowCount++;
+        if (komarugramAppearanceConfig.INSTANCE.getTabStyle() >= komarugramAppearanceConfig.TAB_STYLE_VKUI) addStrokeRow = rowCount++;
         if (listAdapter != null) {
             if (prevAddStrokeRow == -1 && addStrokeRow != -1) {
                 listAdapter.notifyItemInserted(addStrokeRow);
@@ -279,13 +279,13 @@ public class FoldersPreferencesEntry extends BaseFragment implements Notificatio
                     TextCheckCell textCheckCell = (TextCheckCell) holder.itemView;
                     textCheckCell.setEnabled(true, null);
                     if (position == folderNameAppHeaderRow) {
-                        textCheckCell.setTextAndValueAndCheck(getString(R.string.AP_FolderNameInHeader), getString(R.string.AP_FolderNameInHeader_Desc), CherrygramAppearanceConfig.INSTANCE.getFolderNameInHeader(), true, true);
+                        textCheckCell.setTextAndValueAndCheck(getString(R.string.AP_FolderNameInHeader), getString(R.string.AP_FolderNameInHeader_Desc), komarugramAppearanceConfig.INSTANCE.getFolderNameInHeader(), true, true);
                     } else if (position == hideAllChatsTabRow) {
-                        textCheckCell.setTextAndCheck(getString(R.string.CP_NewTabs_RemoveAllChats), CherrygramAppearanceConfig.INSTANCE.getTabsHideAllChats(), true);
+                        textCheckCell.setTextAndCheck(getString(R.string.CP_NewTabs_RemoveAllChats), komarugramAppearanceConfig.INSTANCE.getTabsHideAllChats(), true);
                     } else if (position == hideCounterRow) {
-                        textCheckCell.setTextAndCheck(getString(R.string.CP_NewTabs_NoCounter), CherrygramAppearanceConfig.INSTANCE.getTabsNoUnread(), true);
+                        textCheckCell.setTextAndCheck(getString(R.string.CP_NewTabs_NoCounter), komarugramAppearanceConfig.INSTANCE.getTabsNoUnread(), true);
                     } else if (position == addStrokeRow) {
-                        textCheckCell.setTextAndCheck(getString(R.string.AP_Tab_Style_Stroke), CherrygramAppearanceConfig.INSTANCE.getTabStyleStroke(), true);
+                        textCheckCell.setTextAndCheck(getString(R.string.AP_Tab_Style_Stroke), komarugramAppearanceConfig.INSTANCE.getTabStyleStroke(), true);
                     }
                     break;
                 case VIEW_TYPE_TEXT_SETTING:
@@ -293,36 +293,36 @@ public class FoldersPreferencesEntry extends BaseFragment implements Notificatio
                     textCell.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteBlackText));
                     if (position == tabIconTypeRow) {
                         String value;
-                        switch (CherrygramAppearanceConfig.INSTANCE.getTabMode()) {
-                            case CherrygramAppearanceConfig.TAB_TYPE_MIX:
+                        switch (komarugramAppearanceConfig.INSTANCE.getTabMode()) {
+                            case komarugramAppearanceConfig.TAB_TYPE_MIX:
                                 value = getString(R.string.CG_FoldersTypeIconsTitles);
                                 break;
-                            case CherrygramAppearanceConfig.TAB_TYPE_ICON:
+                            case komarugramAppearanceConfig.TAB_TYPE_ICON:
                                 value = getString(R.string.CG_FoldersTypeIcons);
                                 break;
                             default:
-                            case CherrygramAppearanceConfig.TAB_TYPE_TEXT:
+                            case komarugramAppearanceConfig.TAB_TYPE_TEXT:
                                 value = getString(R.string.CG_FoldersTypeTitles);
                                 break;
                         }
                         textCell.setTextAndValue(getString(R.string.CG_FoldersType_Header), value, true);
                     } else if (position == tabStyleRow) {
                         String value;
-                        switch (CherrygramAppearanceConfig.INSTANCE.getTabStyle()) {
-                            case CherrygramAppearanceConfig.TAB_STYLE_DEFAULT:
+                        switch (komarugramAppearanceConfig.INSTANCE.getTabStyle()) {
+                            case komarugramAppearanceConfig.TAB_STYLE_DEFAULT:
                                 value = getString(R.string.AP_Tab_Style_Default);
                                 break;
-                            case CherrygramAppearanceConfig.TAB_STYLE_TEXT:
+                            case komarugramAppearanceConfig.TAB_STYLE_TEXT:
                                 value = getString(R.string.AP_Tab_Style_Text);
                                 break;
-                            case CherrygramAppearanceConfig.TAB_STYLE_VKUI:
+                            case komarugramAppearanceConfig.TAB_STYLE_VKUI:
                                 value = "VKUI";
                                 break;
-                            case CherrygramAppearanceConfig.TAB_STYLE_PILLS:
+                            case komarugramAppearanceConfig.TAB_STYLE_PILLS:
                                 value = getString(R.string.AP_Tab_Style_Pills);
                                 break;
                             default:
-                            case CherrygramAppearanceConfig.TAB_STYLE_ROUNDED:
+                            case komarugramAppearanceConfig.TAB_STYLE_ROUNDED:
                                 value = getString(R.string.AP_Tab_Style_Rounded);
                                 break;
                         }

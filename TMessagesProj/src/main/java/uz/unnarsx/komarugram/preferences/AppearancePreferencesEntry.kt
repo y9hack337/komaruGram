@@ -1,4 +1,4 @@
-package uz.unnarsx.cherrygram.preferences
+package uz.unnarsx.komarugram.preferences
 
 import androidx.core.util.Pair
 import org.telegram.messenger.LocaleController.getString
@@ -9,17 +9,17 @@ import org.telegram.ui.ActionBar.BaseFragment
 import org.telegram.ui.ActionBar.Theme
 import org.telegram.ui.DialogsActivity
 import org.telegram.ui.LaunchActivity
-import uz.unnarsx.cherrygram.core.configs.CherrygramAppearanceConfig
-import uz.unnarsx.cherrygram.preferences.helpers.TextFieldAlert
-import uz.unnarsx.cherrygram.preferences.drawer.DrawerPreferencesEntry
-import uz.unnarsx.cherrygram.preferences.folders.FoldersPreferencesEntry
-import uz.unnarsx.cherrygram.preferences.tgkit.preference.category
-import uz.unnarsx.cherrygram.preferences.tgkit.preference.contract
-import uz.unnarsx.cherrygram.preferences.tgkit.preference.list
-import uz.unnarsx.cherrygram.preferences.tgkit.preference.switch
-import uz.unnarsx.cherrygram.preferences.tgkit.preference.textIcon
-import uz.unnarsx.cherrygram.preferences.tgkit.preference.tgKitScreen
-import uz.unnarsx.cherrygram.preferences.tgkit.preference.types.TGKitTextIconRow
+import uz.unnarsx.komarugram.core.configs.komarugramAppearanceConfig
+import uz.unnarsx.komarugram.preferences.helpers.TextFieldAlert
+import uz.unnarsx.komarugram.preferences.drawer.DrawerPreferencesEntry
+import uz.unnarsx.komarugram.preferences.folders.FoldersPreferencesEntry
+import uz.unnarsx.komarugram.preferences.tgkit.preference.category
+import uz.unnarsx.komarugram.preferences.tgkit.preference.contract
+import uz.unnarsx.komarugram.preferences.tgkit.preference.list
+import uz.unnarsx.komarugram.preferences.tgkit.preference.switch
+import uz.unnarsx.komarugram.preferences.tgkit.preference.textIcon
+import uz.unnarsx.komarugram.preferences.tgkit.preference.tgKitScreen
+import uz.unnarsx.komarugram.preferences.tgkit.preference.types.TGKitTextIconRow
 
 class AppearancePreferencesEntry : BasePreferencesEntry {
     override fun getPreferences(bf: BaseFragment) = tgKitScreen(getString(R.string.AP_Header_Appearance)) {
@@ -29,18 +29,18 @@ class AppearancePreferencesEntry : BasePreferencesEntry {
 
                 contract({
                     return@contract listOf(
-                        Pair(CherrygramAppearanceConfig.ICON_REPLACE_NONE, getString(R.string.AP_IconReplacement_Default)),
-                        Pair(CherrygramAppearanceConfig.ICON_REPLACE_VKUI, getString(R.string.AP_IconReplacement_VKUI)),
-                        Pair(CherrygramAppearanceConfig.ICON_REPLACE_SOLAR, getString(R.string.AP_IconReplacement_Solar))
+                        Pair(komarugramAppearanceConfig.ICON_REPLACE_NONE, getString(R.string.AP_IconReplacement_Default)),
+                        Pair(komarugramAppearanceConfig.ICON_REPLACE_VKUI, getString(R.string.AP_IconReplacement_VKUI)),
+                        Pair(komarugramAppearanceConfig.ICON_REPLACE_SOLAR, getString(R.string.AP_IconReplacement_Solar))
                     )
                 }, {
-                    return@contract when (CherrygramAppearanceConfig.iconReplacement) {
-                        CherrygramAppearanceConfig.ICON_REPLACE_VKUI -> getString(R.string.AP_IconReplacement_VKUI)
-                        CherrygramAppearanceConfig.ICON_REPLACE_SOLAR -> getString(R.string.AP_IconReplacement_Solar)
+                    return@contract when (komarugramAppearanceConfig.iconReplacement) {
+                        komarugramAppearanceConfig.ICON_REPLACE_VKUI -> getString(R.string.AP_IconReplacement_VKUI)
+                        komarugramAppearanceConfig.ICON_REPLACE_SOLAR -> getString(R.string.AP_IconReplacement_Solar)
                         else -> getString(R.string.AP_IconReplacement_Default)
                     }
                 }) {
-                    CherrygramAppearanceConfig.iconReplacement = it
+                    komarugramAppearanceConfig.iconReplacement = it
                     (bf.parentActivity as? LaunchActivity)?.reloadResources()
                     bf.parentLayout.rebuildAllFragmentViews(true, true)
                 }
@@ -49,18 +49,18 @@ class AppearancePreferencesEntry : BasePreferencesEntry {
                 title = getString(R.string.AP_OneUI_Switch_Style)
 
                 contract({
-                    return@contract CherrygramAppearanceConfig.oneUI_SwitchStyle
+                    return@contract komarugramAppearanceConfig.oneUI_SwitchStyle
                 }) {
-                    CherrygramAppearanceConfig.oneUI_SwitchStyle = it
+                    komarugramAppearanceConfig.oneUI_SwitchStyle = it
                     bf.parentLayout.rebuildAllFragmentViews(true, true)
                 }
             }
             switch {
                 title = getString(R.string.AP_DisableDividers)
                 contract({
-                    return@contract CherrygramAppearanceConfig.disableDividers
+                    return@contract komarugramAppearanceConfig.disableDividers
                 }) {
-                    CherrygramAppearanceConfig.disableDividers = it
+                    komarugramAppearanceConfig.disableDividers = it
                     Theme.applyCommonTheme();
                     bf.parentLayout.rebuildAllFragmentViews(true, true)
                 }
@@ -100,9 +100,9 @@ class AppearancePreferencesEntry : BasePreferencesEntry {
             switch {
                 title = getString(R.string.AP_CenterTitle)
                 contract({
-                    return@contract CherrygramAppearanceConfig.centerTitle
+                    return@contract komarugramAppearanceConfig.centerTitle
                 }) {
-                    CherrygramAppearanceConfig.centerTitle = it
+                    komarugramAppearanceConfig.centerTitle = it
                     bf.parentLayout.rebuildAllFragmentViews(true, true)
                 }
             }
@@ -110,11 +110,11 @@ class AppearancePreferencesEntry : BasePreferencesEntry {
                 title = getString(R.string.AP_ToolBarShadow)
 
                 contract({
-                    return@contract CherrygramAppearanceConfig.disableToolBarShadow
+                    return@contract komarugramAppearanceConfig.disableToolBarShadow
                 }) {
-                    CherrygramAppearanceConfig.disableToolBarShadow = it
+                    komarugramAppearanceConfig.disableToolBarShadow = it
                     bf.parentLayout.setHeaderShadow(
-                        if (CherrygramAppearanceConfig.disableToolBarShadow) null else bf.parentLayout.parentActivity.getDrawable(R.drawable.header_shadow)?.mutate()
+                        if (komarugramAppearanceConfig.disableToolBarShadow) null else bf.parentLayout.parentActivity.getDrawable(R.drawable.header_shadow)?.mutate()
                     )
                     bf.parentLayout.rebuildAllFragmentViews(false, false)
                 }
@@ -124,9 +124,9 @@ class AppearancePreferencesEntry : BasePreferencesEntry {
                 description = getString(R.string.AP_OverrideHeader_Desc)
 
                 contract({
-                    return@contract CherrygramAppearanceConfig.overrideHeaderColor
+                    return@contract komarugramAppearanceConfig.overrideHeaderColor
                 }) {
-                    CherrygramAppearanceConfig.overrideHeaderColor = it
+                    komarugramAppearanceConfig.overrideHeaderColor = it
                     bf.parentLayout.rebuildAllFragmentViews(false, false)
                 }
             }
@@ -162,18 +162,18 @@ class AppearancePreferencesEntry : BasePreferencesEntry {
             switch {
                 title = getString(R.string.CP_Snowflakes_AH)
                 contract({
-                    return@contract CherrygramAppearanceConfig.drawSnowInActionBar
+                    return@contract komarugramAppearanceConfig.drawSnowInActionBar
                 }) {
-                    CherrygramAppearanceConfig.drawSnowInActionBar = it
+                    komarugramAppearanceConfig.drawSnowInActionBar = it
                     bf.parentLayout.rebuildAllFragmentViews(false, false)
                 }
             }
             switch {
                 title = getString(R.string.CP_Header_Chats)
                 contract({
-                    return@contract CherrygramAppearanceConfig.drawSnowInChat
+                    return@contract komarugramAppearanceConfig.drawSnowInChat
                 }) {
-                    CherrygramAppearanceConfig.drawSnowInChat = it
+                    komarugramAppearanceConfig.drawSnowInChat = it
                     bf.parentLayout.rebuildAllFragmentViews(false, false)
                 }
             }

@@ -33,7 +33,7 @@ import org.telegram.ui.Components.StickerImageView;
 
 import java.util.ArrayList;
 
-import uz.unnarsx.komarugram.core.configs.CherrygramAppearanceConfig;
+import uz.unnarsx.komarugram.core.configs.komarugramAppearanceConfig;
 
 public class AutoDeleteMessagesActivity extends BaseFragment implements NotificationCenter.NotificationCenterDelegate {
 
@@ -75,7 +75,7 @@ public class AutoDeleteMessagesActivity extends BaseFragment implements Notifica
         actionBar.setAllowOverlayTitle(true);
         actionBar.setTitle(LocaleController.getString(R.string.AutoDeleteMessages));
 
-        if (CherrygramAppearanceConfig.INSTANCE.getOverrideHeaderColor()) {
+        if (komarugramAppearanceConfig.INSTANCE.getOverrideHeaderColor()) {
             actionBar.setBackgroundColor(getThemedColor(Theme.key_windowBackgroundWhite));
             actionBar.setItemsColor(getThemedColor(Theme.key_windowBackgroundWhiteBlackText), false);
             actionBar.setItemsBackgroundColor(getThemedColor(Theme.key_actionBarActionModeDefaultSelector), true);

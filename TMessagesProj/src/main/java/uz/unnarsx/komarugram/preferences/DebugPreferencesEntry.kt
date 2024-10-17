@@ -1,4 +1,4 @@
-package uz.unnarsx.cherrygram.preferences
+package uz.unnarsx.komarugram.preferences
 
 import android.content.DialogInterface
 import android.content.SharedPreferences
@@ -16,30 +16,30 @@ import org.telegram.ui.ActionBar.AlertDialog
 import org.telegram.ui.ActionBar.BaseFragment
 import org.telegram.ui.Components.Paint.PersistColorPalette
 import org.telegram.ui.RestrictedLanguagesSelectActivity
-import uz.unnarsx.cherrygram.core.configs.CherrygramCoreConfig
-import uz.unnarsx.cherrygram.core.configs.CherrygramDebugConfig
-import uz.unnarsx.cherrygram.core.helpers.AppRestartHelper
-import uz.unnarsx.cherrygram.preferences.tgkit.preference.category
-import uz.unnarsx.cherrygram.preferences.tgkit.preference.contract
-import uz.unnarsx.cherrygram.preferences.tgkit.preference.hint
-import uz.unnarsx.cherrygram.preferences.tgkit.preference.list
-import uz.unnarsx.cherrygram.preferences.tgkit.preference.switch
-import uz.unnarsx.cherrygram.preferences.tgkit.preference.textIcon
-import uz.unnarsx.cherrygram.preferences.tgkit.preference.tgKitScreen
-import uz.unnarsx.cherrygram.preferences.tgkit.preference.types.TGKitTextIconRow
+import uz.unnarsx.komarugram.core.configs.komarugramCoreConfig
+import uz.unnarsx.komarugram.core.configs.komarugramDebugConfig
+import uz.unnarsx.komarugram.core.helpers.AppRestartHelper
+import uz.unnarsx.komarugram.preferences.tgkit.preference.category
+import uz.unnarsx.komarugram.preferences.tgkit.preference.contract
+import uz.unnarsx.komarugram.preferences.tgkit.preference.hint
+import uz.unnarsx.komarugram.preferences.tgkit.preference.list
+import uz.unnarsx.komarugram.preferences.tgkit.preference.switch
+import uz.unnarsx.komarugram.preferences.tgkit.preference.textIcon
+import uz.unnarsx.komarugram.preferences.tgkit.preference.tgKitScreen
+import uz.unnarsx.komarugram.preferences.tgkit.preference.types.TGKitTextIconRow
 
 class DebugPreferencesEntry : BasePreferencesEntry {
     override fun getPreferences(bf: BaseFragment) = tgKitScreen("Debug // WIP") {
         category("Misc") {
             switch {
-                isAvailable = !CherrygramCoreConfig.isStandaloneStableBuild() && !CherrygramCoreConfig.isPlayStoreBuild()
+                isAvailable = !komarugramCoreConfig.isStandaloneStableBuild() && !komarugramCoreConfig.isPlayStoreBuild()
                 title = "Toast all RPC errors *"
                 description = "you'll see RPC errors from Telegram's backend as toast messages."
 
                 contract({
-                    return@contract CherrygramDebugConfig.showRPCErrors
+                    return@contract komarugramDebugConfig.showRPCErrors
                 }) {
-                    CherrygramDebugConfig.showRPCErrors = it
+                    komarugramDebugConfig.showRPCErrors = it
                     AppRestartHelper.createRestartBulletin(bf)
                 }
             }
@@ -48,9 +48,9 @@ class DebugPreferencesEntry : BasePreferencesEntry {
                 description = "unlike IOS and TDesktop"
 
                 contract({
-                    return@contract CherrygramDebugConfig.oldTimeStyle
+                    return@contract komarugramDebugConfig.oldTimeStyle
                 }) {
-                    CherrygramDebugConfig.oldTimeStyle = it
+                    komarugramDebugConfig.oldTimeStyle = it
                 }
             }
             textIcon {
@@ -102,9 +102,9 @@ class DebugPreferencesEntry : BasePreferencesEntry {
                 description = "When you swipe down (accidentally or intentionally), web-view just gets closed while you just want to scroll something in the mini-app"
 
                 contract({
-                    return@contract CherrygramDebugConfig.swipeInsideBotToClose
+                    return@contract komarugramDebugConfig.swipeInsideBotToClose
                 }) {
-                    CherrygramDebugConfig.swipeInsideBotToClose = it
+                    komarugramDebugConfig.swipeInsideBotToClose = it
                 }
             }
         }
@@ -113,9 +113,9 @@ class DebugPreferencesEntry : BasePreferencesEntry {
                 title = "Force chat blur *"
 
                 contract({
-                    return@contract CherrygramDebugConfig.forceChatBlurEffect
+                    return@contract komarugramDebugConfig.forceChatBlurEffect
                 }) {
-                    CherrygramDebugConfig.forceChatBlurEffect = it
+                    komarugramDebugConfig.forceChatBlurEffect = it
                 }
             }
             switch {
@@ -136,34 +136,34 @@ class DebugPreferencesEntry : BasePreferencesEntry {
 
                 contract({
                     return@contract listOf(
-                        Pair(CherrygramDebugConfig.AUDIO_SOURCE_DEFAULT, "DEFAULT"),
-                        Pair(CherrygramDebugConfig.AUDIO_SOURCE_CAMCORDER, "CAMCORDER"),
-                        Pair(CherrygramDebugConfig.AUDIO_SOURCE_MIC, "MIC"),
-                        Pair(CherrygramDebugConfig.AUDIO_SOURCE_REMOTE_SUBMIX, "REMOTE_SUBMIX"),
-                        Pair(CherrygramDebugConfig.AUDIO_SOURCE_UNPROCESSED, "UNPROCESSED"),
-                        Pair(CherrygramDebugConfig.AUDIO_SOURCE_VOICE_CALL, "VOICE_CALL"),
-                        Pair(CherrygramDebugConfig.AUDIO_SOURCE_VOICE_COMMUNICATION, "VOICE_COMMUNICATION"),
-                        Pair(CherrygramDebugConfig.AUDIO_SOURCE_VOICE_DOWNLINK, "VOICE_DOWNLINK"),
-                        Pair(CherrygramDebugConfig.AUDIO_SOURCE_VOICE_PERFORMANCE, "VOICE_PERFORMANCE"),
-                        Pair(CherrygramDebugConfig.AUDIO_SOURCE_VOICE_RECOGNITION, "VOICE_RECOGNITION"),
-                        Pair(CherrygramDebugConfig.AUDIO_SOURCE_VOICE_UPLINK, "VOICE_UPLINK")
+                        Pair(komarugramDebugConfig.AUDIO_SOURCE_DEFAULT, "DEFAULT"),
+                        Pair(komarugramDebugConfig.AUDIO_SOURCE_CAMCORDER, "CAMCORDER"),
+                        Pair(komarugramDebugConfig.AUDIO_SOURCE_MIC, "MIC"),
+                        Pair(komarugramDebugConfig.AUDIO_SOURCE_REMOTE_SUBMIX, "REMOTE_SUBMIX"),
+                        Pair(komarugramDebugConfig.AUDIO_SOURCE_UNPROCESSED, "UNPROCESSED"),
+                        Pair(komarugramDebugConfig.AUDIO_SOURCE_VOICE_CALL, "VOICE_CALL"),
+                        Pair(komarugramDebugConfig.AUDIO_SOURCE_VOICE_COMMUNICATION, "VOICE_COMMUNICATION"),
+                        Pair(komarugramDebugConfig.AUDIO_SOURCE_VOICE_DOWNLINK, "VOICE_DOWNLINK"),
+                        Pair(komarugramDebugConfig.AUDIO_SOURCE_VOICE_PERFORMANCE, "VOICE_PERFORMANCE"),
+                        Pair(komarugramDebugConfig.AUDIO_SOURCE_VOICE_RECOGNITION, "VOICE_RECOGNITION"),
+                        Pair(komarugramDebugConfig.AUDIO_SOURCE_VOICE_UPLINK, "VOICE_UPLINK")
                     )
                 }, {
-                    return@contract when (CherrygramDebugConfig.audioSource) {
-                        CherrygramDebugConfig.AUDIO_SOURCE_CAMCORDER -> "CAMCORDER"
-                        CherrygramDebugConfig.AUDIO_SOURCE_MIC -> "MIC"
-                        CherrygramDebugConfig.AUDIO_SOURCE_REMOTE_SUBMIX -> "REMOTE_SUBMIX"
-                        CherrygramDebugConfig.AUDIO_SOURCE_UNPROCESSED -> "UNPROCESSED"
-                        CherrygramDebugConfig.AUDIO_SOURCE_VOICE_CALL -> "VOICE_CALL"
-                        CherrygramDebugConfig.AUDIO_SOURCE_VOICE_COMMUNICATION -> "VOICE_COMMUNICATION"
-                        CherrygramDebugConfig.AUDIO_SOURCE_VOICE_DOWNLINK -> "VOICE_DOWNLINK"
-                        CherrygramDebugConfig.AUDIO_SOURCE_VOICE_PERFORMANCE -> "VOICE_PERFORMANCE"
-                        CherrygramDebugConfig.AUDIO_SOURCE_VOICE_RECOGNITION -> "VOICE_RECOGNITION"
-                        CherrygramDebugConfig.AUDIO_SOURCE_VOICE_UPLINK -> "VOICE_UPLINK"
+                    return@contract when (komarugramDebugConfig.audioSource) {
+                        komarugramDebugConfig.AUDIO_SOURCE_CAMCORDER -> "CAMCORDER"
+                        komarugramDebugConfig.AUDIO_SOURCE_MIC -> "MIC"
+                        komarugramDebugConfig.AUDIO_SOURCE_REMOTE_SUBMIX -> "REMOTE_SUBMIX"
+                        komarugramDebugConfig.AUDIO_SOURCE_UNPROCESSED -> "UNPROCESSED"
+                        komarugramDebugConfig.AUDIO_SOURCE_VOICE_CALL -> "VOICE_CALL"
+                        komarugramDebugConfig.AUDIO_SOURCE_VOICE_COMMUNICATION -> "VOICE_COMMUNICATION"
+                        komarugramDebugConfig.AUDIO_SOURCE_VOICE_DOWNLINK -> "VOICE_DOWNLINK"
+                        komarugramDebugConfig.AUDIO_SOURCE_VOICE_PERFORMANCE -> "VOICE_PERFORMANCE"
+                        komarugramDebugConfig.AUDIO_SOURCE_VOICE_RECOGNITION -> "VOICE_RECOGNITION"
+                        komarugramDebugConfig.AUDIO_SOURCE_VOICE_UPLINK -> "VOICE_UPLINK"
                         else -> "DEFAULT"
                     }
                 }) {
-                    CherrygramDebugConfig.audioSource = it
+                    komarugramDebugConfig.audioSource = it
                 }
             }
             switch {
@@ -171,18 +171,18 @@ class DebugPreferencesEntry : BasePreferencesEntry {
                 description = "Max quality will be automatically selected when you send a video"
 
                 contract({
-                    return@contract CherrygramDebugConfig.sendVideosAtMaxQuality
+                    return@contract komarugramDebugConfig.sendVideosAtMaxQuality
                 }) {
-                    CherrygramDebugConfig.sendVideosAtMaxQuality = it
+                    komarugramDebugConfig.sendVideosAtMaxQuality = it
                 }
             }
             switch {
                 title = "Play GIFs as Videos *"
 
                 contract({
-                    return@contract CherrygramDebugConfig.playGIFsAsVideos
+                    return@contract komarugramDebugConfig.playGIFsAsVideos
                 }) {
-                    CherrygramDebugConfig.playGIFsAsVideos = it
+                    komarugramDebugConfig.playGIFsAsVideos = it
                 }
             }
             textIcon {
@@ -293,7 +293,7 @@ class DebugPreferencesEntry : BasePreferencesEntry {
                     AppRestartHelper.createDebugSuccessBulletin(bf)
                 }
             }
-            hint("* Cherrygram's feature.")
+            hint("* komarugram's feature.")
         }
     }
 }

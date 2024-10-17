@@ -1,4 +1,4 @@
-package uz.unnarsx.cherrygram.chats.translator;
+package uz.unnarsx.komarugram.chats.translator;
 
 import static org.telegram.messenger.LocaleController.getString;
 
@@ -16,8 +16,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Locale;
 
-import uz.unnarsx.cherrygram.core.configs.CherrygramChatsConfig;
-import uz.unnarsx.cherrygram.helpers.ui.PopupHelper;
+import uz.unnarsx.komarugram.core.configs.komarugramChatsConfig;
+import uz.unnarsx.komarugram.helpers.ui.PopupHelper;
 
 public class Translator {
 
@@ -42,11 +42,11 @@ public class Translator {
         targetLanguages.add(0, "app");
         names.add(0, getString(R.string.Default));
 
-        PopupHelper.show(names, getString(R.string.CG_TranslationLanguage), targetLanguages.indexOf(isKeyboard ? CherrygramChatsConfig.INSTANCE.getTranslationKeyboardTarget() : CherrygramChatsConfig.INSTANCE.getTranslationTarget()), context, i -> {
+        PopupHelper.show(names, getString(R.string.CG_TranslationLanguage), targetLanguages.indexOf(isKeyboard ? komarugramChatsConfig.INSTANCE.getTranslationKeyboardTarget() : komarugramChatsConfig.INSTANCE.getTranslationTarget()), context, i -> {
             if (isKeyboard) {
-                CherrygramChatsConfig.INSTANCE.setTranslationKeyboardTarget(targetLanguages.get(i));
+                komarugramChatsConfig.INSTANCE.setTranslationKeyboardTarget(targetLanguages.get(i));
             } else {
-                CherrygramChatsConfig.INSTANCE.setTranslationTarget(targetLanguages.get(i));
+                komarugramChatsConfig.INSTANCE.setTranslationTarget(targetLanguages.get(i));
             }
             callback.run();
         }, resourcesProvider);

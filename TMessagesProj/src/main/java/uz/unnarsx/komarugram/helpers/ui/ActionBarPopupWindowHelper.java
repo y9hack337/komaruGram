@@ -1,4 +1,4 @@
-package uz.unnarsx.cherrygram.helpers.ui;
+package uz.unnarsx.komarugram.helpers.ui;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;

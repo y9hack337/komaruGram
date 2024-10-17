@@ -121,14 +121,14 @@ import uz.unnarsx.komarugram.camera.EffectSelectorView;
 import uz.unnarsx.komarugram.camera.LockAnimationView;
 import uz.unnarsx.komarugram.camera.SlideControlView;
 import uz.unnarsx.komarugram.core.PermissionsUtils;
-import uz.unnarsx.komarugram.core.configs.CherrygramCameraConfig;
+import uz.unnarsx.komarugram.core.configs.komarugramCameraConfig;
 
 public class ChatAttachAlertPhotoLayout extends ChatAttachAlert.AttachAlertLayout implements NotificationCenter.NotificationCenterDelegate {
 
     private static final int VIEW_TYPE_AVATAR_CONSTRUCTOR = 4;
     private static final int SHOW_FAST_SCROLL_MIN_COUNT = 30;
     private final boolean needCamera;
-    private final boolean disableAttachCamera = CherrygramCameraConfig.INSTANCE.getDisableAttachCamera();
+    private final boolean disableAttachCamera = komarugramCameraConfig.INSTANCE.getDisableAttachCamera();
 
     private RecyclerListView cameraPhotoRecyclerView;
     private LinearLayoutManager cameraPhotoLayoutManager;
@@ -968,7 +968,7 @@ public class ChatAttachAlertPhotoLayout extends ChatAttachAlert.AttachAlertLayou
                     }
                 }, hasSpoiler ? 250 : 0);
             } else {
-                if (SharedConfig.inappCamera && CherrygramCameraConfig.INSTANCE.getCameraType() != CherrygramCameraConfig.SYSTEM_CAMERA) {
+                if (SharedConfig.inappCamera && komarugramCameraConfig.INSTANCE.getCameraType() != komarugramCameraConfig.SYSTEM_CAMERA) {
                     openCamera(true);
                 } else {
                     if (parentAlert.delegate != null) {
@@ -2454,7 +2454,7 @@ public class ChatAttachAlertPhotoLayout extends ChatAttachAlert.AttachAlertLayou
         if (fragment == null || fragment.getParentActivity() == null) {
             return;
         }
-        if (!SharedConfig.inappCamera || CherrygramCameraConfig.INSTANCE.getCameraType() == CherrygramCameraConfig.SYSTEM_CAMERA) {
+        if (!SharedConfig.inappCamera || komarugramCameraConfig.INSTANCE.getCameraType() == komarugramCameraConfig.SYSTEM_CAMERA) {
             deviceHasGoodCamera = false;
         } else {
             if (Build.VERSION.SDK_INT >= 23) {

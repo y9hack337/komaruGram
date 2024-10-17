@@ -39,7 +39,7 @@ import com.google.android.gms.common.GoogleApiAvailability;
 import org.json.JSONObject;
 import org.telegram.messenger.voip.VideoCapturerDevice;
 import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.*;
 import org.telegram.ui.ActionBar.BaseFragment;
 import org.telegram.ui.Adapters.DrawerLayoutAdapter;
 import org.telegram.ui.Components.ForegroundDetector;
@@ -52,10 +52,9 @@ import java.util.ArrayList;
 import kotlin.coroutines.Continuation;
 import kotlin.coroutines.CoroutineContext;
 import kotlin.coroutines.EmptyCoroutineContext;
-import uz.unnarsx.komarugram.core.configs.CherrygramCoreConfig;
-import org.telegram.tgnet.ConnectionsManagerImpl;
+import uz.unnarsx.komarugram.core.configs.komarugramCoreConfig;
 import uz.unnarsx.komarugram.camera.CameraXUtils;
-import uz.unnarsx.komarugram.core.configs.CherrygramExperimentalConfig;
+import uz.unnarsx.komarugram.core.configs.komarugramExperimentalConfig;
 
 public class ApplicationLoader extends Application {
 
@@ -148,7 +147,7 @@ public class ApplicationLoader extends Application {
     }
 
     protected boolean isStandalone() {
-        return false;
+        return true;
     }
 
     public static File getFilesDirFixed() {
@@ -193,7 +192,7 @@ public class ApplicationLoader extends Application {
 
                     }
 
-                    boolean isSlow = CherrygramExperimentalConfig.INSTANCE.getSlowNetworkMode();
+                    boolean isSlow = komarugramExperimentalConfig.INSTANCE.getSlowNetworkMode();
                     for (int a = 0; a < UserConfig.MAX_ACCOUNT_COUNT; a++) {
                         ConnectionsManager.getInstance(a).checkConnection();
                         FileLoader.getInstance(a).onNetworkChanged(isSlow);
@@ -228,7 +227,7 @@ public class ApplicationLoader extends Application {
         SharedConfig.loadConfig();
         hasPlayServices = checkPlayServices();
         CameraXUtils.loadCameraXSizes();
-        if (!CherrygramCoreConfig.INSTANCE.isPlayStoreBuild()) {
+        if (!komarugramCoreConfig.INSTANCE.isPlayStoreBuild()) {
             Continuation<Object> suspendResult = new Continuation<>() {
                 @NonNull
                 @Override
@@ -241,7 +240,7 @@ public class ApplicationLoader extends Application {
 
                 }
             };
-            ConnectionsManagerImpl.INSTANCE.checkConnection(suspendResult);
+            //ConnectionsManagerImpl.INSTANCE.checkConnection(suspendResult);
         }
         SharedPrefsHelper.init(applicationContext);
         for (int a = 0; a < UserConfig.MAX_ACCOUNT_COUNT; a++) { //TODO improve account
@@ -342,7 +341,7 @@ public class ApplicationLoader extends Application {
                     Log.d("TFOSS", "Trying to start push service every 10 minutes");
                     Log.d("TFOSS", "Starting push service...");
                 }
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O && CherrygramExperimentalConfig.INSTANCE.getResidentNotification()) {
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O && komarugramExperimentalConfig.INSTANCE.getResidentNotification()) {
                     applicationContext.startForegroundService(new Intent(applicationContext, NotificationsService.class));
                 } else {
                     applicationContext.startService(new Intent(applicationContext, NotificationsService.class));

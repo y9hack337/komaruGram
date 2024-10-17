@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- by t.me/arsLan-->
-    <string name="CG_FollowChannelLink">Падпісвайцеся на @Cherry_Gram!</string>
+    <string name="CG_FollowChannelLink">Падпісвайцеся на @komarugram!</string>
     <string name="CG_FollowChannelTitle">Падпісацца на афіцыйны канал</string>
-    <string name="CG_FollowChannelInfo">Падключыцеся да нашага канала, каб быць у курсе ўсіх навін і функцый Cherrygram!</string>
+    <string name="CG_FollowChannelInfo">Падключыцеся да нашага канала, каб быць у курсе ўсіх навін і функцый komarugram!</string>
     <string name="CG_DoNotRemindAgain">Больш не нагадваць</string>
     <!--Telegram screens-->
     <string name="CG_RegistrationDate">Дата рэгістрацыі:</string>
@@ -58,8 +58,8 @@
     <string name="CG_FwdMenu_EnableCaptions">Уключыць подпісы</string>
     <string name="CG_FwdMenu_DisableCaptions">Схаваць подпісы</string>
     <!--Location screen-->
-    <string name="CG_LocationPermission">Cherrygram патрабуецца ваша месцазнаходжанне, каб вы маглі дзяліцца ёй з сябрамі. У вас запытаюць доступ да месцазнаходжання (калі вы выкарыстоўваеце праграму).</string>
-    <string name="CG_LocationPermission_Desc">Аднак, калі вы хаціце дзяліцца сваім месцазнаходжаннем, калі Cherrygram закрыты ці згорнуты, перайдзіце да \"Трансляцыя месцазнаходжання\". Пакуль вы не пагадзіцеся, па-за праграмай яно не будзе даступна.</string>
+    <string name="CG_LocationPermission">komarugram патрабуецца ваша месцазнаходжанне, каб вы маглі дзяліцца ёй з сябрамі. У вас запытаюць доступ да месцазнаходжання (калі вы выкарыстоўваеце праграму).</string>
+    <string name="CG_LocationPermission_Desc">Аднак, калі вы хаціце дзяліцца сваім месцазнаходжаннем, калі komarugram закрыты ці згорнуты, перайдзіце да \"Трансляцыя месцазнаходжання\". Пакуль вы не пагадзіцеся, па-за праграмай яно не будзе даступна.</string>
     <!--Location screen-->
     <!--Search filter-->
     <string name="CG_SearchFilter">Фільтр па выніках пошуку</string>
@@ -79,13 +79,13 @@
     <!--Misc-->
     <string name="CG_Restart">Перазапусціць прыкладанне</string>
     <string name="CG_RestartToApply">Перазапусціце дадатак, каб прымяніць змены</string>
-    <string name="CG_PushService">Сэрвіс апавяшчэнняў Cherrygram.</string>
+    <string name="CG_PushService">Сэрвіс апавяшчэнняў komarugram.</string>
     <string name="CG_ForceClean">Прымусова ачысціць кэш Telegram</string>
     <string name="CG_ForceCleanInfo">Выкарыстоўвайце гэта, калі Вы доўга бачыце \"Падлік…\" пры спробе ачысткі кэшу.\nГэта выдаліць УСЕ з Вашага кэшу - будзьце асцярожныя!</string>
     <string name="CG_ForceCleanInfo1">Вы сапраўды хочаце выдаліць УСЕ з Вашага кэшу Telegram?</string>
-    <string name="CG_Kaboom">Доступ да гэтай функцыі можна атрымаць без пароля Cherrygram, праз сістэмныя наладкі. Гэтая функцыя цалкам выдаляе ўсе дадзеныя прыкладання. Яе можна выкарыстоўваць у аварыйных сітуацыях.</string>
+    <string name="CG_Kaboom">Доступ да гэтай функцыі можна атрымаць без пароля komarugram, праз сістэмныя наладкі. Гэтая функцыя цалкам выдаляе ўсе дадзеныя прыкладання. Яе можна выкарыстоўваць у аварыйных сітуацыях.</string>
     <string name="CG_AppCrashed">Нешта пайшло не так</string>
-    <string name="CG_AppCrashedDesc">Cherrygram перастаў працаваць.  Калі ласка, адпраўце логі распрацоўкам, каб яны маглі як мага хутчэй выправіць гэтую памылку.</string>
+    <string name="CG_AppCrashedDesc">komarugram перастаў працаваць.  Калі ласка, адпраўце логі распрацоўкам, каб яны маглі як мага хутчэй выправіць гэтую памылку.</string>
     <string name="CG_CopyReportDetails">Скапіяваць дэталі справаздачы</string>
     <string name="CG_ReportDetailsCopied">Дэталі справаздачы скапіяваныя ў буфер абмену.</string>
     <string name="CG_TranslationLanguage">Мова перакладу</string>
@@ -107,11 +107,11 @@
     <string name="CG_MessageContainsCustomReactions_other">Рэакцыі ўтрымліваюць кастамныя эмодзі \nиз %1$d набораў.</string>
     <!--Misc-->
     <!--Telegram screens-->
-    <!--Cherrygram screens-->
-    <!--Cherrygram Preferences-->
-    <string name="CGP_AdvancedSettings">Налады Cherrygram</string>
+    <!--komarugram screens-->
+    <!--komarugram Preferences-->
+    <string name="CGP_AdvancedSettings">Налады komarugram</string>
     <string name="CGP_About_Desc">Эксперыментальная мадыфікацыя дадатку Telegram. Націсніце тут, каб прачытаць спіс функцый.</string>
-    <string name="CGP_Header_About">Аб Cherrygram</string>
+    <string name="CGP_Header_About">Аб komarugram</string>
     <string name="CGP_Header_About_Desc">Абнаўлення, зыходны код і многае іншае</string>
     <string name="CGP_Links">Спасылкі</string>
     <string name="CGP_ToChannel">Афіцыйны канал</string>
@@ -119,7 +119,7 @@
     <string name="CGP_Source">Зыходны код</string>
     <string name="CGP_Crowdin">Дапамажы нам з перакладам</string>
     <string name="CGP_Header_Categories">Катэгорыі</string>
-    <!--Cherrygram Preferences-->
+    <!--komarugram Preferences-->
     <!--General Preferences-->
     <string name="AP_Header_General">Асноўныя</string>
     <!--General Preferences-->
@@ -179,8 +179,8 @@
     <string name="CP_DisablePremStickAutoPlay">Адключыць аўтапрайграванне Premium стыкераў</string>
     <string name="CP_DisablePremStickAutoPlay_Desc">Premium анімацыя стыкераў не будзе прайграна аўтаматычна (функцыя не будзе працаваць калі Вы выключылі націскі на Premium стыкеры)</string>
     <string name="CP_Filters_Header">Папкі</string>
-    <string name="AP_FolderNameInHeader">Назва папкі заміж \"Cherrygram\"</string>
-    <string name="AP_FolderNameInHeader_Desc">Гэта зменіць \"Cherrygram\" у загалоўку зверху на назву Вашай папкі (зручна пры адлюстраванні іконкаў замест назваў папкаў)</string>
+    <string name="AP_FolderNameInHeader">Назва папкі заміж \"komarugram\"</string>
+    <string name="AP_FolderNameInHeader_Desc">Гэта зменіць \"komarugram\" у загалоўку зверху на назву Вашай папкі (зручна пры адлюстраванні іконкаў замест назваў папкаў)</string>
     <string name="CP_NewTabs_RemoveAllChats">Схаваць ўкладку \"Усе чаты\"</string>
     <string name="AP_Tab_Style">Стыль укладкі</string>
     <string name="AP_Tab_Style_Default">Стандартны</string>
@@ -265,7 +265,7 @@
     <string name="CP_CameraAspectRatio">Суадносіны бакоў камеры</string>
     <string name="CP_RearCam">Выкарыстоўваць заднюю камеру</string>
     <string name="CP_RearCam_Desc">Заміж франтальнай камеры пры запісе відэапаведамленняў</string>
-    <string name="CP_CaptureType_Desc">Выкарыстоўваюць \"Захоп відэа\" па змаўчанні. \nАбярыце \"Захоп выявы\" (змяншае якасць) толькі калі Cherrygram завісае на секунду перад запісам відэапаведамлення.</string>
+    <string name="CP_CaptureType_Desc">Выкарыстоўваюць \"Захоп відэа\" па змаўчанні. \nАбярыце \"Захоп выявы\" (змяншае якасць) толькі калі komarugram завісае на секунду перад запісам відэапаведамлення.</string>
     <string name="CP_DisableCam">Адключыць камеру ў меню выбару фота</string>
     <string name="CP_DisableCam_Desc">Уключыце гэта калі меню тармозіць</string>
     <string name="CP_Header_Videomessages">Відэапаведамленні</string>
@@ -304,7 +304,7 @@
     <string name="SP_AskPinBeforeDelete">Пацвярждаць выдаленне біяметрыкай.</string>
     <string name="SP_AskPinBeforeDelete_Desc">Калі вы захаціце выдаліць чат ці гісторыю, будзе патрабавацца пацверджане біяметрыяй. Код і біяметрыка ў сістэме павінны быць уключаны.</string>
     <string name="SP_AllowUseSystemPasscode">Выкарыстоўваць сістэмны Код/Узор</string>
-    <string name="SP_AllowUseSystemPasscode_Desc">Кнопка \"Скасаваць\" пры праверцы адбітка, будзе заменена на \"Код/Узор\" і дасць магчымасць разблакіраваць Cherrygram.</string>
+    <string name="SP_AllowUseSystemPasscode_Desc">Кнопка \"Скасаваць\" пры праверцы адбітка, будзе заменена на \"Код/Узор\" і дасць магчымасць разблакіраваць komarugram.</string>
     <string name="SP_TestFingerprint">Тэст адбітка</string>
     <string name="SP_Category_Account">Акаўнт</string>
     <string name="SP_DeleteAccount">Выдаліць Telegram акаўнт</string>
@@ -323,7 +323,7 @@
     <string name="UP_ClearedUpdatesCache">Вычышчана %1$s кэша.</string>
     <string name="UP_NothingToClear">Няма чаго чысціць.</string>
     <string name="UP_CheckForUpdates">Праверыць абнаўленні</string>
-    <string name="UP_Not_Found">Выкарыстоўваецца апошняя версія Cherrygram.</string>
+    <string name="UP_Not_Found">Выкарыстоўваецца апошняя версія komarugram.</string>
     <string name="UP_UpdateAvailable">Даступна абнаўленне!</string>
     <string name="UP_Version">Версія</string>
     <string name="UP_UpdateSize">Памер абнаўлення</string>
@@ -332,9 +332,9 @@
     <string name="UP_Download">Спампаваць</string>
     <!--Updates Preferences-->
     <!--Donations-->
-    <string name="DP_RateUs">Ацаніць Cherrygram</string>
+    <string name="DP_RateUs">Ацаніць komarugram</string>
     <string name="DP_Donate">Падтрымаць распрацоўку</string>
     <string name="DP_Donate_Method">Абярыце спосаб</string>
     <!--Donations-->
-    <!--Cherrygram screens-->
+    <!--komarugram screens-->
 </resources>

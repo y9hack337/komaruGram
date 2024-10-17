@@ -1,4 +1,4 @@
-package uz.unnarsx.cherrygram.core.updater;
+package uz.unnarsx.komarugram.core.updater;
 
 import static org.telegram.messenger.LocaleController.getString;
 
@@ -35,9 +35,9 @@ import org.telegram.ui.Components.StickerImageView;
 
 import java.util.Objects;
 
-import uz.unnarsx.cherrygram.core.configs.CherrygramCoreConfig;
-import uz.unnarsx.cherrygram.misc.Constants;
-import uz.unnarsx.cherrygram.core.helpers.CGResourcesHelper;
+import uz.unnarsx.komarugram.core.configs.komarugramCoreConfig;
+import uz.unnarsx.komarugram.misc.Constants;
+import uz.unnarsx.komarugram.core.helpers.CGResourcesHelper;
 
 public class UpdaterBottomSheet extends BottomSheet {
 
@@ -141,7 +141,7 @@ public class UpdaterBottomSheet extends BottomSheet {
             doneButton.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 14);
             doneButton.setText(getString(R.string.AppUpdateDownloadNow));
             doneButton.setOnClickListener(v -> {
-                UpdaterUtils.downloadApk(getContext(), update.downloadURL, "Cherrygram " + update.version);
+                UpdaterUtils.downloadApk(getContext(), update.downloadURL, "komarugram " + update.version);
                 dismiss();
             });
             linearLayout.addView(doneButton, LayoutHelper.createFrame(LayoutHelper.MATCH_PARENT, 48, 0, 16, 15, 16, 5));
@@ -157,7 +157,7 @@ public class UpdaterBottomSheet extends BottomSheet {
             scheduleButton.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 14);
             scheduleButton.setText(getString(R.string.AppUpdateRemindMeLater));
             scheduleButton.setOnClickListener(v -> {
-                CherrygramCoreConfig.INSTANCE.setUpdateScheduleTimestamp(System.currentTimeMillis());
+                komarugramCoreConfig.INSTANCE.setUpdateScheduleTimestamp(System.currentTimeMillis());
                 dismiss();
             });
             linearLayout.addView(scheduleButton, LayoutHelper.createFrame(LayoutHelper.MATCH_PARENT, 48, 0, 16, 1, 16, 0));
@@ -172,9 +172,9 @@ public class UpdaterBottomSheet extends BottomSheet {
             AnimatedTextView checkUpdates = new AnimatedTextView(context, true, true, false);
             TextCell installBetas = new TextCell(context, 23, false, true, resourcesProvider);
             installBetas.setBackground(Theme.createSelectorDrawable(Theme.getColor(Theme.key_listSelector), 100, 0));
-            installBetas.setTextAndCheckAndIcon(getString(R.string.UP_InstallBetas), CherrygramCoreConfig.INSTANCE.getInstallBetas(), R.drawable.test_tube_solar, false);
+            installBetas.setTextAndCheckAndIcon(getString(R.string.UP_InstallBetas), komarugramCoreConfig.INSTANCE.getInstallBetas(), R.drawable.test_tube_solar, false);
             installBetas.setOnClickListener(v -> {
-                CherrygramCoreConfig.INSTANCE.toggleInstallBetas();
+                komarugramCoreConfig.INSTANCE.toggleInstallBetas();
                 installBetas.setChecked(!installBetas.isChecked());
                 checkUpdates.callOnClick();
             });
@@ -182,9 +182,9 @@ public class UpdaterBottomSheet extends BottomSheet {
 
             TextCell checkOnLaunch = new TextCell(context, 23, false, true, resourcesProvider);
             checkOnLaunch.setBackground(Theme.createSelectorDrawable(Theme.getColor(Theme.key_listSelector), 100, 0));
-            checkOnLaunch.setTextAndCheckAndIcon(getString(R.string.UP_Auto_OTA), CherrygramCoreConfig.INSTANCE.getAutoOTA(), R.drawable.msg_retry, false);
+            checkOnLaunch.setTextAndCheckAndIcon(getString(R.string.UP_Auto_OTA), komarugramCoreConfig.INSTANCE.getAutoOTA(), R.drawable.msg_retry, false);
             checkOnLaunch.setOnClickListener(v -> {
-                CherrygramCoreConfig.INSTANCE.toggleAutoOTA();
+                komarugramCoreConfig.INSTANCE.toggleAutoOTA();
                 checkOnLaunch.setChecked(!checkOnLaunch.isChecked());
             });
             linearLayout.addView(checkOnLaunch);

@@ -1,4 +1,4 @@
-package uz.unnarsx.cherrygram.preferences.tgkit.preference;
+package uz.unnarsx.komarugram.preferences.tgkit.preference;
 
 import java.util.List;
 

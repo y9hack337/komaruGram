@@ -1,4 +1,4 @@
-package uz.unnarsx.cherrygram.chats.helpers
+package uz.unnarsx.komarugram.chats.helpers
 
 import android.app.Activity
 import android.content.SharedPreferences
@@ -9,8 +9,8 @@ import org.telegram.messenger.FingerprintController
 import org.telegram.messenger.MessageObject
 import org.telegram.tgnet.TLRPC.MessageEntity
 import org.telegram.tgnet.TLRPC.TL_messageEntitySpoiler
-import uz.unnarsx.cherrygram.core.CGBiometricPrompt
-import uz.unnarsx.cherrygram.core.configs.CherrygramPrivacyConfig
+import uz.unnarsx.komarugram.core.CGBiometricPrompt
+import uz.unnarsx.komarugram.core.configs.komarugramPrivacyConfig
 import java.lang.reflect.Type
 
 object ChatsPasswordHelper {
@@ -57,6 +57,6 @@ object ChatsPasswordHelper {
     }
 
     var askPasscodeForChats =
-        CherrygramPrivacyConfig.askForPasscodeBeforeOpenChat && getArrayList(Passcode_Array) != null && !getArrayList(Passcode_Array)!!.isEmpty()
+        komarugramPrivacyConfig.askForPasscodeBeforeOpenChat && getArrayList(Passcode_Array) != null && !getArrayList(Passcode_Array)!!.isEmpty()
                 && CGBiometricPrompt.hasBiometricEnrolled() && FingerprintController.isKeyReady() && !FingerprintController.checkDeviceFingerprintsChanged()
 }

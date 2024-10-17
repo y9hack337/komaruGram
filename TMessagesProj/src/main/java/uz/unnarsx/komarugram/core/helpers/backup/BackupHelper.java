@@ -1,4 +1,4 @@
-package uz.unnarsx.cherrygram.core.helpers.backup;
+package uz.unnarsx.komarugram.core.helpers.backup;
 
 import static org.telegram.messenger.LocaleController.getString;
 
@@ -34,8 +34,8 @@ import java.util.Map;
 import java.util.function.Function;
 
 import kotlin.text.StringsKt;
-import uz.unnarsx.cherrygram.core.helpers.AppRestartHelper;
-import uz.unnarsx.cherrygram.core.PermissionsUtils;
+import uz.unnarsx.komarugram.core.helpers.AppRestartHelper;
+import uz.unnarsx.komarugram.core.PermissionsUtils;
 
 public class BackupHelper {
 
@@ -259,6 +259,7 @@ public class BackupHelper {
         mainconfig.add("CP_VideoSeekDuration");
         mainconfig.add("CP_Notification_Sound");
         mainconfig.add("CP_VibrationInChats");
+        mainconfig.add("CP_AiModel");
         mainconfig.add("CP_SilenceNonContacts");
         mainconfig.add("CP_CameraType");
         mainconfig.add("CP_CameraXOptimizedMode");

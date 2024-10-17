@@ -19,7 +19,7 @@ import androidx.core.app.NotificationChannelCompat;
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
 
-import uz.unnarsx.komarugram.core.configs.CherrygramExperimentalConfig;
+import uz.unnarsx.komarugram.core.configs.komarugramExperimentalConfig;
 import uz.unnarsx.komarugram.core.helpers.CGResourcesHelper;
 
 public class NotificationsService extends Service {
@@ -30,7 +30,7 @@ public class NotificationsService extends Service {
         super.onCreate();
         ApplicationLoader.postInitApplication();
 
-        if (CherrygramExperimentalConfig.INSTANCE.getResidentNotification()) {
+        if (komarugramExperimentalConfig.INSTANCE.getResidentNotification()) {
             NotificationChannelCompat channel = new NotificationChannelCompat.Builder("komarugramPush", NotificationManagerCompat.IMPORTANCE_DEFAULT)
                     .setName(LocaleController.getString("CG_PushService", R.string.CG_PushService))
                     .setLightsEnabled(false)

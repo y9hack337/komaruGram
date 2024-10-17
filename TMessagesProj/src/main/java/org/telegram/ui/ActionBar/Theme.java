@@ -150,7 +150,7 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.concurrent.CountDownLatch;
 
-import uz.unnarsx.komarugram.core.configs.CherrygramAppearanceConfig;
+import uz.unnarsx.komarugram.core.configs.komarugramAppearanceConfig;
 import uz.unnarsx.komarugram.helpers.ui.MonetHelper;
 
 public class Theme {
@@ -5219,13 +5219,13 @@ public class Theme {
         int hour = calendar.get(Calendar.HOUR_OF_DAY);
 
         int eventType = -1;
-        if ((monthOfYear == 11 && dayOfMonth >= 24 && dayOfMonth <= 31 || monthOfYear == 0 && dayOfMonth == 1) || (CherrygramAppearanceConfig.INSTANCE.getEventType() == 1)) {
+        if ((monthOfYear == 11 && dayOfMonth >= 24 && dayOfMonth <= 31 || monthOfYear == 0 && dayOfMonth == 1) || (komarugramAppearanceConfig.INSTANCE.getEventType() == 1)) {
             eventType = 0;
-        } else if ((monthOfYear == 1 && dayOfMonth == 14) || (CherrygramAppearanceConfig.INSTANCE.getEventType() == 2)) {
+        } else if ((monthOfYear == 1 && dayOfMonth == 14) || (komarugramAppearanceConfig.INSTANCE.getEventType() == 2)) {
             eventType = 1;
-        } else if ((monthOfYear == 9 && dayOfMonth >= 30 || monthOfYear == 10 && dayOfMonth == 1 && hour < 12) || (CherrygramAppearanceConfig.INSTANCE.getEventType() == 3)) {
+        } else if ((monthOfYear == 9 && dayOfMonth >= 30 || monthOfYear == 10 && dayOfMonth == 1 && hour < 12) || (komarugramAppearanceConfig.INSTANCE.getEventType() == 3)) {
             eventType = 2;
-        } else if ((monthOfYear == 1 && dayOfMonth <= 14) || (CherrygramAppearanceConfig.INSTANCE.getEventType() == 4)) {
+        } else if ((monthOfYear == 1 && dayOfMonth <= 14) || (komarugramAppearanceConfig.INSTANCE.getEventType() == 4)) {
             eventType = 3;
         }
         return eventType;
@@ -5246,7 +5246,7 @@ public class Theme {
                 canStartHolidayAnimation = false;
             }
             if (dialogs_holidayDrawable == null) {
-                if ((monthOfYear == 11 && dayOfMonth >= (BuildVars.DEBUG_PRIVATE_VERSION ? 29 : 31) && dayOfMonth <= 31 || monthOfYear == 0 && dayOfMonth == 1) || CherrygramAppearanceConfig.INSTANCE.getDrawSnowInActionBar()) {
+                if ((monthOfYear == 11 && dayOfMonth >= (BuildVars.DEBUG_PRIVATE_VERSION ? 29 : 31) && dayOfMonth <= 31 || monthOfYear == 0 && dayOfMonth == 1) || komarugramAppearanceConfig.INSTANCE.getDrawSnowInActionBar()) {
                     dialogs_holidayDrawable = ApplicationLoader.applicationContext.getResources().getDrawable(R.drawable.newyear);
                     dialogs_holidayDrawableOffsetX = -dp(3);
                     dialogs_holidayDrawableOffsetY = -dp(-7);
@@ -9611,7 +9611,7 @@ public class Theme {
                 return animatingColors.valueAt(index);
             }
         }
-        if (CherrygramAppearanceConfig.INSTANCE.getDisableDividers() && key_divider == key) {
+        if (komarugramAppearanceConfig.INSTANCE.getDisableDividers() && key_divider == key) {
             return 0x00ffffff;
         }
         if (serviceBitmapShader != null && (key_chat_serviceText == key || key_chat_serviceLink == key || key_chat_serviceIcon == key

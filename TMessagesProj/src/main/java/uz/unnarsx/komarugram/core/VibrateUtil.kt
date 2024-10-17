@@ -1,4 +1,4 @@
-package uz.unnarsx.cherrygram.core
+package uz.unnarsx.komarugram.core
 
 import android.content.Context
 import android.os.Build
@@ -10,7 +10,7 @@ import android.view.ViewGroup
 import androidx.core.view.children
 import org.telegram.messenger.AndroidUtilities
 import org.telegram.messenger.ApplicationLoader
-import uz.unnarsx.cherrygram.core.configs.CherrygramChatsConfig
+import uz.unnarsx.komarugram.core.configs.komarugramChatsConfig
 
 object VibrateUtil {
 
@@ -26,7 +26,7 @@ object VibrateUtil {
     @JvmOverloads
     fun vibrate(time: Long = 200L) {
 
-        if (CherrygramChatsConfig.disableVibration) return
+        if (komarugramChatsConfig.disableVibration) return
 
         if (!VibrateUtil::vibrator.isInitialized) {
             // Use new VibratorManager service for API >= 31

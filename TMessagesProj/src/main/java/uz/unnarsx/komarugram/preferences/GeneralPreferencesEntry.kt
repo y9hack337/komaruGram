@@ -1,15 +1,15 @@
-package uz.unnarsx.cherrygram.preferences
+package uz.unnarsx.komarugram.preferences
 
 import org.telegram.messenger.AndroidUtilities
 import org.telegram.messenger.LocaleController.getString
 import org.telegram.messenger.R
 import org.telegram.ui.ActionBar.BaseFragment
-import uz.unnarsx.cherrygram.core.configs.CherrygramCoreConfig
-import uz.unnarsx.cherrygram.core.helpers.AppRestartHelper
-import uz.unnarsx.cherrygram.preferences.tgkit.preference.category
-import uz.unnarsx.cherrygram.preferences.tgkit.preference.contract
-import uz.unnarsx.cherrygram.preferences.tgkit.preference.switch
-import uz.unnarsx.cherrygram.preferences.tgkit.preference.tgKitScreen
+import uz.unnarsx.komarugram.core.configs.komarugramCoreConfig
+import uz.unnarsx.komarugram.core.helpers.AppRestartHelper
+import uz.unnarsx.komarugram.preferences.tgkit.preference.category
+import uz.unnarsx.komarugram.preferences.tgkit.preference.contract
+import uz.unnarsx.komarugram.preferences.tgkit.preference.switch
+import uz.unnarsx.komarugram.preferences.tgkit.preference.tgKitScreen
 
 class GeneralPreferencesEntry : BasePreferencesEntry {
     override fun getPreferences(bf: BaseFragment) = tgKitScreen(getString(R.string.AP_Header_General)) {
@@ -19,26 +19,26 @@ class GeneralPreferencesEntry : BasePreferencesEntry {
                 description = getString(R.string.CP_NoRoundingSummary)
 
                 contract({
-                    return@contract CherrygramCoreConfig.noRounding
+                    return@contract komarugramCoreConfig.noRounding
                 }) {
-                    CherrygramCoreConfig.noRounding = it
+                    komarugramCoreConfig.noRounding = it
                 }
             }
             switch {
                 title = getString(R.string.AP_SystemEmoji)
                 contract({
-                    return@contract CherrygramCoreConfig.systemEmoji
+                    return@contract komarugramCoreConfig.systemEmoji
                 }) {
-                    CherrygramCoreConfig.systemEmoji = it
+                    komarugramCoreConfig.systemEmoji = it
                 }
             }
             switch {
                 title = getString(R.string.AP_SystemFonts)
 
                 contract({
-                    return@contract CherrygramCoreConfig.systemFonts
+                    return@contract komarugramCoreConfig.systemFonts
                 }) {
-                    CherrygramCoreConfig.systemFonts = it
+                    komarugramCoreConfig.systemFonts = it
                     AndroidUtilities.clearTypefaceCache()
                     AppRestartHelper.createRestartBulletin(bf)
                 }
@@ -46,9 +46,9 @@ class GeneralPreferencesEntry : BasePreferencesEntry {
             switch {
                 title = getString(R.string.AP_Old_Notification_Icon)
                 contract({
-                    return@contract CherrygramCoreConfig.oldNotificationIcon
+                    return@contract komarugramCoreConfig.oldNotificationIcon
                 }) {
-                    CherrygramCoreConfig.oldNotificationIcon = it
+                    komarugramCoreConfig.oldNotificationIcon = it
                     AppRestartHelper.createRestartBulletin(bf)
                 }
             }
@@ -59,9 +59,9 @@ class GeneralPreferencesEntry : BasePreferencesEntry {
                 title = getString(R.string.CP_HideStories)
 
                 contract({
-                    return@contract CherrygramCoreConfig.hideStories
+                    return@contract komarugramCoreConfig.hideStories
                 }) {
-                    CherrygramCoreConfig.hideStories = it
+                    komarugramCoreConfig.hideStories = it
                 }
             }
             switch {
@@ -69,18 +69,18 @@ class GeneralPreferencesEntry : BasePreferencesEntry {
                 description = getString(R.string.CP_CustomWallpapers_Desc)
 
                 contract({
-                    return@contract CherrygramCoreConfig.customWallpapers
+                    return@contract komarugramCoreConfig.customWallpapers
                 }) {
-                    CherrygramCoreConfig.customWallpapers = it
+                    komarugramCoreConfig.customWallpapers = it
                 }
             }
             switch {
                 title = getString(R.string.CP_DisableAnimAvatars)
 
                 contract({
-                    return@contract CherrygramCoreConfig.disableAnimatedAvatars
+                    return@contract komarugramCoreConfig.disableAnimatedAvatars
                 }) {
-                    CherrygramCoreConfig.disableAnimatedAvatars = it
+                    komarugramCoreConfig.disableAnimatedAvatars = it
                     AppRestartHelper.createRestartBulletin(bf)
                 }
             }
@@ -89,9 +89,9 @@ class GeneralPreferencesEntry : BasePreferencesEntry {
                 description = getString(R.string.CP_DisableReactionsOverlay_Desc)
 
                 contract({
-                    return@contract CherrygramCoreConfig.disableReactionsOverlay
+                    return@contract komarugramCoreConfig.disableReactionsOverlay
                 }) {
-                    CherrygramCoreConfig.disableReactionsOverlay = it
+                    komarugramCoreConfig.disableReactionsOverlay = it
                     AppRestartHelper.createRestartBulletin(bf)
                 }
             }
@@ -100,9 +100,9 @@ class GeneralPreferencesEntry : BasePreferencesEntry {
                 description = getString(R.string.CP_DisableReactionAnim_Desc)
 
                 contract({
-                    return@contract CherrygramCoreConfig.disableReactionAnim
+                    return@contract komarugramCoreConfig.disableReactionAnim
                 }) {
-                    CherrygramCoreConfig.disableReactionAnim = it
+                    komarugramCoreConfig.disableReactionAnim = it
                     AppRestartHelper.createRestartBulletin(bf)
                 }
             }
@@ -111,9 +111,9 @@ class GeneralPreferencesEntry : BasePreferencesEntry {
                 description = getString(R.string.CP_DisablePremStickAnim_Desc)
 
                 contract({
-                    return@contract CherrygramCoreConfig.disablePremStickAnim
+                    return@contract komarugramCoreConfig.disablePremStickAnim
                 }) {
-                    CherrygramCoreConfig.disablePremStickAnim = it
+                    komarugramCoreConfig.disablePremStickAnim = it
                     AppRestartHelper.createRestartBulletin(bf)
                 }
             }
@@ -122,9 +122,9 @@ class GeneralPreferencesEntry : BasePreferencesEntry {
                 description = getString(R.string.CP_DisablePremStickAutoPlay_Desc)
 
                 contract({
-                    return@contract CherrygramCoreConfig.disablePremStickAutoPlay
+                    return@contract komarugramCoreConfig.disablePremStickAutoPlay
                 }) {
-                    CherrygramCoreConfig.disablePremStickAutoPlay = it
+                    komarugramCoreConfig.disablePremStickAutoPlay = it
                     AppRestartHelper.createRestartBulletin(bf)
                 }
             }
@@ -133,9 +133,9 @@ class GeneralPreferencesEntry : BasePreferencesEntry {
                 description = getString(R.string.CP_HideSendAsChannelDesc)
 
                 contract({
-                    return@contract CherrygramCoreConfig.hideSendAsChannel
+                    return@contract komarugramCoreConfig.hideSendAsChannel
                 }) {
-                    CherrygramCoreConfig.hideSendAsChannel = it
+                    komarugramCoreConfig.hideSendAsChannel = it
                 }
             }
 

@@ -1,4 +1,4 @@
-package uz.unnarsx.cherrygram.camera;
+package uz.unnarsx.komarugram.camera;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;

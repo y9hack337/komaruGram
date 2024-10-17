@@ -1,4 +1,4 @@
-package uz.unnarsx.cherrygram.core.updater;
+package uz.unnarsx.komarugram.core.updater;
 
 import static org.telegram.messenger.LocaleController.getString;
 
@@ -43,16 +43,16 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Objects;
 
-import uz.unnarsx.cherrygram.core.configs.CherrygramCoreConfig;
-import uz.unnarsx.cherrygram.core.helpers.CGResourcesHelper;
-import uz.unnarsx.cherrygram.misc.Constants;
+import uz.unnarsx.komarugram.core.configs.komarugramCoreConfig;
+import uz.unnarsx.komarugram.core.helpers.CGResourcesHelper;
+import uz.unnarsx.komarugram.misc.Constants;
 
 public class UpdaterUtils {
 
     public static final DispatchQueue otaQueue = new DispatchQueue("otaQueue");
 
-    private static String uri = "https://api.github.com/repos/arsLan4k1390/Cherrygram/releases/latest";
-    private static String betauri = "https://api.github.com/repos/arsLan4k1390/CherrygramBeta-APKs/releases/latest";
+    private static String uri = "https://api.github.com/repos/arsLan4k1390/komarugram/releases/latest";
+    private static String betauri = "https://api.github.com/repos/arsLan4k1390/komarugramBeta-APKs/releases/latest";
     private static String downloadURL = null;
     public static String version, changelog, size, uploadDate;
     public static File otaPath, versionPath, apkFile;
@@ -111,19 +111,19 @@ public class UpdaterUtils {
     }
 
     public static void checkUpdates(BaseFragment fragment, boolean manual, OnUpdateNotFound onUpdateNotFound, OnUpdateFound onUpdateFound, Browser.Progress progress) {
-        if (CherrygramCoreConfig.INSTANCE.isStandalonePremiumBuild()) return;
-        if (CherrygramCoreConfig.INSTANCE.isPlayStoreBuild()) return;
+        if (komarugramCoreConfig.INSTANCE.isStandalonePremiumBuild()) return;
+        if (komarugramCoreConfig.INSTANCE.isPlayStoreBuild()) return;
 
-        if (checkingForUpdates || id != 1L || (System.currentTimeMillis() - CherrygramCoreConfig.INSTANCE.getUpdateScheduleTimestamp() < updateCheckInterval && !manual))
+        if (checkingForUpdates || id != 1L || (System.currentTimeMillis() - komarugramCoreConfig.INSTANCE.getUpdateScheduleTimestamp() < updateCheckInterval && !manual))
             return;
 
         checkingForUpdates = true;
         otaQueue.postRunnable(() -> {
-            CherrygramCoreConfig.INSTANCE.getLastUpdateCheckTime();
-            CherrygramCoreConfig.INSTANCE.setLastUpdateCheckTime(System.currentTimeMillis());
+            komarugramCoreConfig.INSTANCE.getLastUpdateCheckTime();
+            komarugramCoreConfig.INSTANCE.setLastUpdateCheckTime(System.currentTimeMillis());
             try {
                 var connection = (HttpURLConnection) new URI(uri).toURL().openConnection();
-                if (CherrygramCoreConfig.INSTANCE.getInstallBetas()) {
+                if (komarugramCoreConfig.INSTANCE.getInstallBetas()) {
                     connection = (HttpURLConnection) new URI(betauri).toURL().openConnection();
                 }
                 connection.setRequestMethod("GET");
@@ -153,7 +153,7 @@ public class UpdaterUtils {
                         FileLog.d ("DownloadLink: " + downloadURL);
                     } else if (ApplicationLoader.isStandaloneBuild() && ApplicationLoader.isHuaweiStoreBuild()) {
                         link = arr.getJSONObject(i).getString("browser_download_url")
-                                .replace("Cherrygram-", "Cherrygram-Huawei-");
+                                .replace("komarugram-", "komarugram-Huawei-");
                         downloadURL = link;
                         FileLog.d ("DownloadLinkHuawei: " + downloadURL);
                     }
@@ -223,7 +223,7 @@ public class UpdaterUtils {
         var install = new Intent(Intent.ACTION_VIEW);
         Uri fileUri;
         if (Build.VERSION.SDK_INT >= 24) {
-            fileUri = FileProvider.getUriForFile(context, "uz.unnarsx.cherrygram" + ".provider", file);
+            fileUri = FileProvider.getUriForFile(context, "uz.unnarsx.komarugram" + ".provider", file);
         } else {
             fileUri = Uri.fromFile(file);
         }
@@ -384,6 +384,6 @@ public class UpdaterUtils {
     }
 
     public static String getLastCheckUpdateTime() {
-        return getString(R.string.UP_LastCheck) + ": " + LocaleController.formatDateTime(CherrygramCoreConfig.INSTANCE.getLastUpdateCheckTime() / 1000, true);
+        return getString(R.string.UP_LastCheck) + ": " + LocaleController.formatDateTime(komarugramCoreConfig.INSTANCE.getLastUpdateCheckTime() / 1000, true);
     }
 }

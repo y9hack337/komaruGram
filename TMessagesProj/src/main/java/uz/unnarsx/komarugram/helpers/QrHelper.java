@@ -1,4 +1,4 @@
-package uz.unnarsx.cherrygram.helpers;
+package uz.unnarsx.komarugram.helpers;
 
 import android.graphics.Bitmap;
 

@@ -1,4 +1,4 @@
-package uz.unnarsx.cherrygram.misc.widgets;
+package uz.unnarsx.komarugram.misc.widgets;
 
 import android.app.Activity;
 import android.content.Intent;

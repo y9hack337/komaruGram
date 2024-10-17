@@ -31,7 +31,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
 
-import uz.unnarsx.komarugram.core.configs.CherrygramChatsConfig;
+import uz.unnarsx.komarugram.core.configs.komarugramChatsConfig;
 
 public class EntityView extends FrameLayout {
     private final static List<Integer> STICKY_ANGLES = Arrays.asList(
@@ -90,7 +90,7 @@ public class EntityView extends FrameLayout {
     private final Runnable longPressRunnable = () -> {
         recognizedLongPress = true;
         if (delegate != null) {
-            if (!CherrygramChatsConfig.INSTANCE.getDisableVibration()) {
+            if (!komarugramChatsConfig.INSTANCE.getDisableVibration()) {
                 performHapticFeedback(HapticFeedbackConstants.LONG_PRESS);
             }
             delegate.onEntityLongClicked(EntityView.this);
@@ -462,7 +462,7 @@ public class EntityView extends FrameLayout {
             runStickyXAnimator(1, 0);
         } else {
             try {
-                if (!CherrygramChatsConfig.INSTANCE.getDisableVibration()) {
+                if (!komarugramChatsConfig.INSTANCE.getDisableVibration()) {
                     performHapticFeedback(HapticFeedbackConstants.KEYBOARD_TAP, HapticFeedbackConstants.FLAG_IGNORE_GLOBAL_SETTING);
                 }
             } catch (Exception ignored) {}
@@ -486,7 +486,7 @@ public class EntityView extends FrameLayout {
             runStickyYAnimator(1, 0);
         } else {
             try {
-                if (!CherrygramChatsConfig.INSTANCE.getDisableVibration()) {
+                if (!komarugramChatsConfig.INSTANCE.getDisableVibration()) {
                     performHapticFeedback(HapticFeedbackConstants.KEYBOARD_TAP, HapticFeedbackConstants.FLAG_IGNORE_GLOBAL_SETTING);
                 }
             } catch (Exception ignored) {}
@@ -607,7 +607,7 @@ public class EntityView extends FrameLayout {
         newScale = Utilities.clamp(newScale, getMaxScale(), getMinScale());
         if (allowHaptic() && (newScale >= getMaxScale() || newScale <= getMinScale()) != (oldScale >= getMaxScale() || oldScale <= getMinScale())) {
             try {
-                if (!CherrygramChatsConfig.INSTANCE.getDisableVibration()) {
+                if (!komarugramChatsConfig.INSTANCE.getDisableVibration()) {
                     performHapticFeedback(HapticFeedbackConstants.KEYBOARD_TAP, HapticFeedbackConstants.FLAG_IGNORE_VIEW_SETTING);
                 }
             } catch (Exception ignore) {
@@ -646,7 +646,7 @@ public class EntityView extends FrameLayout {
                             currentStickyAngle = stickyAngle;
                             hasStickyAngle = true;
                             try {
-                                if (!CherrygramChatsConfig.INSTANCE.getDisableVibration()) {
+                                if (!komarugramChatsConfig.INSTANCE.getDisableVibration()) {
                                     performHapticFeedback(HapticFeedbackConstants.KEYBOARD_TAP, HapticFeedbackConstants.FLAG_IGNORE_GLOBAL_SETTING);
                                 }
                             } catch (Exception ignored) {}

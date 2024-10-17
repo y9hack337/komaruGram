@@ -59,9 +59,9 @@ import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 
-import uz.unnarsx.komarugram.core.configs.CherrygramCoreConfig;
-import uz.unnarsx.komarugram.core.configs.CherrygramDebugConfig;
-import uz.unnarsx.komarugram.core.configs.CherrygramExperimentalConfig;
+import uz.unnarsx.komarugram.core.configs.komarugramCoreConfig;
+import uz.unnarsx.komarugram.core.configs.komarugramDebugConfig;
+import uz.unnarsx.komarugram.core.configs.komarugramExperimentalConfig;
 import uz.unnarsx.komarugram.core.helpers.ErrorDatabaseHelper;
 
 import javax.net.ssl.SSLException;
@@ -372,7 +372,7 @@ public class ConnectionsManager extends BaseController {
                         if (BuildVars.LOGS_ENABLED && error.code != -2000) {
                             FileLog.e(object + " got error " + error.code + " " + error.text);
                         }
-                        if (CherrygramDebugConfig.INSTANCE.getShowRPCErrors() && !CherrygramCoreConfig.INSTANCE.isStandaloneStableBuild() && !CherrygramCoreConfig.INSTANCE.isPlayStoreBuild()) {
+                        if (komarugramDebugConfig.INSTANCE.getShowRPCErrors() && !komarugramCoreConfig.INSTANCE.isStandaloneStableBuild() && !komarugramCoreConfig.INSTANCE.isPlayStoreBuild()) {
                             ErrorDatabaseHelper.showErrorToast(object, errorText);
                         }
                     }
@@ -557,7 +557,7 @@ public class ConnectionsManager extends BaseController {
             FileLog.d("selected ip strategy " + selectedStrategy);
         }
         native_setIpStrategy(currentAccount, selectedStrategy);
-        native_setNetworkAvailable(currentAccount, ApplicationLoader.isNetworkOnline(), ApplicationLoader.getCurrentNetworkType(), CherrygramExperimentalConfig.INSTANCE.getSlowNetworkMode());
+        native_setNetworkAvailable(currentAccount, ApplicationLoader.isNetworkOnline(), ApplicationLoader.getCurrentNetworkType(), komarugramExperimentalConfig.INSTANCE.getSlowNetworkMode());
     }
 
     public void setPushConnectionEnabled(boolean value) {

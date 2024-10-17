@@ -1,17 +1,17 @@
-package uz.unnarsx.cherrygram.core.icons
+package uz.unnarsx.komarugram.core.icons
 
 import android.annotation.SuppressLint
 import android.content.res.*
 import android.graphics.drawable.Drawable
-import uz.unnarsx.cherrygram.core.configs.CherrygramAppearanceConfig
+import uz.unnarsx.komarugram.core.configs.komarugramAppearanceConfig
 //import com.google.android.exoplayer2.util.Log
-import uz.unnarsx.cherrygram.core.icons.icon_replaces.BaseIconReplace
+import uz.unnarsx.komarugram.core.icons.icon_replaces.BaseIconReplace
 
 @Suppress("DEPRECATION")
 class CGUIResources(private val wrapped: Resources) : Resources(wrapped.assets, wrapped.displayMetrics, wrapped.configuration) {
-    private var activeReplacement: BaseIconReplace = CherrygramAppearanceConfig.getCurrentIconPack()
+    private var activeReplacement: BaseIconReplace = komarugramAppearanceConfig.getCurrentIconPack()
     fun reloadReplacements() {
-        activeReplacement = CherrygramAppearanceConfig.getCurrentIconPack()
+        activeReplacement = komarugramAppearanceConfig.getCurrentIconPack()
     }
 
     @Deprecated("Deprecated in Java")

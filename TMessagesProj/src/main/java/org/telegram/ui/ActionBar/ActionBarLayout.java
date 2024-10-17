@@ -79,10 +79,10 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import uz.unnarsx.komarugram.core.configs.CherrygramAppearanceConfig;
-import uz.unnarsx.komarugram.core.configs.CherrygramChatsConfig;
+import uz.unnarsx.komarugram.core.configs.komarugramAppearanceConfig;
+import uz.unnarsx.komarugram.core.configs.komarugramChatsConfig;
 import uz.unnarsx.komarugram.core.VibrateUtil;
-import uz.unnarsx.komarugram.core.configs.CherrygramExperimentalConfig;
+import uz.unnarsx.komarugram.core.configs.komarugramExperimentalConfig;
 
 
 public class ActionBarLayout extends FrameLayout implements INavigationLayout, FloatingDebugProvider {
@@ -338,7 +338,7 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
                                     if (shouldBeEnabled != enabled) {
                                         ripple.setState(shouldBeEnabled ? new int[]{android.R.attr.state_pressed, android.R.attr.state_enabled} : new int[]{});
                                         if (shouldBeEnabled) {
-                                            if (!CherrygramChatsConfig.INSTANCE.getDisableVibration()) {
+                                            if (!komarugramChatsConfig.INSTANCE.getDisableVibration()) {
                                                 AndroidUtilities.vibrateCursor(button);
                                             }
                                         }
@@ -513,7 +513,7 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
 
         if (layerShadowDrawable == null) {
             layerShadowDrawable = getResources().getDrawable(R.drawable.layer_shadow);
-            headerShadowDrawable = CherrygramAppearanceConfig.INSTANCE.getDisableToolBarShadow() ? null : getResources().getDrawable(R.drawable.header_shadow).mutate();
+            headerShadowDrawable = komarugramAppearanceConfig.INSTANCE.getDisableToolBarShadow() ? null : getResources().getDrawable(R.drawable.header_shadow).mutate();
             scrimPaint = new Paint();
         }
 
@@ -1098,7 +1098,7 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
         View fragmentView = lastFragment.fragmentView;
         if (fragmentView == null) {
             fragmentView = lastFragment.createView(parentActivity);
-            if (CherrygramChatsConfig.INSTANCE.getDisableVibration()) {
+            if (komarugramChatsConfig.INSTANCE.getDisableVibration()) {
                 VibrateUtil.disableHapticFeedback(fragmentView);
             }
         }
@@ -1736,7 +1736,7 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
         View fragmentView = fragment.fragmentView;
         if (fragmentView == null) {
             fragmentView = fragment.createView(parentActivity);
-            if (CherrygramChatsConfig.INSTANCE.getDisableVibration()) {
+            if (komarugramChatsConfig.INSTANCE.getDisableVibration()) {
                 VibrateUtil.disableHapticFeedback(fragmentView);
             }
         } else {
@@ -2261,7 +2261,7 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
             }
         });
         animatorSet.start();
-        if (!CherrygramChatsConfig.INSTANCE.getDisableVibration()) {
+        if (!komarugramChatsConfig.INSTANCE.getDisableVibration()) {
             performHapticFeedback(HapticFeedbackConstants.KEYBOARD_TAP);
         }
 
@@ -2318,7 +2318,7 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
             View fragmentView = previousFragment.fragmentView;
             if (fragmentView == null) {
                 fragmentView = previousFragment.createView(parentActivity);
-                if (CherrygramChatsConfig.INSTANCE.getDisableVibration()) {
+                if (komarugramChatsConfig.INSTANCE.getDisableVibration()) {
                     VibrateUtil.disableHapticFeedback(fragmentView);
                 }
             }
@@ -2505,7 +2505,7 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
         View fragmentView = previousFragment.fragmentView;
         if (fragmentView == null) {
             fragmentView = previousFragment.createView(parentActivity);
-            if (CherrygramChatsConfig.INSTANCE.getDisableVibration()) {
+            if (komarugramChatsConfig.INSTANCE.getDisableVibration()) {
                 VibrateUtil.disableHapticFeedback(fragmentView);
             }
         } else {
@@ -3151,7 +3151,7 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
         return Math.max(0, usableViewHeight - (rect.bottom - rect.top));
     }
 
-    private static boolean USE_ACTIONBAR_CROSSFADE = CherrygramExperimentalConfig.INSTANCE.getSpringAnimation() == CherrygramExperimentalConfig.ANIMATION_SPRING && CherrygramExperimentalConfig.INSTANCE.getActionbarCrossfade();
+    private static boolean USE_ACTIONBAR_CROSSFADE = komarugramExperimentalConfig.INSTANCE.getSpringAnimation() == komarugramExperimentalConfig.ANIMATION_SPRING && komarugramExperimentalConfig.INSTANCE.getActionbarCrossfade();
     private float swipeProgress;
     private MenuDrawable menuDrawable;
 
@@ -3243,7 +3243,7 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
         }
     }
 
-    private static boolean USE_SPRING_ANIMATION = CherrygramExperimentalConfig.INSTANCE.getSpringAnimation() == CherrygramExperimentalConfig.ANIMATION_SPRING;
+    private static boolean USE_SPRING_ANIMATION = komarugramExperimentalConfig.INSTANCE.getSpringAnimation() == komarugramExperimentalConfig.ANIMATION_SPRING;
     private static final float SPRING_STIFFNESS = 1000f;
     private static final float SPRING_STIFFNESS_PREVIEW = 650f;
     private static final float SPRING_STIFFNESS_PREVIEW_OUT = 800f;

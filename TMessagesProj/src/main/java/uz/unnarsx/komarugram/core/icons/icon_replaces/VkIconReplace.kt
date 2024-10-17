@@ -1,8 +1,8 @@
-package uz.unnarsx.cherrygram.core.icons.icon_replaces
+package uz.unnarsx.komarugram.core.icons.icon_replaces
 
 import android.util.SparseIntArray
 import org.telegram.messenger.R
-import uz.unnarsx.cherrygram.core.icons.newSparseInt
+import uz.unnarsx.komarugram.core.icons.newSparseInt
 
 class VkIconReplace : BaseIconReplace() {
     override val replaces: SparseIntArray = newSparseInt(

@@ -1,4 +1,4 @@
-package uz.unnarsx.cherrygram.camera;
+package uz.unnarsx.komarugram.camera;
 
 import static org.telegram.messenger.AndroidUtilities.dp;
 import static org.telegram.messenger.LocaleController.getString;
@@ -27,8 +27,8 @@ import org.telegram.messenger.R;
 import org.telegram.ui.Components.InstantCameraView;
 import org.telegram.ui.Components.RLottieDrawable;
 
-import uz.unnarsx.cherrygram.core.CGFeatureHooks;
-import uz.unnarsx.cherrygram.core.configs.CherrygramCameraConfig;
+import uz.unnarsx.komarugram.core.CGFeatureHooks;
+import uz.unnarsx.komarugram.core.configs.komarugramCameraConfig;
 
 public class VideoMessagesHelper {
 
@@ -183,7 +183,7 @@ public class VideoMessagesHelper {
         float value = 0;
         if (
                 !instantCameraView.isFrontface
-                && !CherrygramCameraConfig.INSTANCE.getStartFromUltraWideCam()
+                && !komarugramCameraConfig.INSTANCE.getStartFromUltraWideCam()
                 && cameraXController != null && !cameraXController.isAvailableWideMode() /* Wide camera check to prevent wrong slider value on non-supported devices*/
         ) {
             value = 0.5f;
@@ -239,11 +239,11 @@ public class VideoMessagesHelper {
 
     public static Range<Integer> getCameraXFpsRange() {
         Range<Integer> fpsRange = new Range<>(30, 30);
-        if (CherrygramCameraConfig.INSTANCE.getCameraXFpsRange() == CherrygramCameraConfig.CameraXFpsRange25to30) {
+        if (komarugramCameraConfig.INSTANCE.getCameraXFpsRange() == komarugramCameraConfig.CameraXFpsRange25to30) {
             fpsRange = new Range<>(25, 30);
-        } else if (CherrygramCameraConfig.INSTANCE.getCameraXFpsRange() == CherrygramCameraConfig.CameraXFpsRange30to60) {
+        } else if (komarugramCameraConfig.INSTANCE.getCameraXFpsRange() == komarugramCameraConfig.CameraXFpsRange30to60) {
             fpsRange = new Range<>(30, 60);
-        } else if (CherrygramCameraConfig.INSTANCE.getCameraXFpsRange() == CherrygramCameraConfig.CameraXFpsRange60to60) {
+        } else if (komarugramCameraConfig.INSTANCE.getCameraXFpsRange() == komarugramCameraConfig.CameraXFpsRange60to60) {
             fpsRange = new Range<>(60, 60);
         }
         return fpsRange;
@@ -251,11 +251,11 @@ public class VideoMessagesHelper {
 
     public static int getCameraXAspectRatio() {
         int aspectRatio;
-        if (CherrygramCameraConfig.INSTANCE.getCameraAspectRatio() == CherrygramCameraConfig.Camera4to3) {
+        if (komarugramCameraConfig.INSTANCE.getCameraAspectRatio() == komarugramCameraConfig.Camera4to3) {
             aspectRatio = AspectRatio.RATIO_4_3;
-        } else if (CherrygramCameraConfig.INSTANCE.getCameraAspectRatio() == CherrygramCameraConfig.Camera16to9) {
+        } else if (komarugramCameraConfig.INSTANCE.getCameraAspectRatio() == komarugramCameraConfig.Camera16to9) {
             aspectRatio = AspectRatio.RATIO_16_9;
-        } else if (CherrygramCameraConfig.INSTANCE.getCameraAspectRatio() == CherrygramCameraConfig.CameraAspectDefault) {
+        } else if (komarugramCameraConfig.INSTANCE.getCameraAspectRatio() == komarugramCameraConfig.CameraAspectDefault) {
             aspectRatio = AspectRatio.RATIO_DEFAULT;
         } else {
             aspectRatio = AspectRatio.RATIO_16_9;

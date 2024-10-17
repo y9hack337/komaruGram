@@ -1,12 +1,12 @@
-package uz.unnarsx.cherrygram.preferences.tgkit.preference
+package uz.unnarsx.komarugram.preferences.tgkit.preference
 
 import androidx.core.util.Pair
-import uz.unnarsx.cherrygram.preferences.tgkit.preference.types.TGKitListPreference
-import uz.unnarsx.cherrygram.preferences.tgkit.preference.types.TGKitSliderPreference
-import uz.unnarsx.cherrygram.preferences.tgkit.preference.types.TGKitSwitchPreference
-import uz.unnarsx.cherrygram.preferences.tgkit.preference.types.TGKitTextDetailRow
-import uz.unnarsx.cherrygram.preferences.tgkit.preference.types.TGKitTextHintRow
-import uz.unnarsx.cherrygram.preferences.tgkit.preference.types.TGKitTextIconRow
+import uz.unnarsx.komarugram.preferences.tgkit.preference.types.TGKitListPreference
+import uz.unnarsx.komarugram.preferences.tgkit.preference.types.TGKitSliderPreference
+import uz.unnarsx.komarugram.preferences.tgkit.preference.types.TGKitSwitchPreference
+import uz.unnarsx.komarugram.preferences.tgkit.preference.types.TGKitTextDetailRow
+import uz.unnarsx.komarugram.preferences.tgkit.preference.types.TGKitTextHintRow
+import uz.unnarsx.komarugram.preferences.tgkit.preference.types.TGKitTextIconRow
 
 fun tgKitScreen(name: String, block: TGKitScreen.() -> Unit) = TGKitSettings(name, mutableListOf<TGKitCategory>().apply(block))
 

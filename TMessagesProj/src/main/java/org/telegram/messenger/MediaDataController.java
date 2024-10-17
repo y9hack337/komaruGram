@@ -102,7 +102,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import uz.unnarsx.komarugram.chats.helpers.ChatsPasswordHelper;
-import uz.unnarsx.komarugram.core.configs.CherrygramChatsConfig;
+import uz.unnarsx.komarugram.core.configs.komarugramChatsConfig;
 import uz.unnarsx.komarugram.chats.helpers.ChatsHelper2;
 
 @SuppressWarnings("unchecked")
@@ -895,7 +895,7 @@ public class MediaDataController extends BaseController {
         if (type == TYPE_PREMIUM_STICKERS) {
             return new ArrayList<>(recentStickers[type]);
         }
-        ArrayList<TLRPC.Document> result = new ArrayList<>(arrayList.subList(0, Math.min(arrayList.size(), CherrygramChatsConfig.INSTANCE.getSlider_RecentStickersAmplifier())));
+        ArrayList<TLRPC.Document> result = new ArrayList<>(arrayList.subList(0, Math.min(arrayList.size(), komarugramChatsConfig.INSTANCE.getSlider_RecentStickersAmplifier())));
         if (firstEmpty && !result.isEmpty() && !StickersAlert.DISABLE_STICKER_EDITOR) {
             result.add(0, new TLRPC.TL_documentEmpty());
         }
@@ -1002,7 +1002,7 @@ public class MediaDataController extends BaseController {
                 });
             }
 //            maxCount = getMessagesController().maxRecentStickersCount;
-            maxCount = CherrygramChatsConfig.INSTANCE.getSlider_RecentStickersAmplifier();
+            maxCount = komarugramChatsConfig.INSTANCE.getSlider_RecentStickersAmplifier();
         }
         if (recentStickers[type].size() > maxCount || remove) {
             TLRPC.Document old = remove ? document : recentStickers[type].remove(recentStickers[type].size() - 1);
@@ -2015,7 +2015,7 @@ public class MediaDataController extends BaseController {
                             maxCount = UserConfig.getInstance(currentAccount).isPremium() ? getMessagesController().stickersFavedLimitPremium : getMessagesController().stickersFavedLimitDefault;
                         } else {
 //                            maxCount = getMessagesController().maxRecentStickersCount;
-                            maxCount = CherrygramChatsConfig.INSTANCE.getSlider_RecentStickersAmplifier();
+                            maxCount = komarugramChatsConfig.INSTANCE.getSlider_RecentStickersAmplifier();
                         }
                     }
                     database.beginTransaction();

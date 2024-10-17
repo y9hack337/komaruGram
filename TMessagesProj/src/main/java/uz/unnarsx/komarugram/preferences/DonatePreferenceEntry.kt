@@ -8,9 +8,10 @@ import org.telegram.messenger.LocaleController
 import org.telegram.messenger.R
 import org.telegram.ui.ActionBar.BaseFragment
 import org.telegram.ui.ActionBar.Theme
-import uz.unnarsx.komarugram.preferences.tgkit.preference.category
+import uz.unnarsx.komarugram.preferences.BasePreferencesEntry
 import uz.unnarsx.komarugram.preferences.tgkit.preference.textIcon
 import uz.unnarsx.komarugram.preferences.tgkit.preference.tgKitScreen
+import uz.unnarsx.komarugram.preferences.tgkit.preference.*
 import uz.unnarsx.komarugram.preferences.tgkit.preference.types.TGKitTextIconRow
 
 class DonatePreferenceEntry : BasePreferencesEntry {

@@ -50,7 +50,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Locale;
 
-import uz.unnarsx.komarugram.core.configs.CherrygramDebugConfig;
+import uz.unnarsx.komarugram.core.configs.komarugramDebugConfig;
 
 public class SharedConfig {
     /**
@@ -1726,7 +1726,7 @@ public class SharedConfig {
     }
 
     public static boolean canBlurChat() {
-        if (CherrygramDebugConfig.INSTANCE.getForceChatBlurEffect()) {
+        if (komarugramDebugConfig.INSTANCE.getForceChatBlurEffect()) {
             return true;
         }
         return getDevicePerformanceClass() >= (Build.VERSION.SDK_INT >= 31 ? PERFORMANCE_CLASS_AVERAGE : PERFORMANCE_CLASS_HIGH) || BuildVars.DEBUG_PRIVATE_VERSION;

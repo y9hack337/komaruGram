@@ -2,7 +2,7 @@
 <resources>
     <!-- by t.me/arsLan-->
     <string name="CG_FollowChannelTitle">Subscrever o canal oficial</string>
-    <string name="CG_FollowChannelInfo">Inscreva-se no nosso canal para ficar a par de todas as novidades e características do Cherrygram!</string>
+    <string name="CG_FollowChannelInfo">Inscreva-se no nosso canal para ficar a par de todas as novidades e características do komarugram!</string>
     <string name="CG_DoNotRemindAgain">Não voltar a lembrar</string>
     <!--Telegram screens-->
     <!--Sign in screen-->
@@ -53,15 +53,15 @@
     <!--Misc-->
     <string name="CG_Restart">Reiniciar aplicação</string>
     <string name="CG_RestartToApply">Reiniciar para aplicar alterações</string>
-    <string name="CG_PushService">Serviço de Notificações do Cherrygram.</string>
+    <string name="CG_PushService">Serviço de Notificações do komarugram.</string>
     <string name="CG_ForceClean">Forçar Limpeza de Cache do Telegram</string>
     <string name="CG_ForceCleanInfo">Use isto se você encarar um longo \"Calculando…\" quando tentar limpar o cache.\nIsto excluirá TUDO do seu cache - tenha cuidado!</string>
     <string name="CG_ForceCleanInfo1">Quer realmente apagar TUDO da sua cache do Telegram?</string>
-    <string name="CG_Kaboom">Este recurso pode ser acessado sem a senha do Cherrygram, através de 
+    <string name="CG_Kaboom">Este recurso pode ser acessado sem a senha do komarugram, através de 
 as configurações do sistema. Esta característica apaga completamente todas as suas 
-(Cherrygram\'s) dados. Pode ser utilizado em situações de emergência.</string>
+(komarugram\'s) dados. Pode ser utilizado em situações de emergência.</string>
     <string name="CG_AppCrashed">Algo correu mal</string>
-    <string name="CG_AppCrashedDesc">O Cherrygram deixou de funcionar. Por favor, envie registos aos programadores para poderem corrigir este erro o mais rapidamente possível.</string>
+    <string name="CG_AppCrashedDesc">O komarugram deixou de funcionar. Por favor, envie registos aos programadores para poderem corrigir este erro o mais rapidamente possível.</string>
     <string name="CG_CopyReportDetails">Copiar Detalhes do Relatório</string>
     <string name="CG_ReportDetailsCopied">Detalhes de falhas copiados para o Clipboard.</string>
     <string name="CG_TranslationLanguage">Idioma de tradução</string>
@@ -81,11 +81,11 @@ as configurações do sistema. Esta característica apaga completamente todas as
     <string name="CG_ProfileBackground">Aplicar perfil de fundo</string>
     <!--Misc-->
     <!--Telegram screens-->
-    <!--Cherrygram screens-->
-    <!--Cherrygram Preferences-->
-    <string name="CGP_AdvancedSettings">Preferências do Cherrygram</string>
+    <!--komarugram screens-->
+    <!--komarugram Preferences-->
+    <string name="CGP_AdvancedSettings">Preferências do komarugram</string>
     <string name="CGP_About_Desc">Uma modificação experimental da aplicação Telegram. Toque aqui para ler a lista de funcionalidades das aplicações.</string>
-    <string name="CGP_Header_About">Sobre Cherrygram</string>
+    <string name="CGP_Header_About">Sobre komarugram</string>
     <string name="CGP_Header_About_Desc">Atualizações, código-fonte e muito mais</string>
     <string name="CGP_Links">Ligações</string>
     <string name="CGP_ToChannel">Canal oficial</string>
@@ -93,7 +93,7 @@ as configurações do sistema. Esta característica apaga completamente todas as
     <string name="CGP_Source">Código-fonte</string>
     <string name="CGP_Crowdin">Ajudar com a tradução</string>
     <string name="CGP_Header_Categories">Categorias</string>
-    <!--Cherrygram Preferences-->
+    <!--komarugram Preferences-->
     <!--General Preferences-->
     <string name="AP_Header_General">Geral</string>
     <!--General Preferences-->
@@ -148,8 +148,8 @@ as configurações do sistema. Esta característica apaga completamente todas as
     <string name="CP_DisablePremStickAutoPlay">Desativar auto-reprodução de stickers premium</string>
     <string name="CP_DisablePremStickAutoPlay_Desc">A animação de autocolantes premium não será reproduzida automaticamente (a funcionalidade não funcionará se desativar os toques nos autocolantes premium)</string>
     <string name="CP_Filters_Header">Pastas</string>
-    <string name="AP_FolderNameInHeader">Nome da pasta em vez de \"Cherrygram\"</string>
-    <string name="AP_FolderNameInHeader_Desc">Isto mudará \"Cherrygram\" na barra de ação para o nome da sua pasta (útil se tiver apenas ícones em vez de nomes de pastas)</string>
+    <string name="AP_FolderNameInHeader">Nome da pasta em vez de \"komarugram\"</string>
+    <string name="AP_FolderNameInHeader_Desc">Isto mudará \"komarugram\" na barra de ação para o nome da sua pasta (útil se tiver apenas ícones em vez de nomes de pastas)</string>
     <string name="CP_NewTabs_RemoveAllChats">Esconder o separador \"Todos os chats\"</string>
     <string name="AP_Tab_Style">Estilo de pestaña</string>
     <string name="AP_Tab_Style_Default">Por defeito</string>
@@ -264,7 +264,7 @@ as configurações do sistema. Esta característica apaga completamente todas as
     <string name="UP_ClearedUpdatesCache">Limpo %1$s de cache.</string>
     <string name="UP_NothingToClear">Nada para limpar.</string>
     <string name="UP_CheckForUpdates">Verificar por atualizações</string>
-    <string name="UP_Not_Found">O Cherrygram está atualizado.</string>
+    <string name="UP_Not_Found">O komarugram está atualizado.</string>
     <string name="UP_UpdateAvailable">Atualização disponível!</string>
     <string name="UP_Version">Versão</string>
     <string name="UP_UpdateSize">Tamanho da atualização</string>
@@ -275,5 +275,5 @@ as configurações do sistema. Esta característica apaga completamente todas as
     <string name="DP_Donate">Faça um donativo</string>
     <string name="DP_Donate_Method">Escolher o método</string>
     <!--Donations-->
-    <!--Cherrygram screens-->
+    <!--komarugram screens-->
 </resources>

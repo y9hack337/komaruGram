@@ -51,6 +51,8 @@ import android.media.AudioManager;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.os.PowerManager;
 import android.os.SystemClock;
 import android.provider.Settings;
@@ -194,9 +196,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 
-import uz.unnarsx.komarugram.core.configs.CherrygramAppearanceConfig;
-import uz.unnarsx.komarugram.core.configs.CherrygramChatsConfig;
-import uz.unnarsx.komarugram.core.configs.CherrygramCoreConfig;
+import uz.unnarsx.komarugram.core.configs.komarugramAppearanceConfig;
+import uz.unnarsx.komarugram.core.configs.komarugramChatsConfig;
+import uz.unnarsx.komarugram.core.configs.komarugramCoreConfig;
 import uz.unnarsx.komarugram.chats.translator.BaseTranslator;
 import uz.unnarsx.komarugram.chats.translator.Translator;
 
@@ -885,7 +887,7 @@ public class ChatActivityEnterView extends BlurredFrameLayout implements Notific
         @Override
         public void run() {
             if (delegate != null) {
-                if (parentActivity != null && !AndroidUtilities.isTablet() && CherrygramAppearanceConfig.INSTANCE.getIconReplacement() != CherrygramAppearanceConfig.ICON_REPLACE_NONE) {
+                if (parentActivity != null && !AndroidUtilities.isTablet() && komarugramAppearanceConfig.INSTANCE.getIconReplacement() != komarugramAppearanceConfig.ICON_REPLACE_NONE) {
                     AndroidUtilities.lockOrientation(parentActivity, ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
                 }
                 delegate.needStartRecordVideo(0, true, 0, 0, 0);
@@ -2631,7 +2633,7 @@ public class ChatActivityEnterView extends BlurredFrameLayout implements Notific
                 }
             }
         });
-        if (CherrygramCoreConfig.INSTANCE.getHideSendAsChannel() && UserConfig.getInstance(currentAccount).isPremium()) {
+        if (komarugramCoreConfig.INSTANCE.getHideSendAsChannel() && UserConfig.getInstance(currentAccount).isPremium()) {
             emojiButton.setOnLongClickListener(v -> {
                 try {
                     v.performHapticFeedback(HapticFeedbackConstants.KEYBOARD_TAP, HapticFeedbackConstants.FLAG_IGNORE_GLOBAL_SETTING);
@@ -2840,7 +2842,7 @@ public class ChatActivityEnterView extends BlurredFrameLayout implements Notific
                             } else {
                                 delegate.needShowMediaBanHint();
                             }
-                            if (!CherrygramChatsConfig.INSTANCE.getDisableVibration()) {
+                            if (!komarugramChatsConfig.INSTANCE.getDisableVibration()) {
                                 performHapticFeedback(HapticFeedbackConstants.KEYBOARD_TAP);
                             }
                             sendAccessibilityEvent(AccessibilityEvent.TYPE_VIEW_CLICKED);
@@ -4121,7 +4123,7 @@ public class ChatActivityEnterView extends BlurredFrameLayout implements Notific
 
     private void startLockTransition() {
         AnimatorSet animatorSet = new AnimatorSet();
-        if (!CherrygramChatsConfig.INSTANCE.getDisableVibration()) {
+        if (!komarugramChatsConfig.INSTANCE.getDisableVibration()) {
             performHapticFeedback(HapticFeedbackConstants.KEYBOARD_TAP, HapticFeedbackConstants.FLAG_IGNORE_GLOBAL_SETTING);
         }
 
@@ -4332,7 +4334,7 @@ public class ChatActivityEnterView extends BlurredFrameLayout implements Notific
                         if (sendPopupWindow != null && sendPopupWindow.isShowing()) {
                             sendPopupWindow.dismiss();
                         }
-                        if (!CherrygramChatsConfig.INSTANCE.getDisableVibration()) {
+                        if (!komarugramChatsConfig.INSTANCE.getDisableVibration()) {
                             performHapticFeedback(HapticFeedbackConstants.KEYBOARD_TAP, HapticFeedbackConstants.FLAG_IGNORE_GLOBAL_SETTING);
                         }
                         Translator.showTranslationTargetSelector(getContext(), true, () -> {
@@ -4391,7 +4393,7 @@ public class ChatActivityEnterView extends BlurredFrameLayout implements Notific
             sendPopupWindow.showAtLocation(view, Gravity.LEFT | Gravity.TOP, location[0] + view.getMeasuredWidth() - sendPopupLayout.getMeasuredWidth() + dp(8), y);
             sendPopupWindow.dimBehind();
             sendButton.invalidate();
-            if (!CherrygramChatsConfig.INSTANCE.getDisableVibration()) {
+            if (!komarugramChatsConfig.INSTANCE.getDisableVibration()) {
                 try {
                     view.performHapticFeedback(HapticFeedbackConstants.KEYBOARD_TAP, HapticFeedbackConstants.FLAG_IGNORE_GLOBAL_SETTING);
                 } catch (Exception ignore) {}
@@ -4588,7 +4590,7 @@ public class ChatActivityEnterView extends BlurredFrameLayout implements Notific
                             messageSendPreview.dismiss(false);
                             messageSendPreview = null;
                         }
-                        if (!CherrygramChatsConfig.INSTANCE.getDisableVibration()) {
+                        if (!komarugramChatsConfig.INSTANCE.getDisableVibration()) {
                             performHapticFeedback(HapticFeedbackConstants.KEYBOARD_TAP, HapticFeedbackConstants.FLAG_IGNORE_GLOBAL_SETTING);
                         }
                         Translator.showTranslationTargetSelector(getContext(), true, this::translatePreSend, resourcesProvider);
@@ -4612,7 +4614,7 @@ public class ChatActivityEnterView extends BlurredFrameLayout implements Notific
                             messageSendPreview.dismiss(false);
                             messageSendPreview = null;
                         }
-                        if (!komaruGramConfig.INSTANCE.getDisableVibration()) {
+                        if (!komarugramChatsConfig.INSTANCE.getDisableVibration()) {
                             performHapticFeedback(HapticFeedbackConstants.KEYBOARD_TAP, HapticFeedbackConstants.FLAG_IGNORE_GLOBAL_SETTING);
                         }
                         gptPreSend();
@@ -7919,7 +7921,7 @@ public class ChatActivityEnterView extends BlurredFrameLayout implements Notific
             } catch (Exception e) {
                 FileLog.e(e);
             }
-            if (CherrygramAppearanceConfig.INSTANCE.getIconReplacement() == CherrygramAppearanceConfig.ICON_REPLACE_NONE) {
+            if (komarugramAppearanceConfig.INSTANCE.getIconReplacement() == komarugramAppearanceConfig.ICON_REPLACE_NONE) {
                 AndroidUtilities.lockOrientation(parentActivity);
             }
 
@@ -9665,7 +9667,7 @@ public class ChatActivityEnterView extends BlurredFrameLayout implements Notific
         if (parentFragment == null || delegate == null) {
             return;
         }
-        if (CherrygramCoreConfig.INSTANCE.getHideSendAsChannel())
+        if (komarugramCoreConfig.INSTANCE.getHideSendAsChannel())
             return;
         createMessageEditText();
         TLRPC.Chat chat = parentFragment.getMessagesController().getChat(-dialog_id);
@@ -12793,6 +12795,7 @@ public class ChatActivityEnterView extends BlurredFrameLayout implements Notific
     }
 
     private Handler handler = new Handler(Looper.getMainLooper());
+
     public void gptPreSend() {
         final AlertDialog progressDialog = new AlertDialog(getContext(), AlertDialog.ALERT_TYPE_SPINNER);
         AndroidUtilities.runOnUIThread(() -> {
@@ -12806,7 +12809,6 @@ public class ChatActivityEnterView extends BlurredFrameLayout implements Notific
         new Thread(new Runnable() {
             @Override
             public void run() {
-
                 String result = sendRequestToGPT(messageEditText.getText().toString());
 
                 handler.post(new Runnable() {
@@ -12819,6 +12821,7 @@ public class ChatActivityEnterView extends BlurredFrameLayout implements Notific
                         }
                         if (result != null) {
                             messageEditText.setText(result);
+
                         } else {
                             // Handle error
                         }
@@ -12830,22 +12833,61 @@ public class ChatActivityEnterView extends BlurredFrameLayout implements Notific
 
     private String sendRequestToGPT(String message) {
         try {
-            URL url = new URL("http://api.onlysq.ru/ai/v1");
+            URL url;
+            String requestBody;
+
+            if (komarugramChatsConfig.INSTANCE.getGPTModel() == komarugramChatsConfig.CHATGPT) {
+                url = new URL("http://api.onlysq.ru/ai/v1");
+                JSONArray jsonArray = new JSONArray();
+                JSONObject jsonObject = new JSONObject();
+                jsonObject.put("role", "user");
+                jsonObject.put("content", message);
+                jsonArray.put(jsonObject);
+                requestBody = jsonArray.toString();
+
+            } else {
+                url = new URL("http://api.onlysq.ru/ai/v2");
+                JSONObject jsonRequest = new JSONObject();
+                JSONArray messages = new JSONArray();
+                JSONObject messageContent = new JSONObject();
+
+                if (komarugramChatsConfig.INSTANCE.getGPTModel() == komarugramChatsConfig.BLACKBOX) {
+                    messageContent.put("role", "user");
+                }
+
+                messageContent.put("content", message);
+                messages.put(messageContent);
+
+
+                JSONObject request = new JSONObject();
+                request.put("messages", messages);
+                JSONObject mainRequest = new JSONObject();
+
+
+                if (komarugramChatsConfig.INSTANCE.getGPTModel() == komarugramChatsConfig.GEMINI) {
+                    mainRequest.put("model", "gemini");
+                } else if (komarugramChatsConfig.INSTANCE.getGPTModel() == komarugramChatsConfig.BLACKBOX) {
+                    mainRequest.put("model", "blackbox");
+                }
+                mainRequest.put("request", request);
+
+
+
+                requestBody = mainRequest.toString();
+
+
+            }
+
+
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
             connection.setRequestMethod("POST");
             connection.setRequestProperty("Content-Type", "application/json");
             connection.setDoOutput(true);
 
-            // Create JSON payload
-            JSONArray jsonArray = new JSONArray();
-            JSONObject jsonObject = new JSONObject();
-            jsonObject.put("role", "user");
-            jsonObject.put("content", message);
-            jsonArray.put(jsonObject);
 
             // Send request
             OutputStream os = connection.getOutputStream();
-            os.write(jsonArray.toString().getBytes());
+            os.write(requestBody.getBytes());
             os.flush();
             os.close();
 
@@ -12863,7 +12905,6 @@ public class ChatActivityEnterView extends BlurredFrameLayout implements Notific
             return jsonResponse.getString("answer");
 
         } catch (Exception e) {
-            FileLog.e(e);
             return null;
         }
     }

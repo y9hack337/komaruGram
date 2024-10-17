@@ -1,4 +1,4 @@
-package uz.unnarsx.cherrygram.preferences.drawer.cells;
+package uz.unnarsx.komarugram.preferences.drawer.cells;
 
 import android.annotation.SuppressLint;
 import android.content.Context;

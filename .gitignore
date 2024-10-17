@@ -4,9 +4,9 @@
 afat/
 build/
 obj/
-/TMessagesProj/src/main/java/uz/unnarsx/cherrygram/Extra.java
-/TMessagesProj/src/main/java/uz/unnarsx/cherrygram/Extra.kt
-/TMessagesProj/src/main/java/uz/unnarsx/cherrygram/helpers/UserInfoHelper.java
+/TMessagesProj/src/main/java/uz/unnarsx/komarugram/Extra.java
+/TMessagesProj/src/main/java/uz/unnarsx/komarugram/Extra.kt
+/TMessagesProj/src/main/java/uz/unnarsx/komarugram/helpers/UserInfoHelper.java
 /TMessagesProj/src/main/java/org/telegram/tgnet/ConnectionsManagerImpl.kt
 /TMessagesProj/src/main/java/org/telegram/tgnet/ConnectionManagerDelegate.java
 *.iml

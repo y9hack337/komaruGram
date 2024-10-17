@@ -215,8 +215,8 @@ import java.util.concurrent.atomic.AtomicReference;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import uz.unnarsx.komarugram.core.configs.CherrygramAppearanceConfig;
-import uz.unnarsx.komarugram.core.configs.CherrygramCoreConfig;
+import uz.unnarsx.komarugram.core.configs.komarugramAppearanceConfig;
+import uz.unnarsx.komarugram.core.configs.komarugramCoreConfig;
 import uz.unnarsx.komarugram.helpers.ui.FontHelper;
 import uz.unnarsx.komarugram.core.PermissionsUtils;
 
@@ -2194,7 +2194,7 @@ public class AndroidUtilities {
             if (!typefaceCache.containsKey(assetPath)) {
                 Typeface t = null;
                 try {
-                    if (CherrygramCoreConfig.INSTANCE.getSystemFonts()) {
+                    if (komarugramCoreConfig.INSTANCE.getSystemFonts()) {
                         switch (assetPath) {
                             case TYPEFACE_ROBOTO_MONO:
                                 t = Typeface.MONOSPACE;
@@ -2284,7 +2284,7 @@ public class AndroidUtilities {
     }
 
     public static int getShadowHeight() {
-        if (CherrygramAppearanceConfig.INSTANCE.getDisableDividers()) {
+        if (komarugramAppearanceConfig.INSTANCE.getDisableDividers()) {
             return 0;
         } else if (density >= 4.0f) {
             return 3;

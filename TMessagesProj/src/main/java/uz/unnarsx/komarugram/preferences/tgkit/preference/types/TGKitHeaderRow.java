@@ -1,6 +1,6 @@
-package uz.unnarsx.cherrygram.preferences.tgkit.preference.types;
+package uz.unnarsx.komarugram.preferences.tgkit.preference.types;
 
-import uz.unnarsx.cherrygram.preferences.tgkit.preference.TGKitPreference;
+import uz.unnarsx.komarugram.preferences.tgkit.preference.TGKitPreference;
 
 public class TGKitHeaderRow extends TGKitPreference {
     public TGKitHeaderRow(String title) {

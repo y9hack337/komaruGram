@@ -1,4 +1,4 @@
-package uz.unnarsx.cherrygram.preferences
+package uz.unnarsx.komarugram.preferences
 
 import android.os.Build
 import android.os.Environment
@@ -6,15 +6,15 @@ import android.widget.Toast
 import org.telegram.messenger.LocaleController.getString
 import org.telegram.messenger.R
 import org.telegram.ui.ActionBar.BaseFragment
-import uz.unnarsx.cherrygram.core.helpers.AppRestartHelper
-import uz.unnarsx.cherrygram.core.CGBiometricPrompt
-import uz.unnarsx.cherrygram.core.configs.CherrygramPrivacyConfig
-import uz.unnarsx.cherrygram.preferences.tgkit.preference.category
-import uz.unnarsx.cherrygram.preferences.tgkit.preference.contract
-import uz.unnarsx.cherrygram.preferences.tgkit.preference.switch
-import uz.unnarsx.cherrygram.preferences.tgkit.preference.textIcon
-import uz.unnarsx.cherrygram.preferences.tgkit.preference.tgKitScreen
-import uz.unnarsx.cherrygram.preferences.tgkit.preference.types.TGKitTextIconRow
+import uz.unnarsx.komarugram.core.helpers.AppRestartHelper
+import uz.unnarsx.komarugram.core.CGBiometricPrompt
+import uz.unnarsx.komarugram.core.configs.komarugramPrivacyConfig
+import uz.unnarsx.komarugram.preferences.tgkit.preference.category
+import uz.unnarsx.komarugram.preferences.tgkit.preference.contract
+import uz.unnarsx.komarugram.preferences.tgkit.preference.switch
+import uz.unnarsx.komarugram.preferences.tgkit.preference.textIcon
+import uz.unnarsx.komarugram.preferences.tgkit.preference.tgKitScreen
+import uz.unnarsx.komarugram.preferences.tgkit.preference.types.TGKitTextIconRow
 import java.io.File
 
 class PrivacyAndSecurityPreferencesEntry : BasePreferencesEntry {
@@ -24,9 +24,9 @@ class PrivacyAndSecurityPreferencesEntry : BasePreferencesEntry {
                 title = getString(R.string.SP_NoProxyPromo)
 
                 contract({
-                    return@contract CherrygramPrivacyConfig.hideProxySponsor
+                    return@contract komarugramPrivacyConfig.hideProxySponsor
                 }) {
-                    CherrygramPrivacyConfig.hideProxySponsor = it
+                    komarugramPrivacyConfig.hideProxySponsor = it
                     bf.parentLayout.rebuildAllFragmentViews(false, false)
                 }
             }
@@ -35,9 +35,9 @@ class PrivacyAndSecurityPreferencesEntry : BasePreferencesEntry {
                 description = getString(R.string.SP_GoogleAnalytics_Desc)
 
                 contract({
-                    return@contract CherrygramPrivacyConfig.googleAnalytics
+                    return@contract komarugramPrivacyConfig.googleAnalytics
                 }) {
-                    CherrygramPrivacyConfig.googleAnalytics = it
+                    komarugramPrivacyConfig.googleAnalytics = it
                     AppRestartHelper.createRestartBulletin(bf)
                 }
             }
@@ -61,10 +61,10 @@ class PrivacyAndSecurityPreferencesEntry : BasePreferencesEntry {
                     description = getString(R.string.SP_AskPinForChats_Desc)
 
                     contract({
-                        return@contract CherrygramPrivacyConfig.askForPasscodeBeforeOpenChat
+                        return@contract komarugramPrivacyConfig.askForPasscodeBeforeOpenChat
                     }) {
                         CGBiometricPrompt.prompt(bf.parentActivity) {
-                            CherrygramPrivacyConfig.askForPasscodeBeforeOpenChat = it
+                            komarugramPrivacyConfig.askForPasscodeBeforeOpenChat = it
                             bf.parentLayout.rebuildAllFragmentViews(true, true)
                             AppRestartHelper.createRestartBulletin(bf)
                         }
@@ -75,9 +75,9 @@ class PrivacyAndSecurityPreferencesEntry : BasePreferencesEntry {
                     description = getString(R.string.SP_AskPinBeforeDelete_Desc)
 
                     contract({
-                        return@contract CherrygramPrivacyConfig.askPasscodeBeforeDelete
+                        return@contract komarugramPrivacyConfig.askPasscodeBeforeDelete
                     }) {
-                        CherrygramPrivacyConfig.askPasscodeBeforeDelete = it
+                        komarugramPrivacyConfig.askPasscodeBeforeDelete = it
                         AppRestartHelper.createRestartBulletin(bf)
                     }
                 }
@@ -86,9 +86,9 @@ class PrivacyAndSecurityPreferencesEntry : BasePreferencesEntry {
                     description = getString(R.string.SP_AllowUseSystemPasscode_Desc)
 
                     contract({
-                        return@contract CherrygramPrivacyConfig.allowSystemPasscode
+                        return@contract komarugramPrivacyConfig.allowSystemPasscode
                     }) {
-                        CherrygramPrivacyConfig.allowSystemPasscode = it
+                        komarugramPrivacyConfig.allowSystemPasscode = it
                     }
                 }
                 textIcon {

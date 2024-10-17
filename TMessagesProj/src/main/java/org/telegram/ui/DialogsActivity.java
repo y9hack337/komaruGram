@@ -246,11 +246,11 @@ import java.util.Collections;
 import java.util.List;
 import java.util.concurrent.ConcurrentHashMap;
 
-import uz.unnarsx.komarugram.core.configs.CherrygramAppearanceConfig;
-import uz.unnarsx.komarugram.core.configs.CherrygramChatsConfig;
+import uz.unnarsx.komarugram.core.configs.komarugramAppearanceConfig;
+import uz.unnarsx.komarugram.core.configs.komarugramChatsConfig;
 import uz.unnarsx.komarugram.core.CGBiometricPrompt;
-import uz.unnarsx.komarugram.core.configs.CherrygramExperimentalConfig;
-import uz.unnarsx.komarugram.core.configs.CherrygramPrivacyConfig;
+import uz.unnarsx.komarugram.core.configs.komarugramExperimentalConfig;
+import uz.unnarsx.komarugram.core.configs.komarugramPrivacyConfig;
 import uz.unnarsx.komarugram.core.crashlytics.CrashReportBottomSheet;
 import uz.unnarsx.komarugram.core.crashlytics.Crashlytics;
 import uz.unnarsx.komarugram.core.PermissionsUtils;
@@ -288,7 +288,7 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
     private boolean wasDrawn;
     private int fragmentContextTopPadding;
 
-    boolean askPasscode = CherrygramPrivacyConfig.INSTANCE.getAskPasscodeBeforeDelete() && CGBiometricPrompt.hasBiometricEnrolled() && FingerprintController.isKeyReady() && !FingerprintController.checkDeviceFingerprintsChanged();
+    boolean askPasscode = komarugramPrivacyConfig.INSTANCE.getAskPasscodeBeforeDelete() && CGBiometricPrompt.hasBiometricEnrolled() && FingerprintController.isKeyReady() && !FingerprintController.checkDeviceFingerprintsChanged();
 
     public MessagesStorage.TopicKey getOpenedDialogId() {
         return openedDialogId;
@@ -824,7 +824,7 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
 
                 canvas.clipRect(0, -getY() + getActionBarTop() + getActionBarFullHeight(), getMeasuredWidth(), getMeasuredHeight());
                 if (slideFragmentProgress != 1f) {
-                    if (slideFragmentLite || CherrygramExperimentalConfig.INSTANCE.getSpringAnimation() == CherrygramExperimentalConfig.ANIMATION_SPRING) {
+                    if (slideFragmentLite || komarugramExperimentalConfig.INSTANCE.getSpringAnimation() == komarugramExperimentalConfig.ANIMATION_SPRING) {
                         canvas.translate((isDrawerTransition ? 1 : -1) * dp(slideAmplitudeDp) * (1f - slideFragmentProgress), 0);
                     } else {
                         final float s = 1f - 0.05f * (1f - slideFragmentProgress);
@@ -836,7 +836,7 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
                 canvas.restore();
             } else if (child == actionBar && slideFragmentProgress != 1f) {
                 canvas.save();
-                if (slideFragmentLite || CherrygramExperimentalConfig.INSTANCE.getSpringAnimation() == CherrygramExperimentalConfig.ANIMATION_SPRING) {
+                if (slideFragmentLite || komarugramExperimentalConfig.INSTANCE.getSpringAnimation() == komarugramExperimentalConfig.ANIMATION_SPRING) {
                     canvas.translate((isDrawerTransition ? 1 : -1) * dp(slideAmplitudeDp) * (1f - slideFragmentProgress), 0);
                 } else {
                     float s = 1f - 0.05f * (1f - slideFragmentProgress);
@@ -1043,7 +1043,7 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
                 canvas.save();
                 canvas.translate(fragmentContextView.getX(), fragmentContextView.getY());
                 if (slideFragmentProgress != 1f) {
-                    if (slideFragmentLite || CherrygramExperimentalConfig.INSTANCE.getSpringAnimation() == CherrygramExperimentalConfig.ANIMATION_SPRING) {
+                    if (slideFragmentLite || komarugramExperimentalConfig.INSTANCE.getSpringAnimation() == komarugramExperimentalConfig.ANIMATION_SPRING) {
                         canvas.translate((isDrawerTransition ? 1 : -1) * dp(slideAmplitudeDp) * (1f - slideFragmentProgress), 0);
                     } else {
                         final float s = 1f - 0.05f * (1f - slideFragmentProgress);
@@ -2266,7 +2266,7 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
                                 }
                                 if (!canShowHiddenArchive) {
                                     canShowHiddenArchive = true;
-                                    if (!CherrygramChatsConfig.INSTANCE.getDisableVibration()) {
+                                    if (!komarugramChatsConfig.INSTANCE.getDisableVibration()) {
                                         performHapticFeedback(HapticFeedbackConstants.KEYBOARD_TAP, HapticFeedbackConstants.FLAG_IGNORE_GLOBAL_SETTING);
                                     }
                                     if (parentPage.pullForegroundDrawable != null) {
@@ -3305,7 +3305,7 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
             if (folderId != 0) {
                 actionBar.setTitle(actionBarDefaultTitle = getString(R.string.ArchivedChats));
                 actionBar.setBackButtonImage(R.drawable.ic_ab_back);
-                if ((Theme.isCurrentThemeDark() || Theme.isCurrentThemeNight()) && CherrygramAppearanceConfig.INSTANCE.getOverrideHeaderColor()) {
+                if ((Theme.isCurrentThemeDark() || Theme.isCurrentThemeNight()) && komarugramAppearanceConfig.INSTANCE.getOverrideHeaderColor()) {
                     actionBar.setBackgroundColor(getThemedColor(Theme.key_windowBackgroundWhite));
                     actionBar.setTitleColor(getThemedColor(Theme.key_windowBackgroundWhiteBlackText));
                     actionBar.setItemsColor(getThemedColor(Theme.key_windowBackgroundWhiteBlackText), false);
@@ -3485,7 +3485,7 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
 
                 @Override
                 public int getTabCounter(int tabId) {
-                    if (initialDialogsType == DIALOGS_TYPE_FORWARD || CherrygramAppearanceConfig.INSTANCE.getTabsNoUnread()) {
+                    if (initialDialogsType == DIALOGS_TYPE_FORWARD || komarugramAppearanceConfig.INSTANCE.getTabsNoUnread()) {
                         return 0;
                     }
                     if (tabId == filterTabsView.getDefaultTabId()) {
@@ -3634,7 +3634,7 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
                     if (!selectedDialogs.isEmpty()) {
                         return;
                     }
-                    if (CherrygramAppearanceConfig.INSTANCE.getFolderNameInHeader()) {
+                    if (komarugramAppearanceConfig.INSTANCE.getFolderNameInHeader()) {
                         actionBar.setTitleAnimatedX(tab.isDefault ? actionBarDefaultTitle : tab.realTitle, tab.isDefault ? statusDrawable : null, forward, 250);
                     } else {
                         actionBar.setTitle(actionBarDefaultTitle, statusDrawable);
@@ -4100,7 +4100,7 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
                             if (canShowHiddenArchive != canShowInternal) {
                                 canShowHiddenArchive = canShowInternal;
                                 if (viewPage.archivePullViewState == ARCHIVE_ITEM_STATE_HIDDEN) {
-                                    if (!CherrygramChatsConfig.INSTANCE.getDisableVibration()) {
+                                    if (!komarugramChatsConfig.INSTANCE.getDisableVibration()) {
                                         viewPage.listView.performHapticFeedback(HapticFeedbackConstants.KEYBOARD_TAP, HapticFeedbackConstants.FLAG_IGNORE_GLOBAL_SETTING);
                                     }
                                     if (viewPage.pullForegroundDrawable != null) {
@@ -6768,12 +6768,12 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
                 filterTabsView.removeTabs();
                 for (int a = 0, N = filters.size(); a < N; a++) {
                     if (filters.get(a).isDefault()) {
-                        if (!CherrygramAppearanceConfig.INSTANCE.getTabsHideAllChats()) filterTabsView.addTab(a, 0, LocaleController.getString(R.string.FilterAllChats), true, filters.get(a).locked, filters.get(a).emoticon);
+                        if (!komarugramAppearanceConfig.INSTANCE.getTabsHideAllChats()) filterTabsView.addTab(a, 0, LocaleController.getString(R.string.FilterAllChats), true, filters.get(a).locked, filters.get(a).emoticon);
                     } else {
                         filterTabsView.addTab(a, filters.get(a).localId, filters.get(a).name, false,  filters.get(a).locked, filters.get(a).emoticon);
                     }
                 }
-                if (CherrygramAppearanceConfig.INSTANCE.getTabsHideAllChats() && stableId <= 0) {
+                if (komarugramAppearanceConfig.INSTANCE.getTabsHideAllChats() && stableId <= 0) {
                     id = filterTabsView.getFirstTabId();
                     updateCurrentTab = true;
                     viewPages[0].selectedType = id;
@@ -6849,7 +6849,7 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
                 filterTabsView.resetTabId();
 
                 if (!actionBarDefaultTitle.equals(actionBar.getTitle())) {
-                    if (CherrygramAppearanceConfig.INSTANCE.getFolderNameInHeader()) {
+                    if (komarugramAppearanceConfig.INSTANCE.getFolderNameInHeader()) {
                         actionBar.setTitleAnimatedX(actionBarDefaultTitle, statusDrawable, false, 250);
                     } else {
                         actionBar.setTitle(actionBarDefaultTitle, statusDrawable);
@@ -7539,7 +7539,7 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
 
             animators.add(valueAnimator);
             searchAnimator.playTogether(animators);
-            searchAnimator.setDuration(show ? (CherrygramAppearanceConfig.INSTANCE.getTabStyle() != 0 ? 50 : 220) : 180);
+            searchAnimator.setDuration(show ? (komarugramAppearanceConfig.INSTANCE.getTabStyle() != 0 ? 50 : 220) : 180);
             searchAnimator.setInterpolator(CubicBezierInterpolator.EASE_OUT);
 
             if (filterTabsViewIsVisible) {
@@ -12615,7 +12615,7 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
             fragmentView.invalidate();
         }
 
-        if (slideFragmentLite || CherrygramExperimentalConfig.INSTANCE.getSpringAnimation() == CherrygramExperimentalConfig.ANIMATION_SPRING) {
+        if (slideFragmentLite || komarugramExperimentalConfig.INSTANCE.getSpringAnimation() == komarugramExperimentalConfig.ANIMATION_SPRING) {
             if (filterTabsView != null) {
                 filterTabsView.getListView().setTranslationX((isDrawerTransition ? 1 : -1) * dp(slideAmplitudeDp) * (1f - slideFragmentProgress));
                 filterTabsView.invalidate();

@@ -1,4 +1,4 @@
-package uz.unnarsx.cherrygram.core;
+package uz.unnarsx.komarugram.core;
 
 import static org.telegram.messenger.LocaleController.getString;
 
@@ -16,19 +16,19 @@ import androidx.fragment.app.FragmentActivity;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.R;
 
-import uz.unnarsx.cherrygram.core.configs.CherrygramDebugConfig;
-import uz.unnarsx.cherrygram.core.configs.CherrygramPrivacyConfig;
+import uz.unnarsx.komarugram.core.configs.komarugramDebugConfig;
+import uz.unnarsx.komarugram.core.configs.komarugramPrivacyConfig;
 
 public class CGBiometricPrompt {
 
     private static BiometricPrompt.PromptInfo createPromptInfo() {
         BiometricPrompt.PromptInfo.Builder builder = new BiometricPrompt.PromptInfo.Builder();
         builder.setTitle(getString(R.string.CG_AppName));
-        if (!CherrygramPrivacyConfig.INSTANCE.getAllowSystemPasscode()) {
+        if (!komarugramPrivacyConfig.INSTANCE.getAllowSystemPasscode()) {
             builder.setNegativeButtonText(getString(R.string.Cancel));
         }
 //        builder.setAllowedAuthenticators(BIOMETRIC_STRONG | DEVICE_CREDENTIAL);
-        builder.setDeviceCredentialAllowed(CherrygramPrivacyConfig.INSTANCE.getAllowSystemPasscode());
+        builder.setDeviceCredentialAllowed(komarugramPrivacyConfig.INSTANCE.getAllowSystemPasscode());
         builder.setConfirmationRequired(false);
 
         /*return new BiometricPrompt.PromptInfo.Builder()
@@ -64,20 +64,20 @@ public class CGBiometricPrompt {
         CGBiometricPrompt.callBiometricPrompt(activity, new CGBiometricPrompt.CGBiometricListener() {
             @Override
             public void onError(CharSequence msg) {
-                if (CherrygramDebugConfig.INSTANCE.getShowRPCErrors())
+                if (komarugramDebugConfig.INSTANCE.getShowRPCErrors())
                     Toast.makeText(activity, msg, Toast.LENGTH_SHORT).show();
             }
 
             @Override
             public void onFailed() {
-                if (CherrygramDebugConfig.INSTANCE.getShowRPCErrors())
+                if (komarugramDebugConfig.INSTANCE.getShowRPCErrors())
                     Toast.makeText(activity, "Fail", Toast.LENGTH_SHORT).show();
             }
 
             @Override
             public void onSuccess(BiometricPrompt.AuthenticationResult result) {
                 successCallback.run();
-                if (CherrygramDebugConfig.INSTANCE.getShowRPCErrors())
+                if (komarugramDebugConfig.INSTANCE.getShowRPCErrors())
                     Toast.makeText(activity, "Success", Toast.LENGTH_SHORT).show();
             }
         });

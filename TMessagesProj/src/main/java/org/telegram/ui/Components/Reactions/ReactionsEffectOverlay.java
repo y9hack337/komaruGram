@@ -41,7 +41,7 @@ import org.telegram.ui.SelectAnimatedEmojiDialog;
 import java.util.ArrayList;
 import java.util.Random;
 
-import uz.unnarsx.komarugram.core.configs.CherrygramCoreConfig;
+import uz.unnarsx.komarugram.core.configs.komarugramCoreConfig;
 
 public class ReactionsEffectOverlay {
 
@@ -723,7 +723,7 @@ public class ReactionsEffectOverlay {
     }
 
     public static void show(BaseFragment baseFragment, ReactionsContainerLayout reactionsLayout, ChatMessageCell cell, View fromAnimationView, float x, float y, ReactionsLayoutInBubble.VisibleReaction visibleReaction, int currentAccount, int animationType) {
-        if (CherrygramCoreConfig.INSTANCE.getDisableReactionAnim()) return;
+        if (komarugramCoreConfig.INSTANCE.getDisableReactionAnim()) return;
         if (cell == null || visibleReaction == null || baseFragment == null || baseFragment.getParentActivity() == null) {
             return;
         }
@@ -773,7 +773,7 @@ public class ReactionsEffectOverlay {
     }
 
     public static void startAnimation() {
-        if (CherrygramCoreConfig.INSTANCE.getDisableReactionAnim()) return;
+        if (komarugramCoreConfig.INSTANCE.getDisableReactionAnim()) return;
         if (currentOverlay != null) {
             currentOverlay.started = true;
             currentOverlay.startTime = System.currentTimeMillis();

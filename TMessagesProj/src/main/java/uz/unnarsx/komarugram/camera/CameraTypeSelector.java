@@ -1,4 +1,4 @@
-package uz.unnarsx.cherrygram.camera;
+package uz.unnarsx.komarugram.camera;
 
 import static org.telegram.messenger.LocaleController.getString;
 
@@ -36,7 +36,7 @@ import org.telegram.ui.Components.LayoutHelper;
 import org.telegram.ui.Components.NumberPicker;
 import org.telegram.ui.LaunchActivity;
 
-import uz.unnarsx.cherrygram.core.configs.CherrygramCameraConfig;
+import uz.unnarsx.komarugram.core.configs.komarugramCameraConfig;
 
 public class CameraTypeSelector extends LinearLayout {
     String[] strings = new String[]{
@@ -51,7 +51,7 @@ public class CameraTypeSelector extends LinearLayout {
             R.drawable.camerax_icon,
             R.drawable.android_camera_icon
     };
-    int currentIcon = CherrygramCameraConfig.INSTANCE.getCameraType();
+    int currentIcon = komarugramCameraConfig.INSTANCE.getCameraType();
     private final NumberPicker numberPicker;
     private final FrameLayout preview;
 
@@ -168,7 +168,7 @@ public class CameraTypeSelector extends LinearLayout {
             updateIcon(true);
             picker.performHapticFeedback(HapticFeedbackConstants.KEYBOARD_TAP, HapticFeedbackConstants.FLAG_IGNORE_GLOBAL_SETTING);
         });
-        int selectedButton = CherrygramCameraConfig.INSTANCE.getCameraType();
+        int selectedButton = komarugramCameraConfig.INSTANCE.getCameraType();
         numberPicker.setValue(selectedButton);
         addView(numberPicker, LayoutHelper.createFrame(132, 102, Gravity.RIGHT, 0, 33, 21, 33));
         updateIcon(false);
@@ -189,7 +189,7 @@ public class CameraTypeSelector extends LinearLayout {
                 @Override
                 public void onAnimationEnd(Animator animation) {
                     super.onAnimationEnd(animation);
-                    currentIcon = CherrygramCameraConfig.INSTANCE.getCameraType();
+                    currentIcon = komarugramCameraConfig.INSTANCE.getCameraType();
                     animator.setFloatValues(0f, 1f);
                     animator.removeAllListeners();
                     animator.start();

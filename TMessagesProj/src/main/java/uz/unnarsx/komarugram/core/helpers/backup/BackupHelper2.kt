@@ -1,4 +1,4 @@
-package uz.unnarsx.cherrygram.core.helpers.backup
+package uz.unnarsx.komarugram.core.helpers.backup
 
 import android.content.Context
 import android.content.Intent

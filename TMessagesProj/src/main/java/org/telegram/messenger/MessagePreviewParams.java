@@ -19,7 +19,7 @@ import org.telegram.ui.Components.MessagePreviewView;
 
 import java.util.ArrayList;
 
-import uz.unnarsx.komarugram.core.configs.CherrygramChatsConfig;
+import uz.unnarsx.komarugram.core.configs.komarugramChatsConfig;
 
 public class MessagePreviewParams {
 
@@ -179,7 +179,7 @@ public class MessagePreviewParams {
     public boolean isSecret;
     public boolean multipleUsers;
 
-    public boolean hideForwardSendersName = CherrygramChatsConfig.INSTANCE.getNoAuthorship();
+    public boolean hideForwardSendersName = komarugramChatsConfig.INSTANCE.getNoAuthorship();
     public boolean hideCaption;
     public boolean willSeeSenders;
 

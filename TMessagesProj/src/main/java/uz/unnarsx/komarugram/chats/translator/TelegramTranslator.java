@@ -1,4 +1,4 @@
-package uz.unnarsx.cherrygram.chats.translator;
+package uz.unnarsx.komarugram.chats.translator;
 
 import android.text.TextUtils;
 
@@ -19,7 +19,7 @@ import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.atomic.AtomicReference;
 
 import kotlin.NotImplementedError;
-import uz.unnarsx.cherrygram.chats.helpers.MessageHelper;
+import uz.unnarsx.komarugram.chats.helpers.MessageHelper;
 
 public class TelegramTranslator extends BaseTranslator {
 

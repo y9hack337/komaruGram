@@ -238,7 +238,7 @@ public class ProfileChannelCell extends FrameLayout {
         ArrayList<DialogCell.CustomDialog> dialogs = new ArrayList<>();
 
         DialogCell.CustomDialog customDialog = new DialogCell.CustomDialog();
-        customDialog.name = LocaleController.getString("CG_AppName", R.string.CG_AppName) + " \uD83C\uDF52";
+        customDialog.name = LocaleController.getString("CG_AppName", R.string.CG_AppName);
         customDialog.message = LocaleController.getString("CG_FollowChannelInfo", R.string.CG_FollowChannelInfo);
         customDialog.id = 1390;
         customDialog.unread_count = 0;
